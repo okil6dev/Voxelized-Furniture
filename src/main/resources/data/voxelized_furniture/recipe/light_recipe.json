@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b"
+  ],
+  "key": {
+    "a": "minecraft:chain",
+    "b": "minecraft:sea_lantern"
+  },
+  "result": {
+    "id": "voxelized_furniture:light",
+    "count": 1
+  }
+}

@@ -3064,6 +3064,149 @@
         ]
       },
       "path": "~/Electrical/Light"
+    },
+    {
+      "name": "OakWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/oak_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "SpruceWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/spruce_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "MangroveWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/mangrove_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "JungleWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/jungle_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "DarkOakWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/dark_oak_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "CherryWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cherry_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/cherry_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "BirchWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/birch_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "BambooWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bamboo_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/bamboo_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "AcaciaWardrobeCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_wardrobe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/acacia_wardrobe_craft.json"
+        ]
+      },
+      "path": "~/Bedroom/wardrobe"
+    },
+    {
+      "name": "LightRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/light_recipe.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "LightSwitchRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_switch_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/light_switch_recipe.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
     }
   ],
   "variable_elements": [

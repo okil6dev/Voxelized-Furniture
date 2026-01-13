@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:dark_oak_planks",
+    "b": "minecraft:dark_oak_slab",
+    "c": "minecraft:dark_oak_stairs"
+  },
+  "result": {
+    "id": "voxelized_furniture:dark_oak_wardrobe",
+    "count": 1
+  }
+}

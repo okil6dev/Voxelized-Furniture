@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:acacia_planks",
+    "b": "minecraft:acacia_slab",
+    "c": "minecraft:acacia_stairs"
+  },
+  "result": {
+    "id": "voxelized_furniture:acacia_wardrobe",
+    "count": 1
+  }
+}

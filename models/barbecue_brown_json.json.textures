@@ -1,0 +1,18 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:coal_block",
+        "1": "minecraft:black_concrete",
+        "2": "minecraft:brown_terracotta",
+        "3": "minecraft:light_gray_concrete",
+        "4": "minecraft:brown_concrete_powder",
+        "5": "minecraft:white_concrete_powder",
+        "6": "minecraft:red_concrete_powder",
+        "7": "minecraft:stripped_dark_oak_log",
+        "8": "anvil_darker"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:cherry_planks",
+    "b": "minecraft:cherry_slab",
+    "c": "minecraft:cherry_stairs"
+  },
+  "result": {
+    "id": "voxelized_furniture:cherry_wardrobe",
+    "count": 1
+  }
+}

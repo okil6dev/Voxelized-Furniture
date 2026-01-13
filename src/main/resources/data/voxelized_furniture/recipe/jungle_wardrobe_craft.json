@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:jungle_planks",
+    "b": "minecraft:jungle_slab",
+    "c": "minecraft:jungle_stairs"
+  },
+  "result": {
+    "id": "voxelized_furniture:jungle_wardrobe",
+    "count": 1
+  }
+}

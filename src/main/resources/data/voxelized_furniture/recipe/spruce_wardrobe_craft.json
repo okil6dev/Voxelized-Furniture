@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:spruce_planks",
+    "b": "minecraft:spruce_slab",
+    "c": "minecraft:spruce_stairs"
+  },
+  "result": {
+    "id": "voxelized_furniture:spruce_wardrobe",
+    "count": 1
+  }
+}
