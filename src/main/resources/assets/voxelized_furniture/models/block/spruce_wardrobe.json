@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/wardrobe_bottom_spruce",
+  "textures": {
+    "all": "minecraft:block/stripped_spruce_log",
+    "particle": "minecraft:block/stripped_spruce_log",
+    "1": "minecraft:block/stripped_spruce_log",
+    "2": "minecraft:block/spruce_planks",
+    "3": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

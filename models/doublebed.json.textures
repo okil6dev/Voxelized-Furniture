@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "minecraft:stripped_spruce_log",
+        "3": "minecraft:light_blue_wool",
+        "4": "minecraft:blue_wool",
+        "5": "minecraft:white_wool"
+      }
+    }
+  }
+}

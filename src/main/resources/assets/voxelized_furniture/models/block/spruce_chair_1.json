@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/chair_spruce",
+  "textures": {
+    "all": "minecraft:block/stripped_spruce_log",
+    "particle": "minecraft:block/stripped_spruce_log",
+    "0": "minecraft:block/stripped_spruce_log"
+  },
+  "render_type": "solid"
+}

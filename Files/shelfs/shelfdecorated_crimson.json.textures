@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:crimson_planks",
+        "1": "map",
+        "3": "normal",
+        "4": "minecraft:grass_block_top",
+        "5": "minecraft:stone_bricks",
+        "6": "minecraft:fern"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b",
+    "c"
+  ],
+  "key": {
+    "a": "minecraft:quartz_slab",
+    "b": "minecraft:barrel",
+    "c": "minecraft:quartz_block"
+  },
+  "result": {
+    "id": "voxelized_furniture:fridge",
+    "count": 1
+  }
+}

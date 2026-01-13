@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/sink_dark_oak",
+  "textures": {
+    "all": "minecraft:block/dark_oak_log",
+    "particle": "minecraft:block/dark_oak_log",
+    "0": "minecraft:block/quartz_block_side",
+    "1": "minecraft:block/stripped_dark_oak_log",
+    "2": "minecraft:block/anvil"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/wardrobe_bottom_oak",
+  "textures": {
+    "all": "minecraft:block/stripped_oak_log",
+    "particle": "minecraft:block/stripped_oak_log",
+    "1": "minecraft:block/stripped_oak_log",
+    "2": "minecraft:block/oak_planks",
+    "3": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

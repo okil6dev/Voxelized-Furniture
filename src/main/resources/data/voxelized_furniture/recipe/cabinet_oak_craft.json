@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "bbb"
+  ],
+  "key": {
+    "a": "minecraft:oak_slab",
+    "b": "minecraft:oak_planks",
+    "c": "minecraft:barrel"
+  },
+  "result": {
+    "id": "voxelized_furniture:cabinet_oak",
+    "count": 2
+  }
+}

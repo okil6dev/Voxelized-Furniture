@@ -1,0 +1,14 @@
+{
+  "parent": "voxelized_furniture:custom/shelfdecorated_cherry",
+  "textures": {
+    "all": "voxelized_furniture:block/normal",
+    "particle": "voxelized_furniture:block/normal",
+    "0": "minecraft:block/cherry_planks",
+    "1": "voxelized_furniture:block/map",
+    "3": "voxelized_furniture:block/normal",
+    "4": "minecraft:block/grass_block_top",
+    "5": "minecraft:block/stone_bricks",
+    "6": "minecraft:block/fern"
+  },
+  "render_type": "cutout"
+}

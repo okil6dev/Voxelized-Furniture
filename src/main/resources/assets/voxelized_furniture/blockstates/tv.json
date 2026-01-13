@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/tv"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/tv",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/tv",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/tv",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/wardrobe_top_bamboo",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/bamboo_planks",
+    "1": "minecraft:block/stripped_bamboo_block",
+    "3": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

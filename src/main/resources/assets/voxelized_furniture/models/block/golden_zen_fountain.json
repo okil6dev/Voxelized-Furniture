@@ -1,0 +1,14 @@
+{
+  "parent": "voxelized_furniture:custom/golden_zen_fountain",
+  "textures": {
+    "all": "minecraft:block/bamboo_planks",
+    "particle": "minecraft:block/bamboo_planks",
+    "0": "minecraft:block/bamboo_planks",
+    "1": "voxelized_furniture:block/grass_block_top",
+    "2": "minecraft:block/coarse_dirt",
+    "3": "voxelized_furniture:block/zen_water_still",
+    "4": "minecraft:block/stone",
+    "5": "voxelized_furniture:block/zen_water_flow"
+  },
+  "render_type": "translucent"
+}

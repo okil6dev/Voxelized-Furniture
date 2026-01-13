@@ -1,0 +1,12 @@
+{
+  "parent": "voxelized_furniture:custom/greenpottedplant",
+  "textures": {
+    "all": "voxelized_furniture:block/greenpottexture",
+    "particle": "voxelized_furniture:block/greenpottexture",
+    "0": "voxelized_furniture:block/greenpottexture",
+    "1": "minecraft:block/grass_block_top",
+    "2": "minecraft:block/stripped_oak_log",
+    "3": "minecraft:block/acacia_leaves"
+  },
+  "render_type": "cutout_mipped"
+}

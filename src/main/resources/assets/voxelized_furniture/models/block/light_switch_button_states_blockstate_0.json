@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/lightswitchonjson",
+  "textures": {
+    "all": "voxelized_furniture:block/anvil_darker",
+    "particle": "voxelized_furniture:block/anvil_darker",
+    "1": "minecraft:block/anvil",
+    "2": "voxelized_furniture:block/anvil_darker"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:bamboo_planks",
+        "1": "minecraft:bamboo_block",
+        "3": "minecraft:stripped_bamboo_block_top"
+      }
+    }
+  }
+}

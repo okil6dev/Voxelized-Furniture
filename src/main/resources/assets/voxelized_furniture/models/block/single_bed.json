@@ -1,0 +1,12 @@
+{
+  "parent": "voxelized_furniture:custom/singlebed",
+  "textures": {
+    "all": "minecraft:block/light_blue_wool",
+    "particle": "minecraft:block/light_blue_wool",
+    "1": "minecraft:block/stripped_spruce_log",
+    "3": "minecraft:block/light_blue_wool",
+    "4": "minecraft:block/blue_wool",
+    "5": "minecraft:block/white_wool"
+  },
+  "render_type": "cutout_mipped"
+}

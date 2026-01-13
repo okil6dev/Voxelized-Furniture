@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:dark_oak_planks",
+    "b": "minecraft:dark_oak_slab",
+    "c": "minecraft:chest"
+  },
+  "result": {
+    "id": "voxelized_furniture:dark_oak_shelf",
+    "count": 2
+  }
+}

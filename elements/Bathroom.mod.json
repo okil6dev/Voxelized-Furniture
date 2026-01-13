@@ -1,0 +1,11 @@
+{
+  "_fv": 79,
+  "_type": "tab",
+  "definition": {
+    "name": "VF --> Bathroom",
+    "icon": {
+      "value": "CUSTOM:Shower"
+    },
+    "showSearch": true
+  }
+}

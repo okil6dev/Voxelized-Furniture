@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "minecraft:stripped_mangrove_log",
+        "2": "minecraft:mangrove_planks",
+        "3": "minecraft:anvil"
+      }
+    }
+  }
+}

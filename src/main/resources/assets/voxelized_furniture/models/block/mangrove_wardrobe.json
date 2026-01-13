@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/wardrobe_bottom_mangrove",
+  "textures": {
+    "all": "minecraft:block/stripped_mangrove_log",
+    "particle": "minecraft:block/stripped_mangrove_log",
+    "1": "minecraft:block/stripped_mangrove_log",
+    "2": "minecraft:block/mangrove_planks",
+    "3": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

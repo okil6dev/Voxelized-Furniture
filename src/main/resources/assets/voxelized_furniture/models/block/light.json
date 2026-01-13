@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/light_off",
+  "textures": {
+    "all": "minecraft:block/sea_lantern",
+    "particle": "minecraft:block/sea_lantern",
+    "0": "minecraft:block/gray_concrete",
+    "2": "voxelized_furniture:block/light_off"
+  },
+  "render_type": "solid"
+}

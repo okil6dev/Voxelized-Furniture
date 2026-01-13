@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:light_blue_wool",
+    "minecraft:light_blue_wool",
+    "minecraft:spruce_wood",
+    "minecraft:spruce_wood"
+  ],
+  "result": {
+    "id": "voxelized_furniture:single_bed",
+    "count": 1
+  }
+}

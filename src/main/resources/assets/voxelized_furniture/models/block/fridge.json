@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/fridge",
+  "textures": {
+    "all": "minecraft:block/quartz_block_side",
+    "particle": "minecraft:block/quartz_block_side",
+    "1": "minecraft:block/quartz_block_side",
+    "2": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/cherry_shelf"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/cherry_shelf",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/cherry_shelf",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/cherry_shelf",
+      "y": 270
+    }
+  }
+}

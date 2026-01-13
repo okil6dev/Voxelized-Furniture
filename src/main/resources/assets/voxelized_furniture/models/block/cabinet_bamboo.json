@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/cabinet_bamboo",
+  "textures": {
+    "all": "minecraft:block/bamboo_block",
+    "particle": "minecraft:block/bamboo_block",
+    "0": "minecraft:block/bamboo_planks",
+    "1": "minecraft:block/bamboo_block",
+    "3": "minecraft:block/stripped_bamboo_block_top"
+  },
+  "render_type": "solid"
+}

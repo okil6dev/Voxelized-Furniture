@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/shower",
+  "textures": {
+    "all": "minecraft:block/anvil",
+    "particle": "minecraft:block/anvil",
+    "0": "minecraft:block/anvil",
+    "1": "minecraft:block/black_concrete_powder",
+    "2": "minecraft:block/quartz_block_side"
+  },
+  "render_type": "solid"
+}

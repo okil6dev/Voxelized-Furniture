@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/chair_dark_oak",
+  "textures": {
+    "all": "minecraft:block/stripped_dark_oak_log",
+    "particle": "minecraft:block/stripped_dark_oak_log",
+    "0": "minecraft:block/stripped_dark_oak_log"
+  },
+  "render_type": "solid"
+}

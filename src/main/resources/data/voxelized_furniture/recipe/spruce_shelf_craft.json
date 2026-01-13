@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:spruce_planks",
+    "b": "minecraft:spruce_slab",
+    "c": "minecraft:chest"
+  },
+  "result": {
+    "id": "voxelized_furniture:spruce_shelf",
+    "count": 2
+  }
+}

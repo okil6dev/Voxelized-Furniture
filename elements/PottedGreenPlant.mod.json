@@ -1,0 +1,344 @@
+{
+  "_fv": 79,
+  "_type": "block",
+  "definition": {
+    "texture": "greenpottexture",
+    "textureTop": "",
+    "textureLeft": "",
+    "textureFront": "",
+    "textureRight": "",
+    "textureBack": "",
+    "renderType": 2,
+    "customModelName": "greenpottedplant:default",
+    "rotationMode": 1,
+    "enablePitch": false,
+    "emissiveRendering": false,
+    "displayFluidOverlay": false,
+    "animations": [],
+    "itemTexture": "",
+    "particleTexture": "",
+    "blockSetType": "OAK",
+    "pottedPlant": {
+      "value": ""
+    },
+    "tintType": "Foliage",
+    "isItemTinted": true,
+    "hasTransparency": true,
+    "connectedSides": false,
+    "transparencyType": "CUTOUT_MIPPED",
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 4.5,
+        "my": 0.0,
+        "mz": 4.5,
+        "Mx": 11.5,
+        "My": 1.0,
+        "Mz": 11.5,
+        "subtract": false
+      },
+      {
+        "mx": 3.5,
+        "my": 1.0,
+        "mz": 4.5,
+        "Mx": 4.5,
+        "My": 7.0,
+        "Mz": 11.5,
+        "subtract": false
+      },
+      {
+        "mx": 2.5,
+        "my": 7.0,
+        "mz": 4.5,
+        "Mx": 3.5,
+        "My": 13.0,
+        "Mz": 11.5,
+        "subtract": false
+      },
+      {
+        "mx": 11.5,
+        "my": 1.0,
+        "mz": 4.5,
+        "Mx": 12.5,
+        "My": 7.0,
+        "Mz": 11.5,
+        "subtract": false
+      },
+      {
+        "mx": 12.5,
+        "my": 7.0,
+        "mz": 4.5,
+        "Mx": 13.5,
+        "My": 13.0,
+        "Mz": 11.5,
+        "subtract": false
+      },
+      {
+        "mx": 4.5,
+        "my": 1.0,
+        "mz": 11.5,
+        "Mx": 11.5,
+        "My": 7.0,
+        "Mz": 12.5,
+        "subtract": false
+      },
+      {
+        "mx": 4.5,
+        "my": 7.0,
+        "mz": 12.5,
+        "Mx": 11.5,
+        "My": 13.0,
+        "Mz": 13.5,
+        "subtract": false
+      },
+      {
+        "mx": 4.5,
+        "my": 1.0,
+        "mz": 3.5,
+        "Mx": 11.5,
+        "My": 7.0,
+        "Mz": 4.5,
+        "subtract": false
+      },
+      {
+        "mx": 4.5,
+        "my": 7.0,
+        "mz": 2.5,
+        "Mx": 11.5,
+        "My": 13.0,
+        "Mz": 3.5,
+        "subtract": false
+      },
+      {
+        "mx": 4.5,
+        "my": 7.0,
+        "mz": 3.5,
+        "Mx": 11.5,
+        "My": 11.0,
+        "Mz": 12.5,
+        "subtract": false
+      },
+      {
+        "mx": 11.5,
+        "my": 7.0,
+        "mz": 4.5,
+        "Mx": 12.5,
+        "My": 11.0,
+        "Mz": 11.5,
+        "subtract": false
+      },
+      {
+        "mx": 3.5,
+        "my": 7.0,
+        "mz": 4.5,
+        "Mx": 4.5,
+        "My": 11.0,
+        "Mz": 11.5,
+        "subtract": false
+      },
+      {
+        "mx": 11.5,
+        "my": 7.0,
+        "mz": 3.5,
+        "Mx": 12.5,
+        "My": 13.0,
+        "Mz": 4.5,
+        "subtract": false
+      },
+      {
+        "mx": 3.5,
+        "my": 7.0,
+        "mz": 3.5,
+        "Mx": 4.5,
+        "My": 13.0,
+        "Mz": 4.5,
+        "subtract": false
+      },
+      {
+        "mx": 3.5,
+        "my": 7.0,
+        "mz": 11.5,
+        "Mx": 4.5,
+        "My": 13.0,
+        "Mz": 12.5,
+        "subtract": false
+      },
+      {
+        "mx": 11.5,
+        "my": 7.0,
+        "mz": 11.5,
+        "Mx": 12.5,
+        "My": 13.0,
+        "Mz": 12.5,
+        "subtract": false
+      },
+      {
+        "mx": 7.5,
+        "my": 11.0,
+        "mz": 7.5,
+        "Mx": 8.5,
+        "My": 22.0,
+        "Mz": 8.5,
+        "subtract": false
+      },
+      {
+        "mx": 5.5,
+        "my": 21.0,
+        "mz": 5.5,
+        "Mx": 12.5,
+        "My": 27.0,
+        "Mz": 12.5,
+        "subtract": false
+      },
+      {
+        "mx": 2.5,
+        "my": 22.0,
+        "mz": 2.5,
+        "Mx": 9.5,
+        "My": 28.0,
+        "Mz": 9.5,
+        "subtract": false
+      },
+      {
+        "mx": 5.5,
+        "my": 19.0,
+        "mz": 2.5,
+        "Mx": 12.5,
+        "My": 25.0,
+        "Mz": 9.5,
+        "subtract": false
+      },
+      {
+        "mx": 3.5,
+        "my": 23.0,
+        "mz": 6.5,
+        "Mx": 9.5,
+        "My": 29.0,
+        "Mz": 10.5,
+        "subtract": false
+      },
+      {
+        "mx": 4.5,
+        "my": 20.0,
+        "mz": 4.5,
+        "Mx": 11.5,
+        "My": 26.0,
+        "Mz": 11.5,
+        "subtract": false
+      }
+    ],
+    "customProperties": [],
+    "name": "Potted Green Plant",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "hardness": 1.5,
+    "resistance": 6.0,
+    "hasGravity": false,
+    "isWaterloggable": false,
+    "hasBlockItem": true,
+    "maxStackSize": 64,
+    "rarity": "COMMON",
+    "immuneToFire": true,
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:Nature"
+      }
+    ],
+    "destroyTool": "pickaxe",
+    "customDrop": {
+      "value": ""
+    },
+    "dropAmount": 1,
+    "xpAmountMin": 0,
+    "xpAmountMax": 0,
+    "useLootTableForDrops": false,
+    "requiresCorrectTool": true,
+    "enchantPowerBonus": 0.0,
+    "plantsGrowOn": false,
+    "canRedstoneConnect": false,
+    "lightOpacity": 0,
+    "tickRate": 0,
+    "tickRandomly": false,
+    "isReplaceable": false,
+    "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
+    "colorOnMap": "DEFAULT",
+    "noteBlockInstrument": "harp",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "NONE",
+    "aiPathNodeType": "DEFAULT",
+    "strippingResult": {
+      "value": ""
+    },
+    "ignitedByLava": false,
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "isLadder": false,
+    "slipperiness": 0.6,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "reactionToPushing": "NORMAL",
+    "isNotColidable": false,
+    "isCustomSoundType": false,
+    "soundOnStep": {
+      "value": "WOOD"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "luminance": 0,
+    "unbreakable": false,
+    "vanillaToolTier": "NONE",
+    "isBonemealable": false,
+    "sensitiveToVibration": false,
+    "vibrationalEvents": [],
+    "vibrationSensitivityRadius": {
+      "fixedValue": 7.0
+    },
+    "hasInventory": false,
+    "openGUIOnRightClick": false,
+    "inventorySize": 9,
+    "inventoryStackSize": 99,
+    "inventoryDropWhenDestroyed": true,
+    "inventoryComparatorPower": true,
+    "inventoryOutSlotIDs": [],
+    "inventoryInSlotIDs": [],
+    "hasEnergyStorage": false,
+    "energyInitial": 0,
+    "energyCapacity": 400000,
+    "energyMaxReceive": 200,
+    "energyMaxExtract": 200,
+    "isFluidTank": false,
+    "fluidCapacity": 8000,
+    "fluidRestrictions": [],
+    "generateFeature": false,
+    "restrictionBiomes": [],
+    "blocksToReplace": [
+      {
+        "value": "TAG:stone_ore_replaceables"
+      }
+    ],
+    "generationShape": "UNIFORM",
+    "frequencyPerChunks": 10,
+    "frequencyOnChunk": 16,
+    "minGenerateHeight": 0,
+    "maxGenerateHeight": 64
+  }
+}

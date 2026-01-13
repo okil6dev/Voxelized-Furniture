@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/cherry_chair_1"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/cherry_chair_1",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/cherry_chair_1",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/cherry_chair_1",
+      "y": 270
+    }
+  }
+}

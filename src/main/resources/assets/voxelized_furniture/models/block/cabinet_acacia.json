@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/cabinet_acacia",
+  "textures": {
+    "all": "minecraft:block/stripped_acacia_log",
+    "particle": "minecraft:block/stripped_acacia_log",
+    "0": "minecraft:block/stripped_acacia_log",
+    "1": "minecraft:block/acacia_planks",
+    "3": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

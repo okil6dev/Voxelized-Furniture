@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/chair_jungle",
+  "textures": {
+    "all": "minecraft:block/stripped_jungle_log",
+    "particle": "minecraft:block/stripped_jungle_log",
+    "0": "minecraft:block/stripped_jungle_log"
+  },
+  "render_type": "solid"
+}

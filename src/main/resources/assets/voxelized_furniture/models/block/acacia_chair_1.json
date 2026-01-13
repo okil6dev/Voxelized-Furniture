@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/chair_acacia",
+  "textures": {
+    "all": "minecraft:block/stripped_acacia_log",
+    "particle": "minecraft:block/stripped_acacia_log",
+    "0": "minecraft:block/stripped_acacia_log"
+  },
+  "render_type": "solid"
+}

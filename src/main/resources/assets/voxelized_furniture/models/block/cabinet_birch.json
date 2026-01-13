@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/cabinet_birch",
+  "textures": {
+    "all": "minecraft:block/stripped_birch_log",
+    "particle": "minecraft:block/stripped_birch_log",
+    "0": "minecraft:block/stripped_birch_log",
+    "1": "minecraft:block/birch_planks",
+    "3": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

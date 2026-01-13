@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "ccc"
+  ],
+  "key": {
+    "a": "#minecraft:wool_carpets",
+    "b": "minecraft:oak_slab",
+    "c": "minecraft:glass_pane",
+    "d": "minecraft:honey_bottle"
+  },
+  "result": {
+    "id": "voxelized_furniture:honey_jar",
+    "count": 1
+  }
+}

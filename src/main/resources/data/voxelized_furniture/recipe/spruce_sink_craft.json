@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "bbb"
+  ],
+  "key": {
+    "a": "minecraft:spruce_slab",
+    "b": "minecraft:quartz_block",
+    "c": "minecraft:anvil"
+  },
+  "result": {
+    "id": "voxelized_furniture:oak_sink",
+    "count": 1
+  }
+}

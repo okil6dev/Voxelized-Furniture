@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:oak_planks",
+    "b": "minecraft:oak_slab",
+    "c": "minecraft:chest"
+  },
+  "result": {
+    "id": "voxelized_furniture:oak_shelf",
+    "count": 2
+  }
+}

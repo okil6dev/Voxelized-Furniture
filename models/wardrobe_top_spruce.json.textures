@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "minecraft:stripped_spruce_log",
+        "3": "minecraft:anvil"
+      }
+    }
+  }
+}

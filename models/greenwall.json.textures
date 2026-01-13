@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:azalea_leaves",
+        "1": "minecraft:allium",
+        "2": "minecraft:blue_orchid",
+        "3": "minecraft:cornflower",
+        "4": "minecraft:bamboo_small_leaves",
+        "5": "minecraft:dandelion",
+        "6": "minecraft:bamboo_singleleaf"
+      }
+    }
+  }
+}

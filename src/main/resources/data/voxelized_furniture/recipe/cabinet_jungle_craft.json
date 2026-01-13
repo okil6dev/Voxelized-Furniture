@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "bbb"
+  ],
+  "key": {
+    "a": "minecraft:jungle_slab",
+    "b": "minecraft:jungle_planks",
+    "c": "minecraft:barrel"
+  },
+  "result": {
+    "id": "voxelized_furniture:cabinet_jungle",
+    "count": 2
+  }
+}

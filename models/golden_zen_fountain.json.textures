@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:bamboo_planks",
+        "1": "grass_block_top",
+        "2": "minecraft:coarse_dirt",
+        "3": "zen_water_still",
+        "4": "minecraft:stone",
+        "5": "zen_water_flow"
+      }
+    }
+  }
+}

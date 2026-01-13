@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/wardrobe_bottom_jungle",
+  "textures": {
+    "all": "minecraft:block/stripped_jungle_log",
+    "particle": "minecraft:block/stripped_jungle_log",
+    "1": "minecraft:block/stripped_jungle_log",
+    "2": "minecraft:block/jungle_planks",
+    "3": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

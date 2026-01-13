@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "voxelized_furniture:laptop",
+    "voxelized_furniture:potted_green_plant",
+    "voxelized_furniture:asphalt",
+    "voxelized_furniture:lighton",
+    "voxelized_furniture:light_switch_button",
+    "voxelized_furniture:light",
+    "voxelized_furniture:fridge",
+    "voxelized_furniture:tv"
+  ]
+}

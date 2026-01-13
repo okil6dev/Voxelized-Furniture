@@ -1,0 +1,11 @@
+{
+  "_fv": 79,
+  "_type": "tab",
+  "definition": {
+    "name": "VF --> Living Room",
+    "icon": {
+      "value": "CUSTOM:CabinetOak"
+    },
+    "showSearch": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "ddd"
+  ],
+  "key": {
+    "a": "minecraft:bamboo_slab",
+    "b": "minecraft:bamboo_planks",
+    "c": "minecraft:barrel",
+    "d": "minecraft:bamboo_block"
+  },
+  "result": {
+    "id": "voxelized_furniture:cabinet_bamboo",
+    "count": 2
+  }
+}

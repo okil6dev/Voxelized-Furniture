@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 2,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Blocks.BAMBOO_SLAB"
+      },
+      {
+        "value": "Blocks.BAMBOO_SLAB"
+      },
+      {
+        "value": "Blocks.BAMBOO_SLAB"
+      },
+      {
+        "value": "Blocks.BAMBOO_PLANKS"
+      },
+      {
+        "value": "Blocks.BARREL"
+      },
+      {
+        "value": "Blocks.BAMBOO_PLANKS"
+      },
+      {
+        "value": "Blocks.BAMBOO_BLOCK"
+      },
+      {
+        "value": "Blocks.BAMBOO_BLOCK"
+      },
+      {
+        "value": "Blocks.BAMBOO_BLOCK"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CabinetBamboo"
+    },
+    "name": "cabinet_bamboo_craft",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/laptop",
+  "textures": {
+    "all": "voxelized_furniture:block/laptop_light_gray_concrete",
+    "particle": "voxelized_furniture:block/laptop_light_gray_concrete",
+    "1": "voxelized_furniture:block/laptop_light_gray_concrete",
+    "2": "voxelized_furniture:block/tvstaticblue"
+  },
+  "render_type": "cutout"
+}

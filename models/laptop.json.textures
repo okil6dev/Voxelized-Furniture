@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "laptop_light_gray_concrete",
+        "2": "tvstaticblue"
+      }
+    }
+  }
+}

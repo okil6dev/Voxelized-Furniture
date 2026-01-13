@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": "minecraft:jungle_planks",
+    "b": "minecraft:jungle_slab",
+    "c": "minecraft:chest"
+  },
+  "result": {
+    "id": "voxelized_furniture:jungle_shelf",
+    "count": 2
+  }
+}

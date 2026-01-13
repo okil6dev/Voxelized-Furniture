@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    " b "
+  ],
+  "key": {
+    "a": "minecraft:acacia_leaves",
+    "b": "minecraft:lime_concrete_powder",
+    "c": "minecraft:grass_block"
+  },
+  "result": {
+    "id": "voxelized_furniture:potted_green_plant",
+    "count": 1
+  }
+}

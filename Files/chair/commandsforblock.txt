@@ -1,0 +1,53 @@
+--- DARK_OAK ---
+/summon voxelized_furniture:dark_oak_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:dark_oak_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:dark_oak_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:dark_oak_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- OAK ---
+/summon voxelized_furniture:oak_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:oak_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:oak_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:oak_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- SPRUCE ---
+/summon voxelized_furniture:spruce_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:spruce_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:spruce_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:spruce_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- BIRCH ---
+/summon voxelized_furniture:birch_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:birch_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:birch_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:birch_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- JUNGLE ---
+/summon voxelized_furniture:jungle_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:jungle_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:jungle_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:jungle_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- ACACIA ---
+/summon voxelized_furniture:acacia_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:acacia_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:acacia_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:acacia_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- MANGROVE ---
+/summon voxelized_furniture:mangrove_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:mangrove_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:mangrove_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:mangrove_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- CHERRY ---
+/summon voxelized_furniture:cherry_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:cherry_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:cherry_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:cherry_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}
+
+--- BAMBOO ---
+/summon voxelized_furniture:bamboo_chair ~ ~ ~ {Rotation:[-90.0f, 0.0f]}
+/summon voxelized_furniture:bamboo_chair ~ ~ ~ {Rotation:[0.0f, 0.0f]}
+/summon voxelized_furniture:bamboo_chair ~ ~ ~ {Rotation:[90.0f, 0.0f]}
+/summon voxelized_furniture:bamboo_chair ~ ~ ~ {Rotation:[180.0f, 0.0f]}

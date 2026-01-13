@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/sink_mangrove",
+  "textures": {
+    "all": "minecraft:block/mangrove_log",
+    "particle": "minecraft:block/mangrove_log",
+    "0": "minecraft:block/quartz_block_side",
+    "1": "minecraft:block/stripped_mangrove_log",
+    "2": "minecraft:block/anvil"
+  },
+  "render_type": "cutout"
+}

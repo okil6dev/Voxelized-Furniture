@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/tv",
+  "textures": {
+    "all": "voxelized_furniture:block/tvstaticblue",
+    "particle": "voxelized_furniture:block/tvstaticblue",
+    "1": "voxelized_furniture:block/laptop_light_gray_concrete",
+    "2": "voxelized_furniture:block/tvstaticblue"
+  },
+  "render_type": "solid"
+}

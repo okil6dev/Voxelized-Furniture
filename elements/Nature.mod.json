@@ -1,0 +1,11 @@
+{
+  "_fv": 79,
+  "_type": "tab",
+  "definition": {
+    "name": "VF --> Nature",
+    "icon": {
+      "value": "Blocks.SHORT_DRY_GRASS"
+    },
+    "showSearch": true
+  }
+}
