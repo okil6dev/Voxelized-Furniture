@@ -3309,6 +3309,24 @@
         ]
       },
       "path": "~/Kitchen"
+    },
+    {
+      "name": "Oven",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oven",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/oven.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/OvenBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/oven.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/oven.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/oven.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/oven.json"
+        ]
+      },
+      "path": "~/Kitchen"
     }
   ],
   "variable_elements": [
@@ -3364,6 +3382,7 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:Oven",
       "~CUSTOM:KitchenSink",
       "~CUSTOM:KitchenDrawer1",
       "~CUSTOM:KitchenDrawer",
@@ -3471,7 +3490,8 @@
       "item.voxelized_furniture.stove_vent": "Stove Vent",
       "item.voxelized_furniture.kitchen_drawer": "Kitchen Drawer",
       "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
-      "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer"
+      "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer",
+      "item.voxelized_furniture.oven": "Oven"
     }
   },
   "metadata": {
