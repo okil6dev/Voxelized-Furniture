@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:gold_nugget",
+    "minecraft:blackstone",
+    "minecraft:gold_nugget",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone"
+  ],
+  "result": {
+    "id": "voxelized_furniture:kitchen_drawer_1",
+    "count": 3
+  }
+}

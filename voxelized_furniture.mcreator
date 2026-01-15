@@ -3238,25 +3238,6 @@
       "path": "~/outside"
     },
     {
-      "name": "StoveVent",
-      "type": "block",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "stove_vent",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/voxelized_furniture/models/item/stove_vent.json",
-          "src/main/resources/assets/voxelized_furniture/blockstates/stove_vent.json",
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/stove_vent.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/stove_vent.json",
-          "src/main/resources/assets/voxelized_furniture/items/stove_vent.json",
-          "src/main/java/net/okil/voxelizedfurniture/block/entity/StoveVentBlockEntity.java",
-          "src/main/java/net/okil/voxelizedfurniture/block/StoveVentBlock.java"
-        ]
-      },
-      "path": "~/Kitchen"
-    },
-    {
       "name": "KitchenDrawer",
       "type": "block",
       "compiles": true,
@@ -3327,6 +3308,90 @@
         ]
       },
       "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenDrawerRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_drawer_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/kitchen_drawer_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenDrawer1Recipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_drawer_1_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/kitchen_drawer_1_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "OvenRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oven_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/oven_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenSinkRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_sink_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/kitchen_sink_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "OvenVent",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oven_vent",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/oven_vent.json",
+          "src/main/resources/assets/voxelized_furniture/items/oven_vent.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/OvenVentBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/oven_vent.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/oven_vent.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/oven_vent.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/OvenVentBlockEntity.java"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "OvenVentRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oven_vent_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/oven_vent_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
     }
   ],
   "variable_elements": [
@@ -3382,11 +3447,11 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:OvenVent",
       "~CUSTOM:Oven",
       "~CUSTOM:KitchenSink",
       "~CUSTOM:KitchenDrawer1",
       "~CUSTOM:KitchenDrawer",
-      "~CUSTOM:StoveVent",
       "~CUSTOM:BrownBarbecue",
       "~CUSTOM:Lighton",
       "~CUSTOM:LightSwitchButton",
@@ -3487,11 +3552,11 @@
       "item.voxelized_furniture.lighton": "Light",
       "item.voxelized_furniture.brown_barbecue": "Brown Barbecue",
       "item_group.voxelized_furniture.outside": "VF --\u003e Outside",
-      "item.voxelized_furniture.stove_vent": "Stove Vent",
       "item.voxelized_furniture.kitchen_drawer": "Kitchen Drawer",
       "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
       "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer",
-      "item.voxelized_furniture.oven": "Oven"
+      "item.voxelized_furniture.oven": "Oven",
+      "item.voxelized_furniture.oven_vent": "Oven Vent"
     }
   },
   "metadata": {

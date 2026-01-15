@@ -24,11 +24,11 @@ import javax.annotation.Nullable;
 
 import java.util.stream.IntStream;
 
-public class StoveVentBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+public class OvenVentBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(9, ItemStack.EMPTY);
 
-	public StoveVentBlockEntity(BlockPos position, BlockState state) {
-		super(VoxelizedFurnitureModBlockEntities.STOVE_VENT.get(), position, state);
+	public OvenVentBlockEntity(BlockPos position, BlockState state) {
+		super(VoxelizedFurnitureModBlockEntities.OVEN_VENT.get(), position, state);
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class StoveVentBlockEntity extends RandomizableContainerBlockEntity imple
 
 	@Override
 	public Component getDefaultName() {
-		return Component.literal("stove_vent");
+		return Component.literal("oven_vent");
 	}
 
 	@Override
@@ -81,7 +81,7 @@ public class StoveVentBlockEntity extends RandomizableContainerBlockEntity imple
 
 	@Override
 	public Component getDisplayName() {
-		return Component.literal("Stove Vent");
+		return Component.literal("Oven Vent");
 	}
 
 	@Override

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:quartz_stairs",
+    "minecraft:quartz_slab",
+    "minecraft:quartz_stairs",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone"
+  ],
+  "result": {
+    "id": "voxelized_furniture:kitchen_sink",
+    "count": 3
+  }
+}

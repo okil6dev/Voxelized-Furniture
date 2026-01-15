@@ -1,5 +1,5 @@
 {
-  "parent": "voxelized_furniture:block/stove_vent",
+  "parent": "voxelized_furniture:block/oven_vent",
   "display": {
     "thirdperson": {
       "rotation": [

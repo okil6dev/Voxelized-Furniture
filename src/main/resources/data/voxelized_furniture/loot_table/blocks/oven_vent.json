@@ -1,6 +1,6 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "voxelized_furniture:blocks/stove_vent",
+  "random_sequence": "voxelized_furniture:blocks/oven_vent",
   "pools": [
     {
       "rolls": 1.0,
@@ -12,7 +12,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "voxelized_furniture:stove_vent"
+          "name": "voxelized_furniture:oven_vent"
         }
       ]
     }

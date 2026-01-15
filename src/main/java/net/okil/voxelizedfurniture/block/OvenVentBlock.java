@@ -1,6 +1,6 @@
 package net.okil.voxelizedfurniture.block;
 
-import net.okil.voxelizedfurniture.block.entity.StoveVentBlockEntity;
+import net.okil.voxelizedfurniture.block.entity.OvenVentBlockEntity;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -21,7 +21,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-public class StoveVentBlock extends Block implements EntityBlock {
+public class OvenVentBlock extends Block implements EntityBlock {
 	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(1, 0, 5.5, 15, 2, 7), box(1, 0, 7, 2, 2, 16), box(2, 0, 15, 14, 2, 16), box(14, 0, 7, 15, 2, 16), box(2, 2, 7, 14, 3, 9), box(2, 2, 15, 14, 3, 16), box(13, 2, 9, 14, 3, 15),
 			box(2, 2, 9, 3, 3, 15), box(3, 3, 8.5, 13, 4, 11), box(3, 3, 11, 4, 4, 15), box(12, 3, 11, 13, 4, 15), box(3, 3, 15, 13, 4, 16), box(4, 4, 15, 12, 5, 16), box(4, 4, 10, 12, 5, 12), box(11, 4, 12, 12, 5, 15), box(4, 4, 12, 5, 5, 15),
@@ -38,7 +38,7 @@ public class StoveVentBlock extends Block implements EntityBlock {
 			box(11.25, 5, 5, 12, 6, 11), box(15.25, 5, 5, 16, 6, 11), box(12, 5, 10, 15.25, 6, 11), box(12, 5, 5, 15.25, 6, 6), box(15, 6, 6, 16, 16, 10), box(12, 6, 6, 13, 16, 10), box(13, 15, 7, 15, 16, 9), box(13, 6, 9, 15, 16, 10),
 			box(13, 6, 6, 15, 16, 7));
 
-	public StoveVentBlock(BlockBehaviour.Properties properties) {
+	public OvenVentBlock(BlockBehaviour.Properties properties) {
 		super(properties.sound(SoundType.METAL).strength(5f, 7f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
@@ -96,7 +96,7 @@ public class StoveVentBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new StoveVentBlockEntity(pos, state);
+		return new OvenVentBlockEntity(pos, state);
 	}
 
 	@Override
@@ -119,7 +119,7 @@ public class StoveVentBlock extends Block implements EntityBlock {
 	@Override
 	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
-		if (tileentity instanceof StoveVentBlockEntity be)
+		if (tileentity instanceof OvenVentBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
 		else
 			return 0;

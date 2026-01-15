@@ -60,7 +60,7 @@ public class VoxelizedFurnitureModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BirchWardrobeBlockEntity>> BIRCH_WARDROBE = register("birch_wardrobe", VoxelizedFurnitureModBlocks.BIRCH_WARDROBE, BirchWardrobeBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooWardrobeBlockEntity>> BAMBOO_WARDROBE = register("bamboo_wardrobe", VoxelizedFurnitureModBlocks.BAMBOO_WARDROBE, BambooWardrobeBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AcaciaWardrobeBlockEntity>> ACACIA_WARDROBE = register("acacia_wardrobe", VoxelizedFurnitureModBlocks.ACACIA_WARDROBE, AcaciaWardrobeBlockEntity::new);
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<StoveVentBlockEntity>> STOVE_VENT = register("stove_vent", VoxelizedFurnitureModBlocks.STOVE_VENT, StoveVentBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<OvenVentBlockEntity>> OVEN_VENT = register("oven_vent", VoxelizedFurnitureModBlocks.OVEN_VENT, OvenVentBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -108,6 +108,6 @@ public class VoxelizedFurnitureModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BIRCH_WARDROBE.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_WARDROBE.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ACACIA_WARDROBE.get(), SidedInvWrapper::new);
-		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, STOVE_VENT.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, OVEN_VENT.get(), SidedInvWrapper::new);
 	}
 }
