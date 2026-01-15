@@ -13,13 +13,13 @@ public class LightonandoffProcedure {
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
-		sx = -5;
+		sx = -10;
 		found = false;
-		for (int index0 = 0; index0 < 10; index0++) {
-			sy = -5;
-			for (int index1 = 0; index1 < 10; index1++) {
-				sz = -5;
-				for (int index2 = 0; index2 < 10; index2++) {
+		for (int index0 = 0; index0 < 20; index0++) {
+			sy = -10;
+			for (int index1 = 0; index1 < 20; index1++) {
+				sz = -10;
+				for (int index2 = 0; index2 < 20; index2++) {
 					if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).getBlock() == VoxelizedFurnitureModBlocks.LIGHT.get()) {
 						world.scheduleTick(BlockPos.containing(x + sx, y + sy, z + sz), world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz)).getBlock(), 1);
 					} else if ((world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz))).getBlock() == VoxelizedFurnitureModBlocks.LIGHTON.get()) {

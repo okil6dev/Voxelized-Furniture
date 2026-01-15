@@ -1,0 +1,12 @@
+{
+  "parent": "voxelized_furniture:custom/kitchendrawer",
+  "textures": {
+    "all": "voxelized_furniture:block/cranegray",
+    "particle": "voxelized_furniture:block/cranegray",
+    "1": "voxelized_furniture:block/scatteredwood",
+    "2": "voxelized_furniture:block/darkscatteredwood",
+    "3": "voxelized_furniture:block/lowblack",
+    "4": "minecraft:block/gold_block"
+  },
+  "render_type": "solid"
+}

@@ -66,9 +66,9 @@ class ModelProcessorApp(ctk.CTk):
         ctk.CTkButton(scale_frame, text="Set GUI (0.35)", fg_color="#3498db", command=lambda: self.set_display_scale("gui", 0.35)).pack(side="left", expand=True, fill="x", padx=2)
         ctk.CTkButton(scale_frame, text="Set Dropped (0.25)", fg_color="#2980b9", command=lambda: self.set_display_scale("ground", 0.25)).pack(side="left", expand=True, fill="x", padx=2)
 
-        # Rotation Fixer
+        # --- THE ROTATION FIXER ---
         tools_frame = ctk.CTkFrame(step2, fg_color="transparent"); tools_frame.pack(fill="x", padx=15, pady=(5, 10))
-        ctk.CTkButton(tools_frame, text="Fix Rotation Angles", fg_color="#d35400", command=self.fix_illegal_angles).pack(fill="x", padx=2, pady=2)
+        ctk.CTkButton(tools_frame, text="Fix All Illegal Rotations", fg_color="#d35400", command=self.fix_illegal_angles).pack(fill="x", padx=2, pady=2)
 
         # 3. COMMAND GENERATOR
         step3 = ctk.CTkFrame(self.main_container); step3.pack(fill="x", padx=30, pady=10)
@@ -122,12 +122,15 @@ class ModelProcessorApp(ctk.CTk):
                 if "rotation" in e:
                     angle = e["rotation"].get("angle", 0)
                     if angle not in LEGAL_ANGLES:
+                        # Find the closest legal angle from [-45, -22.5, 0, 22.5, 45]
                         e["rotation"]["angle"] = min(LEGAL_ANGLES, key=lambda x:abs(x-angle))
                         changed += 1
             if changed > 0:
                 with open(self.source_path, 'w') as f:
                     json.dump(data, f, indent=4)
                 messagebox.showinfo("Success", f"Fixed {changed} illegal rotation angles.")
+            else:
+                messagebox.showinfo("Check", "No illegal rotation angles found.")
         except Exception as e: messagebox.showerror("Error", str(e))
 
     # --- CORE FUNCTIONS ---

@@ -79,5 +79,11 @@
   "item.voxelized_furniture.light": "Light",
   "item.voxelized_furniture.light_switch_button": "Light Switch",
   "item_group.voxelized_furniture.electrical": "Electrical",
-  "item.voxelized_furniture.lighton": "Light"
+  "item.voxelized_furniture.lighton": "Light",
+  "item.voxelized_furniture.brown_barbecue": "Brown Barbecue",
+  "item_group.voxelized_furniture.outside": "VF --\u003e Outside",
+  "item.voxelized_furniture.stove_vent": "Stove Vent",
+  "item.voxelized_furniture.kitchen_drawer": "Kitchen Drawer",
+  "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
+  "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer"
 }

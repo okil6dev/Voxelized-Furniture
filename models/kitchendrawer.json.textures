@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "scatteredwood",
+        "2": "darkscatteredwood",
+        "3": "lowblack",
+        "4": "minecraft:gold_block"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "3": "lowblack",
+        "4": "minecraft:gold_block",
+        "5": "pinkwhite",
+        "6": "cranegray"
+      }
+    }
+  }
+}

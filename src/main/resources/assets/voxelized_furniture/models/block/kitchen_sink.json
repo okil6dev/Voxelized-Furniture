@@ -1,0 +1,12 @@
+{
+  "parent": "voxelized_furniture:custom/kitchensink",
+  "textures": {
+    "all": "voxelized_furniture:block/cranegray",
+    "particle": "voxelized_furniture:block/cranegray",
+    "3": "voxelized_furniture:block/lowblack",
+    "4": "minecraft:block/gold_block",
+    "5": "voxelized_furniture:block/pinkwhite",
+    "6": "voxelized_furniture:block/cranegray"
+  },
+  "render_type": "solid"
+}
