@@ -1,22 +1,41 @@
 package net.okil.voxelizedfurniture.block;
 
+import net.okil.voxelizedfurniture.world.inventory.KitchenCounterGuiMenu;
+import net.okil.voxelizedfurniture.block.entity.KitchenDrawerBlockEntity;
+
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-public class KitchenDrawerBlock extends Block {
+import io.netty.buffer.Unpooled;
+
+public class KitchenDrawerBlock extends Block implements EntityBlock {
 	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(0, 0, 3, 16, 14, 16), box(1, 12, 2.5, 15, 13, 3), box(1, 8, 2.5, 15, 9, 3), box(14, 9, 2.5, 15, 12, 3), box(1, 9, 2.5, 2, 12, 3), box(1, 3, 2.5, 2, 6, 3), box(1, 2, 2.5, 15, 3, 3),
 			box(1, 6, 2.5, 15, 7, 3), box(7, 6, 2, 9, 7, 2.5), box(7, 12, 2, 9, 13, 2.5), box(14, 3, 2.5, 15, 6, 3), box(0, 14, 7, 16, 16, 10), box(0, 14, 11, 16, 16, 14), box(0, 14, 15, 16, 16, 16), box(0, 14, 14, 16, 16, 15),
@@ -79,5 +98,61 @@ public class KitchenDrawerBlock extends Block {
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	}
+
+	@Override
+	public InteractionResult useWithoutItem(BlockState blockstate, Level world, BlockPos pos, Player entity, BlockHitResult hit) {
+		super.useWithoutItem(blockstate, world, pos, entity, hit);
+		if (entity instanceof ServerPlayer player) {
+			player.openMenu(new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal("Kitchen Drawer");
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new KitchenCounterGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
+				}
+			}, pos);
+		}
+		return InteractionResult.SUCCESS;
+	}
+
+	@Override
+	public MenuProvider getMenuProvider(BlockState state, Level worldIn, BlockPos pos) {
+		BlockEntity tileEntity = worldIn.getBlockEntity(pos);
+		return tileEntity instanceof MenuProvider menuProvider ? menuProvider : null;
+	}
+
+	@Override
+	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+		return new KitchenDrawerBlockEntity(pos, state);
+	}
+
+	@Override
+	public boolean triggerEvent(BlockState state, Level world, BlockPos pos, int eventID, int eventParam) {
+		super.triggerEvent(state, world, pos, eventID, eventParam);
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		return blockEntity != null && blockEntity.triggerEvent(eventID, eventParam);
+	}
+
+	@Override
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	}
+
+	@Override
+	public boolean hasAnalogOutputSignal(BlockState state) {
+		return true;
+	}
+
+	@Override
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+		BlockEntity tileentity = world.getBlockEntity(pos);
+		if (tileentity instanceof KitchenDrawerBlockEntity be)
+			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
+		else
+			return 0;
 	}
 }

@@ -4,9 +4,9 @@
     "all": "voxelized_furniture:block/greenpottexture",
     "particle": "voxelized_furniture:block/greenpottexture",
     "0": "voxelized_furniture:block/greenpottexture",
-    "1": "minecraft:block/grass_block_top",
+    "1": "voxelized_furniture:block/grass_block_top",
     "2": "minecraft:block/stripped_oak_log",
-    "3": "minecraft:block/acacia_leaves"
+    "3": "minecraft:block/azalea_leaves"
   },
   "render_type": "cutout_mipped"
 }

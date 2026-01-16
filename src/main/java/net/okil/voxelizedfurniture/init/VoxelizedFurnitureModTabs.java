@@ -76,6 +76,9 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_SINK.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.OVEN.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.OVEN_VENT.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_TABLE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_CORNER.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE.get().asItem());
 			}).withSearchBar().withTabsBefore(VF_LIVINGROOM.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> NATURE = REGISTRY.register("nature",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.nature")).icon(() -> new ItemStack(Blocks.SHORT_DRY_GRASS)).displayItems((parameters, tabData) -> {

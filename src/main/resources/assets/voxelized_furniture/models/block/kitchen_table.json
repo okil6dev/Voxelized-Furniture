@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/kitchentable",
+  "textures": {
+    "all": "voxelized_furniture:block/lowblack",
+    "particle": "voxelized_furniture:block/lowblack",
+    "0": "voxelized_furniture:block/lowblack",
+    "1": "voxelized_furniture:block/darkscatteredwood",
+    "2": "voxelized_furniture:block/scatteredwood"
+  },
+  "render_type": "cutout_mipped"
+}

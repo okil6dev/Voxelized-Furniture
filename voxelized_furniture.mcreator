@@ -3250,6 +3250,7 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenDrawerBlock.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/KitchenDrawerBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/kitchen_drawer.json"
         ]
       },
@@ -3266,6 +3267,7 @@
           "src/main/resources/assets/voxelized_furniture/models/item/kitchen_drawer_1.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_drawer_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_drawer_1.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/KitchenDrawer1BlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_drawer_1.json",
           "src/main/resources/assets/voxelized_furniture/items/kitchen_drawer_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenDrawer1Block.java"
@@ -3284,6 +3286,7 @@
           "src/main/resources/assets/voxelized_furniture/models/item/kitchen_sink.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_sink.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_sink.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/KitchenSinkBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/items/kitchen_sink.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenSinkBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_sink.json"
@@ -3392,6 +3395,100 @@
         ]
       },
       "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenTable",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_table.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/kitchen_table.json",
+          "src/main/resources/assets/voxelized_furniture/items/kitchen_table.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_table.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/kitchen_table.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/KitchenTableBlock.java"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenCounterGui",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_counter_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/world/inventory/KitchenCounterGuiMenu.java",
+          "src/main/java/net/okil/voxelizedfurniture/client/gui/KitchenCounterGuiScreen.java"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenDrawerCorner",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_drawer_corner",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_drawer_corner.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/KitchenDrawerCornerBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/kitchen_drawer_corner.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/kitchen_drawer_corner.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_drawer_corner.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/kitchen_drawer_corner.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenDrawerCornerRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_drawer_corner_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/kitchen_drawer_corner_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenTableRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_table_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/kitchen_table_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "KitchenFridge",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kitchen_fridge",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_fridge.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/kitchen_fridge.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_fridge.json",
+          "src/main/resources/assets/voxelized_furniture/items/kitchen_fridge.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/KitchenFridgeBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/kitchen_fridge.json"
+        ]
+      },
+      "path": "~/Kitchen"
     }
   ],
   "variable_elements": [
@@ -3447,6 +3544,9 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:KitchenFridge",
+      "~CUSTOM:KitchenDrawerCorner",
+      "~CUSTOM:KitchenTable",
       "~CUSTOM:OvenVent",
       "~CUSTOM:Oven",
       "~CUSTOM:KitchenSink",
@@ -3556,7 +3656,10 @@
       "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
       "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer",
       "item.voxelized_furniture.oven": "Oven",
-      "item.voxelized_furniture.oven_vent": "Oven Vent"
+      "item.voxelized_furniture.oven_vent": "Oven Vent",
+      "item.voxelized_furniture.kitchen_table": "Kitchen Table",
+      "item.voxelized_furniture.kitchen_drawer_corner": "Kitchen Drawer Corner",
+      "item.voxelized_furniture.kitchen_fridge": "Kitchen Fridge"
     }
   },
   "metadata": {

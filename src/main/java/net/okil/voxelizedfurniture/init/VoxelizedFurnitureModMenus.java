@@ -5,6 +5,7 @@ package net.okil.voxelizedfurniture.init;
 
 import net.okil.voxelizedfurniture.world.inventory.WardrobeGuiMenu;
 import net.okil.voxelizedfurniture.world.inventory.ShelfGuiMenu;
+import net.okil.voxelizedfurniture.world.inventory.KitchenCounterGuiMenu;
 import net.okil.voxelizedfurniture.world.inventory.FridgeGuiMenu;
 import net.okil.voxelizedfurniture.world.inventory.CabinetsGuiMenu;
 import net.okil.voxelizedfurniture.network.MenuStateUpdateMessage;
@@ -31,6 +32,7 @@ public class VoxelizedFurnitureModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<FridgeGuiMenu>> FRIDGE_GUI = REGISTRY.register("fridge_gui", () -> IMenuTypeExtension.create(FridgeGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<ShelfGuiMenu>> SHELF_GUI = REGISTRY.register("shelf_gui", () -> IMenuTypeExtension.create(ShelfGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<WardrobeGuiMenu>> WARDROBE_GUI = REGISTRY.register("wardrobe_gui", () -> IMenuTypeExtension.create(WardrobeGuiMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<KitchenCounterGuiMenu>> KITCHEN_COUNTER_GUI = REGISTRY.register("kitchen_counter_gui", () -> IMenuTypeExtension.create(KitchenCounterGuiMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

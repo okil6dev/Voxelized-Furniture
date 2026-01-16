@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "fridgegray",
+        "1": "lowblack",
+        "2": "fridgehandle"
+      }
+    }
+  }
+}

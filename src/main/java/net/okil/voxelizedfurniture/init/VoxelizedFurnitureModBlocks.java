@@ -89,6 +89,9 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> KITCHEN_SINK;
 	public static final DeferredBlock<Block> OVEN;
 	public static final DeferredBlock<Block> OVEN_VENT;
+	public static final DeferredBlock<Block> KITCHEN_TABLE;
+	public static final DeferredBlock<Block> KITCHEN_DRAWER_CORNER;
+	public static final DeferredBlock<Block> KITCHEN_FRIDGE;
 	static {
 		CABINET_OAK = register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = register("cabinet_birch", CabinetBirchBlock::new);
@@ -159,6 +162,9 @@ public class VoxelizedFurnitureModBlocks {
 		KITCHEN_SINK = register("kitchen_sink", KitchenSinkBlock::new);
 		OVEN = register("oven", OvenBlock::new);
 		OVEN_VENT = register("oven_vent", OvenVentBlock::new);
+		KITCHEN_TABLE = register("kitchen_table", KitchenTableBlock::new);
+		KITCHEN_DRAWER_CORNER = register("kitchen_drawer_corner", KitchenDrawerCornerBlock::new);
+		KITCHEN_FRIDGE = register("kitchen_fridge", KitchenFridgeBlock::new);
 	}
 
 	// Start of user code block custom blocks

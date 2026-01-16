@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "lowblack",
+        "1": "darkscatteredwood",
+        "2": "scatteredwood"
+      }
+    }
+  }
+}

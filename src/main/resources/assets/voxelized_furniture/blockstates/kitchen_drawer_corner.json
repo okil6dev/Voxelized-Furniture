@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/kitchen_drawer_corner"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/kitchen_drawer_corner",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/kitchen_drawer_corner",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/kitchen_drawer_corner",
+      "y": 270
+    }
+  }
+}

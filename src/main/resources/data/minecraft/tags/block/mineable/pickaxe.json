@@ -3,8 +3,10 @@
   "values": [
     "voxelized_furniture:laptop",
     "voxelized_furniture:oven",
+    "voxelized_furniture:kitchen_drawer_corner",
     "voxelized_furniture:oven_vent",
     "voxelized_furniture:kitchen_drawer",
+    "voxelized_furniture:kitchen_table",
     "voxelized_furniture:light_switch_button",
     "voxelized_furniture:light",
     "voxelized_furniture:kitchen_sink",
@@ -13,6 +15,7 @@
     "voxelized_furniture:asphalt",
     "voxelized_furniture:kitchen_drawer_1",
     "voxelized_furniture:lighton",
+    "voxelized_furniture:kitchen_fridge",
     "voxelized_furniture:fridge",
     "voxelized_furniture:brown_barbecue"
   ]

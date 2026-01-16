@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#minecraft:wooden_slabs",
+    "#minecraft:wooden_slabs",
+    "#minecraft:wooden_slabs",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone",
+    "minecraft:blackstone"
+  ],
+  "result": {
+    "id": "voxelized_furniture:kitchen_table",
+    "count": 3
+  }
+}

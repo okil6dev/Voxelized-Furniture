@@ -15,8 +15,10 @@ public class VoxelizedFurnitureModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(chair_oak.LAYER_LOCATION, chair_oak::createBodyLayer);
+		event.registerLayerDefinition(ModelPottedBambooPlant.LAYER_LOCATION, ModelPottedBambooPlant::createBodyLayer);
 		event.registerLayerDefinition(chair_acacia.LAYER_LOCATION, chair_acacia::createBodyLayer);
 		event.registerLayerDefinition(chair_jungle.LAYER_LOCATION, chair_jungle::createBodyLayer);
+		event.registerLayerDefinition(ModelCustomModel.LAYER_LOCATION, ModelCustomModel::createBodyLayer);
 		event.registerLayerDefinition(Modelchair.LAYER_LOCATION, Modelchair::createBodyLayer);
 		event.registerLayerDefinition(chair_dark_oak.LAYER_LOCATION, chair_dark_oak::createBodyLayer);
 		event.registerLayerDefinition(chair_birch.LAYER_LOCATION, chair_birch::createBodyLayer);

@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/kitchenfridge",
+  "textures": {
+    "all": "voxelized_furniture:block/fridgehandle",
+    "particle": "voxelized_furniture:block/fridgehandle",
+    "0": "voxelized_furniture:block/fridgegray",
+    "1": "voxelized_furniture:block/lowblack",
+    "2": "voxelized_furniture:block/fridgehandle"
+  },
+  "render_type": "cutout_mipped"
+}

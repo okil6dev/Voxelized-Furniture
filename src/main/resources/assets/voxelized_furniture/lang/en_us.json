@@ -86,5 +86,8 @@
   "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
   "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer",
   "item.voxelized_furniture.oven": "Oven",
-  "item.voxelized_furniture.oven_vent": "Oven Vent"
+  "item.voxelized_furniture.oven_vent": "Oven Vent",
+  "item.voxelized_furniture.kitchen_table": "Kitchen Table",
+  "item.voxelized_furniture.kitchen_drawer_corner": "Kitchen Drawer Corner",
+  "item.voxelized_furniture.kitchen_fridge": "Kitchen Fridge"
 }

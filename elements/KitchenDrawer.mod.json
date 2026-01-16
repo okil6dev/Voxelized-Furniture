@@ -276,8 +276,9 @@
     "vibrationSensitivityRadius": {
       "fixedValue": 7.0
     },
-    "hasInventory": false,
-    "openGUIOnRightClick": false,
+    "hasInventory": true,
+    "guiBoundTo": "KitchenCounterGui",
+    "openGUIOnRightClick": true,
     "inventorySize": 9,
     "inventoryStackSize": 99,
     "inventoryDropWhenDestroyed": true,

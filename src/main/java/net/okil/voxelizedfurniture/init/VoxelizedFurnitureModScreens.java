@@ -5,6 +5,7 @@ package net.okil.voxelizedfurniture.init;
 
 import net.okil.voxelizedfurniture.client.gui.WardrobeGuiScreen;
 import net.okil.voxelizedfurniture.client.gui.ShelfGuiScreen;
+import net.okil.voxelizedfurniture.client.gui.KitchenCounterGuiScreen;
 import net.okil.voxelizedfurniture.client.gui.FridgeGuiScreen;
 import net.okil.voxelizedfurniture.client.gui.CabinetsGuiScreen;
 
@@ -21,6 +22,7 @@ public class VoxelizedFurnitureModScreens {
 		event.register(VoxelizedFurnitureModMenus.FRIDGE_GUI.get(), FridgeGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.SHELF_GUI.get(), ShelfGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.WARDROBE_GUI.get(), WardrobeGuiScreen::new);
+		event.register(VoxelizedFurnitureModMenus.KITCHEN_COUNTER_GUI.get(), KitchenCounterGuiScreen::new);
 	}
 
 	public interface ScreenAccessor {
