@@ -3480,6 +3480,7 @@
       "registry_name": "kitchen_fridge",
       "metadata": {
         "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/KitchenFridgeBlockEntity.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_fridge.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_fridge.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_fridge.json",

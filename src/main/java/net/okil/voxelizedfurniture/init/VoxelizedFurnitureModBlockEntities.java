@@ -64,6 +64,7 @@ public class VoxelizedFurnitureModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KitchenDrawer1BlockEntity>> KITCHEN_DRAWER_1 = register("kitchen_drawer_1", VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_1, KitchenDrawer1BlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KitchenSinkBlockEntity>> KITCHEN_SINK = register("kitchen_sink", VoxelizedFurnitureModBlocks.KITCHEN_SINK, KitchenSinkBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<OvenVentBlockEntity>> OVEN_VENT = register("oven_vent", VoxelizedFurnitureModBlocks.OVEN_VENT, OvenVentBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KitchenFridgeBlockEntity>> KITCHEN_FRIDGE = register("kitchen_fridge", VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE, KitchenFridgeBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -115,5 +116,6 @@ public class VoxelizedFurnitureModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, KITCHEN_DRAWER_1.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, KITCHEN_SINK.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, OVEN_VENT.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, KITCHEN_FRIDGE.get(), SidedInvWrapper::new);
 	}
 }

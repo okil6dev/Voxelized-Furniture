@@ -279,7 +279,7 @@
     "hasInventory": true,
     "guiBoundTo": "KitchenCounterGui",
     "openGUIOnRightClick": true,
-    "inventorySize": 9,
+    "inventorySize": 18,
     "inventoryStackSize": 99,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,

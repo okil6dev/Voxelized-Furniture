@@ -1,6 +1,6 @@
 package net.okil.voxelizedfurniture.block.entity;
 
-import net.okil.voxelizedfurniture.world.inventory.KitchenCounterGuiMenu;
+import net.okil.voxelizedfurniture.world.inventory.FridgeGuiMenu;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlockEntities;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -27,11 +27,11 @@ import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
 
-public class KitchenDrawerBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.withSize(18, ItemStack.EMPTY);
+public class KitchenFridgeBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+	private NonNullList<ItemStack> stacks = NonNullList.withSize(39, ItemStack.EMPTY);
 
-	public KitchenDrawerBlockEntity(BlockPos position, BlockState state) {
-		super(VoxelizedFurnitureModBlockEntities.KITCHEN_DRAWER.get(), position, state);
+	public KitchenFridgeBlockEntity(BlockPos position, BlockState state) {
+		super(VoxelizedFurnitureModBlockEntities.KITCHEN_FRIDGE.get(), position, state);
 	}
 
 	@Override
@@ -74,17 +74,17 @@ public class KitchenDrawerBlockEntity extends RandomizableContainerBlockEntity i
 
 	@Override
 	public Component getDefaultName() {
-		return Component.literal("kitchen_drawer");
+		return Component.literal("kitchen_fridge");
 	}
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new KitchenCounterGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new FridgeGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override
 	public Component getDisplayName() {
-		return Component.literal("Kitchen Drawer");
+		return Component.literal("Kitchen Fridge");
 	}
 
 	@Override
