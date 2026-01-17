@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Crafting",
-    "recipeRetstackSize": 2,
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
     "group": "",
     "unlockingItems": [],
     "cookingBookCategory": "MISC",
@@ -11,36 +11,10 @@
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "recipeSlots": [
-      {
-        "value": "Blocks.WOODEN_SLAB#0"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#0"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.BARREL"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      }
-    ],
-    "recipeReturnStack": {
+    "stoneCuttingInputStack": {
+      "value": "Blocks.PLANKS#0"
+    },
+    "stoneCuttingReturnStack": {
       "value": "CUSTOM:CabinetOak"
     },
     "name": "cabinet_oak_craft",

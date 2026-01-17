@@ -1,18 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "aaa",
-    "bcb",
-    "bbb"
-  ],
-  "key": {
-    "a": "minecraft:spruce_slab",
-    "b": "minecraft:spruce_planks",
-    "c": "minecraft:barrel"
-  },
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:spruce_planks",
   "result": {
     "id": "voxelized_furniture:cabinet_spruce",
-    "count": 2
+    "count": 1
   }
 }

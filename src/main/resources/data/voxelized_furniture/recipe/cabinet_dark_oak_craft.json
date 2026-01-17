@@ -1,18 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "aaa",
-    "bcb",
-    "bbb"
-  ],
-  "key": {
-    "a": "minecraft:dark_oak_slab",
-    "b": "minecraft:dark_oak_planks",
-    "c": "minecraft:barrel"
-  },
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:dark_oak_planks",
   "result": {
     "id": "voxelized_furniture:cabinet_dark_oak",
-    "count": 2
+    "count": 1
   }
 }

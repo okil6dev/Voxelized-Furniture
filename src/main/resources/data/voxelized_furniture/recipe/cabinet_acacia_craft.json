@@ -1,18 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "aaa",
-    "bcb",
-    "bbb"
-  ],
-  "key": {
-    "a": "minecraft:acacia_slab",
-    "b": "minecraft:acacia_planks",
-    "c": "minecraft:barrel"
-  },
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:acacia_planks",
   "result": {
-    "id": "voxelized_furniture:cabinet_jungle",
-    "count": 2
+    "id": "voxelized_furniture:cabinet_acacia",
+    "count": 1
   }
 }

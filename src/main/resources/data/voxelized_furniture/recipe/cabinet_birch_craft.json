@@ -1,18 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "aaa",
-    "bcb",
-    "bbb"
-  ],
-  "key": {
-    "a": "minecraft:birch_slab",
-    "b": "minecraft:birch_planks",
-    "c": "minecraft:barrel"
-  },
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:birch_planks",
   "result": {
     "id": "voxelized_furniture:cabinet_birch",
-    "count": 2
+    "count": 1
   }
 }

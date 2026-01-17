@@ -1,9 +1,6 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:stone_stairs"
-  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:stone",
   "result": {
     "id": "voxelized_furniture:light_switch_button",
     "count": 1

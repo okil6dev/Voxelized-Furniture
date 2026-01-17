@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "2": "darkgray",
+        "3": "lightcoloroff"
+      }
+    }
+  }
+}

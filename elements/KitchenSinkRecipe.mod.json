@@ -3,7 +3,7 @@
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
-    "recipeRetstackSize": 3,
+    "recipeRetstackSize": 1,
     "group": "",
     "unlockingItems": [],
     "cookingBookCategory": "MISC",
@@ -13,31 +13,31 @@
     "recipeShapeless": true,
     "recipeSlots": [
       {
-        "value": "Blocks.QUARTZ_STAIRS"
+        "value": ""
       },
       {
-        "value": "Blocks.STONE_SLAB#7"
+        "value": ""
       },
       {
-        "value": "Blocks.QUARTZ_STAIRS"
+        "value": ""
       },
       {
-        "value": "Blocks.BLACKSTONE"
+        "value": ""
       },
       {
-        "value": "Blocks.BLACKSTONE"
+        "value": "CUSTOM:KitchenDrawer"
       },
       {
-        "value": "Blocks.BLACKSTONE"
+        "value": "Blocks.QUARTZ_BLOCK#3"
       },
       {
-        "value": "Blocks.BLACKSTONE"
+        "value": ""
       },
       {
-        "value": "Blocks.BLACKSTONE"
+        "value": ""
       },
       {
-        "value": "Blocks.BLACKSTONE"
+        "value": ""
       }
     ],
     "recipeReturnStack": {

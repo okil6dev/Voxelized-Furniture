@@ -2,8 +2,8 @@
   "_fv": 79,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Crafting",
-    "recipeRetstackSize": 2,
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
     "group": "",
     "unlockingItems": [],
     "cookingBookCategory": "MISC",
@@ -11,37 +11,11 @@
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "recipeSlots": [
-      {
-        "value": "Blocks.WOODEN_SLAB#4"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#4"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#4"
-      },
-      {
-        "value": "Blocks.PLANKS#4"
-      },
-      {
-        "value": "Blocks.BARREL"
-      },
-      {
-        "value": "Blocks.PLANKS#4"
-      },
-      {
-        "value": "Blocks.PLANKS#4"
-      },
-      {
-        "value": "Blocks.PLANKS#4"
-      },
-      {
-        "value": "Blocks.PLANKS#4"
-      }
-    ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:CabinetJungle"
+    "stoneCuttingInputStack": {
+      "value": "Blocks.PLANKS#4"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:CabinetAcacia"
     },
     "name": "cabinet_acacia_craft",
     "namespace": "mod"

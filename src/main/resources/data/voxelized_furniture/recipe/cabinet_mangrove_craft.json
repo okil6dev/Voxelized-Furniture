@@ -1,18 +1,8 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "aaa",
-    "bcb",
-    "bbb"
-  ],
-  "key": {
-    "a": "minecraft:mangrove_slab",
-    "b": "minecraft:mangrove_planks",
-    "c": "minecraft:barrel"
-  },
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:mangrove_planks",
   "result": {
-    "id": "voxelized_furniture:cabinet_cherry",
-    "count": 2
+    "id": "voxelized_furniture:cabinet_mangrove",
+    "count": 1
   }
 }
