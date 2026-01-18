@@ -1227,7 +1227,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/OakChairRenderer.java",
           "src/main/resources/assets/voxelized_furniture/items/oak_chair_spawn_egg.json",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/oak_chair_biome_modifier.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/OakChairEntity.java"
         ]
       },
@@ -1395,7 +1394,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/SpruceChairRenderer.java",
           "src/main/resources/assets/voxelized_furniture/items/spruce_chair_spawn_egg.json",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/spruce_chair_biome_modifier.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/SpruceChairEntity.java"
         ]
       },
@@ -1500,7 +1498,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/entity/MangroveChairEntity.java",
           "src/main/resources/assets/voxelized_furniture/items/mangrove_chair_spawn_egg.json",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/mangrove_chair_biome_modifier.json",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/MangroveChairRenderer.java"
         ]
       },
@@ -1624,7 +1621,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/JungleChairRenderer.java",
           "src/main/resources/assets/voxelized_furniture/items/jungle_chair_spawn_egg.json",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/jungle_chair_biome_modifier.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/JungleChairEntity.java"
         ]
       },
@@ -1760,8 +1756,7 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/entity/DarkOakChairEntity.java",
           "src/main/resources/assets/voxelized_furniture/items/dark_oak_chair_spawn_egg.json",
-          "src/main/java/net/okil/voxelizedfurniture/client/renderer/DarkOakChairRenderer.java",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/dark_oak_chair_biome_modifier.json"
+          "src/main/java/net/okil/voxelizedfurniture/client/renderer/DarkOakChairRenderer.java"
         ]
       },
       "path": "~/Living Room/Chairs"
@@ -1865,7 +1860,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/CherryChairRenderer.java",
           "src/main/resources/assets/voxelized_furniture/items/cherry_chair_spawn_egg.json",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/cherry_chair_biome_modifier.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/CherryChairEntity.java"
         ]
       },
@@ -1970,7 +1964,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/entity/BirchChairEntity.java",
           "src/main/resources/assets/voxelized_furniture/items/birch_chair_spawn_egg.json",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/birch_chair_biome_modifier.json",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/BirchChairRenderer.java"
         ]
       },
@@ -2075,8 +2068,7 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/items/bamboo_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/BambooChairRenderer.java",
-          "src/main/java/net/okil/voxelizedfurniture/entity/BambooChairEntity.java",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/bamboo_chair_biome_modifier.json"
+          "src/main/java/net/okil/voxelizedfurniture/entity/BambooChairEntity.java"
         ]
       },
       "path": "~/Living Room/Chairs"
@@ -2180,8 +2172,7 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/items/acacia_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/AcaciaChairEntity.java",
-          "src/main/java/net/okil/voxelizedfurniture/client/renderer/AcaciaChairRenderer.java",
-          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/acacia_chair_biome_modifier.json"
+          "src/main/java/net/okil/voxelizedfurniture/client/renderer/AcaciaChairRenderer.java"
         ]
       },
       "path": "~/Living Room/Chairs"
@@ -3490,6 +3481,365 @@
         ]
       },
       "path": "~/Kitchen"
+    },
+    {
+      "name": "ModernBulkheadLightOff",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "modern_bulkhead_light_off",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/modern_bulkhead_light_off.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ModernBulkheadLightOffBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/modern_bulkhead_light_off.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/modern_bulkhead_light_off.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/modern_bulkhead_light_off.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/modern_bulkhead_light_off.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "ModernBulkheadLightOn",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "modern_bulkhead_light_on",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/modern_bulkhead_light_on.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ModernBulkheadLightOnBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/modern_bulkhead_light_on.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/modern_bulkhead_light_on.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/modern_bulkhead_light_on.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/modern_bulkhead_light_on.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "LightSwitchMDHL",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_switch_mdhl",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/LightSwitchMDHLProcedure.java"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "MDHLRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mdhl_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/mdhl_recipe.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "OakCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/oak_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/OakCobblePathBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/oak_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/oak_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/oak_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "SpruceCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/spruce_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/spruce_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/SpruceCobblePathBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/spruce_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/spruce_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "MangroveCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/mangrove_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/mangrove_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/items/mangrove_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/MangroveCobblePathBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "JungleCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/jungle_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/items/jungle_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/jungle_cobble_path.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/jungle_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/JungleCobblePathBlock.java"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "DarkOakCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/DarkOakCobblePathBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/items/dark_oak_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "CherryCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cherry_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/cherry_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/items/cherry_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/cherry_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/cherry_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/CherryCobblePathBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "BirchCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/BirchCobblePathBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/birch_cobble_path.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/birch_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/birch_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/birch_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "BambooCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bamboo_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/bamboo_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/BambooCobblePathBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/bamboo_cobble_path.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/bamboo_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "AcaciaCobblePath",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_cobble_path",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/acacia_cobble_path.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/AcaciaCobblePathBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/acacia_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/items/acacia_cobble_path.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_cobble_path.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/acacia_cobble_path.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "OakCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/oak_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "SpruceCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/spruce_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "MangroveCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/mangrove_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "JungleCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/jungle_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "DarkOakCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/dark_oak_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "CherryCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cherry_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/cherry_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "BirchCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/birch_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "AcaciaCobblePathRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_cobble_path_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/acacia_cobble_path_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "SoapCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soap_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/soap_craft.json"
+        ]
+      },
+      "path": "~/Bathroom"
     }
   ],
   "variable_elements": [
@@ -3545,6 +3895,17 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:AcaciaCobblePath",
+      "~CUSTOM:BambooCobblePath",
+      "~CUSTOM:BirchCobblePath",
+      "~CUSTOM:CherryCobblePath",
+      "~CUSTOM:DarkOakCobblePath",
+      "~CUSTOM:JungleCobblePath",
+      "~CUSTOM:MangroveCobblePath",
+      "~CUSTOM:SpruceCobblePath",
+      "~CUSTOM:OakCobblePath",
+      "~CUSTOM:ModernBulkheadLightOn",
+      "~CUSTOM:ModernBulkheadLightOff",
       "~CUSTOM:KitchenFridge",
       "~CUSTOM:KitchenDrawerCorner",
       "~CUSTOM:KitchenTable",
@@ -3655,12 +4016,23 @@
       "item_group.voxelized_furniture.outside": "VF --\u003e Outside",
       "item.voxelized_furniture.kitchen_drawer": "Kitchen Drawer",
       "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
-      "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer",
+      "item.voxelized_furniture.kitchen_sink": "Kitchen Sink",
       "item.voxelized_furniture.oven": "Oven",
       "item.voxelized_furniture.oven_vent": "Oven Vent",
       "item.voxelized_furniture.kitchen_table": "Kitchen Table",
       "item.voxelized_furniture.kitchen_drawer_corner": "Kitchen Drawer Corner",
-      "item.voxelized_furniture.kitchen_fridge": "Kitchen Fridge"
+      "item.voxelized_furniture.kitchen_fridge": "Kitchen Fridge",
+      "item.voxelized_furniture.modern_bulkhead_light_off": "Modern Bulkhead Light",
+      "item.voxelized_furniture.modern_bulkhead_light_on": "Modern Bulkhead Light",
+      "item.voxelized_furniture.oak_cobble_path": "Oak Cobble Path",
+      "item.voxelized_furniture.spruce_cobble_path": "Spruce Cobble Path",
+      "item.voxelized_furniture.mangrove_cobble_path": "Mangrove Cobble Path",
+      "item.voxelized_furniture.jungle_cobble_path": "Jungle Cobble Path",
+      "item.voxelized_furniture.dark_oak_cobble_path": "Dark Oak Cobble Path",
+      "item.voxelized_furniture.cherry_cobble_path": "Cherry Cobble Path",
+      "item.voxelized_furniture.birch_cobble_path": "Birch Cobble Path",
+      "item.voxelized_furniture.bamboo_cobble_path": "Bamboo Cobble Path",
+      "item.voxelized_furniture.acacia_cobble_path": "Acacia Cobble Path"
     }
   },
   "metadata": {
@@ -3765,7 +4137,6 @@
     "version": "1.0.0",
     "description": "Adds fully survival compatible furniture",
     "author": "okil6",
-    "websiteURL": "https://mcreator.net",
     "license": "Not specified",
     "serverSideOnly": false,
     "modPicture": "icon",
@@ -3774,7 +4145,6 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.8",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.okil.voxelizedfurniture"
   },
   "mcreatorVersion": 202500345720

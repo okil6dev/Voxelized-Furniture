@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/jungle_cobble_path"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/jungle_cobble_path",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/jungle_cobble_path",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/jungle_cobble_path",
+      "y": 270
+    }
+  }
+}

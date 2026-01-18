@@ -3,8 +3,8 @@
     "default": {
       "name": "default",
       "map": {
-        "0": "minecraft:quartz_block_side",
-        "1": "minecraft:stripped_cherry_log",
+        "0": "minecraft:stripped_cherry_log",
+        "1": "minecraft:cherry_planks",
         "3": "minecraft:anvil"
       }
     }

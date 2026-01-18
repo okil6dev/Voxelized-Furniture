@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:acacia_fence",
+    "minecraft:acacia_fence",
+    "minecraft:acacia_fence",
+    "#minecraft:slabs",
+    "#c:stones",
+    "#minecraft:slabs"
+  ],
+  "result": {
+    "id": "voxelized_furniture:acacia_cobble_path",
+    "count": 1
+  }
+}

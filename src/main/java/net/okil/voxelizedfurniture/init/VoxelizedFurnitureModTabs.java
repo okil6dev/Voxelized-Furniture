@@ -117,5 +117,18 @@ public class VoxelizedFurnitureModTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.electrical")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.LIGHT.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VoxelizedFurnitureModBlocks.LIGHT.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.LIGHT_SWITCH_BUTTON.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_OFF.get().asItem());
 			}).withSearchBar().withTabsBefore(BED_ROOM.getId()).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> OUTSIDE = REGISTRY.register("outside",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.outside")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_COBBLE_PATH.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_COBBLE_PATH.get().asItem());
+			}).withSearchBar().withTabsBefore(ELECTRICAL.getId()).build());
 }

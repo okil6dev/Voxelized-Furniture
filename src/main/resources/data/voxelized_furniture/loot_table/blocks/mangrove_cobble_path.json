@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "voxelized_furniture:blocks/mangrove_cobble_path",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "voxelized_furniture:mangrove_cobble_path"
+        }
+      ]
+    }
+  ]
+}

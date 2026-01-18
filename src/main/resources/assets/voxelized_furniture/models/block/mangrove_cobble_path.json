@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/cobble_path_mangrove",
+  "textures": {
+    "all": "minecraft:block/stone",
+    "particle": "minecraft:block/stone",
+    "0": "minecraft:block/stone",
+    "1": "minecraft:block/stripped_mangrove_log",
+    "2": "minecraft:block/gravel"
+  },
+  "render_type": "solid"
+}

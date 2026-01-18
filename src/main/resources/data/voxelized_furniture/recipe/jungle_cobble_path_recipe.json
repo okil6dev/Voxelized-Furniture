@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:jungle_fence",
+    "minecraft:jungle_fence",
+    "minecraft:jungle_fence",
+    "#minecraft:slabs",
+    "#c:stones",
+    "#minecraft:slabs"
+  ],
+  "result": {
+    "id": "voxelized_furniture:jungle_cobble_path",
+    "count": 1
+  }
+}

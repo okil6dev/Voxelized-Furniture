@@ -84,10 +84,21 @@
   "item_group.voxelized_furniture.outside": "VF --\u003e Outside",
   "item.voxelized_furniture.kitchen_drawer": "Kitchen Drawer",
   "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
-  "item.voxelized_furniture.kitchen_sink": "Kitchen Drawer",
+  "item.voxelized_furniture.kitchen_sink": "Kitchen Sink",
   "item.voxelized_furniture.oven": "Oven",
   "item.voxelized_furniture.oven_vent": "Oven Vent",
   "item.voxelized_furniture.kitchen_table": "Kitchen Table",
   "item.voxelized_furniture.kitchen_drawer_corner": "Kitchen Drawer Corner",
-  "item.voxelized_furniture.kitchen_fridge": "Kitchen Fridge"
+  "item.voxelized_furniture.kitchen_fridge": "Kitchen Fridge",
+  "item.voxelized_furniture.modern_bulkhead_light_off": "Modern Bulkhead Light",
+  "item.voxelized_furniture.modern_bulkhead_light_on": "Modern Bulkhead Light",
+  "item.voxelized_furniture.oak_cobble_path": "Oak Cobble Path",
+  "item.voxelized_furniture.spruce_cobble_path": "Spruce Cobble Path",
+  "item.voxelized_furniture.mangrove_cobble_path": "Mangrove Cobble Path",
+  "item.voxelized_furniture.jungle_cobble_path": "Jungle Cobble Path",
+  "item.voxelized_furniture.dark_oak_cobble_path": "Dark Oak Cobble Path",
+  "item.voxelized_furniture.cherry_cobble_path": "Cherry Cobble Path",
+  "item.voxelized_furniture.birch_cobble_path": "Birch Cobble Path",
+  "item.voxelized_furniture.bamboo_cobble_path": "Bamboo Cobble Path",
+  "item.voxelized_furniture.acacia_cobble_path": "Acacia Cobble Path"
 }

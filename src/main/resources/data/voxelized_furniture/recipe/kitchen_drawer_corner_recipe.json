@@ -1,16 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:blackstone",
-    "minecraft:blackstone",
-    "minecraft:blackstone",
-    "minecraft:blackstone",
-    "minecraft:blackstone",
-    "minecraft:blackstone"
-  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": "voxelized_furniture:kitchen_table",
   "result": {
     "id": "voxelized_furniture:kitchen_drawer_corner",
-    "count": 3
+    "count": 1
   }
 }

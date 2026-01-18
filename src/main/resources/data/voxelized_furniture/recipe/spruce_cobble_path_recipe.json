@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:spruce_fence",
+    "minecraft:spruce_fence",
+    "minecraft:spruce_fence",
+    "#minecraft:slabs",
+    "#c:stones",
+    "#minecraft:slabs"
+  ],
+  "result": {
+    "id": "voxelized_furniture:spruce_cobble_path",
+    "count": 1
+  }
+}

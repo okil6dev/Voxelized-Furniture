@@ -92,6 +92,17 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> KITCHEN_TABLE;
 	public static final DeferredItem<Item> KITCHEN_DRAWER_CORNER;
 	public static final DeferredItem<Item> KITCHEN_FRIDGE;
+	public static final DeferredItem<Item> MODERN_BULKHEAD_LIGHT_OFF;
+	public static final DeferredItem<Item> MODERN_BULKHEAD_LIGHT_ON;
+	public static final DeferredItem<Item> OAK_COBBLE_PATH;
+	public static final DeferredItem<Item> SPRUCE_COBBLE_PATH;
+	public static final DeferredItem<Item> MANGROVE_COBBLE_PATH;
+	public static final DeferredItem<Item> JUNGLE_COBBLE_PATH;
+	public static final DeferredItem<Item> DARK_OAK_COBBLE_PATH;
+	public static final DeferredItem<Item> CHERRY_COBBLE_PATH;
+	public static final DeferredItem<Item> BIRCH_COBBLE_PATH;
+	public static final DeferredItem<Item> BAMBOO_COBBLE_PATH;
+	public static final DeferredItem<Item> ACACIA_COBBLE_PATH;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -166,6 +177,17 @@ public class VoxelizedFurnitureModItems {
 		KITCHEN_TABLE = block(VoxelizedFurnitureModBlocks.KITCHEN_TABLE, new Item.Properties().fireResistant());
 		KITCHEN_DRAWER_CORNER = block(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_CORNER, new Item.Properties().fireResistant());
 		KITCHEN_FRIDGE = block(VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE, new Item.Properties().fireResistant());
+		MODERN_BULKHEAD_LIGHT_OFF = block(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_OFF, new Item.Properties().fireResistant());
+		MODERN_BULKHEAD_LIGHT_ON = block(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_ON, new Item.Properties().fireResistant());
+		OAK_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH, new Item.Properties().fireResistant());
+		SPRUCE_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.SPRUCE_COBBLE_PATH, new Item.Properties().fireResistant());
+		MANGROVE_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.MANGROVE_COBBLE_PATH, new Item.Properties().fireResistant());
+		JUNGLE_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.JUNGLE_COBBLE_PATH, new Item.Properties().fireResistant());
+		DARK_OAK_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.DARK_OAK_COBBLE_PATH, new Item.Properties().fireResistant());
+		CHERRY_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.CHERRY_COBBLE_PATH, new Item.Properties().fireResistant());
+		BIRCH_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.BIRCH_COBBLE_PATH, new Item.Properties().fireResistant());
+		BAMBOO_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.BAMBOO_COBBLE_PATH, new Item.Properties().fireResistant());
+		ACACIA_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.ACACIA_COBBLE_PATH, new Item.Properties().fireResistant());
 	}
 
 	// Start of user code block custom items

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:gray_concrete",
+    "minecraft:sea_lantern"
+  ],
+  "result": {
+    "id": "voxelized_furniture:modern_bulkhead_light_off",
+    "count": 1
+  }
+}

@@ -4,7 +4,7 @@
   "definition": {
     "name": "VF --> Outside",
     "icon": {
-      "value": "CUSTOM:BrownBarbecue"
+      "value": "CUSTOM:OakCobblePath"
     },
     "showSearch": true
   }

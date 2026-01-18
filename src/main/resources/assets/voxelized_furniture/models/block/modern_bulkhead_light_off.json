@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/modern_bulkhead_light_off",
+  "textures": {
+    "all": "minecraft:block/sea_lantern",
+    "particle": "minecraft:block/sea_lantern",
+    "2": "voxelized_furniture:block/darkgray",
+    "3": "voxelized_furniture:block/lightcoloroff"
+  },
+  "render_type": "solid"
+}

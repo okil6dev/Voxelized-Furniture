@@ -92,6 +92,17 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> KITCHEN_TABLE;
 	public static final DeferredBlock<Block> KITCHEN_DRAWER_CORNER;
 	public static final DeferredBlock<Block> KITCHEN_FRIDGE;
+	public static final DeferredBlock<Block> MODERN_BULKHEAD_LIGHT_OFF;
+	public static final DeferredBlock<Block> MODERN_BULKHEAD_LIGHT_ON;
+	public static final DeferredBlock<Block> OAK_COBBLE_PATH;
+	public static final DeferredBlock<Block> SPRUCE_COBBLE_PATH;
+	public static final DeferredBlock<Block> MANGROVE_COBBLE_PATH;
+	public static final DeferredBlock<Block> JUNGLE_COBBLE_PATH;
+	public static final DeferredBlock<Block> DARK_OAK_COBBLE_PATH;
+	public static final DeferredBlock<Block> CHERRY_COBBLE_PATH;
+	public static final DeferredBlock<Block> BIRCH_COBBLE_PATH;
+	public static final DeferredBlock<Block> BAMBOO_COBBLE_PATH;
+	public static final DeferredBlock<Block> ACACIA_COBBLE_PATH;
 	static {
 		CABINET_OAK = register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = register("cabinet_birch", CabinetBirchBlock::new);
@@ -165,6 +176,17 @@ public class VoxelizedFurnitureModBlocks {
 		KITCHEN_TABLE = register("kitchen_table", KitchenTableBlock::new);
 		KITCHEN_DRAWER_CORNER = register("kitchen_drawer_corner", KitchenDrawerCornerBlock::new);
 		KITCHEN_FRIDGE = register("kitchen_fridge", KitchenFridgeBlock::new);
+		MODERN_BULKHEAD_LIGHT_OFF = register("modern_bulkhead_light_off", ModernBulkheadLightOffBlock::new);
+		MODERN_BULKHEAD_LIGHT_ON = register("modern_bulkhead_light_on", ModernBulkheadLightOnBlock::new);
+		OAK_COBBLE_PATH = register("oak_cobble_path", OakCobblePathBlock::new);
+		SPRUCE_COBBLE_PATH = register("spruce_cobble_path", SpruceCobblePathBlock::new);
+		MANGROVE_COBBLE_PATH = register("mangrove_cobble_path", MangroveCobblePathBlock::new);
+		JUNGLE_COBBLE_PATH = register("jungle_cobble_path", JungleCobblePathBlock::new);
+		DARK_OAK_COBBLE_PATH = register("dark_oak_cobble_path", DarkOakCobblePathBlock::new);
+		CHERRY_COBBLE_PATH = register("cherry_cobble_path", CherryCobblePathBlock::new);
+		BIRCH_COBBLE_PATH = register("birch_cobble_path", BirchCobblePathBlock::new);
+		BAMBOO_COBBLE_PATH = register("bamboo_cobble_path", BambooCobblePathBlock::new);
+		ACACIA_COBBLE_PATH = register("acacia_cobble_path", AcaciaCobblePathBlock::new);
 	}
 
 	// Start of user code block custom blocks

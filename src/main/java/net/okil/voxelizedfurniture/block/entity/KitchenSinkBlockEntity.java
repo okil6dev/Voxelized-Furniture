@@ -84,7 +84,7 @@ public class KitchenSinkBlockEntity extends RandomizableContainerBlockEntity imp
 
 	@Override
 	public Component getDisplayName() {
-		return Component.literal("Kitchen Drawer");
+		return Component.literal("Kitchen Sink");
 	}
 
 	@Override

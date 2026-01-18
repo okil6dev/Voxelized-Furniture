@@ -287,7 +287,7 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onRightClicked": {
+    "onBlockAdded": {
       "name": "OakWardrobeStack"
     },
     "generateFeature": false,

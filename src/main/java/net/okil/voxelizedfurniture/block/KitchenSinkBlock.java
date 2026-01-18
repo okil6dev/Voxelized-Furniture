@@ -107,7 +107,7 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 			player.openMenu(new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("Kitchen Drawer");
+					return Component.literal("Kitchen Sink");
 				}
 
 				@Override
