@@ -103,6 +103,24 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> BIRCH_COBBLE_PATH;
 	public static final DeferredBlock<Block> BAMBOO_COBBLE_PATH;
 	public static final DeferredBlock<Block> ACACIA_COBBLE_PATH;
+	public static final DeferredBlock<Block> OAK_DOORBELL;
+	public static final DeferredBlock<Block> SPRUCE_DOORBELL;
+	public static final DeferredBlock<Block> MANGROVE_DOORBELL;
+	public static final DeferredBlock<Block> JUNGLE_DOORBELL;
+	public static final DeferredBlock<Block> DARK_OAK_DOORBELL;
+	public static final DeferredBlock<Block> CHERRY_DOORBELL;
+	public static final DeferredBlock<Block> BIRCH_DOORBELL;
+	public static final DeferredBlock<Block> BAMBOO_DOORBELL;
+	public static final DeferredBlock<Block> ACACIA_DOORBELL;
+	public static final DeferredBlock<Block> OAK_PORCH_TABLE;
+	public static final DeferredBlock<Block> SPRUCE_PORCH_TABLE;
+	public static final DeferredBlock<Block> MANGROVE_PORCH_TABLE;
+	public static final DeferredBlock<Block> JUNGLE_PORCH_TABLE;
+	public static final DeferredBlock<Block> DARK_OAK_PORCH_TABLE;
+	public static final DeferredBlock<Block> CHERRY_PORCH_TABLE;
+	public static final DeferredBlock<Block> BIRCH_PORCH_TABLE;
+	public static final DeferredBlock<Block> BAMBOO_PORCH_TABLE;
+	public static final DeferredBlock<Block> ACACIA_PORCH_TABLE;
 	static {
 		CABINET_OAK = register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = register("cabinet_birch", CabinetBirchBlock::new);
@@ -187,6 +205,24 @@ public class VoxelizedFurnitureModBlocks {
 		BIRCH_COBBLE_PATH = register("birch_cobble_path", BirchCobblePathBlock::new);
 		BAMBOO_COBBLE_PATH = register("bamboo_cobble_path", BambooCobblePathBlock::new);
 		ACACIA_COBBLE_PATH = register("acacia_cobble_path", AcaciaCobblePathBlock::new);
+		OAK_DOORBELL = register("oak_doorbell", OakDoorbellBlock::new);
+		SPRUCE_DOORBELL = register("spruce_doorbell", SpruceDoorbellBlock::new);
+		MANGROVE_DOORBELL = register("mangrove_doorbell", MangroveDoorbellBlock::new);
+		JUNGLE_DOORBELL = register("jungle_doorbell", JungleDoorbellBlock::new);
+		DARK_OAK_DOORBELL = register("dark_oak_doorbell", DarkOakDoorbellBlock::new);
+		CHERRY_DOORBELL = register("cherry_doorbell", CherryDoorbellBlock::new);
+		BIRCH_DOORBELL = register("birch_doorbell", BirchDoorbellBlock::new);
+		BAMBOO_DOORBELL = register("bamboo_doorbell", BambooDoorbellBlock::new);
+		ACACIA_DOORBELL = register("acacia_doorbell", AcaciaDoorbellBlock::new);
+		OAK_PORCH_TABLE = register("oak_porch_table", OakPorchTableBlock::new);
+		SPRUCE_PORCH_TABLE = register("spruce_porch_table", SprucePorchTableBlock::new);
+		MANGROVE_PORCH_TABLE = register("mangrove_porch_table", MangrovePorchTableBlock::new);
+		JUNGLE_PORCH_TABLE = register("jungle_porch_table", JunglePorchTableBlock::new);
+		DARK_OAK_PORCH_TABLE = register("dark_oak_porch_table", DarkOakPorchTableBlock::new);
+		CHERRY_PORCH_TABLE = register("cherry_porch_table", CherryPorchTableBlock::new);
+		BIRCH_PORCH_TABLE = register("birch_porch_table", BirchPorchTableBlock::new);
+		BAMBOO_PORCH_TABLE = register("bamboo_porch_table", BambooPorchTableBlock::new);
+		ACACIA_PORCH_TABLE = register("acacia_porch_table", AcaciaPorchTableBlock::new);
 	}
 
 	// Start of user code block custom blocks

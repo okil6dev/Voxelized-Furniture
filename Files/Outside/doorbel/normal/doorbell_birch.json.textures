@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:stripped_birch_log",
+        "1": "minecraft:anvil"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "doorbellring": {
+    "subtitle": "subtitles.doorbellring",
+    "sounds": [
+      {
+        "name": "voxelized_furniture:doorbell",
+        "stream": false
+      }
+    ]
+  }
+}

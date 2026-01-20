@@ -103,6 +103,24 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> BIRCH_COBBLE_PATH;
 	public static final DeferredItem<Item> BAMBOO_COBBLE_PATH;
 	public static final DeferredItem<Item> ACACIA_COBBLE_PATH;
+	public static final DeferredItem<Item> OAK_DOORBELL;
+	public static final DeferredItem<Item> SPRUCE_DOORBELL;
+	public static final DeferredItem<Item> MANGROVE_DOORBELL;
+	public static final DeferredItem<Item> JUNGLE_DOORBELL;
+	public static final DeferredItem<Item> DARK_OAK_DOORBELL;
+	public static final DeferredItem<Item> CHERRY_DOORBELL;
+	public static final DeferredItem<Item> BIRCH_DOORBELL;
+	public static final DeferredItem<Item> BAMBOO_DOORBELL;
+	public static final DeferredItem<Item> ACACIA_DOORBELL;
+	public static final DeferredItem<Item> OAK_PORCH_TABLE;
+	public static final DeferredItem<Item> SPRUCE_PORCH_TABLE;
+	public static final DeferredItem<Item> MANGROVE_PORCH_TABLE;
+	public static final DeferredItem<Item> JUNGLE_PORCH_TABLE;
+	public static final DeferredItem<Item> DARK_OAK_PORCH_TABLE;
+	public static final DeferredItem<Item> CHERRY_PORCH_TABLE;
+	public static final DeferredItem<Item> BIRCH_PORCH_TABLE;
+	public static final DeferredItem<Item> BAMBOO_PORCH_TABLE;
+	public static final DeferredItem<Item> ACACIA_PORCH_TABLE;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -188,6 +206,24 @@ public class VoxelizedFurnitureModItems {
 		BIRCH_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.BIRCH_COBBLE_PATH, new Item.Properties().fireResistant());
 		BAMBOO_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.BAMBOO_COBBLE_PATH, new Item.Properties().fireResistant());
 		ACACIA_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.ACACIA_COBBLE_PATH, new Item.Properties().fireResistant());
+		OAK_DOORBELL = block(VoxelizedFurnitureModBlocks.OAK_DOORBELL);
+		SPRUCE_DOORBELL = block(VoxelizedFurnitureModBlocks.SPRUCE_DOORBELL);
+		MANGROVE_DOORBELL = block(VoxelizedFurnitureModBlocks.MANGROVE_DOORBELL);
+		JUNGLE_DOORBELL = block(VoxelizedFurnitureModBlocks.JUNGLE_DOORBELL);
+		DARK_OAK_DOORBELL = block(VoxelizedFurnitureModBlocks.DARK_OAK_DOORBELL);
+		CHERRY_DOORBELL = block(VoxelizedFurnitureModBlocks.CHERRY_DOORBELL);
+		BIRCH_DOORBELL = block(VoxelizedFurnitureModBlocks.BIRCH_DOORBELL);
+		BAMBOO_DOORBELL = block(VoxelizedFurnitureModBlocks.BAMBOO_DOORBELL);
+		ACACIA_DOORBELL = block(VoxelizedFurnitureModBlocks.ACACIA_DOORBELL);
+		OAK_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.OAK_PORCH_TABLE, new Item.Properties().fireResistant());
+		SPRUCE_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.SPRUCE_PORCH_TABLE, new Item.Properties().fireResistant());
+		MANGROVE_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.MANGROVE_PORCH_TABLE, new Item.Properties().fireResistant());
+		JUNGLE_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.JUNGLE_PORCH_TABLE, new Item.Properties().fireResistant());
+		DARK_OAK_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.DARK_OAK_PORCH_TABLE, new Item.Properties().fireResistant());
+		CHERRY_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.CHERRY_PORCH_TABLE, new Item.Properties().fireResistant());
+		BIRCH_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE, new Item.Properties().fireResistant());
+		BAMBOO_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE, new Item.Properties().fireResistant());
+		ACACIA_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE, new Item.Properties().fireResistant());
 	}
 
 	// Start of user code block custom items

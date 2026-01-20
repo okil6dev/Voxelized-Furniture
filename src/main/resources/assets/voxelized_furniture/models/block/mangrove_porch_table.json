@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/porchtable_mangrove",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/oak_planks",
+    "0": "minecraft:block/anvil",
+    "1": "minecraft:block/mangrove_planks"
+  },
+  "render_type": "translucent"
+}

@@ -114,13 +114,16 @@ public class VoxelizedFurnitureModVariables {
 		}, instance -> instance.save(new CompoundTag(), ctx.levelOrThrow().registryAccess())));
 		boolean _syncDirty = false;
 		public double vfshower = 0;
+		public double doorbelpressed = 0;
 
 		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			vfshower = nbt.getDoubleOr("vfshower", 0);
+			doorbelpressed = nbt.getDoubleOr("doorbelpressed", 0);
 		}
 
 		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			nbt.putDouble("vfshower", vfshower);
+			nbt.putDouble("doorbelpressed", doorbelpressed);
 			return nbt;
 		}
 

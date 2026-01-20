@@ -46,6 +46,7 @@ public class VoxelizedFurnitureMod {
 		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
+		VoxelizedFurnitureModSounds.REGISTRY.register(modEventBus);
 		VoxelizedFurnitureModBlocks.REGISTRY.register(modEventBus);
 		VoxelizedFurnitureModBlockEntities.REGISTRY.register(modEventBus);
 		VoxelizedFurnitureModItems.REGISTRY.register(modEventBus);

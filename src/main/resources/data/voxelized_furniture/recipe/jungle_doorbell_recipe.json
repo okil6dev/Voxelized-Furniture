@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:jungle_planks",
+  "result": {
+    "id": "voxelized_furniture:jungle_doorbell",
+    "count": 1
+  }
+}

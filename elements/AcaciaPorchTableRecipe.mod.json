@@ -1,0 +1,27 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "Blocks.PLANKS#4"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "Blocks.PLANKS#4"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:AcaciaPorchTable"
+    },
+    "name": "acacia_porch_table_recipe",
+    "namespace": "mod"
+  }
+}

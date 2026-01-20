@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/doorbell_spruce",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/oak_planks",
+    "0": "minecraft:block/stripped_spruce_log",
+    "1": "minecraft:block/anvil"
+  },
+  "render_type": "solid"
+}

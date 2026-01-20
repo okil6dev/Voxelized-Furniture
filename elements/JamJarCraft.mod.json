@@ -41,7 +41,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:HoneyJar"
+      "value": "CUSTOM:JamJar"
     },
     "name": "jam_jar_craft",
     "namespace": "mod"

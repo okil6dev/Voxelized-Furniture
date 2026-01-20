@@ -1368,11 +1368,12 @@
         },
         "south": {
           "uv": [
-            0,
-            0,
-            4,
-            8
+            1,
+            8,
+            5,
+            16
           ],
+          "rotation": 180,
           "texture": "#6"
         },
         "west": {
@@ -1447,9 +1448,9 @@
         "south": {
           "uv": [
             0,
-            0,
+            8,
             4,
-            8
+            16
           ],
           "texture": "#6"
         },
@@ -1799,7 +1800,7 @@
     "thirdperson_righthand": {
       "rotation": [
         0,
-        180,
+        -180,
         0
       ],
       "translation": [
@@ -1811,7 +1812,7 @@
     "thirdperson_lefthand": {
       "rotation": [
         0,
-        180,
+        -180,
         0
       ],
       "translation": [
@@ -1837,7 +1838,7 @@
     "gui": {
       "rotation": [
         0,
-        180,
+        -180,
         0
       ]
     },
@@ -1873,7 +1874,7 @@
     "on_shelf": {
       "rotation": [
         0,
-        180,
+        -180,
         0
       ],
       "translation": [

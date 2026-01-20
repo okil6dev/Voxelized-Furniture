@@ -65,6 +65,17 @@ public class VoxelizedFurnitureModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KitchenSinkBlockEntity>> KITCHEN_SINK = register("kitchen_sink", VoxelizedFurnitureModBlocks.KITCHEN_SINK, KitchenSinkBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<OvenVentBlockEntity>> OVEN_VENT = register("oven_vent", VoxelizedFurnitureModBlocks.OVEN_VENT, OvenVentBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<KitchenFridgeBlockEntity>> KITCHEN_FRIDGE = register("kitchen_fridge", VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE, KitchenFridgeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CherryDoorbellBlockEntity>> CHERRY_DOORBELL = register("cherry_doorbell", VoxelizedFurnitureModBlocks.CHERRY_DOORBELL, CherryDoorbellBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BirchDoorbellBlockEntity>> BIRCH_DOORBELL = register("birch_doorbell", VoxelizedFurnitureModBlocks.BIRCH_DOORBELL, BirchDoorbellBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooDoorbellBlockEntity>> BAMBOO_DOORBELL = register("bamboo_doorbell", VoxelizedFurnitureModBlocks.BAMBOO_DOORBELL, BambooDoorbellBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AcaciaDoorbellBlockEntity>> ACACIA_DOORBELL = register("acacia_doorbell", VoxelizedFurnitureModBlocks.ACACIA_DOORBELL, AcaciaDoorbellBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MangrovePorchTableBlockEntity>> MANGROVE_PORCH_TABLE = register("mangrove_porch_table", VoxelizedFurnitureModBlocks.MANGROVE_PORCH_TABLE, MangrovePorchTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JunglePorchTableBlockEntity>> JUNGLE_PORCH_TABLE = register("jungle_porch_table", VoxelizedFurnitureModBlocks.JUNGLE_PORCH_TABLE, JunglePorchTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DarkOakPorchTableBlockEntity>> DARK_OAK_PORCH_TABLE = register("dark_oak_porch_table", VoxelizedFurnitureModBlocks.DARK_OAK_PORCH_TABLE, DarkOakPorchTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CherryPorchTableBlockEntity>> CHERRY_PORCH_TABLE = register("cherry_porch_table", VoxelizedFurnitureModBlocks.CHERRY_PORCH_TABLE, CherryPorchTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BirchPorchTableBlockEntity>> BIRCH_PORCH_TABLE = register("birch_porch_table", VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE, BirchPorchTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooPorchTableBlockEntity>> BAMBOO_PORCH_TABLE = register("bamboo_porch_table", VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE, BambooPorchTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AcaciaPorchTableBlockEntity>> ACACIA_PORCH_TABLE = register("acacia_porch_table", VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE, AcaciaPorchTableBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -117,5 +128,16 @@ public class VoxelizedFurnitureModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, KITCHEN_SINK.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, OVEN_VENT.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, KITCHEN_FRIDGE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CHERRY_DOORBELL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BIRCH_DOORBELL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_DOORBELL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ACACIA_DOORBELL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, MANGROVE_PORCH_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, JUNGLE_PORCH_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DARK_OAK_PORCH_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CHERRY_PORCH_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BIRCH_PORCH_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_PORCH_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ACACIA_PORCH_TABLE.get(), SidedInvWrapper::new);
 	}
 }

@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/porchtable_jungle",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/oak_planks",
+    "0": "minecraft:block/anvil",
+    "1": "minecraft:block/jungle_planks"
+  },
+  "render_type": "translucent"
+}

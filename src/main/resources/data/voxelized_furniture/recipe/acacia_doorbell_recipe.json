@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:acacia_planks",
+  "result": {
+    "id": "voxelized_furniture:acacia_doorbell",
+    "count": 1
+  }
+}

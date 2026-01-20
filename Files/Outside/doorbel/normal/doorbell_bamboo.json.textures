@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:stripped_bamboo_block",
+        "1": "minecraft:anvil"
+      }
+    }
+  }
+}

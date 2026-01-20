@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/birch_porch_table"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/birch_porch_table",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/birch_porch_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/birch_porch_table",
+      "y": 270
+    }
+  }
+}

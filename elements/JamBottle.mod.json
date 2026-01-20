@@ -42,14 +42,14 @@
       "value": "Arrow"
     },
     "projectileDisableAmmoCheck": false,
-    "isFood": false,
+    "isFood": true,
     "nutritionalValue": 4,
     "saturation": 0.3,
     "eatResultItem": {
-      "value": ""
+      "value": "Items.GLASS_BOTTLE"
     },
     "isMeat": false,
-    "isAlwaysEdible": false,
+    "isAlwaysEdible": true,
     "animation": "none",
     "isMusicDisc": false,
     "musicDiscMusic": {
