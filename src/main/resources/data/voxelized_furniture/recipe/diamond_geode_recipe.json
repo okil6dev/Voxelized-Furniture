@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:diamond_block",
+  "result": {
+    "id": "voxelized_furniture:diamond_geode",
+    "count": 1
+  }
+}

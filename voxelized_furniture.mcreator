@@ -4575,6 +4575,145 @@
         ]
       },
       "path": "~/Living Room/Tables/PorchTable"
+    },
+    {
+      "name": "AmethystGeode",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amethyst_geode",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/AmethystGeodeBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/amethyst_geode.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/amethyst_geode.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/amethyst_geode.json",
+          "src/main/resources/assets/voxelized_furniture/items/amethyst_geode.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/amethyst_geode.json"
+        ]
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "Geode",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geode",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "EmeraldGeode",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emerald_geode",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/EmeraldGeodeBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/emerald_geode.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/emerald_geode.json",
+          "src/main/resources/assets/voxelized_furniture/items/emerald_geode.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/emerald_geode.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/emerald_geode.json"
+        ]
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "DiamondGeode",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_geode",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/diamond_geode.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/diamond_geode.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/diamond_geode.json",
+          "src/main/resources/assets/voxelized_furniture/items/diamond_geode.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/DiamondGeodeBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/diamond_geode.json"
+        ]
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "RedstoneGeode",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_geode",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/redstone_geode.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/redstone_geode.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/redstone_geode.json",
+          "src/main/resources/assets/voxelized_furniture/items/redstone_geode.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/RedstoneGeodeBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/redstone_geode.json"
+        ]
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "AmethystGeodeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amethyst_geode_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/amethyst_geode_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/amethyst_geode_recipe.json"
+        ]
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "EmeraldGeodeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emerald_geode_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/emerald_geode_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/emerald_geode_recipe.json"
+        ]
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "DiamondGeodeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_geode_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/diamond_geode_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/diamond_geode_recipe.json"
+        ]
+      },
+      "path": "~/Geode"
+    },
+    {
+      "name": "RedstoneGeodeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_geode_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/redstone_geode_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/redstone_geode_recipe.json"
+        ]
+      },
+      "path": "~/Geode"
     }
   ],
   "variable_elements": [
@@ -4654,6 +4793,10 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:RedstoneGeode",
+      "~CUSTOM:DiamondGeode",
+      "~CUSTOM:EmeraldGeode",
+      "~CUSTOM:AmethystGeode",
       "~CUSTOM:AcaciaPorchTable",
       "~CUSTOM:BambooPorchTable",
       "~CUSTOM:BirchPorchTable",
@@ -4819,7 +4962,12 @@
       "item.voxelized_furniture.cherry_porch_table": "Cherry Porch Table",
       "item.voxelized_furniture.birch_porch_table": "Birch Porch Table",
       "item.voxelized_furniture.bamboo_porch_table": "Bamboo Porch Table",
-      "item.voxelized_furniture.acacia_porch_table": "Acacia Porch Table"
+      "item.voxelized_furniture.acacia_porch_table": "Acacia Porch Table",
+      "item.voxelized_furniture.amethyst_geode": "Amethyst Geode",
+      "item_group.voxelized_furniture.geode": "Geode",
+      "item.voxelized_furniture.emerald_geode": "Emerald Geode",
+      "item.voxelized_furniture.diamond_geode": "Diamond Geode",
+      "item.voxelized_furniture.redstone_geode": "Redstone Geode (Emits Redstone Power)"
     }
   },
   "metadata": {
@@ -4865,6 +5013,10 @@
             "children": [
               {
                 "name": "PorchTable",
+                "children": []
+              },
+              {
+                "name": "Table",
                 "children": []
               }
             ]
@@ -4935,6 +5087,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Geode",
+        "children": []
       }
     ]
   },
@@ -4944,7 +5100,8 @@
     "version": "1.0.0",
     "description": "Adds fully survival compatible furniture",
     "author": "okil6",
-    "license": "Not specified",
+    "websiteURL": "im working on it okay?",
+    "license": "All Rights Reserved",
     "serverSideOnly": false,
     "modPicture": "icon",
     "requiredMods": [],
@@ -4952,6 +5109,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.8",
+    "credits": "Made by okil6 everything is made in mcreator",
     "modElementsPackage": "net.okil.voxelizedfurniture"
   },
   "mcreatorVersion": 202500345720

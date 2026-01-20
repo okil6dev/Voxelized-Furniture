@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/amethyst_geode",
+  "textures": {
+    "all": "minecraft:block/amethyst_block",
+    "particle": "minecraft:block/amethyst_block",
+    "0": "minecraft:block/smooth_basalt",
+    "1": "minecraft:block/calcite",
+    "2": "minecraft:block/amethyst_block"
+  },
+  "render_type": "cutout_mipped"
+}

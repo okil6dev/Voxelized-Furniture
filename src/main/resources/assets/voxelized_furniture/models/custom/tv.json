@@ -462,7 +462,8 @@
           ],
           "texture": "#2"
         }
-      }
+      },
+      "light_emission": 15
     }
   ],
   "display": {

@@ -158,4 +158,11 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DOORBELL.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DOORBELL.get().asItem());
 			}).withSearchBar().withTabsBefore(ELECTRICAL.getId()).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GEODE = REGISTRY.register("geode",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.geode")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.AMETHYST_GEODE.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(VoxelizedFurnitureModBlocks.AMETHYST_GEODE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.EMERALD_GEODE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.DIAMOND_GEODE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.REDSTONE_GEODE.get().asItem());
+			}).withSearchBar().withTabsBefore(OUTSIDE.getId()).build());
 }

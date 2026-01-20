@@ -121,6 +121,10 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> BIRCH_PORCH_TABLE;
 	public static final DeferredBlock<Block> BAMBOO_PORCH_TABLE;
 	public static final DeferredBlock<Block> ACACIA_PORCH_TABLE;
+	public static final DeferredBlock<Block> AMETHYST_GEODE;
+	public static final DeferredBlock<Block> EMERALD_GEODE;
+	public static final DeferredBlock<Block> DIAMOND_GEODE;
+	public static final DeferredBlock<Block> REDSTONE_GEODE;
 	static {
 		CABINET_OAK = register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = register("cabinet_birch", CabinetBirchBlock::new);
@@ -223,6 +227,10 @@ public class VoxelizedFurnitureModBlocks {
 		BIRCH_PORCH_TABLE = register("birch_porch_table", BirchPorchTableBlock::new);
 		BAMBOO_PORCH_TABLE = register("bamboo_porch_table", BambooPorchTableBlock::new);
 		ACACIA_PORCH_TABLE = register("acacia_porch_table", AcaciaPorchTableBlock::new);
+		AMETHYST_GEODE = register("amethyst_geode", AmethystGeodeBlock::new);
+		EMERALD_GEODE = register("emerald_geode", EmeraldGeodeBlock::new);
+		DIAMOND_GEODE = register("diamond_geode", DiamondGeodeBlock::new);
+		REDSTONE_GEODE = register("redstone_geode", RedstoneGeodeBlock::new);
 	}
 
 	// Start of user code block custom blocks

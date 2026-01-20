@@ -28,7 +28,7 @@ public class LaptopBlock extends Block {
 			box(11.85868, 0.36319, 2.5, 13.85868, 0.66319, 3.5), box(12, 10.25, 2, 14, 10.75, 14), box(13, 1.25, 2, 14, 10.25, 14), box(12.2, 1.25, 2, 13, 10.25, 14));
 
 	public LaptopBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(2f, 5f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.strength(2f, 5f).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:amethyst_block",
+  "result": {
+    "id": "voxelized_furniture:amethyst_geode",
+    "count": 1
+  }
+}

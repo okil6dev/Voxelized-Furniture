@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/diamond_geode",
+  "textures": {
+    "all": "voxelized_furniture:block/diamond_raw",
+    "particle": "voxelized_furniture:block/diamond_raw",
+    "0": "minecraft:block/smooth_basalt",
+    "1": "minecraft:block/calcite",
+    "2": "voxelized_furniture:block/diamond_raw"
+  },
+  "render_type": "cutout_mipped"
+}

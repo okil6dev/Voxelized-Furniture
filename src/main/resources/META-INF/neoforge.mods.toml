@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[4,)"
-license="Not specified"
+license="All Rights Reserved"
 
 [[mods]]
 modId="voxelized_furniture"
@@ -8,7 +8,7 @@ version="1.0.0"
 displayName="Voxelized Furniture"
 displayURL="https://mcreator.net"
 logoFile="logo.png"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
+credits="Made by okil6 everything is made in mcreator"
 authors="okil6"
 description="Adds fully survival compatible furniture"
 

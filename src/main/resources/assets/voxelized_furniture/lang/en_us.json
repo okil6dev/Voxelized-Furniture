@@ -119,5 +119,10 @@
   "item.voxelized_furniture.cherry_porch_table": "Cherry Porch Table",
   "item.voxelized_furniture.birch_porch_table": "Birch Porch Table",
   "item.voxelized_furniture.bamboo_porch_table": "Bamboo Porch Table",
-  "item.voxelized_furniture.acacia_porch_table": "Acacia Porch Table"
+  "item.voxelized_furniture.acacia_porch_table": "Acacia Porch Table",
+  "item.voxelized_furniture.amethyst_geode": "Amethyst Geode",
+  "item_group.voxelized_furniture.geode": "Geode",
+  "item.voxelized_furniture.emerald_geode": "Emerald Geode",
+  "item.voxelized_furniture.diamond_geode": "Diamond Geode",
+  "item.voxelized_furniture.redstone_geode": "Redstone Geode (Emits Redstone Power)"
 }

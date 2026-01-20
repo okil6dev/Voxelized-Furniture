@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:smooth_basalt",
+        "1": "minecraft:calcite",
+        "2": "emerald_raw"
+      }
+    }
+  }
+}

@@ -121,6 +121,10 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> BIRCH_PORCH_TABLE;
 	public static final DeferredItem<Item> BAMBOO_PORCH_TABLE;
 	public static final DeferredItem<Item> ACACIA_PORCH_TABLE;
+	public static final DeferredItem<Item> AMETHYST_GEODE;
+	public static final DeferredItem<Item> EMERALD_GEODE;
+	public static final DeferredItem<Item> DIAMOND_GEODE;
+	public static final DeferredItem<Item> REDSTONE_GEODE;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -224,6 +228,10 @@ public class VoxelizedFurnitureModItems {
 		BIRCH_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE, new Item.Properties().fireResistant());
 		BAMBOO_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE, new Item.Properties().fireResistant());
 		ACACIA_PORCH_TABLE = block(VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE, new Item.Properties().fireResistant());
+		AMETHYST_GEODE = block(VoxelizedFurnitureModBlocks.AMETHYST_GEODE, new Item.Properties().fireResistant());
+		EMERALD_GEODE = block(VoxelizedFurnitureModBlocks.EMERALD_GEODE, new Item.Properties().fireResistant());
+		DIAMOND_GEODE = block(VoxelizedFurnitureModBlocks.DIAMOND_GEODE, new Item.Properties().fireResistant());
+		REDSTONE_GEODE = block(VoxelizedFurnitureModBlocks.REDSTONE_GEODE, new Item.Properties().fireResistant());
 	}
 
 	// Start of user code block custom items

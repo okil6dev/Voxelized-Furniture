@@ -24,7 +24,7 @@ public class TvBlock extends Block {
 	private static final VoxelShape SHAPE_WEST = Shapes.or(box(14, 2, -1.5, 16, 14, -1), box(14, 2, 17, 16, 14, 17.5), box(14, 2, -1, 16, 2.5, 17), box(14, 13.5, -1, 16, 14, 17), box(15, 2.5, -1, 16, 13.5, 17), box(14.2, 2.5, -1, 15, 13.5, 17));
 
 	public TvBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(1.5f, 6f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.strength(1.5f, 6f).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 

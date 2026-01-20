@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:redstone_block",
+  "result": {
+    "id": "voxelized_furniture:redstone_geode",
+    "count": 1
+  }
+}
