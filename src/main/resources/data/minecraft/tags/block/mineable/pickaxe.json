@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "voxelized_furniture:miniature_water_ruin",
     "voxelized_furniture:bamboo_cobble_path",
     "voxelized_furniture:oven",
     "voxelized_furniture:oven_vent",
@@ -12,13 +13,12 @@
     "voxelized_furniture:modern_bulkhead_light_off",
     "voxelized_furniture:light_switch_button",
     "voxelized_furniture:redstone_geode",
+    "voxelized_furniture:miniature_ruined_nether_portal",
     "voxelized_furniture:dark_oak_porch_table",
     "voxelized_furniture:asphalt",
     "voxelized_furniture:birch_cobble_path",
-    "voxelized_furniture:lighton",
     "voxelized_furniture:kitchen_fridge",
     "voxelized_furniture:birch_porch_table",
-    "voxelized_furniture:modern_bulkhead_light_on",
     "voxelized_furniture:laptop",
     "voxelized_furniture:emerald_geode",
     "voxelized_furniture:kitchen_drawer_corner",

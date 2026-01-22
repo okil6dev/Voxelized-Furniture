@@ -3039,24 +3039,6 @@
       "path": "~/Electrical"
     },
     {
-      "name": "Lighton",
-      "type": "block",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "lighton",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/voxelized_furniture/models/block/lighton.json",
-          "src/main/resources/assets/voxelized_furniture/models/item/lighton.json",
-          "src/main/resources/assets/voxelized_furniture/items/lighton.json",
-          "src/main/java/net/okil/voxelizedfurniture/block/LightonBlock.java",
-          "src/main/resources/assets/voxelized_furniture/blockstates/lighton.json",
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/lighton.json"
-        ]
-      },
-      "path": "~/Electrical/Light"
-    },
-    {
       "name": "OakWardrobeCraft",
       "type": "recipe",
       "compiles": true,
@@ -3496,55 +3478,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/modern_bulkhead_light_off.json",
           "src/main/resources/assets/voxelized_furniture/models/block/modern_bulkhead_light_off.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/modern_bulkhead_light_off.json"
-        ]
-      },
-      "path": "~/Electrical/Light"
-    },
-    {
-      "name": "ModernBulkheadLightOn",
-      "type": "block",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "modern_bulkhead_light_on",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/modern_bulkhead_light_on.json",
-          "src/main/java/net/okil/voxelizedfurniture/block/ModernBulkheadLightOnBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/modern_bulkhead_light_on.json",
-          "src/main/resources/assets/voxelized_furniture/models/item/modern_bulkhead_light_on.json",
-          "src/main/resources/assets/voxelized_furniture/blockstates/modern_bulkhead_light_on.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/modern_bulkhead_light_on.json"
-        ]
-      },
-      "path": "~/Electrical/Light"
-    },
-    {
-      "name": "LightSwitchMDHL",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "light_switch_mdhl",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/okil/voxelizedfurniture/procedures/LightSwitchMDHLProcedure.java"
         ]
       },
       "path": "~/Electrical/Light"
@@ -4714,6 +4647,433 @@
         ]
       },
       "path": "~/Geode"
+    },
+    {
+      "name": "MiniatureRuinedNetherPortal",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "miniature_ruined_nether_portal",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/miniature_ruined_nether_portal.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/miniature_ruined_nether_portal.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/miniature_ruined_nether_portal.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/MiniatureRuinedNetherPortalBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/miniature_ruined_nether_portal.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/miniature_ruined_nether_portal.json"
+        ]
+      },
+      "path": "~/Miniature"
+    },
+    {
+      "name": "Miniature",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "miniature",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Miniature"
+    },
+    {
+      "name": "MiniatureWaterRuin",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "miniature_water_ruin",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/miniature_water_ruin.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/miniature_water_ruin.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/miniature_water_ruin.json",
+          "src/main/resources/assets/voxelized_furniture/items/miniature_water_ruin.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/MiniatureWaterRuinBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/miniature_water_ruin.json"
+        ]
+      },
+      "path": "~/Miniature"
+    },
+    {
+      "name": "RuinedNetherPortalRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ruined_nether_portal_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/ruined_nether_portal_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/ruined_nether_portal_recipe.json"
+        ]
+      },
+      "path": "~/Miniature"
+    },
+    {
+      "name": "WaterRuinRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_ruin_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/water_ruin_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/water_ruin_recipe.json"
+        ]
+      },
+      "path": "~/Miniature"
+    },
+    {
+      "name": "OakToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/oak_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/oak_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/oak_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/OakToiletRollBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/oak_toilet_roll.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "OakToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/oak_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "MBHLStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mbhl_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/mbhl_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "LightStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/light_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "Toiletrollwool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toiletrollwool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/ToiletrollwoolProcedure.java"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "SpruceToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/spruce_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/SpruceToiletRollBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/spruce_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/SpruceToiletRollBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/spruce_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/items/spruce_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "SpruceToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/spruce_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "MangroveToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/mangrove_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/items/mangrove_toilet_roll.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/MangroveToiletRollBlock.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/MangroveToiletRollBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/mangrove_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "MangroveToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/mangrove_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "JungleToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/JungleToiletRollBlockEntity.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/JungleToiletRollBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/jungle_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/jungle_toilet_roll.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/items/jungle_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/jungle_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "JungleToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/jungle_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "DarkOakToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/DarkOakToiletRollBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/dark_oak_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/DarkOakToiletRollBlockEntity.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "DarkOakToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "CherryToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cherry_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/CherryToiletRollBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/items/cherry_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/cherry_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/CherryToiletRollBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/cherry_toilet_roll.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/cherry_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "CherryToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cherry_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/cherry_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "BirchToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/birch_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/BirchToiletRollBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/birch_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/BirchToiletRollBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/birch_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/birch_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "BirchToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/birch_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "BambooToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bamboo_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/items/bamboo_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/bamboo_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/bamboo_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooToiletRollBlockEntity.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/BambooToiletRollBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "BambooToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bamboo_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/bamboo_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "AcaciaToiletRoll",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_toilet_roll",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/items/acacia_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/AcaciaToiletRollBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/acacia_toilet_roll.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/acacia_toilet_roll.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/AcaciaToiletRollBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/acacia_toilet_roll.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "AcaciaToiletRollStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_toilet_roll_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/acacia_toilet_roll_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Bathroom/Toilet Roll"
     }
   ],
   "variable_elements": [
@@ -4742,6 +5102,15 @@
   ],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
+      "~CUSTOM:AcaciaToiletRoll",
+      "~CUSTOM:BambooToiletRoll",
+      "~CUSTOM:BirchToiletRoll",
+      "~CUSTOM:CherryToiletRoll",
+      "~CUSTOM:DarkOakToiletRoll",
+      "~CUSTOM:JungleToiletRoll",
+      "~CUSTOM:MangroveToiletRoll",
+      "~CUSTOM:SpruceToiletRoll",
+      "~CUSTOM:OakToiletRoll",
       "~CUSTOM:AcaciaDoorbell",
       "~CUSTOM:BambooDoorbell",
       "~CUSTOM:BirchDoorbell",
@@ -4793,6 +5162,8 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:MiniatureWaterRuin",
+      "~CUSTOM:MiniatureRuinedNetherPortal",
       "~CUSTOM:RedstoneGeode",
       "~CUSTOM:DiamondGeode",
       "~CUSTOM:EmeraldGeode",
@@ -4815,7 +5186,6 @@
       "~CUSTOM:MangroveCobblePath",
       "~CUSTOM:SpruceCobblePath",
       "~CUSTOM:OakCobblePath",
-      "~CUSTOM:ModernBulkheadLightOn",
       "~CUSTOM:ModernBulkheadLightOff",
       "~CUSTOM:KitchenFridge",
       "~CUSTOM:KitchenDrawerCorner",
@@ -4826,7 +5196,6 @@
       "~CUSTOM:KitchenDrawer1",
       "~CUSTOM:KitchenDrawer",
       "~CUSTOM:BrownBarbecue",
-      "~CUSTOM:Lighton",
       "~CUSTOM:LightSwitchButton",
       "~CUSTOM:Light",
       "~CUSTOM:Asphalt",
@@ -4850,10 +5219,10 @@
       "item.voxelized_furniture.cabinet_cherry": "Cabinet Cherry",
       "item.voxelized_furniture.cabinet_jungle": "Cabinet Jungle",
       "item.voxelized_furniture.cabinet_bamboo": "Cabinet Bamboo",
-      "item_group.voxelized_furniture.nature": "VF --\u003e Nature",
-      "item_group.voxelized_furniture.vf_livingroom": "VF --\u003e Living Room",
+      "item_group.voxelized_furniture.nature": "Nature",
+      "item_group.voxelized_furniture.vf_livingroom": "Living Room",
       "item.voxelized_furniture.fridge": "Fridge",
-      "item_group.voxelized_furniture.kitchen": "Vf --\u003e Kitchen",
+      "item_group.voxelized_furniture.kitchen": "Kitchen",
       "item.voxelized_furniture.greenwall": "Greenwall",
       "item.voxelized_furniture.oak_sink": "Oak Sink",
       "item.voxelized_furniture.spruce_sink": "Spruce Sink",
@@ -4865,12 +5234,12 @@
       "item.voxelized_furniture.cherry_sink": "Cherry Sink",
       "item.voxelized_furniture.bamboo_sink": "Bamboo Sink",
       "item.voxelized_furniture.cabinet_spruce": "Cabinet Spruce",
-      "item_group.voxelized_furniture.food": "VF --\u003e Food",
+      "item_group.voxelized_furniture.food": "Food",
       "item.voxelized_furniture.jam_jar": "Jam Jar",
       "item.voxelized_furniture.honey_jar": "Honey Jar",
       "item.voxelized_furniture.jam_bottle": "Jam Bottle",
       "item.voxelized_furniture.shower": "Shower",
-      "item_group.voxelized_furniture.bathroom": "VF --\u003e Bathroom",
+      "item_group.voxelized_furniture.bathroom": "Bathroom",
       "item.voxelized_furniture.oak_shelf": "Oak Shelf",
       "item.voxelized_furniture.spruce_shelf": "Spruce Shelf",
       "item.voxelized_furniture.mangrove_shelf": "Mangrove Shelf",
@@ -4906,7 +5275,7 @@
       "item.voxelized_furniture.tv": "Tv",
       "item.voxelized_furniture.laptop": "Laptop",
       "item.voxelized_furniture.asphalt": "Asphalt",
-      "item_group.voxelized_furniture.vf_roads": "Vf --\u003e Roads",
+      "item_group.voxelized_furniture.vf_roads": "Roads",
       "item.voxelized_furniture.double_bed": "Double Bed",
       "item_group.voxelized_furniture.bed_room": "Bed Room",
       "item.voxelized_furniture.single_bed": "Single Bed",
@@ -4922,9 +5291,8 @@
       "item.voxelized_furniture.light": "Light",
       "item.voxelized_furniture.light_switch_button": "Light Switch",
       "item_group.voxelized_furniture.electrical": "Electrical",
-      "item.voxelized_furniture.lighton": "Light",
       "item.voxelized_furniture.brown_barbecue": "Brown Barbecue",
-      "item_group.voxelized_furniture.outside": "VF --\u003e Outside",
+      "item_group.voxelized_furniture.outside": "Outside",
       "item.voxelized_furniture.kitchen_drawer": "Kitchen Drawer",
       "item.voxelized_furniture.kitchen_drawer_1": "Kitchen Drawer",
       "item.voxelized_furniture.kitchen_sink": "Kitchen Sink",
@@ -4934,7 +5302,6 @@
       "item.voxelized_furniture.kitchen_drawer_corner": "Kitchen Drawer Corner",
       "item.voxelized_furniture.kitchen_fridge": "Kitchen Fridge",
       "item.voxelized_furniture.modern_bulkhead_light_off": "Modern Bulkhead Light",
-      "item.voxelized_furniture.modern_bulkhead_light_on": "Modern Bulkhead Light",
       "item.voxelized_furniture.oak_cobble_path": "Oak Cobble Path",
       "item.voxelized_furniture.spruce_cobble_path": "Spruce Cobble Path",
       "item.voxelized_furniture.mangrove_cobble_path": "Mangrove Cobble Path",
@@ -4967,7 +5334,19 @@
       "item_group.voxelized_furniture.geode": "Geode",
       "item.voxelized_furniture.emerald_geode": "Emerald Geode",
       "item.voxelized_furniture.diamond_geode": "Diamond Geode",
-      "item.voxelized_furniture.redstone_geode": "Redstone Geode (Emits Redstone Power)"
+      "item.voxelized_furniture.redstone_geode": "Redstone Geode (Emits Redstone Power)",
+      "item.voxelized_furniture.miniature_ruined_nether_portal": "Miniature Ruined Nether Portal",
+      "item_group.voxelized_furniture.miniature": "Miniature",
+      "item.voxelized_furniture.miniature_water_ruin": "Miniature Water Ruin",
+      "item.voxelized_furniture.oak_toilet_roll": "Oak Toilet Roll",
+      "item.voxelized_furniture.spruce_toilet_roll": "Spruce Toilet Roll",
+      "item.voxelized_furniture.mangrove_toilet_roll": "Mangrove Toilet Roll",
+      "item.voxelized_furniture.jungle_toilet_roll": "Jungle Toilet Roll",
+      "item.voxelized_furniture.dark_oak_toilet_roll": "Dark Oak Toilet Roll",
+      "item.voxelized_furniture.cherry_toilet_roll": "Cherry Toilet Roll",
+      "item.voxelized_furniture.birch_toilet_roll": "Birch Toilet Roll",
+      "item.voxelized_furniture.bamboo_toilet_roll": "Bamboo Toilet Roll",
+      "item.voxelized_furniture.acacia_toilet_roll": "Acacia Toilet Roll"
     }
   },
   "metadata": {
@@ -5047,7 +5426,12 @@
       },
       {
         "name": "Bathroom",
-        "children": []
+        "children": [
+          {
+            "name": "Toilet Roll",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Developer",
@@ -5090,6 +5474,10 @@
       },
       {
         "name": "Geode",
+        "children": []
+      },
+      {
+        "name": "Miniature",
         "children": []
       }
     ]

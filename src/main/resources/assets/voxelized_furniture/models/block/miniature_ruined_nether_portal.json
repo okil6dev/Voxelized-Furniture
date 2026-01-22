@@ -1,0 +1,16 @@
+{
+  "parent": "voxelized_furniture:custom/miniature_nether_ruin",
+  "textures": {
+    "all": "minecraft:block/netherrack",
+    "particle": "minecraft:block/netherrack",
+    "0": "minecraft:block/netherrack",
+    "1": "minecraft:block/obsidian",
+    "2": "minecraft:block/smooth_stone",
+    "3": "minecraft:block/stone_bricks",
+    "4": "minecraft:block/gold_block",
+    "5": "minecraft:block/lava_still",
+    "6": "minecraft:block/chain",
+    "7": "minecraft:block/magma"
+  },
+  "render_type": "cutout"
+}

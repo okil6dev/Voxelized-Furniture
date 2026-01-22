@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "voxelized_furniture:blocks/miniature_ruined_nether_portal",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "voxelized_furniture:miniature_ruined_nether_portal"
+        }
+      ]
+    }
+  ]
+}

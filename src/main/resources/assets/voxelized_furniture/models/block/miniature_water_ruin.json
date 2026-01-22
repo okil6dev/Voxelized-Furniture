@@ -1,0 +1,19 @@
+{
+  "parent": "voxelized_furniture:custom/miniature_water_ruin",
+  "textures": {
+    "all": "voxelized_furniture:block/zen_water_still",
+    "particle": "voxelized_furniture:block/zen_water_still",
+    "0": "minecraft:block/sand",
+    "1": "minecraft:block/moss_block",
+    "2": "minecraft:block/suspicious_gravel_0",
+    "3": "minecraft:block/dirt",
+    "4": "minecraft:block/oak_planks",
+    "5": "minecraft:block/stone_bricks",
+    "6": "minecraft:block/andesite",
+    "7": "minecraft:block/copper_ore",
+    "8": "minecraft:block/stone",
+    "9": "minecraft:block/vine",
+    "10": "voxelized_furniture:block/zen_water_still"
+  },
+  "render_type": "translucent"
+}

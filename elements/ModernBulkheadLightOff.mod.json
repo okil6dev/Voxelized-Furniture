@@ -203,7 +203,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "LightSwitchMDHL"
+      "name": "LightSwitch"
     },
     "generateFeature": false,
     "restrictionBiomes": [],

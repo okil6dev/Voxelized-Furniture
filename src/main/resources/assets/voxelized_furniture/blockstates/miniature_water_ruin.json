@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/miniature_water_ruin"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/miniature_water_ruin",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/miniature_water_ruin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/miniature_water_ruin",
+      "y": 270
+    }
+  }
+}

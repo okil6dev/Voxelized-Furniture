@@ -1,16 +1,28 @@
 package net.okil.voxelizedfurniture.procedures;
 
-import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
-
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.core.BlockPos;
 
 public class LightSwitchProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (VoxelizedFurnitureModBlocks.LIGHT.get() == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock()) {
-			world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.LIGHTON.get().defaultBlockState(), 3);
+		if (0 == ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip1 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip1) : -1)) {
+			{
+				int _value = 1;
+				BlockPos _pos = BlockPos.containing(x, y, z);
+				BlockState _bs = world.getBlockState(_pos);
+				if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+			}
 		} else {
-			world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.LIGHT.get().defaultBlockState(), 3);
+			{
+				int _value = 0;
+				BlockPos _pos = BlockPos.containing(x, y, z);
+				BlockState _bs = world.getBlockState(_pos);
+				if (_bs.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+			}
 		}
 	}
 }

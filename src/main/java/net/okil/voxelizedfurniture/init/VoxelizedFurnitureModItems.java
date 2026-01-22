@@ -82,7 +82,6 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> ACACIA_WARDROBE;
 	public static final DeferredItem<Item> LIGHT;
 	public static final DeferredItem<Item> LIGHT_SWITCH_BUTTON;
-	public static final DeferredItem<Item> LIGHTON;
 	public static final DeferredItem<Item> BROWN_BARBECUE;
 	public static final DeferredItem<Item> KITCHEN_DRAWER;
 	public static final DeferredItem<Item> KITCHEN_DRAWER_1;
@@ -93,7 +92,6 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> KITCHEN_DRAWER_CORNER;
 	public static final DeferredItem<Item> KITCHEN_FRIDGE;
 	public static final DeferredItem<Item> MODERN_BULKHEAD_LIGHT_OFF;
-	public static final DeferredItem<Item> MODERN_BULKHEAD_LIGHT_ON;
 	public static final DeferredItem<Item> OAK_COBBLE_PATH;
 	public static final DeferredItem<Item> SPRUCE_COBBLE_PATH;
 	public static final DeferredItem<Item> MANGROVE_COBBLE_PATH;
@@ -125,6 +123,17 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> EMERALD_GEODE;
 	public static final DeferredItem<Item> DIAMOND_GEODE;
 	public static final DeferredItem<Item> REDSTONE_GEODE;
+	public static final DeferredItem<Item> MINIATURE_RUINED_NETHER_PORTAL;
+	public static final DeferredItem<Item> MINIATURE_WATER_RUIN;
+	public static final DeferredItem<Item> OAK_TOILET_ROLL;
+	public static final DeferredItem<Item> SPRUCE_TOILET_ROLL;
+	public static final DeferredItem<Item> MANGROVE_TOILET_ROLL;
+	public static final DeferredItem<Item> JUNGLE_TOILET_ROLL;
+	public static final DeferredItem<Item> DARK_OAK_TOILET_ROLL;
+	public static final DeferredItem<Item> CHERRY_TOILET_ROLL;
+	public static final DeferredItem<Item> BIRCH_TOILET_ROLL;
+	public static final DeferredItem<Item> BAMBOO_TOILET_ROLL;
+	public static final DeferredItem<Item> ACACIA_TOILET_ROLL;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -189,7 +198,6 @@ public class VoxelizedFurnitureModItems {
 		ACACIA_WARDROBE = block(VoxelizedFurnitureModBlocks.ACACIA_WARDROBE);
 		LIGHT = block(VoxelizedFurnitureModBlocks.LIGHT, new Item.Properties().fireResistant());
 		LIGHT_SWITCH_BUTTON = block(VoxelizedFurnitureModBlocks.LIGHT_SWITCH_BUTTON, new Item.Properties().fireResistant());
-		LIGHTON = block(VoxelizedFurnitureModBlocks.LIGHTON, new Item.Properties().fireResistant());
 		BROWN_BARBECUE = block(VoxelizedFurnitureModBlocks.BROWN_BARBECUE, new Item.Properties().fireResistant());
 		KITCHEN_DRAWER = block(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER, new Item.Properties().fireResistant());
 		KITCHEN_DRAWER_1 = block(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_1, new Item.Properties().fireResistant());
@@ -200,7 +208,6 @@ public class VoxelizedFurnitureModItems {
 		KITCHEN_DRAWER_CORNER = block(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_CORNER, new Item.Properties().fireResistant());
 		KITCHEN_FRIDGE = block(VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE, new Item.Properties().fireResistant());
 		MODERN_BULKHEAD_LIGHT_OFF = block(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_OFF, new Item.Properties().fireResistant());
-		MODERN_BULKHEAD_LIGHT_ON = block(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_ON, new Item.Properties().fireResistant());
 		OAK_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH, new Item.Properties().fireResistant());
 		SPRUCE_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.SPRUCE_COBBLE_PATH, new Item.Properties().fireResistant());
 		MANGROVE_COBBLE_PATH = block(VoxelizedFurnitureModBlocks.MANGROVE_COBBLE_PATH, new Item.Properties().fireResistant());
@@ -232,6 +239,17 @@ public class VoxelizedFurnitureModItems {
 		EMERALD_GEODE = block(VoxelizedFurnitureModBlocks.EMERALD_GEODE, new Item.Properties().fireResistant());
 		DIAMOND_GEODE = block(VoxelizedFurnitureModBlocks.DIAMOND_GEODE, new Item.Properties().fireResistant());
 		REDSTONE_GEODE = block(VoxelizedFurnitureModBlocks.REDSTONE_GEODE, new Item.Properties().fireResistant());
+		MINIATURE_RUINED_NETHER_PORTAL = block(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL, new Item.Properties().fireResistant());
+		MINIATURE_WATER_RUIN = block(VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN, new Item.Properties().fireResistant());
+		OAK_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.OAK_TOILET_ROLL);
+		SPRUCE_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.SPRUCE_TOILET_ROLL);
+		MANGROVE_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.MANGROVE_TOILET_ROLL);
+		JUNGLE_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.JUNGLE_TOILET_ROLL);
+		DARK_OAK_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.DARK_OAK_TOILET_ROLL);
+		CHERRY_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.CHERRY_TOILET_ROLL);
+		BIRCH_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.BIRCH_TOILET_ROLL);
+		BAMBOO_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL);
+		ACACIA_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL);
 	}
 
 	// Start of user code block custom items

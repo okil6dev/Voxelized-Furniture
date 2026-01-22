@@ -1,10 +1,13 @@
 package net.okil.voxelizedfurniture.block;
 
-import net.okil.voxelizedfurniture.procedures.LightSwitchMDHLProcedure;
+import org.checkerframework.checker.units.qual.s;
+
+import net.okil.voxelizedfurniture.procedures.LightSwitchProcedure;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
@@ -22,7 +25,16 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class ModernBulkheadLightOffBlock extends Block {
+	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
 	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(4.5, 1.5, 14, 11.5, 14.5, 16), box(4.5, 1.5, 11, 11.5, 3.5, 14), box(4.5, 12.5, 11, 11.5, 14.5, 14), box(4.5, 10.5, 11, 11.5, 11.5, 14), box(4.5, 8.5, 11, 11.5, 9.5, 14),
+			box(4.5, 6.5, 11, 11.5, 7.5, 14), box(4.5, 4.5, 11, 11.5, 5.5, 14), box(5.25, 3.5, 11.75, 10.75, 12.5, 14));
+	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(4.5, 1.5, 0, 11.5, 14.5, 2), box(4.5, 1.5, 2, 11.5, 3.5, 5), box(4.5, 12.5, 2, 11.5, 14.5, 5), box(4.5, 10.5, 2, 11.5, 11.5, 5), box(4.5, 8.5, 2, 11.5, 9.5, 5),
+			box(4.5, 6.5, 2, 11.5, 7.5, 5), box(4.5, 4.5, 2, 11.5, 5.5, 5), box(5.25, 3.5, 2, 10.75, 12.5, 4.25));
+	private static final VoxelShape SHAPE_1_EAST = Shapes.or(box(0, 1.5, 4.5, 2, 14.5, 11.5), box(2, 1.5, 4.5, 5, 3.5, 11.5), box(2, 12.5, 4.5, 5, 14.5, 11.5), box(2, 10.5, 4.5, 5, 11.5, 11.5), box(2, 8.5, 4.5, 5, 9.5, 11.5),
+			box(2, 6.5, 4.5, 5, 7.5, 11.5), box(2, 4.5, 4.5, 5, 5.5, 11.5), box(2, 3.5, 5.25, 4.25, 12.5, 10.75));
+	private static final VoxelShape SHAPE_1_WEST = Shapes.or(box(14, 1.5, 4.5, 16, 14.5, 11.5), box(11, 1.5, 4.5, 14, 3.5, 11.5), box(11, 12.5, 4.5, 14, 14.5, 11.5), box(11, 10.5, 4.5, 14, 11.5, 11.5), box(11, 8.5, 4.5, 14, 9.5, 11.5),
+			box(11, 6.5, 4.5, 14, 7.5, 11.5), box(11, 4.5, 4.5, 14, 5.5, 11.5), box(11.75, 3.5, 5.25, 14, 12.5, 10.75));
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(4.5, 1.5, 14, 11.5, 14.5, 16), box(4.5, 1.5, 11, 11.5, 3.5, 14), box(4.5, 12.5, 11, 11.5, 14.5, 14), box(4.5, 10.5, 11, 11.5, 11.5, 14), box(4.5, 8.5, 11, 11.5, 9.5, 14),
 			box(4.5, 6.5, 11, 11.5, 7.5, 14), box(4.5, 4.5, 11, 11.5, 5.5, 14), box(5.25, 3.5, 11.75, 10.75, 12.5, 14));
 	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(4.5, 1.5, 0, 11.5, 14.5, 2), box(4.5, 1.5, 2, 11.5, 3.5, 5), box(4.5, 12.5, 2, 11.5, 14.5, 5), box(4.5, 10.5, 2, 11.5, 11.5, 5), box(4.5, 8.5, 2, 11.5, 9.5, 5),
@@ -33,7 +45,13 @@ public class ModernBulkheadLightOffBlock extends Block {
 			box(11, 6.5, 4.5, 14, 7.5, 11.5), box(11, 4.5, 4.5, 14, 5.5, 11.5), box(11.75, 3.5, 5.25, 14, 12.5, 10.75));
 
 	public ModernBulkheadLightOffBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.GLASS).strength(2f, 3f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.sound(SoundType.GLASS).strength(2f, 3f).lightLevel(s -> (new Object() {
+			public int getLightLevel() {
+				if (s.getValue(BLOCKSTATE) == 1)
+					return 10;
+				return 0;
+			}
+		}.getLightLevel())).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -54,6 +72,15 @@ public class ModernBulkheadLightOffBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		if (state.getValue(BLOCKSTATE) == 1) {
+			return (switch (state.getValue(FACING)) {
+				case NORTH -> SHAPE_1_NORTH;
+				case SOUTH -> SHAPE_1_SOUTH;
+				case EAST -> SHAPE_1_EAST;
+				case WEST -> SHAPE_1_WEST;
+				default -> SHAPE_1_NORTH;
+			});
+		}
 		return (switch (state.getValue(FACING)) {
 			case NORTH -> SHAPE_NORTH;
 			case SOUTH -> SHAPE_SOUTH;
@@ -66,7 +93,7 @@ public class ModernBulkheadLightOffBlock extends Block {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING);
+		builder.add(FACING, BLOCKSTATE);
 	}
 
 	@Override
@@ -85,6 +112,6 @@ public class ModernBulkheadLightOffBlock extends Block {
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		LightSwitchMDHLProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		LightSwitchProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/toiletroll_acacia",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/oak_planks",
+    "0": "minecraft:block/stripped_acacia_log",
+    "1": "minecraft:block/white_wool"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,27 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "Blocks.NETHERRACK"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "Blocks.NETHERRACK"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:MiniatureRuinedNetherPortal"
+    },
+    "name": "ruined_nether_portal_recipe",
+    "namespace": "mod"
+  }
+}

@@ -103,6 +103,15 @@ public class VoxelizedFurnitureModTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.bathroom")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.SHOWER.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VoxelizedFurnitureModBlocks.SHOWER.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.SOAP.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.OAK_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL.get().asItem());
 			}).withSearchBar().withTabsBefore(FOOD.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VF_ROADS = REGISTRY.register("vf_roads",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.vf_roads")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.ASPHALT.get())).displayItems((parameters, tabData) -> {
@@ -165,4 +174,9 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.DIAMOND_GEODE.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.REDSTONE_GEODE.get().asItem());
 			}).withSearchBar().withTabsBefore(OUTSIDE.getId()).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MINIATURE = REGISTRY.register("miniature",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.miniature")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.get().asItem());
+			}).withSearchBar().withTabsBefore(GEODE.getId()).build());
 }

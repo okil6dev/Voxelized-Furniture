@@ -1,0 +1,17 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:netherrack",
+        "1": "minecraft:obsidian",
+        "2": "minecraft:smooth_stone",
+        "3": "minecraft:stone_bricks",
+        "4": "minecraft:gold_block",
+        "5": "minecraft:lava_still",
+        "6": "minecraft:chain",
+        "7": "minecraft:magma"
+      }
+    }
+  }
+}

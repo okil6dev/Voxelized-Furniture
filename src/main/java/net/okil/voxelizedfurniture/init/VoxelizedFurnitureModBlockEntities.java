@@ -76,6 +76,14 @@ public class VoxelizedFurnitureModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BirchPorchTableBlockEntity>> BIRCH_PORCH_TABLE = register("birch_porch_table", VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE, BirchPorchTableBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooPorchTableBlockEntity>> BAMBOO_PORCH_TABLE = register("bamboo_porch_table", VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE, BambooPorchTableBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AcaciaPorchTableBlockEntity>> ACACIA_PORCH_TABLE = register("acacia_porch_table", VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE, AcaciaPorchTableBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SpruceToiletRollBlockEntity>> SPRUCE_TOILET_ROLL = register("spruce_toilet_roll", VoxelizedFurnitureModBlocks.SPRUCE_TOILET_ROLL, SpruceToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MangroveToiletRollBlockEntity>> MANGROVE_TOILET_ROLL = register("mangrove_toilet_roll", VoxelizedFurnitureModBlocks.MANGROVE_TOILET_ROLL, MangroveToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<JungleToiletRollBlockEntity>> JUNGLE_TOILET_ROLL = register("jungle_toilet_roll", VoxelizedFurnitureModBlocks.JUNGLE_TOILET_ROLL, JungleToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DarkOakToiletRollBlockEntity>> DARK_OAK_TOILET_ROLL = register("dark_oak_toilet_roll", VoxelizedFurnitureModBlocks.DARK_OAK_TOILET_ROLL, DarkOakToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CherryToiletRollBlockEntity>> CHERRY_TOILET_ROLL = register("cherry_toilet_roll", VoxelizedFurnitureModBlocks.CHERRY_TOILET_ROLL, CherryToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BirchToiletRollBlockEntity>> BIRCH_TOILET_ROLL = register("birch_toilet_roll", VoxelizedFurnitureModBlocks.BIRCH_TOILET_ROLL, BirchToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooToiletRollBlockEntity>> BAMBOO_TOILET_ROLL = register("bamboo_toilet_roll", VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL, BambooToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AcaciaToiletRollBlockEntity>> ACACIA_TOILET_ROLL = register("acacia_toilet_roll", VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL, AcaciaToiletRollBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -139,5 +147,13 @@ public class VoxelizedFurnitureModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BIRCH_PORCH_TABLE.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_PORCH_TABLE.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ACACIA_PORCH_TABLE.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SPRUCE_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, MANGROVE_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, JUNGLE_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DARK_OAK_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CHERRY_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BIRCH_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ACACIA_TOILET_ROLL.get(), SidedInvWrapper::new);
 	}
 }

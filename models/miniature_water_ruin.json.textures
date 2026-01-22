@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:sand",
+        "1": "minecraft:moss_block",
+        "2": "minecraft:suspicious_gravel_0",
+        "3": "minecraft:dirt",
+        "4": "minecraft:oak_planks",
+        "5": "minecraft:stone_bricks",
+        "6": "minecraft:andesite",
+        "7": "minecraft:copper_ore",
+        "8": "minecraft:stone",
+        "9": "minecraft:vine",
+        "10": "zen_water_still"
+      }
+    }
+  }
+}

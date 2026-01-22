@@ -1,0 +1,104 @@
+{
+  "_fv": 79,
+  "_type": "blockstates",
+  "definition": {
+    "block": "CherryToiletRoll",
+    "blockstateList": [
+      {
+        "texture": "minecraft:oak_planks",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "particleTexture": "",
+        "renderType": 2,
+        "customModelName": "toiletroll_cherry:default",
+        "luminance": 0,
+        "boundingBoxes": [
+          {
+            "mx": 4.0,
+            "my": 6.0,
+            "mz": 15.0,
+            "Mx": 12.0,
+            "My": 11.0,
+            "Mz": 16.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.0,
+            "my": 8.25,
+            "mz": 12.75,
+            "Mx": 12.0,
+            "My": 8.75,
+            "Mz": 13.25,
+            "subtract": false
+          },
+          {
+            "mx": 11.5,
+            "my": 8.25,
+            "mz": 13.25,
+            "Mx": 12.0,
+            "My": 8.75,
+            "Mz": 15.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.0,
+            "my": 8.25,
+            "mz": 13.25,
+            "Mx": 4.5,
+            "My": 8.75,
+            "Mz": 15.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.5,
+            "my": 6.75,
+            "mz": 13.5,
+            "Mx": 10.5,
+            "My": 9.75,
+            "Mz": 14.5,
+            "subtract": false
+          },
+          {
+            "mx": 5.5,
+            "my": 6.75,
+            "mz": 11.5,
+            "Mx": 10.5,
+            "My": 9.75,
+            "Mz": 12.5,
+            "subtract": false
+          },
+          {
+            "mx": 5.5,
+            "my": 4.75,
+            "mz": 11.5,
+            "Mx": 10.5,
+            "My": 6.75,
+            "Mz": 11.5,
+            "subtract": false
+          },
+          {
+            "mx": 5.5,
+            "my": 8.75,
+            "mz": 12.5,
+            "Mx": 10.5,
+            "My": 9.75,
+            "Mz": 13.5,
+            "subtract": false
+          },
+          {
+            "mx": 5.5,
+            "my": 6.75,
+            "mz": 12.5,
+            "Mx": 10.5,
+            "My": 7.75,
+            "Mz": 13.5,
+            "subtract": false
+          }
+        ]
+      }
+    ]
+  }
+}

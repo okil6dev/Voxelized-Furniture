@@ -82,7 +82,6 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> ACACIA_WARDROBE;
 	public static final DeferredBlock<Block> LIGHT;
 	public static final DeferredBlock<Block> LIGHT_SWITCH_BUTTON;
-	public static final DeferredBlock<Block> LIGHTON;
 	public static final DeferredBlock<Block> BROWN_BARBECUE;
 	public static final DeferredBlock<Block> KITCHEN_DRAWER;
 	public static final DeferredBlock<Block> KITCHEN_DRAWER_1;
@@ -93,7 +92,6 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> KITCHEN_DRAWER_CORNER;
 	public static final DeferredBlock<Block> KITCHEN_FRIDGE;
 	public static final DeferredBlock<Block> MODERN_BULKHEAD_LIGHT_OFF;
-	public static final DeferredBlock<Block> MODERN_BULKHEAD_LIGHT_ON;
 	public static final DeferredBlock<Block> OAK_COBBLE_PATH;
 	public static final DeferredBlock<Block> SPRUCE_COBBLE_PATH;
 	public static final DeferredBlock<Block> MANGROVE_COBBLE_PATH;
@@ -125,6 +123,17 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> EMERALD_GEODE;
 	public static final DeferredBlock<Block> DIAMOND_GEODE;
 	public static final DeferredBlock<Block> REDSTONE_GEODE;
+	public static final DeferredBlock<Block> MINIATURE_RUINED_NETHER_PORTAL;
+	public static final DeferredBlock<Block> MINIATURE_WATER_RUIN;
+	public static final DeferredBlock<Block> OAK_TOILET_ROLL;
+	public static final DeferredBlock<Block> SPRUCE_TOILET_ROLL;
+	public static final DeferredBlock<Block> MANGROVE_TOILET_ROLL;
+	public static final DeferredBlock<Block> JUNGLE_TOILET_ROLL;
+	public static final DeferredBlock<Block> DARK_OAK_TOILET_ROLL;
+	public static final DeferredBlock<Block> CHERRY_TOILET_ROLL;
+	public static final DeferredBlock<Block> BIRCH_TOILET_ROLL;
+	public static final DeferredBlock<Block> BAMBOO_TOILET_ROLL;
+	public static final DeferredBlock<Block> ACACIA_TOILET_ROLL;
 	static {
 		CABINET_OAK = register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = register("cabinet_birch", CabinetBirchBlock::new);
@@ -188,7 +197,6 @@ public class VoxelizedFurnitureModBlocks {
 		ACACIA_WARDROBE = register("acacia_wardrobe", AcaciaWardrobeBlock::new);
 		LIGHT = register("light", LightBlock::new);
 		LIGHT_SWITCH_BUTTON = register("light_switch_button", LightSwitchButtonBlock::new);
-		LIGHTON = register("lighton", LightonBlock::new);
 		BROWN_BARBECUE = register("brown_barbecue", BrownBarbecueBlock::new);
 		KITCHEN_DRAWER = register("kitchen_drawer", KitchenDrawerBlock::new);
 		KITCHEN_DRAWER_1 = register("kitchen_drawer_1", KitchenDrawer1Block::new);
@@ -199,7 +207,6 @@ public class VoxelizedFurnitureModBlocks {
 		KITCHEN_DRAWER_CORNER = register("kitchen_drawer_corner", KitchenDrawerCornerBlock::new);
 		KITCHEN_FRIDGE = register("kitchen_fridge", KitchenFridgeBlock::new);
 		MODERN_BULKHEAD_LIGHT_OFF = register("modern_bulkhead_light_off", ModernBulkheadLightOffBlock::new);
-		MODERN_BULKHEAD_LIGHT_ON = register("modern_bulkhead_light_on", ModernBulkheadLightOnBlock::new);
 		OAK_COBBLE_PATH = register("oak_cobble_path", OakCobblePathBlock::new);
 		SPRUCE_COBBLE_PATH = register("spruce_cobble_path", SpruceCobblePathBlock::new);
 		MANGROVE_COBBLE_PATH = register("mangrove_cobble_path", MangroveCobblePathBlock::new);
@@ -231,6 +238,17 @@ public class VoxelizedFurnitureModBlocks {
 		EMERALD_GEODE = register("emerald_geode", EmeraldGeodeBlock::new);
 		DIAMOND_GEODE = register("diamond_geode", DiamondGeodeBlock::new);
 		REDSTONE_GEODE = register("redstone_geode", RedstoneGeodeBlock::new);
+		MINIATURE_RUINED_NETHER_PORTAL = register("miniature_ruined_nether_portal", MiniatureRuinedNetherPortalBlock::new);
+		MINIATURE_WATER_RUIN = register("miniature_water_ruin", MiniatureWaterRuinBlock::new);
+		OAK_TOILET_ROLL = register("oak_toilet_roll", OakToiletRollBlock::new);
+		SPRUCE_TOILET_ROLL = register("spruce_toilet_roll", SpruceToiletRollBlock::new);
+		MANGROVE_TOILET_ROLL = register("mangrove_toilet_roll", MangroveToiletRollBlock::new);
+		JUNGLE_TOILET_ROLL = register("jungle_toilet_roll", JungleToiletRollBlock::new);
+		DARK_OAK_TOILET_ROLL = register("dark_oak_toilet_roll", DarkOakToiletRollBlock::new);
+		CHERRY_TOILET_ROLL = register("cherry_toilet_roll", CherryToiletRollBlock::new);
+		BIRCH_TOILET_ROLL = register("birch_toilet_roll", BirchToiletRollBlock::new);
+		BAMBOO_TOILET_ROLL = register("bamboo_toilet_roll", BambooToiletRollBlock::new);
+		ACACIA_TOILET_ROLL = register("acacia_toilet_roll", AcaciaToiletRollBlock::new);
 	}
 
 	// Start of user code block custom blocks
@@ -254,6 +272,7 @@ public class VoxelizedFurnitureModBlocks {
 			BambooShelfBlock.blockColorLoad(event);
 			AcaciaShelfBlock.blockColorLoad(event);
 			PottedGreenPlantBlock.blockColorLoad(event);
+			MiniatureWaterRuinBlock.blockColorLoad(event);
 		}
 	}
 }
