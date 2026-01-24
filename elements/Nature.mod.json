@@ -4,7 +4,7 @@
   "definition": {
     "name": "Nature",
     "icon": {
-      "value": "Blocks.SHORT_DRY_GRASS"
+      "value": "CUSTOM:PottedGreenPlant"
     },
     "showSearch": true
   }

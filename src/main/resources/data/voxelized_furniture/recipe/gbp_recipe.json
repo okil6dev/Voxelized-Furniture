@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    " b "
+  ],
+  "key": {
+    "a": "minecraft:bamboo",
+    "b": "minecraft:lime_concrete_powder",
+    "c": "minecraft:grass_block"
+  },
+  "result": {
+    "id": "voxelized_furniture:green_bamboo_plant",
+    "count": 1
+  }
+}

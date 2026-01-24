@@ -1,0 +1,49 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.BAMBOO"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.CONCRETE_POWDER#5"
+      },
+      {
+        "value": "Blocks.GRASS"
+      },
+      {
+        "value": "Blocks.CONCRETE_POWDER#5"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.CONCRETE_POWDER#5"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:GreenBambooPlant"
+    },
+    "name": "gbp_recipe",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "greenpottex",
+        "1": "minecraft:dirt",
+        "2": "minecraft:bamboo_stage0",
+        "3": "bamboo_singleleaf_greener"
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,7 +29,7 @@ public class CherryCobblePathBlock extends Block {
 			box(-9, 0, -6, 0, 7, 16));
 
 	public CherryCobblePathBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(15f, 10f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.strength(15f, 10f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -49,13 +50,14 @@ public class CherryCobblePathBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		Vec3 offset = state.getOffset(pos);
 		return (switch (state.getValue(FACING)) {
 			case NORTH -> SHAPE_NORTH;
 			case SOUTH -> SHAPE_SOUTH;
 			case EAST -> SHAPE_EAST;
 			case WEST -> SHAPE_WEST;
 			default -> SHAPE_NORTH;
-		});
+		}).move(offset.x, offset.y, offset.z);
 	}
 
 	@Override

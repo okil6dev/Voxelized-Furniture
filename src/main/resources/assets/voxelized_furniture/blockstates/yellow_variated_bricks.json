@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/yellow_bricks" },
+      { "model": "block/variated/bricks/yellow_bricks_01" },
+      { "model": "block/variated/bricks/yellow_bricks_02" },
+      { "model": "block/variated/bricks/yellow_bricks_03" },
+      { "model": "block/variated/bricks/yellow_bricks_04" },
+      { "model": "block/variated/bricks/yellow_bricks_05" },
+      { "model": "block/variated/bricks/yellow_bricks_06" },
+      { "model": "block/variated/bricks/yellow_bricks_07" }
+    ]
+  }
+}

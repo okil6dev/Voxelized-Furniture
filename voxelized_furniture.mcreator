@@ -5074,6 +5074,133 @@
         ]
       },
       "path": "~/Bathroom/Toilet Roll"
+    },
+    {
+      "name": "GreenBambooPlant",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "green_bamboo_plant",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/green_bamboo_plant.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/green_bamboo_plant.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/GreenBambooPlantBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/green_bamboo_plant.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/green_bamboo_plant.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/green_bamboo_plant.json"
+        ]
+      },
+      "path": "~/Nature/PlantLike"
+    },
+    {
+      "name": "GBPRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gbp_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/gbp_recipe.json"
+        ]
+      },
+      "path": "~/Nature/PlantLike"
+    },
+    {
+      "name": "BarrelPlant",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barrel_plant",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/barrel_plant.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/BarrelPlantBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/barrel_plant.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/barrel_plant.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/barrel_plant.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/barrel_plant.json"
+        ]
+      },
+      "path": "~/Nature/PlantLike"
+    },
+    {
+      "name": "BarrelPlantRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barrel_plant_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/barrel_plant_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/barrel_plant_recipe.json"
+        ]
+      },
+      "path": "~/Nature/PlantLike"
+    },
+    {
+      "name": "VariatedBricks",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "variated_bricks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/VariatedBricksBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/variated_bricks.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/variated_bricks.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/variated_bricks.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/variated_bricks.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/variated_bricks.json"
+        ]
+      },
+      "path": "~/bricks"
+    },
+    {
+      "name": "YellowVariatedBricks",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yellow_variated_bricks",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/yellow_variated_bricks.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/yellow_variated_bricks.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/yellow_variated_bricks.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/yellow_variated_bricks.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/YellowVariatedBricksBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/yellow_variated_bricks.json"
+        ]
+      },
+      "path": "~/bricks"
+    },
+    {
+      "name": "VariatedbricksRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "variatedbricks_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/variatedbricks_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/variatedbricks_recipe.json"
+        ]
+      },
+      "path": "~/bricks"
+    },
+    {
+      "name": "SandyVariatedbricksRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sandy_variatedbricks_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/sandy_variatedbricks_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/sandy_variatedbricks_recipe.json"
+        ]
+      },
+      "path": "~/bricks"
     }
   ],
   "variable_elements": [
@@ -5102,6 +5229,7 @@
   ],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
+      "~CUSTOM:BarrelPlant",
       "~CUSTOM:AcaciaToiletRoll",
       "~CUSTOM:BambooToiletRoll",
       "~CUSTOM:BirchToiletRoll",
@@ -5162,6 +5290,9 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:YellowVariatedBricks",
+      "~CUSTOM:VariatedBricks",
+      "~CUSTOM:GreenBambooPlant",
       "~CUSTOM:MiniatureWaterRuin",
       "~CUSTOM:MiniatureRuinedNetherPortal",
       "~CUSTOM:RedstoneGeode",
@@ -5346,7 +5477,11 @@
       "item.voxelized_furniture.cherry_toilet_roll": "Cherry Toilet Roll",
       "item.voxelized_furniture.birch_toilet_roll": "Birch Toilet Roll",
       "item.voxelized_furniture.bamboo_toilet_roll": "Bamboo Toilet Roll",
-      "item.voxelized_furniture.acacia_toilet_roll": "Acacia Toilet Roll"
+      "item.voxelized_furniture.acacia_toilet_roll": "Acacia Toilet Roll",
+      "item.voxelized_furniture.green_bamboo_plant": "Green Bamboo Plant",
+      "item.voxelized_furniture.barrel_plant": "Barrel Plant",
+      "item.voxelized_furniture.variated_bricks": "Variated Bricks",
+      "item.voxelized_furniture.yellow_variated_bricks": "Sandy Variated Bricks"
     }
   },
   "metadata": {
@@ -5479,16 +5614,20 @@
       {
         "name": "Miniature",
         "children": []
+      },
+      {
+        "name": "bricks",
+        "children": []
       }
     ]
   },
   "workspaceSettings": {
     "modid": "voxelized_furniture",
     "modName": "Voxelized Furniture",
-    "version": "1.0.0",
-    "description": "Adds fully survival compatible furniture",
+    "version": "1.2.0",
+    "description": "This mod adds chairs, tables, kitchen sets, sinks, and small land pieces you can use in your builds. It’s mainly for decorating houses, rooms, and custom areas, and gives you more basic objects to work with when building or roleplaying.",
     "author": "okil6",
-    "websiteURL": "im working on it okay?",
+    "websiteURL": "https://github.com/okil6dev/Voxelized-Furniture",
     "license": "All Rights Reserved",
     "serverSideOnly": false,
     "modPicture": "icon",
@@ -5497,7 +5636,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.8",
-    "credits": "Made by okil6 everything is made in mcreator",
+    "credits": "Made by okil6",
     "modElementsPackage": "net.okil.voxelizedfurniture"
   },
   "mcreatorVersion": 202500345720

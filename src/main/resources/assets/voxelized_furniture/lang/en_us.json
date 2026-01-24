@@ -134,5 +134,9 @@
   "item.voxelized_furniture.cherry_toilet_roll": "Cherry Toilet Roll",
   "item.voxelized_furniture.birch_toilet_roll": "Birch Toilet Roll",
   "item.voxelized_furniture.bamboo_toilet_roll": "Bamboo Toilet Roll",
-  "item.voxelized_furniture.acacia_toilet_roll": "Acacia Toilet Roll"
+  "item.voxelized_furniture.acacia_toilet_roll": "Acacia Toilet Roll",
+  "item.voxelized_furniture.green_bamboo_plant": "Green Bamboo Plant",
+  "item.voxelized_furniture.barrel_plant": "Barrel Plant",
+  "item.voxelized_furniture.variated_bricks": "Variated Bricks",
+  "item.voxelized_furniture.yellow_variated_bricks": "Sandy Variated Bricks"
 }

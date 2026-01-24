@@ -4,13 +4,13 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="voxelized_furniture"
-version="1.0.0"
+version="1.2.0"
 displayName="Voxelized Furniture"
-displayURL="https://mcreator.net"
+displayURL="https://github.com/okil6dev/Voxelized-Furniture"
 logoFile="logo.png"
-credits="Made by okil6 everything is made in mcreator"
+credits="Made by okil6"
 authors="okil6"
-description="Adds fully survival compatible furniture"
+description="This mod adds chairs, tables, kitchen sets, sinks, and small land pieces you can use in your builds. It\u2019s mainly for decorating houses, rooms, and custom areas, and gives you more basic objects to work with when building or roleplaying."
 
 # Start of user code block mod configuration
 # End of user code block mod configuration

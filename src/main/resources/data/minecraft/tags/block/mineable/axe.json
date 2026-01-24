@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "voxelized_furniture:barrel_plant",
     "voxelized_furniture:cabinet_birch",
     "voxelized_furniture:spruce_toilet_roll",
     "voxelized_furniture:cabinet_oak",

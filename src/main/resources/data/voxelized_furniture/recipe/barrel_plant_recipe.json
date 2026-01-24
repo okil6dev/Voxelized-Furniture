@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:short_grass",
+    "minecraft:barrel"
+  ],
+  "result": {
+    "id": "voxelized_furniture:barrel_plant",
+    "count": 1
+  }
+}

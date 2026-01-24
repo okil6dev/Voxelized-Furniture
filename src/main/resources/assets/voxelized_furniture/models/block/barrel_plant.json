@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/barrelplant",
+  "textures": {
+    "all": "minecraft:block/barrel_side",
+    "particle": "minecraft:block/barrel_side",
+    "0": "minecraft:block/barrel_side",
+    "2": "voxelized_furniture:block/dirtrevamped",
+    "3": "voxelized_furniture:block/barrelplant"
+  },
+  "render_type": "cutout_mipped"
+}

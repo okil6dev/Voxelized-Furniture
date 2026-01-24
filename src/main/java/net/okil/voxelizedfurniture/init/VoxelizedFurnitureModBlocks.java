@@ -134,6 +134,10 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> BIRCH_TOILET_ROLL;
 	public static final DeferredBlock<Block> BAMBOO_TOILET_ROLL;
 	public static final DeferredBlock<Block> ACACIA_TOILET_ROLL;
+	public static final DeferredBlock<Block> GREEN_BAMBOO_PLANT;
+	public static final DeferredBlock<Block> BARREL_PLANT;
+	public static final DeferredBlock<Block> VARIATED_BRICKS;
+	public static final DeferredBlock<Block> YELLOW_VARIATED_BRICKS;
 	static {
 		CABINET_OAK = register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = register("cabinet_birch", CabinetBirchBlock::new);
@@ -249,6 +253,10 @@ public class VoxelizedFurnitureModBlocks {
 		BIRCH_TOILET_ROLL = register("birch_toilet_roll", BirchToiletRollBlock::new);
 		BAMBOO_TOILET_ROLL = register("bamboo_toilet_roll", BambooToiletRollBlock::new);
 		ACACIA_TOILET_ROLL = register("acacia_toilet_roll", AcaciaToiletRollBlock::new);
+		GREEN_BAMBOO_PLANT = register("green_bamboo_plant", GreenBambooPlantBlock::new);
+		BARREL_PLANT = register("barrel_plant", BarrelPlantBlock::new);
+		VARIATED_BRICKS = register("variated_bricks", VariatedBricksBlock::new);
+		YELLOW_VARIATED_BRICKS = register("yellow_variated_bricks", YellowVariatedBricksBlock::new);
 	}
 
 	// Start of user code block custom blocks

@@ -7,13 +7,17 @@ import net.okil.voxelizedfurniture.VoxelizedFurnitureMod;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
+@EventBusSubscriber
 public class VoxelizedFurnitureModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, VoxelizedFurnitureMod.MODID);
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VF_LIVINGROOM = REGISTRY.register("vf_livingroom",
@@ -67,6 +71,8 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.BARREL_PLANT.get().asItem());
 			}).withSearchBar().build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> KITCHEN = REGISTRY.register("kitchen",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.kitchen")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.FRIDGE.get())).displayItems((parameters, tabData) -> {
@@ -90,9 +96,11 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE.get().asItem());
 			}).withSearchBar().withTabsBefore(VF_LIVINGROOM.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> NATURE = REGISTRY.register("nature",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.nature")).icon(() -> new ItemStack(Blocks.SHORT_DRY_GRASS)).displayItems((parameters, tabData) -> {
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.nature")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.POTTED_GREEN_PLANT.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(VoxelizedFurnitureModBlocks.GREENWALL.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.POTTED_GREEN_PLANT.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.BARREL_PLANT.get().asItem());
 			}).withSearchBar().withTabsBefore(KITCHEN.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> FOOD = REGISTRY.register("food",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.food")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.JAM_JAR.get())).displayItems((parameters, tabData) -> {
@@ -179,4 +187,12 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.get().asItem());
 			}).withSearchBar().withTabsBefore(GEODE.getId()).build());
+
+	@SubscribeEvent
+	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
+		if (tabData.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+			tabData.accept(VoxelizedFurnitureModBlocks.VARIATED_BRICKS.get().asItem());
+			tabData.accept(VoxelizedFurnitureModBlocks.YELLOW_VARIATED_BRICKS.get().asItem());
+		}
+	}
 }

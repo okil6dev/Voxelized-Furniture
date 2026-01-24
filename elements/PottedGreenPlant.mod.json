@@ -235,7 +235,7 @@
     "hardness": 1.5,
     "resistance": 6.0,
     "hasGravity": false,
-    "isWaterloggable": false,
+    "isWaterloggable": true,
     "hasBlockItem": true,
     "maxStackSize": 64,
     "rarity": "COMMON",

@@ -3,6 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,7 +25,8 @@ public class AmethystGeodeBlock extends Block {
 	private static final VoxelShape SHAPE_WEST = Shapes.or(box(9, 0, 1, 15, 9, 15), box(2, 0, 8, 9, 9, 15));
 
 	public AmethystGeodeBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(3f, 5f).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.strength(3f, 5f).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false).dynamicShape()
+				.offsetType(Block.OffsetType.XZ));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -45,13 +47,14 @@ public class AmethystGeodeBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		Vec3 offset = state.getOffset(pos);
 		return (switch (state.getValue(FACING)) {
 			case NORTH -> SHAPE_NORTH;
 			case SOUTH -> SHAPE_SOUTH;
 			case EAST -> SHAPE_EAST;
 			case WEST -> SHAPE_WEST;
 			default -> SHAPE_NORTH;
-		});
+		}).move(offset.x, offset.y, offset.z);
 	}
 
 	@Override

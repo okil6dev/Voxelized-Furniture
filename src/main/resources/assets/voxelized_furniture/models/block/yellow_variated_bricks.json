@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "voxelized_furniture:block/yellow_bricks_01",
+    "particle": "voxelized_furniture:block/yellow_bricks_01"
+  },
+  "render_type": "cutout"
+}

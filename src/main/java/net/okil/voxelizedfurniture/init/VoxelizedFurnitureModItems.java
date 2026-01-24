@@ -134,6 +134,10 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> BIRCH_TOILET_ROLL;
 	public static final DeferredItem<Item> BAMBOO_TOILET_ROLL;
 	public static final DeferredItem<Item> ACACIA_TOILET_ROLL;
+	public static final DeferredItem<Item> GREEN_BAMBOO_PLANT;
+	public static final DeferredItem<Item> BARREL_PLANT;
+	public static final DeferredItem<Item> VARIATED_BRICKS;
+	public static final DeferredItem<Item> YELLOW_VARIATED_BRICKS;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -250,6 +254,10 @@ public class VoxelizedFurnitureModItems {
 		BIRCH_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.BIRCH_TOILET_ROLL);
 		BAMBOO_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL);
 		ACACIA_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL);
+		GREEN_BAMBOO_PLANT = block(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT, new Item.Properties().fireResistant());
+		BARREL_PLANT = block(VoxelizedFurnitureModBlocks.BARREL_PLANT);
+		VARIATED_BRICKS = block(VoxelizedFurnitureModBlocks.VARIATED_BRICKS, new Item.Properties().fireResistant());
+		YELLOW_VARIATED_BRICKS = block(VoxelizedFurnitureModBlocks.YELLOW_VARIATED_BRICKS, new Item.Properties().fireResistant());
 	}
 
 	// Start of user code block custom items

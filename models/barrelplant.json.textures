@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:barrel_side",
+        "2": "dirtrevamped",
+        "3": "barrelplant"
+      }
+    }
+  }
+}
