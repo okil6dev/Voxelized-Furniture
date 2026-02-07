@@ -3,9 +3,9 @@
   "textures": {
     "all": "minecraft:block/bamboo_block",
     "particle": "minecraft:block/bamboo_block",
-    "0": "minecraft:block/bamboo_planks",
-    "1": "minecraft:block/bamboo_block",
-    "2": "minecraft:block/stripped_bamboo_block_top"
+    "0": "minecraft:block/quartz_block_side",
+    "1": "minecraft:block/stripped_bamboo_block",
+    "2": "minecraft:block/anvil"
   },
   "render_type": "cutout"
 }

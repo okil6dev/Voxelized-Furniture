@@ -1,10 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:short_grass",
-    "minecraft:barrel"
-  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:nature_set"
+  },
   "result": {
     "id": "voxelized_furniture:barrel_plant",
     "count": 1

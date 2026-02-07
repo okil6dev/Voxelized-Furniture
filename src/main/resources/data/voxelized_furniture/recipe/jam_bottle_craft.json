@@ -6,10 +6,18 @@
     "bcd"
   ],
   "key": {
-    "a": "minecraft:water_bucket",
-    "b": "minecraft:melon_seeds",
-    "c": "minecraft:glass_bottle",
-    "d": "minecraft:sugar"
+    "a": {
+      "item": "minecraft:water_bucket"
+    },
+    "b": {
+      "item": "minecraft:melon_seeds"
+    },
+    "c": {
+      "item": "minecraft:glass_bottle"
+    },
+    "d": {
+      "item": "minecraft:sugar"
+    }
   },
   "result": {
     "id": "voxelized_furniture:jam_bottle",

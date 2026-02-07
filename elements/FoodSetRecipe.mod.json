@@ -1,0 +1,62 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 9,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "Items.COOKED_BEEF"
+      },
+      {
+        "value": "Items.WHEAT_SEEDS"
+      },
+      {
+        "value": "Items.PUMPKIN_SEEDS"
+      },
+      {
+        "value": "Items.MELON_SEEDS"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.PUMPKIN_SEEDS"
+      },
+      {
+        "value": "Items.WHEAT_SEEDS"
+      },
+      {
+        "value": "Items.PUMPKIN_SEEDS"
+      },
+      {
+        "value": "Items.WHEAT_SEEDS"
+      },
+      {
+        "value": "Items.COOKED_BEEF"
+      },
+      {
+        "value": "Items.WHEAT_SEEDS"
+      },
+      {
+        "value": "Items.MELON_SEEDS"
+      },
+      {
+        "value": "Items.WHEAT_SEEDS"
+      },
+      {
+        "value": "Items.MELON_SEEDS"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:FoodSet"
+    },
+    "name": "food_set_recipe",
+    "namespace": "mod"
+  }
+}

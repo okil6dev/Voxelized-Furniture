@@ -3,7 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,7 +17,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class KitchenDrawerCornerBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(0, 0, 3, 16, 14, 16), box(0, 0, 0, 13, 14, 3), box(10, 14, 0, 13.75, 16, 2.25), box(2, 14, 0, 5, 16, 2.25), box(0, 14, 0, 1, 16, 2.25), box(6, 14, 0, 9, 16, 2.25),
 			box(9, 14, 0, 10, 16, 6), box(5, 14, 0, 6, 16, 10), box(1, 14, 0, 2, 16, 14), box(0, 14, 15, 16, 16, 16), box(1, 14, 14, 16, 16, 15), box(0, 14, 11, 16, 16, 14), box(5, 14, 10, 16, 16, 11), box(0, 14, 7, 16, 16, 10),
 			box(0, 14, 6, 9, 16, 7), box(0, 14, 10, 5, 16, 11), box(0, 14, 14, 1, 16, 15), box(9, 14, 6, 16, 16, 7), box(0, 14, 2.25, 16, 16, 6));
@@ -31,18 +31,18 @@ public class KitchenDrawerCornerBlock extends Block {
 			box(0, 14, 6, 6, 16, 7), box(0, 14, 10, 10, 16, 11), box(0, 14, 14, 14, 16, 15), box(15, 14, 0, 16, 16, 16), box(14, 14, 0, 15, 16, 15), box(11, 14, 0, 14, 16, 16), box(10, 14, 0, 11, 16, 11), box(7, 14, 0, 10, 16, 16),
 			box(6, 14, 7, 7, 16, 16), box(10, 14, 11, 11, 16, 16), box(14, 14, 15, 15, 16, 16), box(6, 14, 0, 7, 16, 7), box(2.25, 14, 0, 6, 16, 16));
 
-	public KitchenDrawerCornerBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public KitchenDrawerCornerBlock() {
+		super(BlockBehaviour.Properties.of().strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

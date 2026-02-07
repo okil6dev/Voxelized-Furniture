@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "voxelized_furniture:kitchen_table",
+  "ingredient": {
+    "item": "voxelized_furniture:kitchen_set"
+  },
   "result": {
     "id": "voxelized_furniture:kitchen_drawer_corner",
     "count": 1

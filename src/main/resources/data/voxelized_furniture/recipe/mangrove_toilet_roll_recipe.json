@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:bathroom_set"
+  },
+  "result": {
+    "id": "voxelized_furniture:mangrove_toilet_roll",
+    "count": 1
+  }
+}

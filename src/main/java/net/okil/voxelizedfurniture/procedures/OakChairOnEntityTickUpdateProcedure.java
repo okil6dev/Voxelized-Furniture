@@ -14,7 +14,7 @@ public class OakChairOnEntityTickUpdateProcedure {
 			return;
 		if (!entity.isVehicle()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 120, 100, false, false));
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120, 100, false, false));
 			entity.push(0, 0, 0);
 			{
 				Entity _ent = entity;

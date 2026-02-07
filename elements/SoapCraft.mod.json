@@ -3,7 +3,7 @@
   "_type": "recipe",
   "definition": {
     "recipeType": "Stone cutting",
-    "recipeRetstackSize": 1,
+    "recipeRetstackSize": 2,
     "group": "",
     "unlockingItems": [],
     "cookingBookCategory": "MISC",
@@ -12,7 +12,7 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "stoneCuttingInputStack": {
-      "value": "Blocks.CONCRETE_POWDER#3"
+      "value": "CUSTOM:BathroomSet"
     },
     "stoneCuttingReturnStack": {
       "value": "CUSTOM:Soap"

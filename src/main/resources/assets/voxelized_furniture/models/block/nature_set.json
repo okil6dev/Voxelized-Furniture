@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/plant_white",
+  "textures": {
+    "all": "voxelized_furniture:block/lightcoloron",
+    "particle": "voxelized_furniture:block/lightcoloron",
+    "0": "voxelized_furniture:block/lightcoloron",
+    "1": "voxelized_furniture:block/lightcoloron",
+    "2": "voxelized_furniture:block/lightcoloron"
+  },
+  "render_type": "solid"
+}

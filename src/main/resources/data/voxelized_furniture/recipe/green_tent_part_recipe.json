@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:green_terracotta"
+  },
+  "result": {
+    "id": "voxelized_furniture:green_tent_part",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/irontentpart",
+  "textures": {
+    "all": "minecraft:block/gray_concrete",
+    "particle": "minecraft:block/gray_concrete",
+    "0": "minecraft:block/gray_concrete"
+  },
+  "render_type": "solid"
+}

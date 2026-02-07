@@ -1,17 +1,10 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:bamboo",
-    "minecraft:gold_ingot",
-    "minecraft:grass_block",
-    "minecraft:gold_ingot",
-    "minecraft:gold_ingot",
-    "minecraft:gold_ingot",
-    "minecraft:gold_ingot"
-  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:nature_set"
+  },
   "result": {
     "id": "voxelized_furniture:golden_desktop_fountain",
-    "count": 2
+    "count": 1
   }
 }

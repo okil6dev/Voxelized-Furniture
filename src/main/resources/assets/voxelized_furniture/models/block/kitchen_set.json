@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/kitchen_white",
+  "textures": {
+    "all": "voxelized_furniture:block/lightcoloron",
+    "particle": "voxelized_furniture:block/lightcoloron",
+    "1": "voxelized_furniture:block/lightcoloron",
+    "2": "voxelized_furniture:block/lightcoloron"
+  },
+  "render_type": "cutout_mipped"
+}

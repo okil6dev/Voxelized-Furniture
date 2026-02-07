@@ -1,0 +1,54 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 45,
+    "height": 60,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2d",
+          "text": "2D",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Seedinpot2d"
+          },
+          "width": 35,
+          "height": 20,
+          "x": 195,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_3d",
+          "text": "3D",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "Seedinpot3d"
+          },
+          "width": 35,
+          "height": 20,
+          "x": 195,
+          "y": 121,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

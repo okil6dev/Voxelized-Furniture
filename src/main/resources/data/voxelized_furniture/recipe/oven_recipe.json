@@ -1,17 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:blackstone",
-    "minecraft:blackstone",
-    "minecraft:blackstone",
-    "minecraft:light_gray_concrete",
-    "minecraft:redstone_block",
-    "minecraft:light_gray_concrete",
-    "minecraft:light_gray_concrete",
-    "minecraft:light_gray_concrete",
-    "minecraft:light_gray_concrete"
-  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:kitchen_set"
+  },
   "result": {
     "id": "voxelized_furniture:oven",
     "count": 1

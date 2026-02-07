@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:bricks",
-  "result": {
-    "id": "voxelized_furniture:variated_bricks",
-    "count": 1
-  }
-}

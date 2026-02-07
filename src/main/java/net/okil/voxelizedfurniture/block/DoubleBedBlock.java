@@ -3,7 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -18,7 +18,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class DoubleBedBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(14, 0, 0, 16, 3, 2), box(14, 0, 30, 16, 3, 32), box(0, 3, 0, 16, 5, 16), box(-16, 3, 0, 0, 5, 16), box(-16, 3, 16, 0, 5, 32), box(-15.5, 5, 16, 0, 8, 30), box(-16, 5, 18, 0, 9, 30),
 			box(-15, 9, 26, -2, 14, 30), box(-15.25, 8, 23, -1.75, 16.25, 26), box(1.75, 8, 23, 15.25, 16.25, 26), box(2, 9, 26, 15, 14, 30), box(0, 5, 18, 16, 9, 30), box(-15.5, 5, 0.5, 0, 8, 16), box(-15, 8, 2, 0, 9, 8), box(0, 8, 2, 15, 9, 8),
 			box(15, 5, 2, 16, 9, 8), box(-16, 5, 2, -15, 9, 8), box(0, 5, 0.5, 15.5, 8, 16), box(0, 5, 16, 15.5, 8, 30), box(-16, 5, 30, 0, 17, 32), box(0, 5, 30, 16, 17, 32), box(0, 3, 16, 16, 5, 32), box(-16, 0, 0, -14, 3, 2),
@@ -35,18 +35,18 @@ public class DoubleBedBlock extends Block {
 			box(26, 9, 18, 30, 14, 31), box(23, 8, 17.75, 26, 16.25, 31.25), box(23, 8, 0.75, 26, 16.25, 14.25), box(26, 9, 1, 30, 14, 14), box(18, 5, 0, 30, 9, 16), box(0.5, 5, 16, 16, 8, 31.5), box(2, 8, 16, 8, 9, 31), box(2, 8, 1, 8, 9, 16),
 			box(2, 5, 0, 8, 9, 1), box(2, 5, 31, 8, 9, 32), box(0.5, 5, 0.5, 16, 8, 16), box(16, 5, 0.5, 30, 8, 16), box(30, 5, 16, 32, 17, 32), box(30, 5, 0, 32, 17, 16), box(16, 3, 0, 32, 5, 16), box(0, 0, 30, 2, 3, 32), box(30, 0, 30, 32, 3, 32));
 
-	public DoubleBedBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(4f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public DoubleBedBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(4f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

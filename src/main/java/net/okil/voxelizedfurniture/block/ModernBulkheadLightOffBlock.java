@@ -8,7 +8,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -26,7 +26,7 @@ import net.minecraft.core.BlockPos;
 
 public class ModernBulkheadLightOffBlock extends Block {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(4.5, 1.5, 14, 11.5, 14.5, 16), box(4.5, 1.5, 11, 11.5, 3.5, 14), box(4.5, 12.5, 11, 11.5, 14.5, 14), box(4.5, 10.5, 11, 11.5, 11.5, 14), box(4.5, 8.5, 11, 11.5, 9.5, 14),
 			box(4.5, 6.5, 11, 11.5, 7.5, 14), box(4.5, 4.5, 11, 11.5, 5.5, 14), box(5.25, 3.5, 11.75, 10.75, 12.5, 14));
 	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(4.5, 1.5, 0, 11.5, 14.5, 2), box(4.5, 1.5, 2, 11.5, 3.5, 5), box(4.5, 12.5, 2, 11.5, 14.5, 5), box(4.5, 10.5, 2, 11.5, 11.5, 5), box(4.5, 8.5, 2, 11.5, 9.5, 5),
@@ -44,8 +44,8 @@ public class ModernBulkheadLightOffBlock extends Block {
 	private static final VoxelShape SHAPE_WEST = Shapes.or(box(14, 1.5, 4.5, 16, 14.5, 11.5), box(11, 1.5, 4.5, 14, 3.5, 11.5), box(11, 12.5, 4.5, 14, 14.5, 11.5), box(11, 10.5, 4.5, 14, 11.5, 11.5), box(11, 8.5, 4.5, 14, 9.5, 11.5),
 			box(11, 6.5, 4.5, 14, 7.5, 11.5), box(11, 4.5, 4.5, 14, 5.5, 11.5), box(11.75, 3.5, 5.25, 14, 12.5, 10.75));
 
-	public ModernBulkheadLightOffBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.GLASS).strength(2f, 3f).lightLevel(s -> (new Object() {
+	public ModernBulkheadLightOffBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(2f, 3f).lightLevel(s -> (new Object() {
 			public int getLightLevel() {
 				if (s.getValue(BLOCKSTATE) == 1)
 					return 10;
@@ -56,12 +56,12 @@ public class ModernBulkheadLightOffBlock extends Block {
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

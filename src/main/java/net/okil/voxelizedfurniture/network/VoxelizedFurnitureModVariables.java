@@ -13,7 +13,6 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 
-import net.minecraft.world.level.saveddata.SavedDataType;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.LevelAccessor;
@@ -76,16 +75,19 @@ public class VoxelizedFurnitureModVariables {
 	}
 
 	public static class WorldVariables extends SavedData {
-		public static final SavedDataType<WorldVariables> TYPE = new SavedDataType<>("voxelized_furniture_worldvars", ctx -> new WorldVariables(), ctx -> CompoundTag.CODEC.xmap(tag -> {
-			WorldVariables instance = new WorldVariables();
-			instance.read(tag, ctx.levelOrThrow().registryAccess());
-			return instance;
-		}, instance -> instance.save(new CompoundTag(), ctx.levelOrThrow().registryAccess())));
+		public static final String DATA_NAME = "voxelized_furniture_worldvars";
 		boolean _syncDirty = false;
+
+		public static WorldVariables load(CompoundTag tag, HolderLookup.Provider lookupProvider) {
+			WorldVariables data = new WorldVariables();
+			data.read(tag, lookupProvider);
+			return data;
+		}
 
 		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 		}
 
+		@Override
 		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			return nbt;
 		}
@@ -99,7 +101,7 @@ public class VoxelizedFurnitureModVariables {
 
 		public static WorldVariables get(LevelAccessor world) {
 			if (world instanceof ServerLevel level) {
-				return level.getDataStorage().computeIfAbsent(WorldVariables.TYPE);
+				return level.getDataStorage().computeIfAbsent(new SavedData.Factory<>(WorldVariables::new, WorldVariables::load), DATA_NAME);
 			} else {
 				return clientSide;
 			}
@@ -107,20 +109,23 @@ public class VoxelizedFurnitureModVariables {
 	}
 
 	public static class MapVariables extends SavedData {
-		public static final SavedDataType<MapVariables> TYPE = new SavedDataType<>("voxelized_furniture_mapvars", ctx -> new MapVariables(), ctx -> CompoundTag.CODEC.xmap(tag -> {
-			MapVariables instance = new MapVariables();
-			instance.read(tag, ctx.levelOrThrow().registryAccess());
-			return instance;
-		}, instance -> instance.save(new CompoundTag(), ctx.levelOrThrow().registryAccess())));
+		public static final String DATA_NAME = "voxelized_furniture_mapvars";
 		boolean _syncDirty = false;
 		public double vfshower = 0;
 		public double doorbelpressed = 0;
 
-		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
-			vfshower = nbt.getDoubleOr("vfshower", 0);
-			doorbelpressed = nbt.getDoubleOr("doorbelpressed", 0);
+		public static MapVariables load(CompoundTag tag, HolderLookup.Provider lookupProvider) {
+			MapVariables data = new MapVariables();
+			data.read(tag, lookupProvider);
+			return data;
 		}
 
+		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
+			vfshower = nbt.getDouble("vfshower");
+			doorbelpressed = nbt.getDouble("doorbelpressed");
+		}
+
+		@Override
 		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			nbt.putDouble("vfshower", vfshower);
 			nbt.putDouble("doorbelpressed", doorbelpressed);
@@ -129,14 +134,14 @@ public class VoxelizedFurnitureModVariables {
 
 		public void markSyncDirty() {
 			this.setDirty();
-			this._syncDirty = true;
+			_syncDirty = true;
 		}
 
 		static MapVariables clientSide = new MapVariables();
 
 		public static MapVariables get(LevelAccessor world) {
-			if (world instanceof ServerLevelAccessor serverLevelAccessor) {
-				return serverLevelAccessor.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(MapVariables.TYPE);
+			if (world instanceof ServerLevelAccessor serverLevelAcc) {
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(new SavedData.Factory<>(MapVariables::new, MapVariables::load), DATA_NAME);
 			} else {
 				return clientSide;
 			}
@@ -147,10 +152,8 @@ public class VoxelizedFurnitureModVariables {
 		public static final Type<SavedDataSyncMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "saved_data_sync"));
 		public static final StreamCodec<RegistryFriendlyByteBuf, SavedDataSyncMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, SavedDataSyncMessage message) -> {
 			buffer.writeInt(message.dataType);
-			if (message.data instanceof MapVariables mapVariables)
-				buffer.writeNbt(mapVariables.save(new CompoundTag(), buffer.registryAccess()));
-			else if (message.data instanceof WorldVariables worldVariables)
-				buffer.writeNbt(worldVariables.save(new CompoundTag(), buffer.registryAccess()));
+			if (message.data != null)
+				buffer.writeNbt(message.data.save(new CompoundTag(), buffer.registryAccess()));
 		}, (RegistryFriendlyByteBuf buffer) -> {
 			int dataType = buffer.readInt();
 			CompoundTag nbt = buffer.readNbt();
@@ -174,9 +177,9 @@ public class VoxelizedFurnitureModVariables {
 			if (context.flow() == PacketFlow.CLIENTBOUND && message.data != null) {
 				context.enqueueWork(() -> {
 					if (message.dataType == 0)
-						MapVariables.clientSide.read(((MapVariables) message.data).save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
+						MapVariables.clientSide.read(message.data.save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
 					else
-						WorldVariables.clientSide.read(((WorldVariables) message.data).save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
+						WorldVariables.clientSide.read(message.data.save(new CompoundTag(), context.player().registryAccess()), context.player().registryAccess());
 				}).exceptionally(e -> {
 					context.connection().disconnect(Component.literal(e.getMessage()));
 					return null;

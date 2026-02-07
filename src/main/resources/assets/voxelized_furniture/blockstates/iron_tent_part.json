@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/iron_tent_part"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/iron_tent_part",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/iron_tent_part",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/iron_tent_part",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "voxelized_furniture:block/iron_tent_part",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "voxelized_furniture:block/iron_tent_part",
+      "x": 90
+    }
+  }
+}

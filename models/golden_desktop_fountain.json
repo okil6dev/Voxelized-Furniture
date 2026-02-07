@@ -4310,16 +4310,26 @@
     "display": {
         "thirdperson_righthand": {
             "translation": [
-                0,
-                7,
-                0
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.5,
+                0.5,
+                0.5
             ]
         },
         "thirdperson_lefthand": {
             "translation": [
-                0,
-                7,
-                0
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                0.5,
+                0.5,
+                0.5
             ]
         },
         "firstperson_righthand": {
@@ -4355,9 +4365,9 @@
                 0
             ],
             "translation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
             ],
             "scale": [
                 0.625,

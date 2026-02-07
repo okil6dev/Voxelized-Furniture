@@ -2,45 +2,23 @@
   "_fv": 79,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Crafting",
+    "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:NatureSet"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.BAMBOO"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.CONCRETE_POWDER#5"
-      },
-      {
-        "value": "Blocks.GRASS"
-      },
-      {
-        "value": "Blocks.CONCRETE_POWDER#5"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.CONCRETE_POWDER#5"
-      },
-      {
-        "value": ""
-      }
-    ],
-    "recipeReturnStack": {
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:NatureSet"
+    },
+    "stoneCuttingReturnStack": {
       "value": "CUSTOM:GreenBambooPlant"
     },
     "name": "gbp_recipe",

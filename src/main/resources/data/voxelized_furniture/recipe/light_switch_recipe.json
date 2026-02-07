@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:stone",
+  "ingredient": {
+    "item": "minecraft:stone"
+  },
   "result": {
     "id": "voxelized_furniture:light_switch_button",
     "count": 1

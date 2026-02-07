@@ -1,14 +1,10 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:stone_slab",
-    "minecraft:stone_stairs",
-    "minecraft:stone",
-    "minecraft:stone_stairs"
-  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:kitchen_set"
+  },
   "result": {
     "id": "voxelized_furniture:oven_vent",
-    "count": 3
+    "count": 1
   }
 }

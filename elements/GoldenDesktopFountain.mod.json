@@ -54,6 +54,9 @@
     "creativeTabs": [
       {
         "value": "CUSTOM:VFCabinets"
+      },
+      {
+        "value": "CUSTOM:Nature"
       }
     ],
     "destroyTool": "axe",

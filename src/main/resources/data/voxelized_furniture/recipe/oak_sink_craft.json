@@ -7,9 +7,15 @@
     "bbb"
   ],
   "key": {
-    "a": "minecraft:oak_slab",
-    "b": "minecraft:quartz_block",
-    "c": "minecraft:anvil"
+    "a": {
+      "item": "minecraft:oak_slab"
+    },
+    "b": {
+      "item": "minecraft:quartz_block"
+    },
+    "c": {
+      "item": "minecraft:anvil"
+    }
   },
   "result": {
     "id": "voxelized_furniture:oak_sink",

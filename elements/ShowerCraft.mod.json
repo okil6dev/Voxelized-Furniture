@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Crafting",
+    "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
     "unlockingItems": [],
@@ -11,36 +11,10 @@
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.STONE_SLAB#7"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.STONE_BUTTON"
-      },
-      {
-        "value": "Blocks.QUARTZ_BLOCK#3"
-      },
-      {
-        "value": "Blocks.STONE_BUTTON"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.QUARTZ_BLOCK#3"
-      },
-      {
-        "value": ""
-      }
-    ],
-    "recipeReturnStack": {
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:BathroomSet"
+    },
+    "stoneCuttingReturnStack": {
       "value": "CUSTOM:Shower"
     },
     "name": "shower_craft",

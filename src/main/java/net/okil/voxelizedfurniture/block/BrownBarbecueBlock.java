@@ -3,7 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,7 +17,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class BrownBarbecueBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(15, 0.5, 3, 17, 2.5, 3.9), box(14.5, 0, 3.1, 17.5, 3, 4), box(15, 0.5, 16.1, 17, 2.5, 17), box(14.5, 0, 16, 17.5, 3, 16.9), box(15, 0, 4, 16, 18, 5), box(1, 2, 4, 15, 3, 5),
 			box(1, 2, 15, 15, 3, 16), box(15, 2, 5, 16, 3, 15), box(0, 2, 5, 1, 3, 15), box(0, 0, 4, 1, 18, 5), box(1, 11, 4, 15, 16, 5), box(6, 12, 3.25, 10, 15, 4), box(6.75, 13.25, 2.85, 7.5, 14, 3.1), box(5.8, 11.9, 3.95, 10.1, 15.1, 4),
 			box(1, 16.3, 4, 15, 18, 5), box(1, 10, 4, 15, 11, 5), box(0, 18, 4, 16, 19, 5), box(12, 18, 3, 13, 19, 4), box(3, 18, 3, 4, 19, 4), box(3, 18, 2, 13, 19, 3), box(1, 11, 15, 15, 16, 16), box(0, 11, 5, 16, 16, 15),
@@ -39,18 +39,18 @@ public class BrownBarbecueBlock extends Block {
 			box(5, 16.3, 0, 15, 18, 16), box(5, 17.3, 16, 15, 18, 17), box(5, 17.3, 17.5, 15, 18, 18.5), box(5, 17.3, 19, 15, 18, 20), box(9.5, 17.4, 13, 10.5, 17.8, 22), box(5, 17.3, 20.5, 15, 18, 21.5), box(5, 17.3, 22, 15, 18, 23),
 			box(5, 18, 0, 16, 20, 16), box(6, 20, 0, 16, 22, 16), box(8.1, 22, 0, 16, 24.1, 16), box(5, 13.3, 1, 15, 17, 15), box(15, 16.3, 1, 16, 18, 15), box(15, 0, 0, 16, 18, 1), box(15, 0, 15, 16, 18, 16));
 
-	public BrownBarbecueBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(3f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public BrownBarbecueBlock() {
+		super(BlockBehaviour.Properties.of().strength(3f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

@@ -2,11 +2,21 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:mangrove_trapdoor",
-    "minecraft:mangrove_planks",
-    "minecraft:mangrove_planks",
-    "minecraft:stick",
-    "minecraft:stick"
+    {
+      "item": "minecraft:mangrove_trapdoor"
+    },
+    {
+      "item": "minecraft:mangrove_planks"
+    },
+    {
+      "item": "minecraft:mangrove_planks"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:mangrove_chair_1",

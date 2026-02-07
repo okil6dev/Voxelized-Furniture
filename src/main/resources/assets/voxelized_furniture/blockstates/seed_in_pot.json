@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "blockstate=0": {
+      "model": "voxelized_furniture:block/seed_in_pot"
+    },
+    "blockstate=1": {
+      "model": "voxelized_furniture:block/seed_in_pot_b_blockstate_0"
+    }
+  }
+}

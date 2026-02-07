@@ -1,15 +1,7 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    " a ",
-    "bcb",
-    "bbb"
-  ],
-  "key": {
-    "a": "minecraft:stone_slab",
-    "b": "minecraft:gold_ingot",
-    "c": "minecraft:grass_block"
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:nature_set"
   },
   "result": {
     "id": "voxelized_furniture:golden_zen_fountain",

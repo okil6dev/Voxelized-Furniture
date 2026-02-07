@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Crafting",
+    "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
     "unlockingItems": [],
@@ -11,36 +11,10 @@
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "recipeSlots": [
-      {
-        "value": "Blocks.CARPET"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#0"
-      },
-      {
-        "value": "Blocks.CARPET"
-      },
-      {
-        "value": "Blocks.GLASS_PANE"
-      },
-      {
-        "value": "Items.HONEY_BOTTLE"
-      },
-      {
-        "value": "Blocks.GLASS_PANE"
-      },
-      {
-        "value": "Blocks.GLASS_PANE"
-      },
-      {
-        "value": "Blocks.GLASS_PANE"
-      },
-      {
-        "value": "Blocks.GLASS_PANE"
-      }
-    ],
-    "recipeReturnStack": {
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:FoodSet"
+    },
+    "stoneCuttingReturnStack": {
       "value": "CUSTOM:HoneyJar"
     },
     "name": "honey_jar_craft",

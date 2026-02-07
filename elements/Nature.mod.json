@@ -4,7 +4,7 @@
   "definition": {
     "name": "Nature",
     "icon": {
-      "value": "CUSTOM:PottedGreenPlant"
+      "value": "CUSTOM:SeedInPot"
     },
     "showSearch": true
   }

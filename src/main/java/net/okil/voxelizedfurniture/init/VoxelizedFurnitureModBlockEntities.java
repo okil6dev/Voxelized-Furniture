@@ -84,11 +84,12 @@ public class VoxelizedFurnitureModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BirchToiletRollBlockEntity>> BIRCH_TOILET_ROLL = register("birch_toilet_roll", VoxelizedFurnitureModBlocks.BIRCH_TOILET_ROLL, BirchToiletRollBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooToiletRollBlockEntity>> BAMBOO_TOILET_ROLL = register("bamboo_toilet_roll", VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL, BambooToiletRollBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AcaciaToiletRollBlockEntity>> ACACIA_TOILET_ROLL = register("acacia_toilet_roll", VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL, AcaciaToiletRollBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SeedInPotBlockEntity>> SEED_IN_POT = register("seed_in_pot", VoxelizedFurnitureModBlocks.SEED_IN_POT, SeedInPotBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
 	private static <T extends BlockEntity> DeferredHolder<BlockEntityType<?>, BlockEntityType<T>> register(String registryname, DeferredHolder<Block, Block> block, BlockEntityType.BlockEntitySupplier<T> supplier) {
-		return REGISTRY.register(registryname, () -> new BlockEntityType(supplier, block.get()));
+		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
 	}
 
 	@SubscribeEvent
@@ -155,5 +156,6 @@ public class VoxelizedFurnitureModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BIRCH_TOILET_ROLL.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_TOILET_ROLL.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ACACIA_TOILET_ROLL.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SEED_IN_POT.get(), SidedInvWrapper::new);
 	}
 }

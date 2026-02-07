@@ -12,18 +12,14 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.fml.util.thread.SidedThreadGroups;
-import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.IEventBus;
 
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.util.Tuple;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.FriendlyByteBuf;
-
-import javax.annotation.Nullable;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Map;
@@ -31,10 +27,6 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Collection;
 import java.util.ArrayList;
-
-import java.lang.invoke.MethodType;
-import java.lang.invoke.MethodHandles;
-import java.lang.invoke.MethodHandle;
 
 @Mod("voxelized_furniture")
 public class VoxelizedFurnitureMod {
@@ -54,6 +46,7 @@ public class VoxelizedFurnitureMod {
 		VoxelizedFurnitureModTabs.REGISTRY.register(modEventBus);
 		VoxelizedFurnitureModVariables.ATTACHMENT_TYPES.register(modEventBus);
 		VoxelizedFurnitureModMenus.REGISTRY.register(modEventBus);
+		VoxelizedFurnitureModParticleTypes.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
 		// End of user code block mod init
 	}
@@ -75,7 +68,7 @@ public class VoxelizedFurnitureMod {
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	private void registerNetworking(final RegisterPayloadHandlersEvent event) {
 		final PayloadRegistrar registrar = event.registrar(MODID);
-		MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id, ((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler(), ((NetworkMessage) networkMessage).handler()));
+		MESSAGES.forEach((id, networkMessage) -> registrar.playBidirectional(id, ((NetworkMessage) networkMessage).reader(), ((NetworkMessage) networkMessage).handler()));
 		networkingRegistered = true;
 	}
 
@@ -96,27 +89,5 @@ public class VoxelizedFurnitureMod {
 		});
 		actions.forEach(e -> e.getA().run());
 		workQueue.removeAll(actions);
-	}
-
-	private static Object minecraft;
-	private static MethodHandle playerHandle;
-
-	@Nullable
-	public static Player clientPlayer() {
-		if (FMLEnvironment.dist.isClient()) {
-			try {
-				if (minecraft == null || playerHandle == null) {
-					Class<?> minecraftClass = Class.forName("net.minecraft.client.Minecraft");
-					minecraft = MethodHandles.publicLookup().findStatic(minecraftClass, "getInstance", MethodType.methodType(minecraftClass)).invoke();
-					playerHandle = MethodHandles.publicLookup().findGetter(minecraftClass, "player", Class.forName("net.minecraft.client.player.LocalPlayer"));
-				}
-				return (Player) playerHandle.invoke(minecraft);
-			} catch (Throwable e) {
-				LOGGER.error("Failed to get client player", e);
-				return null;
-			}
-		} else {
-			return null;
-		}
 	}
 }

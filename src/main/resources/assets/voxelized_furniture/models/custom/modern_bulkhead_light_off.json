@@ -621,17 +621,17 @@
   ],
   "display": {
     "thirdperson_righthand": {
-      "translation": [
-        0,
-        0,
-        -8.25
+      "scale": [
+        0.5,
+        0.5,
+        0.5
       ]
     },
     "thirdperson_lefthand": {
-      "translation": [
-        0,
-        0,
-        -8.25
+      "scale": [
+        0.5,
+        0.5,
+        0.5
       ]
     },
     "firstperson_righthand": {
@@ -667,8 +667,8 @@
         0
       ],
       "translation": [
-        0,
-        0,
+        2.5,
+        -1,
         0
       ],
       "scale": [
@@ -694,7 +694,7 @@
     "on_shelf": {
       "rotation": [
         0,
-        180,
+        -180,
         0
       ],
       "translation": [

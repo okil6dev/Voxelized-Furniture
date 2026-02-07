@@ -3,11 +3,7 @@
  */
 package net.okil.voxelizedfurniture.init;
 
-import net.okil.voxelizedfurniture.client.gui.WardrobeGuiScreen;
-import net.okil.voxelizedfurniture.client.gui.ShelfGuiScreen;
-import net.okil.voxelizedfurniture.client.gui.KitchenCounterGuiScreen;
-import net.okil.voxelizedfurniture.client.gui.FridgeGuiScreen;
-import net.okil.voxelizedfurniture.client.gui.CabinetsGuiScreen;
+import net.okil.voxelizedfurniture.client.gui.*;
 
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -23,6 +19,7 @@ public class VoxelizedFurnitureModScreens {
 		event.register(VoxelizedFurnitureModMenus.SHELF_GUI.get(), ShelfGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.WARDROBE_GUI.get(), WardrobeGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.KITCHEN_COUNTER_GUI.get(), KitchenCounterGuiScreen::new);
+		event.register(VoxelizedFurnitureModMenus.SEED_IN_POT_SETTINGS.get(), SeedInPotSettingsScreen::new);
 	}
 
 	public interface ScreenAccessor {

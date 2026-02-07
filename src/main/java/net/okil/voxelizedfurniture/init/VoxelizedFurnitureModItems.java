@@ -15,8 +15,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
-import java.util.function.Function;
-
 public class VoxelizedFurnitureModItems {
 	public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(VoxelizedFurnitureMod.MODID);
 	public static final DeferredItem<Item> CABINET_OAK;
@@ -28,7 +26,6 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> CABINET_JUNGLE;
 	public static final DeferredItem<Item> CABINET_BAMBOO;
 	public static final DeferredItem<Item> FRIDGE;
-	public static final DeferredItem<Item> GREENWALL;
 	public static final DeferredItem<Item> OAK_SINK;
 	public static final DeferredItem<Item> SPRUCE_SINK;
 	public static final DeferredItem<Item> MANGROVE_SINK;
@@ -136,8 +133,13 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> ACACIA_TOILET_ROLL;
 	public static final DeferredItem<Item> GREEN_BAMBOO_PLANT;
 	public static final DeferredItem<Item> BARREL_PLANT;
-	public static final DeferredItem<Item> VARIATED_BRICKS;
-	public static final DeferredItem<Item> YELLOW_VARIATED_BRICKS;
+	public static final DeferredItem<Item> SEED_IN_POT;
+	public static final DeferredItem<Item> BATHROOM_SET;
+	public static final DeferredItem<Item> NATURE_SET;
+	public static final DeferredItem<Item> FOOD_SET;
+	public static final DeferredItem<Item> KITCHEN_SET;
+	public static final DeferredItem<Item> GREEN_TENT_PART;
+	public static final DeferredItem<Item> IRON_TENT_PART;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -148,7 +150,6 @@ public class VoxelizedFurnitureModItems {
 		CABINET_JUNGLE = block(VoxelizedFurnitureModBlocks.CABINET_JUNGLE);
 		CABINET_BAMBOO = block(VoxelizedFurnitureModBlocks.CABINET_BAMBOO);
 		FRIDGE = block(VoxelizedFurnitureModBlocks.FRIDGE, new Item.Properties().fireResistant());
-		GREENWALL = block(VoxelizedFurnitureModBlocks.GREENWALL);
 		OAK_SINK = block(VoxelizedFurnitureModBlocks.OAK_SINK);
 		SPRUCE_SINK = block(VoxelizedFurnitureModBlocks.SPRUCE_SINK);
 		MANGROVE_SINK = block(VoxelizedFurnitureModBlocks.MANGROVE_SINK);
@@ -161,7 +162,7 @@ public class VoxelizedFurnitureModItems {
 		CABINET_SPRUCE = block(VoxelizedFurnitureModBlocks.CABINET_SPRUCE);
 		JAM_JAR = block(VoxelizedFurnitureModBlocks.JAM_JAR);
 		HONEY_JAR = block(VoxelizedFurnitureModBlocks.HONEY_JAR);
-		JAM_BOTTLE = register("jam_bottle", JamBottleItem::new);
+		JAM_BOTTLE = REGISTRY.register("jam_bottle", JamBottleItem::new);
 		SHOWER = block(VoxelizedFurnitureModBlocks.SHOWER, new Item.Properties().fireResistant());
 		OAK_SHELF = block(VoxelizedFurnitureModBlocks.OAK_SHELF);
 		SPRUCE_SHELF = block(VoxelizedFurnitureModBlocks.SPRUCE_SHELF);
@@ -256,21 +257,22 @@ public class VoxelizedFurnitureModItems {
 		ACACIA_TOILET_ROLL = block(VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL);
 		GREEN_BAMBOO_PLANT = block(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT, new Item.Properties().fireResistant());
 		BARREL_PLANT = block(VoxelizedFurnitureModBlocks.BARREL_PLANT);
-		VARIATED_BRICKS = block(VoxelizedFurnitureModBlocks.VARIATED_BRICKS, new Item.Properties().fireResistant());
-		YELLOW_VARIATED_BRICKS = block(VoxelizedFurnitureModBlocks.YELLOW_VARIATED_BRICKS, new Item.Properties().fireResistant());
+		SEED_IN_POT = block(VoxelizedFurnitureModBlocks.SEED_IN_POT, new Item.Properties().fireResistant());
+		BATHROOM_SET = block(VoxelizedFurnitureModBlocks.BATHROOM_SET);
+		NATURE_SET = block(VoxelizedFurnitureModBlocks.NATURE_SET);
+		FOOD_SET = block(VoxelizedFurnitureModBlocks.FOOD_SET);
+		KITCHEN_SET = block(VoxelizedFurnitureModBlocks.KITCHEN_SET);
+		GREEN_TENT_PART = block(VoxelizedFurnitureModBlocks.GREEN_TENT_PART, new Item.Properties().fireResistant());
+		IRON_TENT_PART = block(VoxelizedFurnitureModBlocks.IRON_TENT_PART, new Item.Properties().fireResistant());
 	}
 
 	// Start of user code block custom items
 	// End of user code block custom items
-	private static <I extends Item> DeferredItem<I> register(String name, Function<Item.Properties, ? extends I> supplier) {
-		return REGISTRY.registerItem(name, supplier, new Item.Properties());
-	}
-
 	private static DeferredItem<Item> block(DeferredHolder<Block, Block> block) {
 		return block(block, new Item.Properties());
 	}
 
 	private static DeferredItem<Item> block(DeferredHolder<Block, Block> block, Item.Properties properties) {
-		return REGISTRY.registerItem(block.getId().getPath(), prop -> new BlockItem(block.get(), prop), properties);
+		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), properties));
 	}
 }

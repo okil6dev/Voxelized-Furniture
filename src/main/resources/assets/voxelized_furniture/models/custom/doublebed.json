@@ -1854,9 +1854,9 @@
   "display": {
     "thirdperson_righthand": {
       "translation": [
-        0,
-        0.75,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
         0.5,
@@ -1866,9 +1866,9 @@
     },
     "thirdperson_lefthand": {
       "translation": [
-        0,
-        0.75,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
         0.5,

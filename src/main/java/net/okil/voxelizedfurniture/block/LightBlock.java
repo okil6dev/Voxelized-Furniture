@@ -23,8 +23,8 @@ public class LightBlock extends Block {
 	private static final VoxelShape SHAPE_1 = Shapes.or(box(7, 6, 7, 9, 16, 9), box(5, 0, 5, 11, 6, 11));
 	private static final VoxelShape SHAPE = Shapes.or(box(7, 6, 7, 9, 16, 9), box(5, 0, 5, 11, 6, 11));
 
-	public LightBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.GLASS).strength(2f, 4f).lightLevel(s -> (new Object() {
+	public LightBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(2f, 4f).lightLevel(s -> (new Object() {
 			public int getLightLevel() {
 				if (s.getValue(BLOCKSTATE) == 1)
 					return 15;
@@ -34,12 +34,12 @@ public class LightBlock extends Block {
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

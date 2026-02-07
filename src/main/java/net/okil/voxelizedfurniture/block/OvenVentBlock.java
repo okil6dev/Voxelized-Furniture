@@ -5,7 +5,7 @@ import net.okil.voxelizedfurniture.block.entity.OvenVentBlockEntity;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,12 +17,11 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class OvenVentBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(1, 0, 5.5, 15, 2, 7), box(1, 0, 7, 2, 2, 16), box(2, 0, 15, 14, 2, 16), box(14, 0, 7, 15, 2, 16), box(2, 2, 7, 14, 3, 9), box(2, 2, 15, 14, 3, 16), box(13, 2, 9, 14, 3, 15),
 			box(2, 2, 9, 3, 3, 15), box(3, 3, 8.5, 13, 4, 11), box(3, 3, 11, 4, 4, 15), box(12, 3, 11, 13, 4, 15), box(3, 3, 15, 13, 4, 16), box(4, 4, 15, 12, 5, 16), box(4, 4, 10, 12, 5, 12), box(11, 4, 12, 12, 5, 15), box(4, 4, 12, 5, 5, 15),
 			box(5, 5, 11.25, 11, 6, 12), box(5, 5, 15.25, 11, 6, 16), box(5, 5, 12, 6, 6, 15.25), box(10, 5, 12, 11, 6, 15.25), box(6, 6, 15, 10, 16, 16), box(6, 6, 12, 10, 16, 13), box(7, 15, 13, 9, 16, 15), box(6, 6, 13, 7, 16, 15),
@@ -38,18 +37,18 @@ public class OvenVentBlock extends Block implements EntityBlock {
 			box(11.25, 5, 5, 12, 6, 11), box(15.25, 5, 5, 16, 6, 11), box(12, 5, 10, 15.25, 6, 11), box(12, 5, 5, 15.25, 6, 6), box(15, 6, 6, 16, 16, 10), box(12, 6, 6, 13, 16, 10), box(13, 15, 7, 15, 16, 9), box(13, 6, 9, 15, 16, 10),
 			box(13, 6, 6, 15, 16, 7));
 
-	public OvenVentBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.METAL).strength(5f, 7f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public OvenVentBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(5f, 7f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -107,8 +106,15 @@ public class OvenVentBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof OvenVentBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override

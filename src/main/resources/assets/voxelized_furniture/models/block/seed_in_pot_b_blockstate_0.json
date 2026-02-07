@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/seedinpot3d",
+  "textures": {
+    "all": "voxelized_furniture:block/smallseedplant",
+    "particle": "voxelized_furniture:block/smallseedplant",
+    "0": "minecraft:block/rooted_dirt",
+    "1": "voxelized_furniture:block/brickypot",
+    "2": "voxelized_furniture:block/smallseedplant"
+  },
+  "render_type": "cutout"
+}

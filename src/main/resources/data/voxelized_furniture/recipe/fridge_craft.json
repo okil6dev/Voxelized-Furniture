@@ -7,9 +7,15 @@
     "c"
   ],
   "key": {
-    "a": "minecraft:quartz_slab",
-    "b": "minecraft:barrel",
-    "c": "minecraft:quartz_block"
+    "a": {
+      "item": "minecraft:quartz_slab"
+    },
+    "b": {
+      "item": "minecraft:barrel"
+    },
+    "c": {
+      "item": "minecraft:quartz_block"
+    }
   },
   "result": {
     "id": "voxelized_furniture:fridge",

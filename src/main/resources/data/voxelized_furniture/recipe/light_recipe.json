@@ -6,8 +6,12 @@
     "b"
   ],
   "key": {
-    "a": "minecraft:chain",
-    "b": "minecraft:sea_lantern"
+    "a": {
+      "item": "minecraft:chain"
+    },
+    "b": {
+      "item": "minecraft:sea_lantern"
+    }
   },
   "result": {
     "id": "voxelized_furniture:light",

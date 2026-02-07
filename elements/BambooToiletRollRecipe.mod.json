@@ -1,0 +1,27 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:BathroomSet"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:BathroomSet"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:BambooToiletRoll"
+    },
+    "name": "bamboo_toilet_roll_recipe",
+    "namespace": "mod"
+  }
+}

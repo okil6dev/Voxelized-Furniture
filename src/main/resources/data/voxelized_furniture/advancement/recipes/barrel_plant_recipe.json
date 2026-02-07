@@ -11,17 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:barrel"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_ingredient_1": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:short_grass"
+            "items": "voxelized_furniture:nature_set"
           }
         ]
       },
@@ -31,8 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ingredient_0",
-      "has_ingredient_1"
+      "has_ingredient_0"
     ]
   ],
   "rewards": {

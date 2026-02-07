@@ -2,12 +2,24 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:oak_fence",
-    "minecraft:oak_fence",
-    "minecraft:oak_fence",
-    "#minecraft:slabs",
-    "#c:stones",
-    "#minecraft:slabs"
+    {
+      "item": "minecraft:oak_fence"
+    },
+    {
+      "item": "minecraft:oak_fence"
+    },
+    {
+      "item": "minecraft:oak_fence"
+    },
+    {
+      "tag": "minecraft:slabs"
+    },
+    {
+      "tag": "c:stones"
+    },
+    {
+      "tag": "minecraft:slabs"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:oak_cobble_path",

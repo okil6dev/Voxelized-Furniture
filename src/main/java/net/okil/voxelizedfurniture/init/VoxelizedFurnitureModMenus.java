@@ -3,11 +3,7 @@
  */
 package net.okil.voxelizedfurniture.init;
 
-import net.okil.voxelizedfurniture.world.inventory.WardrobeGuiMenu;
-import net.okil.voxelizedfurniture.world.inventory.ShelfGuiMenu;
-import net.okil.voxelizedfurniture.world.inventory.KitchenCounterGuiMenu;
-import net.okil.voxelizedfurniture.world.inventory.FridgeGuiMenu;
-import net.okil.voxelizedfurniture.world.inventory.CabinetsGuiMenu;
+import net.okil.voxelizedfurniture.world.inventory.*;
 import net.okil.voxelizedfurniture.network.MenuStateUpdateMessage;
 import net.okil.voxelizedfurniture.VoxelizedFurnitureMod;
 
@@ -15,7 +11,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
-import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.MenuType;
@@ -33,6 +28,7 @@ public class VoxelizedFurnitureModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<ShelfGuiMenu>> SHELF_GUI = REGISTRY.register("shelf_gui", () -> IMenuTypeExtension.create(ShelfGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<WardrobeGuiMenu>> WARDROBE_GUI = REGISTRY.register("wardrobe_gui", () -> IMenuTypeExtension.create(WardrobeGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<KitchenCounterGuiMenu>> KITCHEN_COUNTER_GUI = REGISTRY.register("kitchen_counter_gui", () -> IMenuTypeExtension.create(KitchenCounterGuiMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<SeedInPotSettingsMenu>> SEED_IN_POT_SETTINGS = REGISTRY.register("seed_in_pot_settings", () -> IMenuTypeExtension.create(SeedInPotSettingsMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
@@ -46,7 +42,7 @@ public class VoxelizedFurnitureModMenus {
 			} else if (player.level().isClientSide) {
 				if (Minecraft.getInstance().screen instanceof VoxelizedFurnitureModScreens.ScreenAccessor accessor && needClientUpdate)
 					accessor.updateMenuState(elementType, name, elementState);
-				ClientPacketDistributor.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
+				PacketDistributor.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
 			}
 		}
 

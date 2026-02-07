@@ -3,11 +3,13 @@ package net.okil.voxelizedfurniture.block;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
 
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -23,24 +25,24 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.BiomeColors;
 
 public class MiniatureWaterRuinBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = box(0, 0, 0, 16, 9, 16);
 	private static final VoxelShape SHAPE_SOUTH = box(0, 0, 0, 16, 9, 16);
 	private static final VoxelShape SHAPE_EAST = box(0, 0, 0, 16, 9, 16);
 	private static final VoxelShape SHAPE_WEST = box(0, 0, 0, 16, 9, 16);
 
-	public MiniatureWaterRuinBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(2f, 4f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public MiniatureWaterRuinBlock() {
+		super(BlockBehaviour.Properties.of().strength(2f, 4f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -79,9 +81,17 @@ public class MiniatureWaterRuinBlock extends Block {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
-		event.register((bs, world, pos, index) -> {
-			return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.FOLIAGE_DEFAULT;
+		event.getBlockColors().register((bs, world, pos, index) -> {
+			return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor();
+		}, VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.get());
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
+		event.getItemColors().register((stack, index) -> {
+			return FoliageColor.getDefaultColor();
 		}, VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.get());
 	}
 }

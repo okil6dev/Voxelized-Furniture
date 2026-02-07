@@ -1,0 +1,56 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 9,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Blocks.CONCRETE#0"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Blocks.CONCRETE#0"
+      },
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Items.DYE#3"
+      },
+      {
+        "value": "Items.DYE#3"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:KitchenSet"
+    },
+    "name": "kitchen_set_recipe",
+    "namespace": "mod"
+  }
+}

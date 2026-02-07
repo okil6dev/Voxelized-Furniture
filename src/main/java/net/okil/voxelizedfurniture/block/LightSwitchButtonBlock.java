@@ -9,7 +9,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,7 +27,7 @@ import net.minecraft.core.BlockPos;
 
 public class LightSwitchButtonBlock extends Block {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(10.25, 0, 14, 11, 6, 16), box(5, 0, 14, 5.75, 6, 16), box(5.75, 0.75, 14.1, 10.25, 5.25, 16), box(5.75, 0, 14, 10.25, 0.75, 16), box(5.75, 5.25, 14, 10.25, 6, 16),
 			box(6, 0.9, 13.25, 10, 4.8, 15.25));
 	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(5, 0, 0, 5.75, 6, 2), box(10.25, 0, 0, 11, 6, 2), box(5.75, 0.75, 0, 10.25, 5.25, 1.9), box(5.75, 0, 0, 10.25, 0.75, 2), box(5.75, 5.25, 0, 10.25, 6, 2),
@@ -44,8 +44,8 @@ public class LightSwitchButtonBlock extends Block {
 	private static final VoxelShape SHAPE_WEST = Shapes.or(box(14, 0, 5, 16, 6, 5.75), box(14, 0, 10.25, 16, 6, 11), box(14.1, 0.75, 5.75, 16, 5.25, 10.25), box(14, 0, 5.75, 16, 0.75, 10.25), box(14, 5.25, 5.75, 16, 6, 10.25),
 			box(13.25, 1.05, 6, 15.25, 5, 10));
 
-	public LightSwitchButtonBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(1f, 2f).lightLevel(s -> (new Object() {
+	public LightSwitchButtonBlock() {
+		super(BlockBehaviour.Properties.of().strength(1f, 2f).lightLevel(s -> (new Object() {
 			public int getLightLevel() {
 				if (s.getValue(BLOCKSTATE) == 1)
 					return 0;
@@ -56,12 +56,12 @@ public class LightSwitchButtonBlock extends Block {
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

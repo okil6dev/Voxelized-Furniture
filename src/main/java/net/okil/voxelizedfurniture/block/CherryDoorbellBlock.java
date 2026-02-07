@@ -10,7 +10,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -24,13 +24,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class CherryDoorbellBlock extends Block implements EntityBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(4, 2, 14, 12, 14, 16), box(6, 6, 13.5, 10, 10, 14));
 	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(4, 2, 0, 12, 14, 2), box(6, 6, 2, 10, 10, 2.5));
 	private static final VoxelShape SHAPE_1_EAST = Shapes.or(box(0, 2, 4, 2, 14, 12), box(2, 6, 6, 2.5, 10, 10));
@@ -40,8 +39,8 @@ public class CherryDoorbellBlock extends Block implements EntityBlock {
 	private static final VoxelShape SHAPE_EAST = Shapes.or(box(0, 2, 4, 2, 14, 12), box(2, 6, 6, 3.5, 10, 10));
 	private static final VoxelShape SHAPE_WEST = Shapes.or(box(14, 2, 4, 16, 14, 12), box(12.5, 6, 6, 14, 10, 10));
 
-	public CherryDoorbellBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(2f, 5f).lightLevel(s -> (new Object() {
+	public CherryDoorbellBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2f, 5f).lightLevel(s -> (new Object() {
 			public int getLightLevel() {
 				if (s.getValue(BLOCKSTATE) == 1)
 					return 0;
@@ -52,12 +51,12 @@ public class CherryDoorbellBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -138,8 +137,15 @@ public class CherryDoorbellBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof CherryDoorbellBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override

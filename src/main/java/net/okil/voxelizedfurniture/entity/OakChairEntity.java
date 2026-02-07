@@ -13,7 +13,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.AbstractThrownPotion;
+import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -50,32 +50,32 @@ public class OakChairEntity extends PathfinderMob {
 
 	protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource source, boolean recentlyHitIn) {
 		super.dropCustomDeathLoot(serverLevel, source, recentlyHitIn);
-		this.spawnAtLocation(serverLevel, new ItemStack(VoxelizedFurnitureModBlocks.OAK_CHAIR_1.get()));
+		this.spawnAtLocation(new ItemStack(VoxelizedFurnitureModBlocks.OAK_CHAIR_1.get()));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.hurt"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.generic.death"));
+		return BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("entity.generic.death"));
 	}
 
 	@Override
-	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.getDirectEntity() instanceof AbstractThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud || damagesource.typeHolder().is(NeoForgeMod.POISON_DAMAGE))
+	public boolean hurt(DamageSource damagesource, float amount) {
+		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud || damagesource.typeHolder().is(NeoForgeMod.POISON_DAMAGE))
 			return false;
 		if (damagesource.is(DamageTypes.CACTUS))
 			return false;
 		if (damagesource.is(DamageTypes.DROWN))
 			return false;
-		return super.hurtServer(level, damagesource, amount);
+		return super.hurt(damagesource, amount);
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason reason, @Nullable SpawnGroupData livingdata) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata);
 		OakChairOnInitialEntitySpawnProcedure.execute(this);
 		return retval;
@@ -84,7 +84,7 @@ public class OakChairEntity extends PathfinderMob {
 	@Override
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.SUCCESS;
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
 		super.mobInteract(sourceentity, hand);
 		sourceentity.startRiding(this);
 		double x = this.getX();
@@ -129,7 +129,7 @@ public class OakChairEntity extends PathfinderMob {
 	}
 
 	@Override
-	public boolean canBeCollidedWith(Entity sourceentity) {
+	public boolean canBeCollidedWith() {
 		return true;
 	}
 

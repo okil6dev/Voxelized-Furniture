@@ -41,7 +41,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:JungleChair1"
+      "value": "CUSTOM:DarkOakChair1"
     },
     "name": "dark_oak_chair_craft",
     "namespace": "mod"

@@ -9,7 +9,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -28,7 +28,7 @@ import net.minecraft.core.BlockPos;
 
 public class OakToiletRollBlock extends Block {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(4, 6, 15, 12, 11, 16), box(4, 8.25, 12.75, 12, 8.75, 13.25), box(11.5, 8.25, 13.25, 12, 8.75, 15), box(4, 8.25, 13.25, 4.5, 8.75, 15), box(5.5, 6.75, 13.5, 10.5, 9.75, 14.5),
 			box(5.5, 6.75, 11.5, 10.5, 9.75, 12.5), box(5.5, 8.75, 12.5, 10.5, 9.75, 13.5), box(5.5, 6.75, 12.5, 10.5, 7.75, 13.5));
 	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(4, 6, 0, 12, 11, 1), box(4, 8.25, 2.75, 12, 8.75, 3.25), box(4, 8.25, 1, 4.5, 8.75, 2.75), box(11.5, 8.25, 1, 12, 8.75, 2.75), box(5.5, 6.75, 1.5, 10.5, 9.75, 2.5),
@@ -42,8 +42,8 @@ public class OakToiletRollBlock extends Block {
 	private static final VoxelShape SHAPE_EAST = Shapes.or(box(0, 6, 4, 1, 11, 12), box(2.75, 8.25, 4, 3.25, 8.75, 12), box(1, 8.25, 11.5, 2.75, 8.75, 12), box(1, 8.25, 4, 2.75, 8.75, 4.5));
 	private static final VoxelShape SHAPE_WEST = Shapes.or(box(15, 6, 4, 16, 11, 12), box(12.75, 8.25, 4, 13.25, 8.75, 12), box(13.25, 8.25, 4, 15, 8.75, 4.5), box(13.25, 8.25, 11.5, 15, 8.75, 12));
 
-	public OakToiletRollBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(0.5f, 1f).lightLevel(s -> (new Object() {
+	public OakToiletRollBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(0.5f, 1f).lightLevel(s -> (new Object() {
 			public int getLightLevel() {
 				if (s.getValue(BLOCKSTATE) == 1)
 					return 0;
@@ -54,12 +54,12 @@ public class OakToiletRollBlock extends Block {
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

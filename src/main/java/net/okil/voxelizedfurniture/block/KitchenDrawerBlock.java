@@ -7,7 +7,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,7 +27,6 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
@@ -36,7 +35,7 @@ import net.minecraft.core.BlockPos;
 import io.netty.buffer.Unpooled;
 
 public class KitchenDrawerBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(0, 0, 3, 16, 14, 16), box(1, 12, 2.5, 15, 13, 3), box(1, 8, 2.5, 15, 9, 3), box(14, 9, 2.5, 15, 12, 3), box(1, 9, 2.5, 2, 12, 3), box(1, 3, 2.5, 2, 6, 3), box(1, 2, 2.5, 15, 3, 3),
 			box(1, 6, 2.5, 15, 7, 3), box(7, 6, 2, 9, 7, 2.5), box(7, 12, 2, 9, 13, 2.5), box(14, 3, 2.5, 15, 6, 3), box(0, 14, 7, 16, 16, 10), box(0, 14, 11, 16, 16, 14), box(0, 14, 15, 16, 16, 16), box(0, 14, 14, 16, 16, 15),
 			box(0, 14, 10, 16, 16, 11), box(0, 14, 6, 16, 16, 7), box(0, 14, 2.25, 16, 16, 6));
@@ -50,18 +49,18 @@ public class KitchenDrawerBlock extends Block implements EntityBlock {
 			box(2.5, 6, 1, 3, 7, 15), box(2, 6, 7, 2.5, 7, 9), box(2, 12, 7, 2.5, 13, 9), box(2.5, 3, 1, 3, 6, 2), box(7, 14, 0, 10, 16, 16), box(11, 14, 0, 14, 16, 16), box(15, 14, 0, 16, 16, 16), box(14, 14, 0, 15, 16, 16),
 			box(10, 14, 0, 11, 16, 16), box(6, 14, 0, 7, 16, 16), box(2.25, 14, 0, 6, 16, 16));
 
-	public KitchenDrawerBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public KitchenDrawerBlock() {
+		super(BlockBehaviour.Properties.of().strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -138,8 +137,15 @@ public class KitchenDrawerBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof KitchenDrawerBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override

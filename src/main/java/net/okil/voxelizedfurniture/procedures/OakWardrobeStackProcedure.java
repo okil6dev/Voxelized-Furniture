@@ -2,8 +2,10 @@ package net.okil.voxelizedfurniture.procedures;
 
 import net.okil.voxelizedfurniture.VoxelizedFurnitureMod;
 
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
@@ -22,10 +24,13 @@ public class OakWardrobeStackProcedure {
 						Direction _dir = (getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z)))));
 						BlockPos _pos = BlockPos.containing(x, 1 + y, z);
 						BlockState _bs = world.getBlockState(_pos);
-						if (_bs.getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+						Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+						if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
 							world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
-						} else if (_bs.getBlock().getStateDefinition().getProperty("axis") instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis())) {
-							world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
+						} else {
+							_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+							if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+								world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 						}
 					}
 					{
@@ -40,10 +45,13 @@ public class OakWardrobeStackProcedure {
 						Direction _dir = (getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z)))));
 						BlockPos _pos = BlockPos.containing(x, 2 + y, z);
 						BlockState _bs = world.getBlockState(_pos);
-						if (_bs.getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty _dp && _dp.getPossibleValues().contains(_dir)) {
+						Property<?> _property = _bs.getBlock().getStateDefinition().getProperty("facing");
+						if (_property instanceof DirectionProperty _dp && _dp.getPossibleValues().contains(_dir)) {
 							world.setBlock(_pos, _bs.setValue(_dp, _dir), 3);
-						} else if (_bs.getBlock().getStateDefinition().getProperty("axis") instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis())) {
-							world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
+						} else {
+							_property = _bs.getBlock().getStateDefinition().getProperty("axis");
+							if (_property instanceof EnumProperty _ap && _ap.getPossibleValues().contains(_dir.getAxis()))
+								world.setBlock(_pos, _bs.setValue(_ap, _dir.getAxis()), 3);
 						}
 					}
 					{
@@ -64,10 +72,10 @@ public class OakWardrobeStackProcedure {
 	}
 
 	private static Direction getDirectionFromBlockState(BlockState blockState) {
-		if (blockState.getBlock().getStateDefinition().getProperty("facing") instanceof EnumProperty ep && ep.getValueClass() == Direction.class)
-			return (Direction) blockState.getValue(ep);
-		if (blockState.getBlock().getStateDefinition().getProperty("axis") instanceof EnumProperty ep && ep.getValueClass() == Direction.Axis.class)
-			return Direction.fromAxisAndDirection((Direction.Axis) blockState.getValue(ep), Direction.AxisDirection.POSITIVE);
-		return Direction.NORTH;
+		Property<?> prop = blockState.getBlock().getStateDefinition().getProperty("facing");
+		if (prop instanceof DirectionProperty dp)
+			return blockState.getValue(dp);
+		prop = blockState.getBlock().getStateDefinition().getProperty("axis");
+		return prop instanceof EnumProperty ep && ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) blockState.getValue(ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 	}
 }

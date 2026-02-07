@@ -2,14 +2,24 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:dark_oak_trapdoor",
-    "minecraft:dark_oak_planks",
-    "minecraft:dark_oak_planks",
-    "minecraft:stick",
-    "minecraft:stick"
+    {
+      "item": "minecraft:dark_oak_trapdoor"
+    },
+    {
+      "item": "minecraft:dark_oak_planks"
+    },
+    {
+      "item": "minecraft:dark_oak_planks"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
+    }
   ],
   "result": {
-    "id": "voxelized_furniture:jungle_chair_1",
+    "id": "voxelized_furniture:dark_oak_chair_1",
     "count": 1
   }
 }

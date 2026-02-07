@@ -2,45 +2,23 @@
   "_fv": 79,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Crafting",
-    "recipeRetstackSize": 3,
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:KitchenSet"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": true,
-    "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.NORMAL_STONE_SLAB"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.NORMAL_STONE_STAIRS"
-      },
-      {
-        "value": "Blocks.STONE#0"
-      },
-      {
-        "value": "Blocks.NORMAL_STONE_STAIRS"
-      }
-    ],
-    "recipeReturnStack": {
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:KitchenSet"
+    },
+    "stoneCuttingReturnStack": {
       "value": "CUSTOM:OvenVent"
     },
     "name": "oven_vent_recipe",

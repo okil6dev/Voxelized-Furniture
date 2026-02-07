@@ -1,8 +1,10 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:light_blue_concrete_powder",
+  "ingredient": {
+    "item": "voxelized_furniture:bathroom_set"
+  },
   "result": {
     "id": "voxelized_furniture:soap",
-    "count": 1
+    "count": 2
   }
 }

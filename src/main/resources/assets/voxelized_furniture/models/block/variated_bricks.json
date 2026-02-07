@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "minecraft:block/bricks",
-    "particle": "minecraft:block/bricks"
-  },
-  "render_type": "cutout"
-}

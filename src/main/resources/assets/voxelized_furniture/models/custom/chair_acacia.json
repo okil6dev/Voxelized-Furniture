@@ -3511,6 +3511,20 @@
         0,
         1.75
       ]
+    },
+    "thirdperson_righthand": {
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "thirdperson_lefthand": {
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ]
     }
   }
 }

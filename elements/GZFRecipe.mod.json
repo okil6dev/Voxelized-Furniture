@@ -2,45 +2,23 @@
   "_fv": 79,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Crafting",
+    "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:NatureSet"
+      }
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.NORMAL_STONE_SLAB"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.GOLD_INGOT"
-      },
-      {
-        "value": "Blocks.GRASS"
-      },
-      {
-        "value": "Items.GOLD_INGOT"
-      },
-      {
-        "value": "Items.GOLD_INGOT"
-      },
-      {
-        "value": "Items.GOLD_INGOT"
-      },
-      {
-        "value": "Items.GOLD_INGOT"
-      }
-    ],
-    "recipeReturnStack": {
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:NatureSet"
+    },
+    "stoneCuttingReturnStack": {
       "value": "CUSTOM:GoldenZenFountain"
     },
     "name": "gzf_recipe",

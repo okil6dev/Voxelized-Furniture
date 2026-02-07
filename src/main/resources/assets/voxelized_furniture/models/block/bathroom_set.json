@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/shower_white",
+  "textures": {
+    "all": "voxelized_furniture:block/lightcoloron",
+    "particle": "voxelized_furniture:block/lightcoloron",
+    "3": "voxelized_furniture:block/lightcoloron"
+  },
+  "render_type": "solid"
+}

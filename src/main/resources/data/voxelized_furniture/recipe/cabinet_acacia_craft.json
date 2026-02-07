@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:acacia_planks",
+  "ingredient": {
+    "item": "minecraft:acacia_planks"
+  },
   "result": {
     "id": "voxelized_furniture:cabinet_acacia",
     "count": 1

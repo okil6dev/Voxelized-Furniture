@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "b": {
+      "tag": "minecraft:dirt"
+    }
+  },
+  "result": {
+    "id": "voxelized_furniture:nature_set",
+    "count": 9
+  }
+}

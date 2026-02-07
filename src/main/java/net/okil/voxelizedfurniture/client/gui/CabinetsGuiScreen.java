@@ -8,9 +8,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
+
+import com.mojang.blaze3d.systems.RenderSystem;
 
 public class CabinetsGuiScreen extends AbstractContainerScreen<CabinetsGuiMenu> implements VoxelizedFurnitureModScreens.ScreenAccessor {
 	private final Level world;
@@ -45,8 +46,12 @@ public class CabinetsGuiScreen extends AbstractContainerScreen<CabinetsGuiMenu> 
 
 	@Override
 	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
-		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, ResourceLocation.parse("voxelized_furniture:textures/screens/cabinettext.png"), this.leftPos + 69, this.topPos + 7, 0, 0, 40, 7, 40, 7);
+		RenderSystem.setShaderColor(1, 1, 1, 1);
+		RenderSystem.enableBlend();
+		RenderSystem.defaultBlendFunc();
+		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(ResourceLocation.parse("voxelized_furniture:textures/screens/cabinettext.png"), this.leftPos + 69, this.topPos + 7, 0, 0, 40, 7, 40, 7);
+		RenderSystem.disableBlend();
 	}
 
 	@Override

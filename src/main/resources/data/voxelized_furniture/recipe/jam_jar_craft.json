@@ -1,16 +1,7 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "aba",
-    "cdc",
-    "ccc"
-  ],
-  "key": {
-    "a": "#minecraft:wool_carpets",
-    "b": "minecraft:oak_slab",
-    "c": "minecraft:glass_pane",
-    "d": "voxelized_furniture:jam_bottle"
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:food_set"
   },
   "result": {
     "id": "voxelized_furniture:jam_jar",

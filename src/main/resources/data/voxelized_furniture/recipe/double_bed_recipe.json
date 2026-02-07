@@ -2,12 +2,24 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:light_blue_carpet",
-    "minecraft:white_wool",
-    "minecraft:spruce_wood",
-    "minecraft:spruce_wood",
-    "minecraft:spruce_wood",
-    "minecraft:spruce_wood"
+    {
+      "item": "minecraft:light_blue_carpet"
+    },
+    {
+      "item": "minecraft:white_wool"
+    },
+    {
+      "item": "minecraft:spruce_wood"
+    },
+    {
+      "item": "minecraft:spruce_wood"
+    },
+    {
+      "item": "minecraft:spruce_wood"
+    },
+    {
+      "item": "minecraft:spruce_wood"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:double_bed",

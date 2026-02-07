@@ -1,15 +1,7 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    " a ",
-    "bcb",
-    " c "
-  ],
-  "key": {
-    "a": "minecraft:quartz_slab",
-    "b": "minecraft:stone_button",
-    "c": "minecraft:quartz_block"
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:bathroom_set"
   },
   "result": {
     "id": "voxelized_furniture:shower",

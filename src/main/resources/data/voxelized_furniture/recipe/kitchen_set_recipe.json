@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "b": {
+      "item": "minecraft:white_concrete"
+    }
+  },
+  "result": {
+    "id": "voxelized_furniture:kitchen_set",
+    "count": 9
+  }
+}

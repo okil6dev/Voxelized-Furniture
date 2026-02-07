@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:nature_set"
+  },
+  "result": {
+    "id": "voxelized_furniture:seed_in_pot",
+    "count": 1
+  }
+}

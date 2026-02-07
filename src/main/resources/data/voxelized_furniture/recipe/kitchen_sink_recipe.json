@@ -1,10 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "voxelized_furniture:kitchen_drawer",
-    "minecraft:quartz_block"
-  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "voxelized_furniture:kitchen_set"
+  },
   "result": {
     "id": "voxelized_furniture:kitchen_sink",
     "count": 1

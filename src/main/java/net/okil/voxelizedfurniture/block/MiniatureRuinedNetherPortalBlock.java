@@ -5,41 +5,40 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.ScheduledTickAccess;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class MiniatureRuinedNetherPortalBlock extends Block implements SimpleWaterloggedBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(0, 0, 1, 16, 3, 15), box(6, 2, 8, 13, 10, 9));
 	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(0, 0, 1, 16, 3, 15), box(3, 2, 7, 10, 10, 8));
 	private static final VoxelShape SHAPE_EAST = Shapes.or(box(1, 0, 0, 15, 3, 16), box(7, 2, 6, 8, 10, 13));
 	private static final VoxelShape SHAPE_WEST = Shapes.or(box(1, 0, 0, 15, 3, 16), box(8, 2, 3, 9, 10, 10));
 
-	public MiniatureRuinedNetherPortalBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.NETHERRACK).strength(0.4f, 1f).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
+	public MiniatureRuinedNetherPortalBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.NETHERRACK).strength(0.4f, 1f).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return state.getFluidState().isEmpty();
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -85,10 +84,10 @@ public class MiniatureRuinedNetherPortalBlock extends Block implements SimpleWat
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess scheduledTickAccess, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random) {
+	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
 		if (state.getValue(WATERLOGGED)) {
-			scheduledTickAccess.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
-		return super.updateShape(state, world, scheduledTickAccess, currentPos, facing, facingPos, facingState, random);
+		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
 	}
 }

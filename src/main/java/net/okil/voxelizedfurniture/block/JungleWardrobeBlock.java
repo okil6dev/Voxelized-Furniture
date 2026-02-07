@@ -11,7 +11,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,7 +27,6 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
@@ -37,7 +36,7 @@ import io.netty.buffer.Unpooled;
 
 public class JungleWardrobeBlock extends Block implements EntityBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(0, 0, 0, 16, 2, 16), box(16, 0, 0, 32, 2, 16), box(15, 9, 0, 16, 16, 15), box(16, 15, 0, 31, 16, 15), box(16, 9, 0, 31, 15, 15), box(17, 13, -1, 20, 14, 0), box(16, 2, 0, 31, 8, 15),
 			box(17, 6, -1, 20, 7, 0), box(15, 2, 0, 16, 8, 15), box(0, 2, 0, 1, 16, 16), box(31, 2, 0, 32, 16, 16), box(1, 2, 15, 17, 16, 16), box(17, 2, 15, 31, 16, 16), box(1, 8, 0, 16, 9, 15), box(16, 8, 0, 31, 9, 15), box(1, 15, 0, 15, 16, 15));
 	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(0, 0, 0, 16, 2, 16), box(-16, 0, 0, 0, 2, 16), box(0, 9, 1, 1, 16, 16), box(-15, 15, 1, 0, 16, 16), box(-15, 9, 1, 0, 15, 16), box(-4, 13, 16, -1, 14, 17), box(-15, 2, 1, 0, 8, 16),
@@ -60,8 +59,8 @@ public class JungleWardrobeBlock extends Block implements EntityBlock {
 			box(0, 2, -16, 16, 16, -15), box(15, 2, -1, 16, 16, 15), box(15, 2, -15, 16, 16, -1), box(8, 2, 1, 15, 7, 15), box(2, 4, 1, 10, 7, 15), box(2, 4, -15, 10, 7, 1), box(8, 2, -15, 15, 7, 1), box(0, 7, 0, 15, 8, 15), box(0, 7, -15, 15, 8, 0),
 			box(0, 15, 1, 15, 16, 15));
 
-	public JungleWardrobeBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(3f, 5f).lightLevel(s -> (new Object() {
+	public JungleWardrobeBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(3f, 5f).lightLevel(s -> (new Object() {
 			public int getLightLevel() {
 				if (s.getValue(BLOCKSTATE) == 1)
 					return 0;
@@ -72,12 +71,12 @@ public class JungleWardrobeBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightBlock(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 
@@ -169,8 +168,15 @@ public class JungleWardrobeBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof JungleWardrobeBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "dbd"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:pumpkin_seeds"
+    },
+    "b": {
+      "item": "minecraft:wheat_seeds"
+    },
+    "c": {
+      "item": "minecraft:cooked_beef"
+    },
+    "d": {
+      "item": "minecraft:melon_seeds"
+    }
+  },
+  "result": {
+    "id": "voxelized_furniture:food_set",
+    "count": 9
+  }
+}

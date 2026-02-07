@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/greententpart",
+  "textures": {
+    "all": "voxelized_furniture:block/greententceilingtex",
+    "particle": "voxelized_furniture:block/greententceilingtex",
+    "0": "minecraft:block/gray_concrete",
+    "1": "voxelized_furniture:block/greententceilingtex"
+  },
+  "render_type": "cutout_mipped"
+}
