@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/cubeceilinglight_off",
+  "textures": {
+    "all": "voxelized_furniture:block/lightcoloroff",
+    "particle": "voxelized_furniture:block/lightcoloroff",
+    "2": "voxelized_furniture:block/lightcoloroff",
+    "3": "minecraft:block/gray_concrete"
+  },
+  "render_type": "solid"
+}

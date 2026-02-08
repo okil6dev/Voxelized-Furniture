@@ -5548,6 +5548,50 @@
         ]
       },
       "path": "~/Nature"
+    },
+    {
+      "name": "CubeCeilingLight",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cube_ceiling_light",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/cube_ceiling_light.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/CubeCeilingLightBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/cube_ceiling_light.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/cube_ceiling_light.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/cube_ceiling_light.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "CCLStates",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ccl_states",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/ccl_states_blockstate_0.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "CubeCeilingLightRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cube_ceiling_light_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/cube_ceiling_light_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/cube_ceiling_light_recipe.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
     }
   ],
   "variable_elements": [
@@ -5637,6 +5681,7 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:CubeCeilingLight",
       "~CUSTOM:SeedInPotRamdom",
       "~CUSTOM:SeedInPot",
       "~CUSTOM:GreenBambooPlant",
@@ -5952,7 +5997,8 @@
       "block.voxelized_furniture.kitchen_set": "Kitchen Set",
       "block.voxelized_furniture.seed_in_pot_ramdom": "Seed In Pot",
       "gui.voxelized_furniture.seed_in_pot_settings.button_ramdom": "Random 2D",
-      "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D"
+      "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D",
+      "block.voxelized_furniture.cube_ceiling_light": "Cube Ceiling Light"
     }
   },
   "metadata": {
@@ -6104,7 +6150,7 @@
   "workspaceSettings": {
     "modid": "voxelized_furniture",
     "modName": "Voxelized Furniture",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "This mod adds chairs, tables, kitchen sets, sinks, and small land pieces you can use in your builds. It’s mainly for decorating houses, rooms, and custom areas, and gives you more basic objects to work with when building or roleplaying.",
     "author": "okil6",
     "websiteURL": "https://github.com/okil6dev/Voxelized-Furniture",

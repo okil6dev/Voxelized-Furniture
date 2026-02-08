@@ -139,6 +139,7 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> FOOD_SET;
 	public static final DeferredItem<Item> KITCHEN_SET;
 	public static final DeferredItem<Item> SEED_IN_POT_RAMDOM;
+	public static final DeferredItem<Item> CUBE_CEILING_LIGHT;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -262,6 +263,7 @@ public class VoxelizedFurnitureModItems {
 		FOOD_SET = block(VoxelizedFurnitureModBlocks.FOOD_SET);
 		KITCHEN_SET = block(VoxelizedFurnitureModBlocks.KITCHEN_SET);
 		SEED_IN_POT_RAMDOM = block(VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM, new Item.Properties().fireResistant());
+		CUBE_CEILING_LIGHT = block(VoxelizedFurnitureModBlocks.CUBE_CEILING_LIGHT, new Item.Properties().fireResistant());
 	}
 
 	// Start of user code block custom items

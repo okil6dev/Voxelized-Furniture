@@ -262,5 +262,6 @@
   "block.voxelized_furniture.kitchen_set": "Kitchen Set",
   "block.voxelized_furniture.seed_in_pot_ramdom": "Seed In Pot",
   "gui.voxelized_furniture.seed_in_pot_settings.button_ramdom": "Random 2D",
-  "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D"
+  "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D",
+  "block.voxelized_furniture.cube_ceiling_light": "Cube Ceiling Light"
 }

@@ -138,6 +138,7 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> FOOD_SET;
 	public static final DeferredBlock<Block> KITCHEN_SET;
 	public static final DeferredBlock<Block> SEED_IN_POT_RAMDOM;
+	public static final DeferredBlock<Block> CUBE_CEILING_LIGHT;
 	static {
 		CABINET_OAK = REGISTRY.register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = REGISTRY.register("cabinet_birch", CabinetBirchBlock::new);
@@ -260,6 +261,7 @@ public class VoxelizedFurnitureModBlocks {
 		FOOD_SET = REGISTRY.register("food_set", FoodSetBlock::new);
 		KITCHEN_SET = REGISTRY.register("kitchen_set", KitchenSetBlock::new);
 		SEED_IN_POT_RAMDOM = REGISTRY.register("seed_in_pot_ramdom", SeedInPotRamdomBlock::new);
+		CUBE_CEILING_LIGHT = REGISTRY.register("cube_ceiling_light", CubeCeilingLightBlock::new);
 	}
 
 	// Start of user code block custom blocks

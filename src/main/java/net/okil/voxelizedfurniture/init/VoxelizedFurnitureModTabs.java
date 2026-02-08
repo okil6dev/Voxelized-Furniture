@@ -151,6 +151,7 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.LIGHT.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.LIGHT_SWITCH_BUTTON.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_OFF.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.CUBE_CEILING_LIGHT.get().asItem());
 			}).withSearchBar().withTabsBefore(BED_ROOM.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> OUTSIDE = REGISTRY.register("outside",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.outside")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH.get())).displayItems((parameters, tabData) -> {

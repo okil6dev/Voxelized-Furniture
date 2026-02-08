@@ -66,8 +66,8 @@ class MasterViewport(ctk.CTkFrame):
 class ModelStudioProV60(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("MODEL STUDIO PRO [v60 MASTER MULTI-SELECT]")
-        self.geometry("1200x950")
+        self.title("MODEL STUDIO PRO [v60 MASTER + EMISSIVE]")
+        self.geometry("1300x950")
         ctk.set_appearance_mode("dark")
         
         self.source_files = [] 
@@ -110,10 +110,7 @@ class ModelStudioProV60(ctk.CTk):
         self.inputs = {}
         for attr in ["rotation", "translation", "scale"]:
             f = ctk.CTkFrame(s2, fg_color="transparent"); f.pack(fill="x", pady=2)
-            
-            # Added Injection Checkbox
             ctk.CTkCheckBox(f, text=attr.capitalize(), variable=self.inject_toggles[attr], font=ctk.CTkFont(size=11), width=100).pack(side="left", padx=5)
-            
             self.inputs[attr] = []
             for i in range(3):
                 e = ctk.CTkEntry(f, width=60)
@@ -124,11 +121,20 @@ class ModelStudioProV60(ctk.CTk):
 
         ctk.CTkButton(s2, text="Inject Checked Data to All Loaded", fg_color="#16a085", command=self.save_display_to_all).pack(fill="x", padx=10, pady=10)
 
-        # 3. Tint Manager
+        # 3. Tint & Emissive Manager
         s3 = ctk.CTkFrame(left_panel); s3.pack(fill="x", padx=10, pady=5)
-        ctk.CTkLabel(s3, text="3. TINT MANAGEMENT", font=ctk.CTkFont(weight="bold")).pack(pady=5)
-        self.tint_scroll = ctk.CTkScrollableFrame(s3, height=120); self.tint_scroll.pack(fill="x", padx=5, pady=5)
+        ctk.CTkLabel(s3, text="3. TINT & EMISSIVE MANAGEMENT", font=ctk.CTkFont(weight="bold")).pack(pady=5)
+        self.tint_scroll = ctk.CTkScrollableFrame(s3, height=150); self.tint_scroll.pack(fill="x", padx=5, pady=5)
+        
+        # Action Buttons for Tints
         ctk.CTkButton(s3, text="Apply Tintindex:0 to All", fg_color="#e67e22", command=self.apply_tint_to_all).pack(fill="x", padx=10, pady=2)
+        
+        # Emissive Section
+        e_frame = ctk.CTkFrame(s3, fg_color="#2c3e50"); e_frame.pack(fill="x", padx=10, pady=5)
+        ctk.CTkLabel(e_frame, text="Emissive Brightness (0-15):", font=ctk.CTkFont(size=11)).pack(side="left", padx=5)
+        self.emissive_val = ctk.CTkEntry(e_frame, width=40); self.emissive_val.insert(0, "15"); self.emissive_val.pack(side="left", padx=5)
+        ctk.CTkButton(e_frame, text="Apply Emissive", fg_color="#9b59b6", command=self.apply_emissive_to_all).pack(side="right", padx=5, pady=5)
+
         ctk.CTkButton(s3, text="Fix Non-Standard Angles", fg_color="#d35400", command=self.fix_illegal_angles_all).pack(fill="x", padx=10, pady=5)
 
         # 4. Command Generator
@@ -198,22 +204,15 @@ class ModelStudioProV60(ctk.CTk):
         if not self.source_files: return
         try:
             mode = self.mode_var.get()
-            updated_count = 0
-            
             for path in self.source_files:
                 with open(path, 'r') as f: data = json.load(f)
                 if "display" not in data: data["display"] = {}
                 if mode not in data["display"]: data["display"][mode] = {}
-                
-                # Only inject checked categories
                 for attr in ["rotation", "translation", "scale"]:
                     if self.inject_toggles[attr].get():
                         data["display"][mode][attr] = [float(e.get()) for e in self.inputs[attr]]
-                
                 with open(path, 'w') as f: json.dump(data, f, indent=4)
-                updated_count += 1
-            
-            messagebox.showinfo("Success", f"Updated selected fields for {mode} in {updated_count} files.")
+            messagebox.showinfo("Success", f"Updated {mode} in {len(self.source_files)} files.")
         except Exception as e: messagebox.showerror("Error", str(e))
 
     def refresh_tint_list(self):
@@ -233,7 +232,6 @@ class ModelStudioProV60(ctk.CTk):
         if not self.source_files: return
         selected_ids = [tid for tid, var in self.texture_vars.items() if var.get()]
         if not selected_ids: return
-        
         for path in self.source_files:
             with open(path, 'r') as f: data = json.load(f)
             for e in data.get("elements", []):
@@ -241,8 +239,39 @@ class ModelStudioProV60(ctk.CTk):
                     tex = str(face.get("texture", "")).replace("#", "")
                     if tex in selected_ids: face["tintindex"] = 0
             with open(path, 'w') as f: json.dump(data, f, indent=4)
-            
-        messagebox.showinfo("v60", f"Tints applied to {len(self.source_files)} models.")
+        messagebox.showinfo("v60", "Tints applied.")
+
+    def apply_emissive_to_all(self):
+        if not self.source_files: return
+        selected_ids = [tid for tid, var in self.texture_vars.items() if var.get()]
+        if not selected_ids: 
+            messagebox.showwarning("Warning", "Select at least one texture ID from the list.")
+            return
+        
+        try:
+            b_val = int(self.emissive_val.get())
+            if b_val < 0: b_val = 0
+            if b_val > 15: b_val = 15
+        except: b_val = 15
+
+        for path in self.source_files:
+            with open(path, 'r') as f: data = json.load(f)
+            for e in data.get("elements", []):
+                for face in e.get("faces", {}).values():
+                    # Extract the texture ID from the face
+                    tex = str(face.get("texture", "")).replace("#", "")
+                    
+                    if tex in selected_ids:
+                        # Overwrite or Add the light property (Emissive)
+                        # This ensures that even if it existed with a different value, it's updated.
+                        face["light"] = b_val
+                    else:
+                        # Optional: If you want to REMOVE emissive from other textures, 
+                        # you could add logic here, but usually, we just leave them be.
+                        pass
+                        
+            with open(path, 'w') as f: json.dump(data, f, indent=4)
+        messagebox.showinfo("v60", f"Emissive brightness {b_val} updated for selected textures in all models.")
 
     def fix_illegal_angles_all(self):
         if not self.source_files: return
@@ -256,7 +285,7 @@ class ModelStudioProV60(ctk.CTk):
                         e["rotation"]["angle"] = min(LEGAL_ANGLES, key=lambda x:abs(x-angle))
                         total_fixed += 1
             with open(path, 'w') as f: json.dump(data, f, indent=4)
-        messagebox.showinfo("v60", f"Fixed {total_fixed} angles across all models.")
+        messagebox.showinfo("v60", f"Fixed {total_fixed} angles.")
 
     def generate_commands(self):
         self.cmd_output.delete("1.0", "end")
@@ -284,33 +313,25 @@ class ModelStudioProV60(ctk.CTk):
 
     def process_variants(self):
         if not self.source_files or not self.output_dir: 
-            messagebox.showwarning("Warning", "Load models and select an output folder first.")
+            messagebox.showwarning("Warning", "Setup inputs first.")
             return
-            
         master_tex = ""
         if self.textures_path:
             with open(self.textures_path, 'r', encoding='utf-8') as f: master_tex = f.read()
-
         for source_path in self.source_files:
             orig_fn = os.path.splitext(os.path.basename(source_path))[0]
             detected = next((w for w in WOODS if w in orig_fn.lower()), "")
-            
             with open(source_path, 'r', encoding='utf-8') as f: master_json = f.read()
-            
             for target in WOODS:
                 new_fn = orig_fn.replace(detected, target) if detected else f"{target}_{orig_fn}"
-                
-                # Process Model JSON
                 f_model = self.deep_swap(master_json.replace(orig_fn, new_fn), target)
                 with open(os.path.join(self.output_dir, f"{new_fn}.json"), 'w', encoding='utf-8') as f: 
                     f.write(f_model)
-                
                 if master_tex:
                     f_tex = self.deep_swap(master_tex.replace(orig_fn, new_fn), target)
                     with open(os.path.join(self.output_dir, f"{new_fn}.json.textures"), 'w', encoding='utf-8') as f: 
                         f.write(f_tex)
-        
-        messagebox.showinfo("Complete", f"Generated variants for {len(self.source_files)} models in {len(WOODS)} wood types.")
+        messagebox.showinfo("Complete", "Variants generated.")
         os.startfile(self.output_dir)
 
 if __name__ == "__main__":

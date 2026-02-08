@@ -1,0 +1,27 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "Blocks.CONCRETE#7"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "Blocks.CONCRETE#7"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:CubeCeilingLight"
+    },
+    "name": "cube_ceiling_light_recipe",
+    "namespace": "mod"
+  }
+}
