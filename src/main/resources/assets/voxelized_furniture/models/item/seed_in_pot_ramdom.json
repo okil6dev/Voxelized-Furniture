@@ -1,5 +1,5 @@
 {
-  "parent": "voxelized_furniture:block/iron_tent_part",
+  "parent": "voxelized_furniture:block/seed_in_pot_ramdom",
   "display": {
     "thirdperson": {
       "rotation": [

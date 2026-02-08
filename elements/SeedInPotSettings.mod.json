@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 45,
-    "height": 60,
+    "width": 85,
+    "height": 100,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -22,7 +22,7 @@
           "width": 35,
           "height": 20,
           "x": 195,
-          "y": 98,
+          "y": 76,
           "locked": false
         }
       },
@@ -38,7 +38,39 @@
           "width": 35,
           "height": 20,
           "x": 195,
+          "y": 98,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_ramdom",
+          "text": "Random 2D",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SeedinpotramdomP"
+          },
+          "width": 56,
+          "height": 20,
+          "x": 186,
           "y": 121,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_random_3d",
+          "text": "Random 3D",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SeedinpotramdomP3d"
+          },
+          "width": 72,
+          "height": 20,
+          "x": 177,
+          "y": 143,
           "locked": false
         }
       }

@@ -36,6 +36,12 @@ description="This mod adds chairs, tables, kitchen sets, sinks, and small land p
     side="BOTH"
 
 
+[[dependencies.voxelized_furniture]]
+    modId="sodium"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 
 # Start of user code block dependencies configuration

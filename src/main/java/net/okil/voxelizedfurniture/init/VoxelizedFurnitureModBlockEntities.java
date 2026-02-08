@@ -85,6 +85,7 @@ public class VoxelizedFurnitureModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooToiletRollBlockEntity>> BAMBOO_TOILET_ROLL = register("bamboo_toilet_roll", VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL, BambooToiletRollBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AcaciaToiletRollBlockEntity>> ACACIA_TOILET_ROLL = register("acacia_toilet_roll", VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL, AcaciaToiletRollBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SeedInPotBlockEntity>> SEED_IN_POT = register("seed_in_pot", VoxelizedFurnitureModBlocks.SEED_IN_POT, SeedInPotBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SeedInPotRamdomBlockEntity>> SEED_IN_POT_RAMDOM = register("seed_in_pot_ramdom", VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM, SeedInPotRamdomBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -157,5 +158,6 @@ public class VoxelizedFurnitureModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_TOILET_ROLL.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ACACIA_TOILET_ROLL.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SEED_IN_POT.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SEED_IN_POT_RAMDOM.get(), SidedInvWrapper::new);
 	}
 }

@@ -5449,89 +5449,105 @@
       "path": "~/Kitchen"
     },
     {
-      "name": "GreenTentPart",
+      "name": "SeedInPotRamdom",
       "type": "block",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "green_tent_part",
+      "registry_name": "seed_in_pot_ramdom",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/blockstates/green_tent_part.json",
-          "src/main/java/net/okil/voxelizedfurniture/block/GreenTentPartBlock.java",
-          "src/main/resources/assets/voxelized_furniture/models/block/green_tent_part.json",
-          "src/main/resources/assets/voxelized_furniture/models/item/green_tent_part.json",
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/green_tent_part.json"
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/SeedInPotRamdomBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/seed_in_pot_ramdom.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/seed_in_pot_ramdom.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/SeedInPotRamdomBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/seed_in_pot_ramdom.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/seed_in_pot_ramdom.json"
         ]
       },
-      "path": "~/Tents"
+      "path": "~/Nature"
     },
     {
-      "name": "Tents",
-      "type": "tab",
+      "name": "SeedinpotramdomP",
+      "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tents",
+      "registry_name": "seedinpotramdom_p",
       "metadata": {
-        "files": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/SeedinpotramdomPProcedure.java"
+        ]
       },
-      "path": "~/Tents"
+      "path": "~/Nature"
     },
     {
-      "name": "IronTentPart",
-      "type": "block",
+      "name": "SeedinpotramdomP3d",
+      "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "iron_tent_part",
+      "registry_name": "seedinpotramdom_p_3d",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/SeedinpotramdomP3dProcedure.java"
+        ]
+      },
+      "path": "~/Nature"
+    },
+    {
+      "name": "SeedInPotRandomB",
+      "type": "blockstates",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "seed_in_pot_random_b",
       "metadata": {
         "files": [
-          "src/main/java/net/okil/voxelizedfurniture/block/IronTentPartBlock.java",
-          "src/main/resources/assets/voxelized_furniture/models/item/iron_tent_part.json",
-          "src/main/resources/assets/voxelized_furniture/blockstates/iron_tent_part.json",
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/iron_tent_part.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/iron_tent_part.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/seed_in_pot_random_b_blockstate_0.json"
         ]
       },
-      "path": "~/Tents"
-    },
-    {
-      "name": "GreenTentPartRecipe",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "green_tent_part_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/voxelized_furniture/advancement/recipes/green_tent_part_recipe.json",
-          "src/main/resources/data/voxelized_furniture/recipe/green_tent_part_recipe.json"
-        ]
-      },
-      "path": "~/Tents"
-    },
-    {
-      "name": "IronTentPartRecipe",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "iron_tent_part_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/voxelized_furniture/recipe/iron_tent_part_recipe.json",
-          "src/main/resources/data/voxelized_furniture/advancement/recipes/iron_tent_part_recipe.json"
-        ]
-      },
-      "path": "~/Tents"
-    },
-    {
-      "name": "Test",
-      "type": "overlay",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "test",
-      "metadata": {
-        "files": [
-          "src/main/java/net/okil/voxelizedfurniture/client/screens/TestOverlay.java"
-        ]
-      }
+      "path": "~/Nature"
     }
   ],
   "variable_elements": [
@@ -5621,7 +5637,7 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
-      "~CUSTOM:GreenTentPart",
+      "~CUSTOM:SeedInPotRamdom",
       "~CUSTOM:SeedInPot",
       "~CUSTOM:GreenBambooPlant",
       "~CUSTOM:MiniatureWaterRuin",
@@ -5934,10 +5950,9 @@
       "block.voxelized_furniture.nature_set": "Nature Set",
       "block.voxelized_furniture.food_set": "Food Set",
       "block.voxelized_furniture.kitchen_set": "Kitchen Set",
-      "block.voxelized_furniture.green_tent_part": "Green Tent Part",
-      "item_group.voxelized_furniture.tents": "Tents",
-      "block.voxelized_furniture.iron_tent_part": "Iron Tent Part",
-      "gui.voxelized_furniture.test.label_hello": "hello"
+      "block.voxelized_furniture.seed_in_pot_ramdom": "Seed In Pot",
+      "gui.voxelized_furniture.seed_in_pot_settings.button_ramdom": "Random 2D",
+      "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D"
     }
   },
   "metadata": {
@@ -6083,10 +6098,6 @@
       {
         "name": "Miniature",
         "children": []
-      },
-      {
-        "name": "Tents",
-        "children": []
       }
     ]
   },
@@ -6101,7 +6112,9 @@
     "serverSideOnly": false,
     "modPicture": "icon",
     "requiredMods": [],
-    "dependencies": [],
+    "dependencies": [
+      "sodium"
+    ],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.1",

@@ -185,9 +185,4 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.get().asItem());
 			}).withSearchBar().withTabsBefore(GEODE.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TENTS = REGISTRY.register("tents",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.tents")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.GREEN_TENT_PART.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.GREEN_TENT_PART.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.IRON_TENT_PART.get().asItem());
-			}).withSearchBar().withTabsBefore(MINIATURE.getId()).build());
 }

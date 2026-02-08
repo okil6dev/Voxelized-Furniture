@@ -1,5 +1,7 @@
 package net.okil.voxelizedfurniture.network;
 
+import net.okil.voxelizedfurniture.procedures.SeedinpotramdomPProcedure;
+import net.okil.voxelizedfurniture.procedures.SeedinpotramdomP3dProcedure;
 import net.okil.voxelizedfurniture.procedures.Seedinpot3dProcedure;
 import net.okil.voxelizedfurniture.procedures.Seedinpot2dProcedure;
 import net.okil.voxelizedfurniture.VoxelizedFurnitureMod;
@@ -55,6 +57,14 @@ public record SeedInPotSettingsButtonMessage(int buttonID, int x, int y, int z) 
 		if (buttonID == 1) {
 
 			Seedinpot3dProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 2) {
+
+			SeedinpotramdomPProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 3) {
+
+			SeedinpotramdomP3dProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

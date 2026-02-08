@@ -24,6 +24,8 @@ public class SeedInPotSettingsScreen extends AbstractContainerScreen<SeedInPotSe
 	private boolean menuStateUpdateActive = false;
 	private Button button_2d;
 	private Button button_3d;
+	private Button button_ramdom;
+	private Button button_random_3d;
 
 	public SeedInPotSettingsScreen(SeedInPotSettingsMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -32,8 +34,8 @@ public class SeedInPotSettingsScreen extends AbstractContainerScreen<SeedInPotSe
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 45;
-		this.imageHeight = 60;
+		this.imageWidth = 85;
+		this.imageHeight = 100;
 	}
 
 	@Override
@@ -82,7 +84,7 @@ public class SeedInPotSettingsScreen extends AbstractContainerScreen<SeedInPotSe
 				PacketDistributor.sendToServer(new SeedInPotSettingsButtonMessage(0, x, y, z));
 				SeedInPotSettingsButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 4, this.topPos + 8, 35, 20).build();
+		}).bounds(this.leftPos + 24, this.topPos + 6, 35, 20).build();
 		this.addRenderableWidget(button_2d);
 		button_3d = Button.builder(Component.translatable("gui.voxelized_furniture.seed_in_pot_settings.button_3d"), e -> {
 			int x = SeedInPotSettingsScreen.this.x;
@@ -91,7 +93,25 @@ public class SeedInPotSettingsScreen extends AbstractContainerScreen<SeedInPotSe
 				PacketDistributor.sendToServer(new SeedInPotSettingsButtonMessage(1, x, y, z));
 				SeedInPotSettingsButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}).bounds(this.leftPos + 4, this.topPos + 31, 35, 20).build();
+		}).bounds(this.leftPos + 24, this.topPos + 28, 35, 20).build();
 		this.addRenderableWidget(button_3d);
+		button_ramdom = Button.builder(Component.translatable("gui.voxelized_furniture.seed_in_pot_settings.button_ramdom"), e -> {
+			int x = SeedInPotSettingsScreen.this.x;
+			int y = SeedInPotSettingsScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new SeedInPotSettingsButtonMessage(2, x, y, z));
+				SeedInPotSettingsButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}).bounds(this.leftPos + 15, this.topPos + 51, 56, 20).build();
+		this.addRenderableWidget(button_ramdom);
+		button_random_3d = Button.builder(Component.translatable("gui.voxelized_furniture.seed_in_pot_settings.button_random_3d"), e -> {
+			int x = SeedInPotSettingsScreen.this.x;
+			int y = SeedInPotSettingsScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new SeedInPotSettingsButtonMessage(3, x, y, z));
+				SeedInPotSettingsButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}).bounds(this.leftPos + 6, this.topPos + 73, 72, 20).build();
+		this.addRenderableWidget(button_random_3d);
 	}
 }

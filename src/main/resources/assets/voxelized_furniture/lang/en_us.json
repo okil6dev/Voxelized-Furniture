@@ -260,8 +260,7 @@
   "block.voxelized_furniture.nature_set": "Nature Set",
   "block.voxelized_furniture.food_set": "Food Set",
   "block.voxelized_furniture.kitchen_set": "Kitchen Set",
-  "block.voxelized_furniture.green_tent_part": "Green Tent Part",
-  "item_group.voxelized_furniture.tents": "Tents",
-  "block.voxelized_furniture.iron_tent_part": "Iron Tent Part",
-  "gui.voxelized_furniture.test.label_hello": "hello"
+  "block.voxelized_furniture.seed_in_pot_ramdom": "Seed In Pot",
+  "gui.voxelized_furniture.seed_in_pot_settings.button_ramdom": "Random 2D",
+  "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D"
 }

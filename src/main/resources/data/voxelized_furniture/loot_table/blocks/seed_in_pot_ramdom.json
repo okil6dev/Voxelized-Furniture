@@ -1,6 +1,6 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "voxelized_furniture:blocks/iron_tent_part",
+  "random_sequence": "voxelized_furniture:blocks/seed_in_pot_ramdom",
   "pools": [
     {
       "rolls": 1.0,
@@ -12,7 +12,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "voxelized_furniture:iron_tent_part"
+          "name": "voxelized_furniture:seed_in_pot"
         }
       ]
     }
