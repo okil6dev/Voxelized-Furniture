@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/yucca_plant_random"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/yucca_plant_random",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/yucca_plant_random",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/yucca_plant_random",
+      "y": 270
+    }
+  }
+}

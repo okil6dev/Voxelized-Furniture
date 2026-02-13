@@ -18,7 +18,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.registries.Registries;
 
-@EventBusSubscriber
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class VoxelizedFurnitureModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, VoxelizedFurnitureMod.MODID);
 	public static final DeferredHolder<EntityType<?>, EntityType<OakChairEntity>> OAK_CHAIR = register("oak_chair",

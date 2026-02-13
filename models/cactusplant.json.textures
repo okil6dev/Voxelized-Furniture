@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "minecraft:farmland_moist",
+        "2": "brownpotcolor",
+        "5": "minecraft:cactus_side",
+        "6": "minecraft:cactus_top",
+        "7": "cactus_flower",
+        "missing": "minecraft:acacia_planks"
+      }
+    }
+  }
+}

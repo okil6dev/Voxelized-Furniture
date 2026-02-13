@@ -263,5 +263,19 @@
   "block.voxelized_furniture.seed_in_pot_ramdom": "Seed In Pot",
   "gui.voxelized_furniture.seed_in_pot_settings.button_ramdom": "Random 2D",
   "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D",
-  "block.voxelized_furniture.cube_ceiling_light": "Cube Ceiling Light"
+  "block.voxelized_furniture.cube_ceiling_light": "Cube Ceiling Light",
+  "block.voxelized_furniture.yucca_plant": "Yucca Plant",
+  "block.voxelized_furniture.yucca_plant_random": "Yucca Plant",
+  "gui.voxelized_furniture.yucca_plant_settings_gui.button_normal_2d": "Normal 2D",
+  "gui.voxelized_furniture.yucca_plant_settings_gui.button_random_2d": "Random 2D",
+  "gui.voxelized_furniture.yucca_plant_settings_gui.button_inspiration_image": "Inspiration Image",
+  "block.voxelized_furniture.wheat_plant": "Wheat Plant",
+  "gui.voxelized_furniture.wheat_plant_settings_gui.button_inspiration_image": "Inspiration Image",
+  "gui.voxelized_furniture.wheat_plant_settings_gui.button_normal_2d": "Normal 2D",
+  "gui.voxelized_furniture.wheat_plant_settings_gui.button_random_2d": "Random 2D",
+  "block.voxelized_furniture.random_wheat_plant": "Wheat Plant",
+  "block.voxelized_furniture.bricks": "Bricks",
+  "block.voxelized_furniture.awning": "Awning",
+  "block.voxelized_furniture.awning_closed": "Awning Closed",
+  "block.voxelized_furniture.cactus_plant": "Cactus Plant"
 }

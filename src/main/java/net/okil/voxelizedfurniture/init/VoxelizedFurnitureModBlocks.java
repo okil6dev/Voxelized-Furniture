@@ -139,6 +139,14 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> KITCHEN_SET;
 	public static final DeferredBlock<Block> SEED_IN_POT_RAMDOM;
 	public static final DeferredBlock<Block> CUBE_CEILING_LIGHT;
+	public static final DeferredBlock<Block> YUCCA_PLANT;
+	public static final DeferredBlock<Block> YUCCA_PLANT_RANDOM;
+	public static final DeferredBlock<Block> WHEAT_PLANT;
+	public static final DeferredBlock<Block> RANDOM_WHEAT_PLANT;
+	public static final DeferredBlock<Block> BRICKS;
+	public static final DeferredBlock<Block> AWNING;
+	public static final DeferredBlock<Block> AWNING_CLOSED;
+	public static final DeferredBlock<Block> CACTUS_PLANT;
 	static {
 		CABINET_OAK = REGISTRY.register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = REGISTRY.register("cabinet_birch", CabinetBirchBlock::new);
@@ -262,6 +270,14 @@ public class VoxelizedFurnitureModBlocks {
 		KITCHEN_SET = REGISTRY.register("kitchen_set", KitchenSetBlock::new);
 		SEED_IN_POT_RAMDOM = REGISTRY.register("seed_in_pot_ramdom", SeedInPotRamdomBlock::new);
 		CUBE_CEILING_LIGHT = REGISTRY.register("cube_ceiling_light", CubeCeilingLightBlock::new);
+		YUCCA_PLANT = REGISTRY.register("yucca_plant", YuccaPlantBlock::new);
+		YUCCA_PLANT_RANDOM = REGISTRY.register("yucca_plant_random", YuccaPlantRandomBlock::new);
+		WHEAT_PLANT = REGISTRY.register("wheat_plant", WheatPlantBlock::new);
+		RANDOM_WHEAT_PLANT = REGISTRY.register("random_wheat_plant", RandomWheatPlantBlock::new);
+		BRICKS = REGISTRY.register("bricks", BricksBlock::new);
+		AWNING = REGISTRY.register("awning", AwningBlock::new);
+		AWNING_CLOSED = REGISTRY.register("awning_closed", AwningClosedBlock::new);
+		CACTUS_PLANT = REGISTRY.register("cactus_plant", CactusPlantBlock::new);
 	}
 
 	// Start of user code block custom blocks

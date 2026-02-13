@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "minecraft:farmland_moist",
+        "2": "brownpotcolor",
+        "3": "yucca_log",
+        "4": "bamboo_singleleaf_greener"
+      }
+    }
+  }
+}

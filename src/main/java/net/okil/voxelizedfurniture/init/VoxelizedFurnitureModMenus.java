@@ -29,6 +29,8 @@ public class VoxelizedFurnitureModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<WardrobeGuiMenu>> WARDROBE_GUI = REGISTRY.register("wardrobe_gui", () -> IMenuTypeExtension.create(WardrobeGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<KitchenCounterGuiMenu>> KITCHEN_COUNTER_GUI = REGISTRY.register("kitchen_counter_gui", () -> IMenuTypeExtension.create(KitchenCounterGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<SeedInPotSettingsMenu>> SEED_IN_POT_SETTINGS = REGISTRY.register("seed_in_pot_settings", () -> IMenuTypeExtension.create(SeedInPotSettingsMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<YuccaPlantSettingsGuiMenu>> YUCCA_PLANT_SETTINGS_GUI = REGISTRY.register("yucca_plant_settings_gui", () -> IMenuTypeExtension.create(YuccaPlantSettingsGuiMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<WheatPlantSettingsGuiMenu>> WHEAT_PLANT_SETTINGS_GUI = REGISTRY.register("wheat_plant_settings_gui", () -> IMenuTypeExtension.create(WheatPlantSettingsGuiMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

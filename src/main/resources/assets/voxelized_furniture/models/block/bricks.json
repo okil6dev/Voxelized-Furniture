@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/pile_of_bricks",
+  "textures": {
+    "all": "voxelized_furniture:block/bricks",
+    "particle": "voxelized_furniture:block/bricks",
+    "0": "minecraft:block/bricks"
+  },
+  "render_type": "cutout_mipped"
+}

@@ -15,12 +15,6 @@ description="This mod adds chairs, tables, kitchen sets, sinks, and small land p
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
-[[mixins]]
-    config = "voxelized_furniture.mixins.json"
-
-# Start of user code block custom mixins
-# End of user code block custom mixins
-
 [[dependencies.voxelized_furniture]]
     modId="neoforge"
     type="required"
@@ -38,6 +32,12 @@ description="This mod adds chairs, tables, kitchen sets, sinks, and small land p
 
 [[dependencies.voxelized_furniture]]
     modId="sodium"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.voxelized_furniture]]
+    modId="geckolib"
     type="optional"
     versionRange="[0,)"
     ordering="NONE"

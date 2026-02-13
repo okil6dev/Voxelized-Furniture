@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "voxelized_furniture:block/random_wheat_plant"
+    }
+  }
+}

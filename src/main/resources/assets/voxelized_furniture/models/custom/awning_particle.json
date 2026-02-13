@@ -1,0 +1,6 @@
+{
+  "parent": "voxelized_furniture:displaysettings/awning.display.geo",
+  "textures": {
+    "particle": "voxelized_furniture:block/awning"
+  }
+}

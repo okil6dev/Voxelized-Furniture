@@ -20,6 +20,8 @@ public class VoxelizedFurnitureModScreens {
 		event.register(VoxelizedFurnitureModMenus.WARDROBE_GUI.get(), WardrobeGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.KITCHEN_COUNTER_GUI.get(), KitchenCounterGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.SEED_IN_POT_SETTINGS.get(), SeedInPotSettingsScreen::new);
+		event.register(VoxelizedFurnitureModMenus.YUCCA_PLANT_SETTINGS_GUI.get(), YuccaPlantSettingsGuiScreen::new);
+		event.register(VoxelizedFurnitureModMenus.WHEAT_PLANT_SETTINGS_GUI.get(), WheatPlantSettingsGuiScreen::new);
 	}
 
 	public interface ScreenAccessor {

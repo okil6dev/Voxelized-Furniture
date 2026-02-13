@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "minecraft:farmland_moist",
+        "2": "brownpotcolor",
+        "4": "minecraft:wheat_stage3"
+      }
+    }
+  }
+}

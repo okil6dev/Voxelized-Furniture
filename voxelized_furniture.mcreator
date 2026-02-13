@@ -5009,7 +5009,7 @@
           "src/main/resources/assets/voxelized_furniture/models/item/seed_in_pot.json"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "SeedInPotRecipe",
@@ -5023,7 +5023,7 @@
           "src/main/resources/data/voxelized_furniture/advancement/recipes/seed_in_pot_recipe.json"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "SeedInPotB",
@@ -5036,7 +5036,7 @@
           "src/main/resources/assets/voxelized_furniture/models/block/seed_in_pot_b_blockstate_0.json"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "SeedInPotSettings",
@@ -5051,7 +5051,7 @@
           "src/main/java/net/okil/voxelizedfurniture/client/gui/SeedInPotSettingsScreen.java"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "Seedinpot2d",
@@ -5086,7 +5086,7 @@
           "src/main/java/net/okil/voxelizedfurniture/procedures/Seedinpot2dProcedure.java"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "Seedinpot3d",
@@ -5121,7 +5121,7 @@
           "src/main/java/net/okil/voxelizedfurniture/procedures/Seedinpot3dProcedure.java"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "SeedInPotSettingsP",
@@ -5156,7 +5156,7 @@
           "src/main/java/net/okil/voxelizedfurniture/procedures/SeedInPotSettingsPProcedure.java"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "ShowerP",
@@ -5386,7 +5386,7 @@
           "src/main/resources/data/voxelized_furniture/advancement/recipes/nature_set_recipe.json"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "FoodSet",
@@ -5464,7 +5464,7 @@
           "src/main/resources/assets/voxelized_furniture/models/item/seed_in_pot_ramdom.json"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "SeedinpotramdomP",
@@ -5499,7 +5499,7 @@
           "src/main/java/net/okil/voxelizedfurniture/procedures/SeedinpotramdomPProcedure.java"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "SeedinpotramdomP3d",
@@ -5534,7 +5534,7 @@
           "src/main/java/net/okil/voxelizedfurniture/procedures/SeedinpotramdomP3dProcedure.java"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "SeedInPotRandomB",
@@ -5547,7 +5547,7 @@
           "src/main/resources/assets/voxelized_furniture/models/block/seed_in_pot_random_b_blockstate_0.json"
         ]
       },
-      "path": "~/Nature"
+      "path": "~/Nature/SeedInPot"
     },
     {
       "name": "CubeCeilingLight",
@@ -5592,6 +5592,492 @@
         ]
       },
       "path": "~/Electrical/Light"
+    },
+    {
+      "name": "YuccaPlant",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yucca_plant",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/yucca_plant.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/yucca_plant.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/YuccaPlantBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/yucca_plant.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/yucca_plant.json"
+        ]
+      },
+      "path": "~/Nature/Yuca Plant"
+    },
+    {
+      "name": "YuccaPlantRandom",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yucca_plant_random",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/yucca_plant_random.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/yucca_plant_random.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/YuccaPlantRandomBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/yucca_plant_random.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/yucca_plant_random.json"
+        ]
+      },
+      "path": "~/Nature/Yuca Plant"
+    },
+    {
+      "name": "YuccaPlantN2DP",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yucca_plant_n_2_dp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/YuccaPlantN2DPProcedure.java"
+        ]
+      },
+      "path": "~/Nature/Yuca Plant"
+    },
+    {
+      "name": "YuccaPlantR2DP",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yucca_plant_r_2_dp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/YuccaPlantR2DPProcedure.java"
+        ]
+      },
+      "path": "~/Nature/Yuca Plant"
+    },
+    {
+      "name": "YuccaPlantSettingsGui",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yucca_plant_settings_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/network/YuccaPlantSettingsGuiButtonMessage.java",
+          "src/main/java/net/okil/voxelizedfurniture/world/inventory/YuccaPlantSettingsGuiMenu.java",
+          "src/main/java/net/okil/voxelizedfurniture/client/gui/YuccaPlantSettingsGuiScreen.java"
+        ]
+      },
+      "path": "~/Nature/Yuca Plant"
+    },
+    {
+      "name": "YuccaPlantSettingsOpener",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yucca_plant_settings_opener",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/YuccaPlantSettingsOpenerProcedure.java"
+        ]
+      },
+      "path": "~/Nature/Yuca Plant"
+    },
+    {
+      "name": "ExitGui",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "exit_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/ExitGuiProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "YuccaRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yucca_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/yucca_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/yucca_recipe.json"
+        ]
+      },
+      "path": "~/Nature/Yuca Plant"
+    },
+    {
+      "name": "WheatPlant",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wheat_plant",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/WheatPlantBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/wheat_plant.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/wheat_plant.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/wheat_plant.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/wheat_plant.json"
+        ]
+      },
+      "path": "~/Nature/Wheat Plant"
+    },
+    {
+      "name": "WheatPlantN2DP",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wheat_plant_n_2_dp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/WheatPlantN2DPProcedure.java"
+        ]
+      },
+      "path": "~/Nature/Wheat Plant"
+    },
+    {
+      "name": "WheatPlantR2DP",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wheat_plant_r_2_dp",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/WheatPlantR2DPProcedure.java"
+        ]
+      },
+      "path": "~/Nature/Wheat Plant"
+    },
+    {
+      "name": "WheatPlantSettingsGui",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wheat_plant_settings_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/client/gui/WheatPlantSettingsGuiScreen.java",
+          "src/main/java/net/okil/voxelizedfurniture/world/inventory/WheatPlantSettingsGuiMenu.java",
+          "src/main/java/net/okil/voxelizedfurniture/network/WheatPlantSettingsGuiButtonMessage.java"
+        ]
+      },
+      "path": "~/Nature/Wheat Plant"
+    },
+    {
+      "name": "WheatPlantSettingsOpener",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wheat_plant_settings_opener",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/WheatPlantSettingsOpenerProcedure.java"
+        ]
+      },
+      "path": "~/Nature/Wheat Plant"
+    },
+    {
+      "name": "RandomWheatPlant",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_wheat_plant",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/random_wheat_plant.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/random_wheat_plant.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/RandomWheatPlantBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/random_wheat_plant.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/random_wheat_plant.json"
+        ]
+      },
+      "path": "~/Nature/Wheat Plant"
+    },
+    {
+      "name": "Bricks",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bricks",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/bricks.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/bricks.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/bricks.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/bricks.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/BricksBlock.java"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "BricksRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bricks_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/bricks_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/bricks_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "WheatPlantRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wheat_plant_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/wheat_plant_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/wheat_plant_recipe.json"
+        ]
+      },
+      "path": "~/Nature/Wheat Plant"
+    },
+    {
+      "name": "Awning",
+      "type": "animatedblock",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awning",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/renderer/AwningTileRenderer.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/model/AwningBlockModel.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/renderer/AwningDisplayItemRenderer.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/AwningTileEntity.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/awning.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/model/AwningDisplayModel.java",
+          "src/main/resources/assets/voxelized_furniture/models/custom/awning_particle.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/display/AwningDisplayItem.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/awning.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/AwningBlock.java"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "AwingOpenAndClose",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awing_open_and_close",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/AwingOpenAndCloseProcedure.java"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "AwningClosed",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awning_closed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/AwningClosedBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/awning_closed.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/awning_closed.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/awning_closed.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/awning_closed.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "AwningRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awning_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/awning_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/awning_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "CactusPlant",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cactus_plant",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/CactusPlantBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/cactus_plant.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/cactus_plant.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/cactus_plant.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/cactus_plant.json"
+        ]
+      },
+      "path": "~/Nature/cactus plant"
     }
   ],
   "variable_elements": [
@@ -5681,6 +6167,14 @@
       "~CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:CactusPlant",
+      "~CUSTOM:AwningClosed",
+      "~CUSTOM:Awning",
+      "~CUSTOM:Bricks",
+      "~CUSTOM:RandomWheatPlant",
+      "~CUSTOM:WheatPlant",
+      "~CUSTOM:YuccaPlantRandom",
+      "~CUSTOM:YuccaPlant",
       "~CUSTOM:CubeCeilingLight",
       "~CUSTOM:SeedInPotRamdom",
       "~CUSTOM:SeedInPot",
@@ -5998,11 +6492,26 @@
       "block.voxelized_furniture.seed_in_pot_ramdom": "Seed In Pot",
       "gui.voxelized_furniture.seed_in_pot_settings.button_ramdom": "Random 2D",
       "gui.voxelized_furniture.seed_in_pot_settings.button_random_3d": "Random 3D",
-      "block.voxelized_furniture.cube_ceiling_light": "Cube Ceiling Light"
+      "block.voxelized_furniture.cube_ceiling_light": "Cube Ceiling Light",
+      "block.voxelized_furniture.yucca_plant": "Yucca Plant",
+      "block.voxelized_furniture.yucca_plant_random": "Yucca Plant",
+      "gui.voxelized_furniture.yucca_plant_settings_gui.button_normal_2d": "Normal 2D",
+      "gui.voxelized_furniture.yucca_plant_settings_gui.button_random_2d": "Random 2D",
+      "gui.voxelized_furniture.yucca_plant_settings_gui.button_inspiration_image": "Inspiration Image",
+      "block.voxelized_furniture.wheat_plant": "Wheat Plant",
+      "gui.voxelized_furniture.wheat_plant_settings_gui.button_inspiration_image": "Inspiration Image",
+      "gui.voxelized_furniture.wheat_plant_settings_gui.button_normal_2d": "Normal 2D",
+      "gui.voxelized_furniture.wheat_plant_settings_gui.button_random_2d": "Random 2D",
+      "block.voxelized_furniture.random_wheat_plant": "Wheat Plant",
+      "block.voxelized_furniture.bricks": "Bricks",
+      "block.voxelized_furniture.awning": "Awning",
+      "block.voxelized_furniture.awning_closed": "Awning Closed",
+      "block.voxelized_furniture.cactus_plant": "Cactus Plant"
     }
   },
   "metadata": {
     "files": [
+      "src/main/java/net/okil/voxelizedfurniture/block/listener/ClientListener.java",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModScreens.java",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModMenus.java",
       "src/main/java/net/okil/voxelizedfurniture/network/MenuStateUpdateMessage.java",
@@ -6016,8 +6525,8 @@
       "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/net/okil/voxelizedfurniture/mixin/LevelRendererMixin.java",
       "src/main/java/net/okil/voxelizedfurniture/mixin/ItemInHandRendererMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModTabs.java",
       "src/main/resources/voxelized_furniture.mixins.json",
+      "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModTabs.java",
       "src/main/java/net/okil/voxelizedfurniture/VoxelizedFurnitureMod.java",
       "src/main/java/net/okil/voxelizedfurniture/mixin/ItemInHandLayerMixin.java",
       "src/main/java/net/okil/voxelizedfurniture/mixin/PlayerAnimationMixin.java",
@@ -6072,6 +6581,22 @@
         "children": [
           {
             "name": "PlantLike",
+            "children": []
+          },
+          {
+            "name": "SeedInPot",
+            "children": []
+          },
+          {
+            "name": "Yuca Plant",
+            "children": []
+          },
+          {
+            "name": "Wheat Plant",
+            "children": []
+          },
+          {
+            "name": "cactus plant",
             "children": []
           }
         ]
@@ -6162,7 +6687,9 @@
       "sodium"
     ],
     "dependants": [],
-    "mcreatorDependencies": [],
+    "mcreatorDependencies": [
+      "geckolib"
+    ],
     "currentGenerator": "neoforge-1.21.1",
     "credits": "Made by okil6",
     "modElementsPackage": "net.okil.voxelizedfurniture"

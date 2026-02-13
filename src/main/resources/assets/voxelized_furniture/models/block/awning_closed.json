@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/awningclosed",
+  "textures": {
+    "all": "voxelized_furniture:block/awning",
+    "particle": "voxelized_furniture:block/awning",
+    "0": "voxelized_furniture:block/light_gray_concrete"
+  },
+  "render_type": "solid"
+}
