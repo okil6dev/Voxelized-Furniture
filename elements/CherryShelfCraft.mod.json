@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 2,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.CHERRY_PLANKS",
+      "Blocks.CHEST"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.CHERRY_PLANKS"
-      },
-      {
-        "value": "Blocks.CHERRY_SLAB"
-      },
-      {
-        "value": "Blocks.CHERRY_PLANKS"
-      },
-      {
-        "value": "Blocks.CHERRY_PLANKS"
-      },
-      {
-        "value": "Blocks.CHEST"
-      },
-      {
-        "value": "Blocks.CHERRY_PLANKS"
-      }
+      "",
+      "",
+      "",
+      "Blocks.CHERRY_PLANKS",
+      "Blocks.CHERRY_SLAB",
+      "Blocks.CHERRY_PLANKS",
+      "Blocks.CHERRY_PLANKS",
+      "Blocks.CHEST",
+      "Blocks.CHERRY_PLANKS"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:CherryShelf"
-    },
+    "recipeReturnStack": "CUSTOM:CherryShelf",
     "name": "cherry_shelf_craft",
     "namespace": "mod"
   }

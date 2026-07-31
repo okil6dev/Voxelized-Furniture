@@ -1,8 +1,10 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:kitchen_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:lever",
+    "voxelized_furniture:kitchen_table"
+  ],
   "result": {
     "id": "voxelized_furniture:kitchen_sink",
     "count": 1

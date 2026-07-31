@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#4",
+      "Items.STICK"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": true,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.ACACIA_TRAPDOOR"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.PLANKS#4"
-      },
-      {
-        "value": "Blocks.PLANKS#4"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.STICK"
-      },
-      {
-        "value": "Items.STICK"
-      }
+      "",
+      "",
+      "Blocks.ACACIA_TRAPDOOR",
+      "",
+      "Blocks.PLANKS#4",
+      "Blocks.PLANKS#4",
+      "",
+      "Items.STICK",
+      "Items.STICK"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:AcaciaChair1"
-    },
+    "recipeReturnStack": "CUSTOM:AcaciaChair1",
     "name": "acacia_chair_craft",
     "namespace": "mod"
   }

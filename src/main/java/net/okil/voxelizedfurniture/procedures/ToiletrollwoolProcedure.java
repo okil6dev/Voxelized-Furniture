@@ -1,7 +1,6 @@
 package net.okil.voxelizedfurniture.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
-
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
@@ -15,7 +14,7 @@ public class ToiletrollwoolProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
 		if (entity == null)
 			return;
-		if (0 == (blockstate.getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip1 ? blockstate.getValue(_getip1) : -1)) {
+		if (0 == (getPropertyByName(blockstate, "blockstate") instanceof IntegerProperty _getip1 ? blockstate.getValue(_getip1) : -1)) {
 			if (hasEntityInInventory(entity, new ItemStack(Blocks.WHITE_WOOL))) {
 				{
 					int _value = 1;
@@ -40,9 +39,18 @@ public class ToiletrollwoolProcedure {
 			if (entity instanceof Player _player) {
 				ItemStack _setstack = new ItemStack(Blocks.WHITE_WOOL).copy();
 				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				_player.getInventory().placeItemBackInInventory(_setstack);
 			}
 		}
+	}
+
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
+			}
+		}
+		return null;
 	}
 
 	private static boolean hasEntityInInventory(Entity entity, ItemStack itemstack) {

@@ -1,9 +1,13 @@
 package net.okil.voxelizedfurniture.block;
 
+import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
+
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -16,43 +20,39 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.color.block.BlockTintSources;
+
+import java.util.function.Function;
+import java.util.List;
 
 public class GoldenDesktopFountainBlock extends Block {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private static final VoxelShape SHAPE_NORTH = box(1, 0, 1, 15, 4, 15);
-	private static final VoxelShape SHAPE_SOUTH = box(1, 0, 1, 15, 4, 15);
-	private static final VoxelShape SHAPE_EAST = box(1, 0, 1, 15, 4, 15);
-	private static final VoxelShape SHAPE_WEST = box(1, 0, 1, 15, 4, 15);
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public GoldenDesktopFountainBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(3f, 6f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public GoldenDesktopFountainBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.WOOD).strength(3f, 6f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
+	private Function<BlockState, VoxelShape> makeShapes() {
+		return this.getShapeForEachState(state -> {
+			return switch (state.getValue(FACING)) {
+				case NORTH -> box(1, 0, 1, 15, 4, 15);
+				case EAST -> box(1, 0, 1, 15, 4, 15);
+				case WEST -> box(1, 0, 1, 15, 4, 15);
+				default -> box(1, 0, 1, 15, 4, 15);
+			};
+		});
 	}
 
 	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return shapes.apply(state);
 	}
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return (switch (state.getValue(FACING)) {
-			case NORTH -> SHAPE_NORTH;
-			case SOUTH -> SHAPE_SOUTH;
-			case EAST -> SHAPE_EAST;
-			case WEST -> SHAPE_WEST;
-			default -> SHAPE_NORTH;
-		});
 	}
 
 	@Override
@@ -63,7 +63,10 @@ public class GoldenDesktopFountainBlock extends Block {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -72,5 +75,9 @@ public class GoldenDesktopFountainBlock extends Block {
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	}
+
+	public static void blockColorLoad(RegisterColorHandlersEvent.BlockTintSources event) {
+		event.getBlockColors().register(List.of(BlockTintSources.grass()), VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.get());
 	}
 }

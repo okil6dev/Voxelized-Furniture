@@ -1,22 +1,20 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.CHERRY_PLANKS"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "Blocks.CHERRY_PLANKS"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:CabinetCherry"
-    },
+    "stoneCuttingInputStack": "Blocks.CHERRY_PLANKS",
+    "stoneCuttingReturnStack": "CUSTOM:CabinetCherry",
     "name": "cabinet_cherry_craft",
     "namespace": "mod"
   }

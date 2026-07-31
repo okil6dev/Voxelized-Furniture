@@ -1,11 +1,9 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "tab",
   "definition": {
     "name": "Bed Room",
-    "icon": {
-      "value": "CUSTOM:DoubleBed"
-    },
+    "icon": "CUSTOM:DoubleBed",
     "showSearch": true
   }
 }

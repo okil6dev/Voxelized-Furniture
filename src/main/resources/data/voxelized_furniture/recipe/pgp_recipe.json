@@ -1,8 +1,11 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:nature_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#minecraft:leaves",
+    "minecraft:grass_block",
+    "minecraft:lime_concrete"
+  ],
   "result": {
     "id": "voxelized_furniture:potted_green_plant",
     "count": 1

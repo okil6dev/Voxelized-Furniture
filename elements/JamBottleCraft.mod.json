@@ -1,48 +1,33 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Items.WATER_BUCKET",
+      "Items.GLASS_BOTTLE",
+      "Items.SUGAR",
+      "Items.MELON_SEEDS"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": false,
+    "recipeShapeless": true,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.WATER_BUCKET"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.MELON_SEEDS"
-      },
-      {
-        "value": "Items.GLASS_BOTTLE"
-      },
-      {
-        "value": "Items.SUGAR"
-      }
+      "",
+      "",
+      "",
+      "",
+      "Items.WATER_BUCKET",
+      "",
+      "Items.MELON_SEEDS",
+      "Items.GLASS_BOTTLE",
+      "Items.SUGAR"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:JamBottle"
-    },
+    "recipeReturnStack": "CUSTOM:JamBottle",
     "name": "jam_bottle_craft",
     "namespace": "mod"
   }

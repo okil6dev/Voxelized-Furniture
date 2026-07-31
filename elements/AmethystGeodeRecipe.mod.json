@@ -1,26 +1,20 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
     "unlockingItems": [
-      {
-        "value": "Blocks.AMETHYST_BLOCK"
-      }
+      "Blocks.AMETHYST_BLOCK"
     ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "Blocks.AMETHYST_BLOCK"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:AmethystGeode"
-    },
+    "stoneCuttingInputStack": "Blocks.AMETHYST_BLOCK",
+    "stoneCuttingReturnStack": "CUSTOM:AmethystGeode",
     "name": "amethyst_geode_recipe",
     "namespace": "mod"
   }

@@ -6,6 +6,5 @@
     "0": "minecraft:block/smooth_basalt",
     "1": "minecraft:block/calcite",
     "2": "voxelized_furniture:block/emerald_raw"
-  },
-  "render_type": "cutout_mipped"
+  }
 }

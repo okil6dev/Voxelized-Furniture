@@ -1,26 +1,32 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Stone cutting",
-    "recipeRetstackSize": 1,
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 2,
     "group": "",
     "unlockingItems": [
-      {
-        "value": "CUSTOM:NatureSet"
-      }
+      "Blocks.BARREL",
+      "Blocks.DIRT",
+      "Blocks.RED_FLOWER"
     ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "CUSTOM:NatureSet"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:BarrelPlant"
-    },
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "Blocks.RED_FLOWER",
+      "",
+      "",
+      "Blocks.DIRT",
+      "",
+      "",
+      "Blocks.BARREL",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:BarrelPlant",
     "name": "barrel_plant_recipe",
     "namespace": "mod"
   }

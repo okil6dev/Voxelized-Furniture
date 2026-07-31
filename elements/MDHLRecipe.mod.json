@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.CONCRETE#7",
+      "Blocks.SEA_LANTERN"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": true,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.CONCRETE#7"
-      },
-      {
-        "value": "Blocks.SEA_LANTERN"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      }
+      "",
+      "",
+      "",
+      "Blocks.CONCRETE#7",
+      "Blocks.SEA_LANTERN",
+      "",
+      "",
+      "",
+      ""
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:ModernBulkheadLightOff"
-    },
+    "recipeReturnStack": "CUSTOM:ModernBulkheadLightOff",
     "name": "mdhl_recipe",
     "namespace": "mod"
   }

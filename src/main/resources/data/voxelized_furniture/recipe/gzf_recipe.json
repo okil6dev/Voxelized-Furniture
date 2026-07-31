@@ -1,10 +1,18 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:nature_set"
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    " b "
+  ],
+  "key": {
+    "a": "minecraft:stone",
+    "b": "minecraft:bamboo_planks",
+    "c": "minecraft:grass_block"
   },
   "result": {
     "id": "voxelized_furniture:golden_zen_fountain",
-    "count": 1
+    "count": 3
   }
 }

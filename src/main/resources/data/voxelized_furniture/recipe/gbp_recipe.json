@@ -1,8 +1,11 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:nature_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bamboo",
+    "#minecraft:dirt",
+    "minecraft:green_concrete"
+  ],
   "result": {
     "id": "voxelized_furniture:green_bamboo_plant",
     "count": 1

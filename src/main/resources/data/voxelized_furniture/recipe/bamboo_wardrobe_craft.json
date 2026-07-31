@@ -7,15 +7,9 @@
     "aca"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:bamboo_planks"
-    },
-    "b": {
-      "item": "minecraft:bamboo_slab"
-    },
-    "c": {
-      "item": "minecraft:bamboo_stairs"
-    }
+    "a": "minecraft:bamboo_planks",
+    "b": "minecraft:bamboo_slab",
+    "c": "minecraft:bamboo_stairs"
   },
   "result": {
     "id": "voxelized_furniture:bamboo_wardrobe",

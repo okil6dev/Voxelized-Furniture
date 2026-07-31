@@ -1,48 +1,30 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#3"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": "Blocks.PLANKS#3"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#3"
-      },
-      {
-        "value": "Blocks.PLANKS#3"
-      },
-      {
-        "value": "Blocks.PLANKS#3"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#3"
-      },
-      {
-        "value": "Blocks.PLANKS#3"
-      },
-      {
-        "value": "Blocks.PLANKS#3"
-      },
-      {
-        "value": "Blocks.JUNGLE_STAIRS"
-      },
-      {
-        "value": "Blocks.PLANKS#3"
-      }
+      "Blocks.PLANKS#3",
+      "Blocks.WOODEN_SLAB#3",
+      "Blocks.PLANKS#3",
+      "Blocks.PLANKS#3",
+      "Blocks.WOODEN_SLAB#3",
+      "Blocks.PLANKS#3",
+      "Blocks.PLANKS#3",
+      "Blocks.JUNGLE_STAIRS",
+      "Blocks.PLANKS#3"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:JungleWardrobe"
-    },
+    "recipeReturnStack": "CUSTOM:JungleWardrobe",
     "name": "jungle_wardrobe_craft",
     "namespace": "mod"
   }

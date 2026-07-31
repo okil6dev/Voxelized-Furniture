@@ -1,26 +1,15 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:mangrove_fence"
-    },
-    {
-      "item": "minecraft:mangrove_fence"
-    },
-    {
-      "item": "minecraft:mangrove_fence"
-    },
-    {
-      "tag": "minecraft:slabs"
-    },
-    {
-      "tag": "c:stones"
-    },
-    {
-      "tag": "minecraft:slabs"
-    }
+  "pattern": [
+    "aaa",
+    "bcb"
   ],
+  "key": {
+    "a": "minecraft:mangrove_fence",
+    "b": "#minecraft:slabs",
+    "c": "#c:stones"
+  },
   "result": {
     "id": "voxelized_furniture:mangrove_cobble_path",
     "count": 1

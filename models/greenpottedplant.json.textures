@@ -4,7 +4,7 @@
       "name": "default",
       "map": {
         "0": "greenpottexture",
-        "1": "grass_block_top",
+        "1": "grass_block_top_zen",
         "2": "minecraft:stripped_oak_log",
         "3": "minecraft:azalea_leaves"
       }

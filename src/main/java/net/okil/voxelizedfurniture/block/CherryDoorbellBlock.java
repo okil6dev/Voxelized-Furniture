@@ -1,7 +1,5 @@
 package net.okil.voxelizedfurniture.block;
 
-import org.checkerframework.checker.units.qual.s;
-
 import net.okil.voxelizedfurniture.procedures.OakdoorbellPressedProcedure;
 import net.okil.voxelizedfurniture.block.entity.CherryDoorbellBlockEntity;
 
@@ -10,7 +8,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -24,65 +22,49 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import java.util.function.Function;
+
 public class CherryDoorbellBlock extends Block implements EntityBlock {
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(4, 2, 14, 12, 14, 16), box(6, 6, 13.5, 10, 10, 14));
-	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(4, 2, 0, 12, 14, 2), box(6, 6, 2, 10, 10, 2.5));
-	private static final VoxelShape SHAPE_1_EAST = Shapes.or(box(0, 2, 4, 2, 14, 12), box(2, 6, 6, 2.5, 10, 10));
-	private static final VoxelShape SHAPE_1_WEST = Shapes.or(box(14, 2, 4, 16, 14, 12), box(13.5, 6, 6, 14, 10, 10));
-	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(4, 2, 14, 12, 14, 16), box(6, 6, 12.5, 10, 10, 14));
-	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(4, 2, 0, 12, 14, 2), box(6, 6, 2, 10, 10, 3.5));
-	private static final VoxelShape SHAPE_EAST = Shapes.or(box(0, 2, 4, 2, 14, 12), box(2, 6, 6, 3.5, 10, 10));
-	private static final VoxelShape SHAPE_WEST = Shapes.or(box(14, 2, 4, 16, 14, 12), box(12.5, 6, 6, 14, 10, 10));
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public CherryDoorbellBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2f, 5f).lightLevel(s -> (new Object() {
-			public int getLightLevel() {
-				if (s.getValue(BLOCKSTATE) == 1)
-					return 0;
-				return 0;
+	public CherryDoorbellBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.WOOD).strength(2f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(BLOCKSTATE, 0));
+	}
+
+	private Function<BlockState, VoxelShape> makeShapes() {
+		return this.getShapeForEachState(state -> {
+			if (state.getValue(BLOCKSTATE) == 1) {
+				return switch (state.getValue(FACING)) {
+					case NORTH -> Shapes.or(box(4, 2, 14, 12, 14, 16), box(6, 6, 13.5, 10, 10, 14));
+					case EAST -> Shapes.or(box(0, 2, 4, 2, 14, 12), box(2, 6, 6, 2.5, 10, 10));
+					case WEST -> Shapes.or(box(14, 2, 4, 16, 14, 12), box(13.5, 6, 6, 14, 10, 10));
+					default -> Shapes.or(box(4, 2, 0, 12, 14, 2), box(6, 6, 2, 10, 10, 2.5));
+				};
 			}
-		}.getLightLevel())).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+			return switch (state.getValue(FACING)) {
+				case NORTH -> Shapes.or(box(4, 2, 14, 12, 14, 16), box(6, 6, 12.5, 10, 10, 14));
+				case EAST -> Shapes.or(box(0, 2, 4, 2, 14, 12), box(2, 6, 6, 3.5, 10, 10));
+				case WEST -> Shapes.or(box(14, 2, 4, 16, 14, 12), box(12.5, 6, 6, 14, 10, 10));
+				default -> Shapes.or(box(4, 2, 0, 12, 14, 2), box(6, 6, 2, 10, 10, 3.5));
+			};
+		});
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
-	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return shapes.apply(state);
 	}
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		if (state.getValue(BLOCKSTATE) == 1) {
-			return (switch (state.getValue(FACING)) {
-				case NORTH -> SHAPE_1_NORTH;
-				case SOUTH -> SHAPE_1_SOUTH;
-				case EAST -> SHAPE_1_EAST;
-				case WEST -> SHAPE_1_WEST;
-				default -> SHAPE_1_NORTH;
-			});
-		}
-		return (switch (state.getValue(FACING)) {
-			case NORTH -> SHAPE_NORTH;
-			case SOUTH -> SHAPE_SOUTH;
-			case EAST -> SHAPE_EAST;
-			case WEST -> SHAPE_WEST;
-			default -> SHAPE_NORTH;
-		});
 	}
 
 	@Override
@@ -93,7 +75,10 @@ public class CherryDoorbellBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(BLOCKSTATE, 0);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -137,15 +122,8 @@ public class CherryDoorbellBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof CherryDoorbellBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -154,7 +132,7 @@ public class CherryDoorbellBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof CherryDoorbellBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

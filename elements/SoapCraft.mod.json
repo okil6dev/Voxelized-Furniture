@@ -1,22 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Stone cutting",
-    "recipeRetstackSize": 2,
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.CONCRETE_POWDER#3",
+      "Blocks.LEVER"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "CUSTOM:BathroomSet"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:Soap"
-    },
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "",
+      "",
+      "",
+      "Blocks.LEVER",
+      "",
+      "",
+      "Blocks.CONCRETE_POWDER#3",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:Soap",
     "name": "soap_craft",
     "namespace": "mod"
   }

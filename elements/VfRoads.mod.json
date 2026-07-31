@@ -1,11 +1,9 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "tab",
   "definition": {
     "name": "Roads",
-    "icon": {
-      "value": "CUSTOM:Asphalt"
-    },
+    "icon": "CUSTOM:Asphalt",
     "showSearch": true
   }
 }

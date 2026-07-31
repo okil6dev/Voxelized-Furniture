@@ -1,10 +1,15 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:nature_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:lever",
+    "minecraft:bamboo_planks",
+    "minecraft:grass_block",
+    "minecraft:bamboo_planks",
+    "minecraft:bamboo_planks"
+  ],
   "result": {
     "id": "voxelized_furniture:golden_desktop_fountain",
-    "count": 1
+    "count": 3
   }
 }

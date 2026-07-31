@@ -1,24 +1,12 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "pattern": [
-    " a ",
-    "bcd"
+  "ingredients": [
+    "minecraft:water_bucket",
+    "minecraft:melon_seeds",
+    "minecraft:glass_bottle",
+    "minecraft:sugar"
   ],
-  "key": {
-    "a": {
-      "item": "minecraft:water_bucket"
-    },
-    "b": {
-      "item": "minecraft:melon_seeds"
-    },
-    "c": {
-      "item": "minecraft:glass_bottle"
-    },
-    "d": {
-      "item": "minecraft:sugar"
-    }
-  },
   "result": {
     "id": "voxelized_furniture:jam_bottle",
     "count": 1

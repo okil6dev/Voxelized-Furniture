@@ -5,21 +5,18 @@ import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
 import net.okil.voxelizedfurniture.block.entity.MangroveShelfBlockEntity;
 
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -29,50 +26,46 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.color.block.BlockTintSources;
+
+import java.util.function.Function;
+import java.util.List;
 
 import io.netty.buffer.Unpooled;
 
 public class MangroveShelfBlock extends Block implements EntityBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(1, 1, 9, 15, 2, 16), box(1, 6, 9, 15, 7, 16), box(15, 0, 9, 16, 8, 16), box(0, 0, 9, 1, 8, 16));
-	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(1, 1, 0, 15, 2, 7), box(1, 6, 0, 15, 7, 7), box(0, 0, 0, 1, 8, 7), box(15, 0, 0, 16, 8, 7));
-	private static final VoxelShape SHAPE_EAST = Shapes.or(box(0, 1, 1, 7, 2, 15), box(0, 6, 1, 7, 7, 15), box(0, 0, 15, 7, 8, 16), box(0, 0, 0, 7, 8, 1));
-	private static final VoxelShape SHAPE_WEST = Shapes.or(box(9, 1, 1, 16, 2, 15), box(9, 6, 1, 16, 7, 15), box(9, 0, 0, 16, 8, 1), box(9, 0, 15, 16, 8, 16));
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public MangroveShelfBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public MangroveShelfBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.WOOD).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
+	private Function<BlockState, VoxelShape> makeShapes() {
+		return this.getShapeForEachState(state -> {
+			return switch (state.getValue(FACING)) {
+				case NORTH -> Shapes.or(box(1, 1, 9, 15, 2, 16), box(1, 6, 9, 15, 7, 16), box(15, 0, 9, 16, 8, 16), box(0, 0, 9, 1, 8, 16));
+				case EAST -> Shapes.or(box(0, 1, 1, 7, 2, 15), box(0, 6, 1, 7, 7, 15), box(0, 0, 15, 7, 8, 16), box(0, 0, 0, 7, 8, 1));
+				case WEST -> Shapes.or(box(9, 1, 1, 16, 2, 15), box(9, 6, 1, 16, 7, 15), box(9, 0, 0, 16, 8, 1), box(9, 0, 15, 16, 8, 16));
+				default -> Shapes.or(box(1, 1, 0, 15, 2, 7), box(1, 6, 0, 15, 7, 7), box(0, 0, 0, 1, 8, 7), box(15, 0, 0, 16, 8, 7));
+			};
+		});
 	}
 
 	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return shapes.apply(state);
 	}
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return (switch (state.getValue(FACING)) {
-			case NORTH -> SHAPE_NORTH;
-			case SOUTH -> SHAPE_SOUTH;
-			case EAST -> SHAPE_EAST;
-			case WEST -> SHAPE_WEST;
-			default -> SHAPE_NORTH;
-		});
 	}
 
 	@Override
@@ -83,7 +76,10 @@ public class MangroveShelfBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -132,15 +128,8 @@ public class MangroveShelfBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof MangroveShelfBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -149,7 +138,7 @@ public class MangroveShelfBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof MangroveShelfBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
@@ -157,17 +146,7 @@ public class MangroveShelfBlock extends Block implements EntityBlock {
 			return 0;
 	}
 
-	@OnlyIn(Dist.CLIENT)
-	public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
-		event.getBlockColors().register((bs, world, pos, index) -> {
-			return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor();
-		}, VoxelizedFurnitureModBlocks.MANGROVE_SHELF.get());
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
-		event.getItemColors().register((stack, index) -> {
-			return FoliageColor.getDefaultColor();
-		}, VoxelizedFurnitureModBlocks.MANGROVE_SHELF.get());
+	public static void blockColorLoad(RegisterColorHandlersEvent.BlockTintSources event) {
+		event.getBlockColors().register(List.of(BlockTintSources.foliage()), VoxelizedFurnitureModBlocks.MANGROVE_SHELF.get());
 	}
 }

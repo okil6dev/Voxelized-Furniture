@@ -1,22 +1,20 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#5"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "Blocks.PLANKS#5"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:CabinetDarkOak"
-    },
+    "stoneCuttingInputStack": "Blocks.PLANKS#5",
+    "stoneCuttingReturnStack": "CUSTOM:CabinetDarkOak",
     "name": "cabinet_dark_oak_craft",
     "namespace": "mod"
   }

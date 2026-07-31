@@ -1,8 +1,10 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:kitchen_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "voxelized_furniture:kitchen_table",
+    "minecraft:furnace"
+  ],
   "result": {
     "id": "voxelized_furniture:oven",
     "count": 1

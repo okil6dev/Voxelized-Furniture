@@ -1,5 +1,6 @@
 package net.okil.voxelizedfurniture.procedures;
 
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.LevelAccessor;
@@ -13,11 +14,11 @@ public class LightonandoffProcedure {
 		double sz = 0;
 		sx = -10;
 		found = false;
-		for (int index0 = 0; index0 < 20; index0++) {
+		for (int index9 = 0; index9 < 20; index9++) {
 			sy = -10;
-			for (int index1 = 0; index1 < 20; index1++) {
+			for (int index10 = 0; index10 < 20; index10++) {
 				sz = -10;
-				for (int index2 = 0; index2 < 20; index2++) {
+				for (int index11 = 0; index11 < 20; index11++) {
 					world.scheduleTick(BlockPos.containing(x + sx, y + sy, z + sz), world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz)).getBlock(), 1);
 					sz = sz + 1;
 				}
@@ -25,7 +26,7 @@ public class LightonandoffProcedure {
 			}
 			sx = sx + 1;
 		}
-		if (0 == ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock().getStateDefinition().getProperty("blockstate") instanceof IntegerProperty _getip2 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip2) : -1)) {
+		if (0 == (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "blockstate") instanceof IntegerProperty _getip2 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip2) : -1)) {
 			{
 				int _value = 1;
 				BlockPos _pos = BlockPos.containing(x, y, z);
@@ -42,5 +43,14 @@ public class LightonandoffProcedure {
 					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 			}
 		}
+	}
+
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
+			}
+		}
+		return null;
 	}
 }

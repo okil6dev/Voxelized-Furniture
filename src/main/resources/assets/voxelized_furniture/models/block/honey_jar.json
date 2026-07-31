@@ -2,8 +2,7 @@
   "parent": "voxelized_furniture:custom/honeyjar",
   "textures": {
     "all": "voxelized_furniture:block/honeyjar",
-    "particle": "voxelized_furniture:block/honeyjar",
+    "particle": "minecraft:block/orange_wool",
     "2": "voxelized_furniture:block/honeyjar"
-  },
-  "render_type": "cutout"
+  }
 }

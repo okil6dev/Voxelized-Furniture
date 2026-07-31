@@ -3,9 +3,7 @@
     "default": {
       "name": "default",
       "map": {
-        "0": "darkscatteredwood",
-        "1": "scatteredwood",
-        "2": "lowblack"
+        "3": "kitchendrawecornertex"
       }
     }
   }

@@ -1,48 +1,30 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.MANGROVE_PLANKS"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.MANGROVE_SLAB"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.MANGROVE_SLAB"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.MANGROVE_STAIRS"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      }
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.MANGROVE_SLAB",
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.MANGROVE_SLAB",
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.MANGROVE_STAIRS",
+      "Blocks.MANGROVE_PLANKS"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:MangroveWardrobe"
-    },
+    "recipeReturnStack": "CUSTOM:MangroveWardrobe",
     "name": "mangrove_wardrobe_craft",
     "namespace": "mod"
   }

@@ -1,17 +1,14 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
-    "recipeRetstackSize": 1,
+    "recipeRetstackSize": 3,
     "group": "",
     "unlockingItems": [
-      {
-        "value": "Items.WHEAT_SEEDS"
-      },
-      {
-        "value": "Blocks.CONCRETE#12"
-      }
+      "Items.WHEAT_SEEDS",
+      "Blocks.CONCRETE#12",
+      "Blocks.BRICK_BLOCK"
     ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
@@ -19,37 +16,17 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": true,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.WHEAT_SEEDS"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.CONCRETE#12"
-      },
-      {
-        "value": ""
-      }
+      "",
+      "Items.WHEAT_SEEDS",
+      "",
+      "",
+      "Blocks.DIRT",
+      "",
+      "",
+      "Blocks.BRICK_BLOCK",
+      ""
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:WheatPlant"
-    },
+    "recipeReturnStack": "CUSTOM:WheatPlant",
     "name": "wheat_plant_recipe",
     "namespace": "mod"
   }

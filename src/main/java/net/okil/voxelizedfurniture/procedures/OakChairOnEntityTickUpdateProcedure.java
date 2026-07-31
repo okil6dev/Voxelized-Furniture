@@ -14,13 +14,16 @@ public class OakChairOnEntityTickUpdateProcedure {
 			return;
 		if (!entity.isVehicle()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120, 100, false, false));
+				_entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 120, 100, false, false));
 			entity.push(0, 0, 0);
 			{
 				Entity _ent = entity;
-				_ent.teleportTo(x, y, z);
+				double _tx = x;
+				double _ty = y;
+				double _tz = z;
+				_ent.teleportTo(_tx, _ty, _tz);
 				if (_ent instanceof ServerPlayer _serverPlayer)
-					_serverPlayer.connection.teleport(x, y, z, _ent.getYRot(), _ent.getXRot());
+					_serverPlayer.connection.teleport(_tx, _ty, _tz, _ent.getYRot(), _ent.getXRot());
 			}
 			entity.makeStuckInBlock(Blocks.AIR.defaultBlockState(), new Vec3(0.25, 0.05, 0.25));
 		}

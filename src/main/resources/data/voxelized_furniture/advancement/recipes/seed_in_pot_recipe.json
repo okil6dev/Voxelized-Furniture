@@ -11,7 +11,27 @@
       "conditions": {
         "items": [
           {
-            "items": "voxelized_furniture:nature_set"
+            "items": "#minecraft:dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_1": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_2": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:short_grass"
           }
         ]
       },
@@ -21,7 +41,9 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ingredient_0"
+      "has_ingredient_0",
+      "has_ingredient_1",
+      "has_ingredient_2"
     ]
   ],
   "rewards": {

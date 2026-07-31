@@ -5,6 +5,5 @@
     "particle": "voxelized_furniture:block/gray",
     "0": "voxelized_furniture:block/gray",
     "2": "voxelized_furniture:block/anvil_darker"
-  },
-  "render_type": "solid"
+  }
 }

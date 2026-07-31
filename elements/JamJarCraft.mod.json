@@ -1,22 +1,32 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Stone cutting",
+    "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.GLASS",
+      "CUSTOM:JamBottle",
+      "Blocks.CARPET#14"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "CUSTOM:FoodSet"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:JamJar"
-    },
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "Blocks.CARPET#14",
+      "",
+      "",
+      "CUSTOM:JamBottle",
+      "",
+      "",
+      "Blocks.GLASS",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:JamJar",
     "name": "jam_jar_craft",
     "namespace": "mod"
   }

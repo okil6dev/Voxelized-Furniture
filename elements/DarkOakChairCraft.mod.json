@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#5",
+      "Items.STICK"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": true,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.DARK_OAK_TRAPDOOR"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.PLANKS#5"
-      },
-      {
-        "value": "Blocks.PLANKS#5"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.STICK"
-      },
-      {
-        "value": "Items.STICK"
-      }
+      "",
+      "",
+      "Blocks.DARK_OAK_TRAPDOOR",
+      "",
+      "Blocks.PLANKS#5",
+      "Blocks.PLANKS#5",
+      "",
+      "Items.STICK",
+      "Items.STICK"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:DarkOakChair1"
-    },
+    "recipeReturnStack": "CUSTOM:DarkOakChair1",
     "name": "dark_oak_chair_craft",
     "namespace": "mod"
   }

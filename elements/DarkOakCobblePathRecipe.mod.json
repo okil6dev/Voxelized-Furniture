@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.DARK_OAK_FENCE",
+      "Blocks.STONE"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": true,
+    "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.DARK_OAK_FENCE"
-      },
-      {
-        "value": "Blocks.DARK_OAK_FENCE"
-      },
-      {
-        "value": "Blocks.DARK_OAK_FENCE"
-      },
-      {
-        "value": "Blocks.STONE_SLAB"
-      },
-      {
-        "value": "Blocks.STONE"
-      },
-      {
-        "value": "Blocks.STONE_SLAB"
-      }
+      "",
+      "",
+      "",
+      "Blocks.DARK_OAK_FENCE",
+      "Blocks.DARK_OAK_FENCE",
+      "Blocks.DARK_OAK_FENCE",
+      "Blocks.STONE_SLAB",
+      "Blocks.STONE",
+      "Blocks.STONE_SLAB"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:DarkOakCobblePath"
-    },
+    "recipeReturnStack": "CUSTOM:DarkOakCobblePath",
     "name": "dark_oak_cobble_path_recipe",
     "namespace": "mod"
   }

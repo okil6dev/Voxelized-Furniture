@@ -7,7 +7,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,53 +27,48 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import java.util.function.Function;
+
 import io.netty.buffer.Unpooled;
 
 public class KitchenFridgeBlock extends Block implements EntityBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(0, 0, 3, 16, 16, 16), box(0, 16, 3, 16, 32, 16), box(0.25, 16, 2, 15.75, 31.5, 3), box(14, 12, 1, 15, 24, 2), box(14, 4, 1, 15, 9, 2), box(0.25, 11, 2, 15.75, 16, 3),
-			box(0.25, 1, 2, 15.75, 10, 3), box(3, 26, 1.9, 7, 30, 2));
-	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(0, 0, 0, 16, 16, 13), box(0, 16, 0, 16, 32, 13), box(0.25, 16, 13, 15.75, 31.5, 14), box(1, 12, 14, 2, 24, 15), box(1, 4, 14, 2, 9, 15), box(0.25, 11, 13, 15.75, 16, 14),
-			box(0.25, 1, 13, 15.75, 10, 14), box(9, 26, 14, 13, 30, 14.1));
-	private static final VoxelShape SHAPE_EAST = Shapes.or(box(0, 0, 0, 13, 16, 16), box(0, 16, 0, 13, 32, 16), box(13, 16, 0.25, 14, 31.5, 15.75), box(14, 12, 14, 15, 24, 15), box(14, 4, 14, 15, 9, 15), box(13, 11, 0.25, 14, 16, 15.75),
-			box(13, 1, 0.25, 14, 10, 15.75), box(14, 26, 3, 14.1, 30, 7));
-	private static final VoxelShape SHAPE_WEST = Shapes.or(box(3, 0, 0, 16, 16, 16), box(3, 16, 0, 16, 32, 16), box(2, 16, 0.25, 3, 31.5, 15.75), box(1, 12, 1, 2, 24, 2), box(1, 4, 1, 2, 9, 2), box(2, 11, 0.25, 3, 16, 15.75),
-			box(2, 1, 0.25, 3, 10, 15.75), box(1.9, 26, 9, 2, 30, 13));
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public KitchenFridgeBlock() {
-		super(BlockBehaviour.Properties.of().strength(6f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public KitchenFridgeBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(6f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
+	private Function<BlockState, VoxelShape> makeShapes() {
+		return this.getShapeForEachState(state -> {
+			return switch (state.getValue(FACING)) {
+				case NORTH -> Shapes.or(box(0, 0, 3, 16, 16, 16), box(0, 16, 3, 16, 32, 16), box(0.25, 16, 2, 15.75, 31.5, 3), box(14, 12, 1, 15, 24, 2), box(14, 4, 1, 15, 9, 2), box(0.25, 11, 2, 15.75, 16, 3), box(0.25, 1, 2, 15.75, 10, 3),
+						box(3, 26, 1.9, 7, 30, 2));
+				case EAST -> Shapes.or(box(0, 0, 0, 13, 16, 16), box(0, 16, 0, 13, 32, 16), box(13, 16, 0.25, 14, 31.5, 15.75), box(14, 12, 14, 15, 24, 15), box(14, 4, 14, 15, 9, 15), box(13, 11, 0.25, 14, 16, 15.75), box(13, 1, 0.25, 14, 10, 15.75),
+						box(14, 26, 3, 14.1, 30, 7));
+				case WEST -> Shapes.or(box(3, 0, 0, 16, 16, 16), box(3, 16, 0, 16, 32, 16), box(2, 16, 0.25, 3, 31.5, 15.75), box(1, 12, 1, 2, 24, 2), box(1, 4, 1, 2, 9, 2), box(2, 11, 0.25, 3, 16, 15.75), box(2, 1, 0.25, 3, 10, 15.75),
+						box(1.9, 26, 9, 2, 30, 13));
+				default -> Shapes.or(box(0, 0, 0, 16, 16, 13), box(0, 16, 0, 16, 32, 13), box(0.25, 16, 13, 15.75, 31.5, 14), box(1, 12, 14, 2, 24, 15), box(1, 4, 14, 2, 9, 15), box(0.25, 11, 13, 15.75, 16, 14), box(0.25, 1, 13, 15.75, 10, 14),
+						box(9, 26, 14, 13, 30, 14.1));
+			};
+		});
 	}
 
 	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return shapes.apply(state);
 	}
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return (switch (state.getValue(FACING)) {
-			case NORTH -> SHAPE_NORTH;
-			case SOUTH -> SHAPE_SOUTH;
-			case EAST -> SHAPE_EAST;
-			case WEST -> SHAPE_WEST;
-			default -> SHAPE_NORTH;
-		});
 	}
 
 	@Override
@@ -84,7 +79,10 @@ public class KitchenFridgeBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -133,15 +131,8 @@ public class KitchenFridgeBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof KitchenFridgeBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -150,7 +141,7 @@ public class KitchenFridgeBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof KitchenFridgeBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

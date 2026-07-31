@@ -19,28 +19,18 @@ import net.minecraft.core.BlockPos;
 public class WheatPlantBlock extends Block {
 	private static final VoxelShape SHAPE = box(5, 0, 5, 11, 8, 11);
 
-	public WheatPlantBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 3f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public WheatPlantBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(2f, 3f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
-	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return SHAPE;
 	}
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return (SHAPE);
 	}
 
 	@Override

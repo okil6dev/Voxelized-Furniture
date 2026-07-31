@@ -1,11 +1,9 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "tab",
   "definition": {
     "name": "Electrical",
-    "icon": {
-      "value": "CUSTOM:Light"
-    },
+    "icon": "CUSTOM:Light",
     "showSearch": true
   }
 }

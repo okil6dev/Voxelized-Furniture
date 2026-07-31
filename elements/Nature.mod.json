@@ -1,11 +1,9 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "tab",
   "definition": {
     "name": "Nature",
-    "icon": {
-      "value": "CUSTOM:SeedInPot"
-    },
+    "icon": "CUSTOM:SeedInPot",
     "showSearch": true
   }
 }

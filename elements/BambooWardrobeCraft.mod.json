@@ -1,48 +1,30 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.BAMBOO_PLANKS"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": "Blocks.BAMBOO_PLANKS"
-      },
-      {
-        "value": "Blocks.BAMBOO_SLAB"
-      },
-      {
-        "value": "Blocks.BAMBOO_PLANKS"
-      },
-      {
-        "value": "Blocks.BAMBOO_PLANKS"
-      },
-      {
-        "value": "Blocks.BAMBOO_SLAB"
-      },
-      {
-        "value": "Blocks.BAMBOO_PLANKS"
-      },
-      {
-        "value": "Blocks.BAMBOO_PLANKS"
-      },
-      {
-        "value": "Blocks.BAMBOO_STAIRS"
-      },
-      {
-        "value": "Blocks.BAMBOO_PLANKS"
-      }
+      "Blocks.BAMBOO_PLANKS",
+      "Blocks.BAMBOO_SLAB",
+      "Blocks.BAMBOO_PLANKS",
+      "Blocks.BAMBOO_PLANKS",
+      "Blocks.BAMBOO_SLAB",
+      "Blocks.BAMBOO_PLANKS",
+      "Blocks.BAMBOO_PLANKS",
+      "Blocks.BAMBOO_STAIRS",
+      "Blocks.BAMBOO_PLANKS"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:BambooWardrobe"
-    },
+    "recipeReturnStack": "CUSTOM:BambooWardrobe",
     "name": "bamboo_wardrobe_craft",
     "namespace": "mod"
   }

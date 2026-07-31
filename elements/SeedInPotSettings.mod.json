@@ -1,5 +1,5 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -16,9 +16,7 @@
           "name": "button_2d",
           "text": "2D",
           "isUndecorated": false,
-          "onClick": {
-            "name": "Seedinpot2d"
-          },
+          "onClick": "Seedinpot2d",
           "width": 35,
           "height": 20,
           "x": 195,
@@ -32,9 +30,7 @@
           "name": "button_3d",
           "text": "3D",
           "isUndecorated": false,
-          "onClick": {
-            "name": "Seedinpot3d"
-          },
+          "onClick": "Seedinpot3d",
           "width": 35,
           "height": 20,
           "x": 195,
@@ -48,9 +44,7 @@
           "name": "button_ramdom",
           "text": "Random 2D",
           "isUndecorated": false,
-          "onClick": {
-            "name": "SeedinpotramdomP"
-          },
+          "onClick": "SeedinpotramdomP",
           "width": 56,
           "height": 20,
           "x": 186,
@@ -64,9 +58,7 @@
           "name": "button_random_3d",
           "text": "Random 3D",
           "isUndecorated": false,
-          "onClick": {
-            "name": "SeedinpotramdomP3d"
-          },
+          "onClick": "SeedinpotramdomP3d",
           "width": 72,
           "height": 20,
           "x": 177,

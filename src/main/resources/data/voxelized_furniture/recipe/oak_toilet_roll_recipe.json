@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:bathroom_set"
-  },
+  "ingredient": "minecraft:oak_planks",
   "result": {
     "id": "voxelized_furniture:oak_toilet_roll",
     "count": 1

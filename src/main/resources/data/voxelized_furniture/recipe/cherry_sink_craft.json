@@ -7,15 +7,9 @@
     "bbb"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:cherry_slab"
-    },
-    "b": {
-      "item": "minecraft:quartz_block"
-    },
-    "c": {
-      "item": "minecraft:anvil"
-    }
+    "a": "minecraft:cherry_slab",
+    "b": "minecraft:quartz_block",
+    "c": "minecraft:anvil"
   },
   "result": {
     "id": "voxelized_furniture:cherry_sink",

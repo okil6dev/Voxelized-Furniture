@@ -2,15 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:brown_concrete"
-    }
+    "minecraft:wheat_seeds",
+    "#minecraft:dirt",
+    "minecraft:bricks"
   ],
   "result": {
     "id": "voxelized_furniture:wheat_plant",
-    "count": 1
+    "count": 3
   }
 }

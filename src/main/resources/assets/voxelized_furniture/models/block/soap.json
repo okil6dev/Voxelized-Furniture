@@ -2,8 +2,7 @@
   "parent": "voxelized_furniture:custom/soap",
   "textures": {
     "all": "voxelized_furniture:block/soap",
-    "particle": "voxelized_furniture:block/soap",
+    "particle": "minecraft:block/light_blue_concrete_powder",
     "0": "voxelized_furniture:block/soap"
-  },
-  "render_type": "solid"
+  }
 }

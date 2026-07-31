@@ -1,5 +1,5 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "block",
   "definition": {
     "texture": "minecraft:sea_lantern",
@@ -14,13 +14,111 @@
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
+    "states": [
+      {
+        "texture": "minecraft:sea_lantern",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "modern_bulkhead_light_on:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": true,
+        "boundingBoxes": [
+          {
+            "mx": 4.5,
+            "my": 1.5,
+            "mz": 14.0,
+            "Mx": 11.5,
+            "My": 14.5,
+            "Mz": 16.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.5,
+            "my": 1.5,
+            "mz": 11.0,
+            "Mx": 11.5,
+            "My": 3.5,
+            "Mz": 14.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.5,
+            "my": 12.5,
+            "mz": 11.0,
+            "Mx": 11.5,
+            "My": 14.5,
+            "Mz": 14.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.5,
+            "my": 10.5,
+            "mz": 11.0,
+            "Mx": 11.5,
+            "My": 11.5,
+            "Mz": 14.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.5,
+            "my": 8.5,
+            "mz": 11.0,
+            "Mx": 11.5,
+            "My": 9.5,
+            "Mz": 14.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.5,
+            "my": 6.5,
+            "mz": 11.0,
+            "Mx": 11.5,
+            "My": 7.5,
+            "Mz": 14.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.5,
+            "my": 4.5,
+            "mz": 11.0,
+            "Mx": 11.5,
+            "My": 5.5,
+            "Mz": 14.0,
+            "subtract": false
+          },
+          {
+            "mx": 5.25,
+            "my": 3.5,
+            "mz": 11.75,
+            "Mx": 10.75,
+            "My": 12.5,
+            "Mz": 14.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 1,
+              "name": "CUSTOM:blockstate",
+              "type": "integer"
+            },
+            "value": 1
+          }
+        ]
+      }
+    ],
     "animations": [],
     "itemTexture": "",
     "particleTexture": "",
     "blockSetType": "OAK",
-    "pottedPlant": {
-      "value": ""
-    },
+    "pottedPlant": "",
+    "leavesParticleChance": 0.0,
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": true,
@@ -101,7 +199,15 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "min": 0,
+        "max": 1,
+        "name": "CUSTOM:blockstate",
+        "type": "integer",
+        "value": 0
+      }
+    ],
     "name": "Modern Bulkhead Light",
     "specialInformation": {
       "fixedValue": []
@@ -115,14 +221,10 @@
     "rarity": "COMMON",
     "immuneToFire": true,
     "creativeTabs": [
-      {
-        "value": "CUSTOM:Electrical"
-      }
+      "CUSTOM:Electrical"
     ],
     "destroyTool": "pickaxe",
-    "customDrop": {
-      "value": ""
-    },
+    "customDrop": "",
     "dropAmount": 1,
     "xpAmountMin": 0,
     "xpAmountMax": 0,
@@ -131,6 +233,7 @@
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
+    "hasCustomOpacity": false,
     "lightOpacity": 0,
     "tickRate": 0,
     "tickRandomly": false,
@@ -141,14 +244,10 @@
     },
     "colorOnMap": "DEFAULT",
     "noteBlockInstrument": "harp",
-    "creativePickItem": {
-      "value": ""
-    },
+    "creativePickItem": "",
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
-    "strippingResult": {
-      "value": ""
-    },
+    "strippingResult": "",
     "ignitedByLava": false,
     "flammability": 0,
     "fireSpreadSpeed": 0,
@@ -158,26 +257,16 @@
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
+    "soundOnStep": "GLASS",
     "isCustomSoundType": false,
-    "soundOnStep": {
-      "value": "GLASS"
+    "breakSound": "",
+    "fallSound": "",
+    "hitSound": "",
+    "placeSound": "",
+    "stepSound": "",
+    "luminance": {
+      "fixedValue": 0.0
     },
-    "breakSound": {
-      "value": ""
-    },
-    "fallSound": {
-      "value": ""
-    },
-    "hitSound": {
-      "value": ""
-    },
-    "placeSound": {
-      "value": ""
-    },
-    "stepSound": {
-      "value": ""
-    },
-    "luminance": 0,
     "unbreakable": false,
     "vanillaToolTier": "NONE",
     "isBonemealable": false,
@@ -202,15 +291,11 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onTickUpdate": {
-      "name": "LightSwitch"
-    },
+    "onTickUpdate": "LightSwitch",
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
-      {
-        "value": "TAG:stone_ore_replaceables"
-      }
+      "TAG:stone_ore_replaceables"
     ],
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 10,

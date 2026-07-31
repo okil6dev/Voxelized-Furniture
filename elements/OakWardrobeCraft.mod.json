@@ -1,48 +1,30 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#0"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      },
-      {
-        "value": "Blocks.OAK_STAIRS"
-      },
-      {
-        "value": "Blocks.PLANKS#0"
-      }
+      "Blocks.PLANKS#0",
+      "Blocks.WOODEN_SLAB#0",
+      "Blocks.PLANKS#0",
+      "Blocks.PLANKS#0",
+      "Blocks.WOODEN_SLAB#0",
+      "Blocks.PLANKS#0",
+      "Blocks.PLANKS#0",
+      "Blocks.OAK_STAIRS",
+      "Blocks.PLANKS#0"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:OakWardrobe"
-    },
+    "recipeReturnStack": "CUSTOM:OakWardrobe",
     "name": "oak_wardrobe_craft",
     "namespace": "mod"
   }

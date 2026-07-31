@@ -1,18 +1,14 @@
 package net.okil.voxelizedfurniture.client.particle;
 
-import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.api.distmarker.Dist;
-
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.client.particle.TextureSheetParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.multiplayer.ClientLevel;
 
-@OnlyIn(Dist.CLIENT)
-public class ShowerPParticle extends TextureSheetParticle {
+public class ShowerPParticle extends SingleQuadParticle {
 	public static ShowerPParticleProvider provider(SpriteSet spriteSet) {
 		return new ShowerPParticleProvider(spriteSet);
 	}
@@ -24,7 +20,7 @@ public class ShowerPParticle extends TextureSheetParticle {
 			this.spriteSet = spriteSet;
 		}
 
-		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new ShowerPParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet);
 		}
 	}
@@ -32,7 +28,7 @@ public class ShowerPParticle extends TextureSheetParticle {
 	private final SpriteSet spriteSet;
 
 	protected ShowerPParticle(ClientLevel world, double x, double y, double z, double vx, double vy, double vz, SpriteSet spriteSet) {
-		super(world, x, y, z);
+		super(world, x, y, z, spriteSet.first());
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
 		this.lifetime = (int) Math.max(1, 7 + (this.random.nextInt(14) - 7));
@@ -41,12 +37,11 @@ public class ShowerPParticle extends TextureSheetParticle {
 		this.xd = vx * 0.01;
 		this.yd = vy * 0.01;
 		this.zd = vz * 0.01;
-		this.pickSprite(spriteSet);
 	}
 
 	@Override
-	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+	public SingleQuadParticle.Layer getLayer() {
+		return SingleQuadParticle.Layer.TRANSLUCENT;
 	}
 
 	@Override

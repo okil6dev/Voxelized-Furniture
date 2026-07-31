@@ -1,14 +1,11 @@
 package net.okil.voxelizedfurniture.block;
 
-import org.checkerframework.checker.units.qual.s;
-
 import net.okil.voxelizedfurniture.procedures.SeedInPotSettingsPProcedure;
 import net.okil.voxelizedfurniture.block.entity.SeedInPotRamdomBlockEntity;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -19,39 +16,41 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import java.util.function.Function;
+
 public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	private static final VoxelShape SHAPE_1 = Shapes.or(box(5, 0, 5, 11, 1, 11), box(5, 1, 10, 11, 5, 11), box(6, 1, 6, 10, 5, 10), box(7.5, 8, 8.5, 8.5, 9, 10.5), box(8.5, 8, 7.5, 10.5, 9, 8.5), box(5.5, 8, 7.5, 7.5, 9, 8.5),
-			box(7.5, 5, 7.5, 8.5, 8, 8.5), box(7.5, 8, 5.5, 8.5, 9, 7.5), box(10, 1, 6, 11, 5, 10), box(5, 1, 6, 6, 5, 10), box(5, 1, 5, 11, 5, 6), box(6, 5, 10, 10, 6, 12), box(10, 5, 4, 12, 6, 12), box(4, 5, 4, 6, 6, 12), box(6, 5, 4, 10, 6, 6));
-	private static final VoxelShape SHAPE = Shapes.or(box(5, 0, 5, 11, 1, 11), box(5, 1, 10, 11, 5, 11), box(6, 1, 6, 10, 5, 10), box(10, 1, 6, 11, 5, 10), box(5, 1, 6, 6, 5, 10), box(5, 1, 5, 11, 5, 6), box(6, 5, 10, 10, 6, 12),
-			box(10, 5, 4, 12, 6, 12), box(4, 5, 4, 6, 6, 12), box(6, 5, 4, 10, 6, 6));
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public SeedInPotRamdomBlock() {
-		super(BlockBehaviour.Properties.of().strength(-1, 3600000).lightLevel(s -> (new Object() {
-			public int getLightLevel() {
-				if (s.getValue(BLOCKSTATE) == 1)
-					return 0;
-				return 0;
+	public SeedInPotRamdomBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(-1, 3600000).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
+		this.registerDefaultState(this.stateDefinition.any().setValue(BLOCKSTATE, 0));
+	}
+
+	private Function<BlockState, VoxelShape> makeShapes() {
+		return this.getShapeForEachState(state -> {
+			if (state.getValue(BLOCKSTATE) == 1) {
+				return Shapes.or(box(5, 0, 5, 11, 1, 11), box(5, 1, 10, 11, 5, 11), box(6, 1, 6, 10, 5, 10), box(7.5, 8, 8.5, 8.5, 9, 10.5), box(8.5, 8, 7.5, 10.5, 9, 8.5), box(5.5, 8, 7.5, 7.5, 9, 8.5), box(7.5, 5, 7.5, 8.5, 8, 8.5),
+						box(7.5, 8, 5.5, 8.5, 9, 7.5), box(10, 1, 6, 11, 5, 10), box(5, 1, 6, 6, 5, 10), box(5, 1, 5, 11, 5, 6), box(6, 5, 10, 10, 6, 12), box(10, 5, 4, 12, 6, 12), box(4, 5, 4, 6, 6, 12), box(6, 5, 4, 10, 6, 6));
 			}
-		}.getLightLevel())).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
+			return Shapes.or(box(5, 0, 5, 11, 1, 11), box(5, 1, 10, 11, 5, 11), box(6, 1, 6, 10, 5, 10), box(10, 1, 6, 11, 5, 10), box(5, 1, 6, 6, 5, 10), box(5, 1, 5, 11, 5, 6), box(6, 5, 10, 10, 6, 12), box(10, 5, 4, 12, 6, 12),
+					box(4, 5, 4, 6, 6, 12), box(6, 5, 4, 10, 6, 6));
+		});
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
-	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return shapes.apply(state).move(state.getOffset(pos));
 	}
 
 	@Override
@@ -60,18 +59,17 @@ public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		Vec3 offset = state.getOffset(world, pos);
-		if (state.getValue(BLOCKSTATE) == 1) {
-			return (SHAPE_1).move(offset.x, offset.y, offset.z);
-		}
-		return (SHAPE).move(offset.x, offset.y, offset.z);
-	}
-
-	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
 		builder.add(BLOCKSTATE);
+	}
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(BLOCKSTATE, 0);
 	}
 
 	@Override
@@ -107,15 +105,8 @@ public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof SeedInPotRamdomBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -124,7 +115,7 @@ public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof SeedInPotRamdomBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

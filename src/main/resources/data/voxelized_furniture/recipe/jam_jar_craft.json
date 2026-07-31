@@ -1,8 +1,11 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:food_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:red_carpet",
+    "voxelized_furniture:jam_bottle",
+    "minecraft:glass"
+  ],
   "result": {
     "id": "voxelized_furniture:jam_jar",
     "count": 1

@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#2",
+      "Items.STICK"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": true,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.BIRCH_TRAPDOOR"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.PLANKS#2"
-      },
-      {
-        "value": "Blocks.PLANKS#2"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.STICK"
-      },
-      {
-        "value": "Items.STICK"
-      }
+      "",
+      "",
+      "Blocks.BIRCH_TRAPDOOR",
+      "",
+      "Blocks.PLANKS#2",
+      "Blocks.PLANKS#2",
+      "",
+      "Items.STICK",
+      "Items.STICK"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:BirchChair1"
-    },
+    "recipeReturnStack": "CUSTOM:BirchChair1",
     "name": "birch_chair_craft",
     "namespace": "mod"
   }

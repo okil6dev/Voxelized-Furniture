@@ -1,11 +1,9 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "tab",
   "definition": {
     "name": "Miniature",
-    "icon": {
-      "value": "CUSTOM:MiniatureRuinedNetherPortal"
-    },
+    "icon": "CUSTOM:MiniatureRuinedNetherPortal",
     "showSearch": true
   }
 }

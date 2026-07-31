@@ -6,6 +6,5 @@
     "1": "minecraft:block/stripped_birch_log",
     "2": "minecraft:block/birch_planks",
     "3": "minecraft:block/anvil"
-  },
-  "render_type": "solid"
+  }
 }

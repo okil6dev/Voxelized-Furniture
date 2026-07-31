@@ -1,14 +1,12 @@
 package net.okil.voxelizedfurniture.block;
 
-import org.checkerframework.checker.units.qual.s;
-
 import net.okil.voxelizedfurniture.procedures.LightSwitchProcedure;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -24,70 +22,53 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import java.util.function.Function;
+
 public class ModernBulkheadLightOffBlock extends Block {
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private static final VoxelShape SHAPE_1_NORTH = Shapes.or(box(4.5, 1.5, 14, 11.5, 14.5, 16), box(4.5, 1.5, 11, 11.5, 3.5, 14), box(4.5, 12.5, 11, 11.5, 14.5, 14), box(4.5, 10.5, 11, 11.5, 11.5, 14), box(4.5, 8.5, 11, 11.5, 9.5, 14),
-			box(4.5, 6.5, 11, 11.5, 7.5, 14), box(4.5, 4.5, 11, 11.5, 5.5, 14), box(5.25, 3.5, 11.75, 10.75, 12.5, 14));
-	private static final VoxelShape SHAPE_1_SOUTH = Shapes.or(box(4.5, 1.5, 0, 11.5, 14.5, 2), box(4.5, 1.5, 2, 11.5, 3.5, 5), box(4.5, 12.5, 2, 11.5, 14.5, 5), box(4.5, 10.5, 2, 11.5, 11.5, 5), box(4.5, 8.5, 2, 11.5, 9.5, 5),
-			box(4.5, 6.5, 2, 11.5, 7.5, 5), box(4.5, 4.5, 2, 11.5, 5.5, 5), box(5.25, 3.5, 2, 10.75, 12.5, 4.25));
-	private static final VoxelShape SHAPE_1_EAST = Shapes.or(box(0, 1.5, 4.5, 2, 14.5, 11.5), box(2, 1.5, 4.5, 5, 3.5, 11.5), box(2, 12.5, 4.5, 5, 14.5, 11.5), box(2, 10.5, 4.5, 5, 11.5, 11.5), box(2, 8.5, 4.5, 5, 9.5, 11.5),
-			box(2, 6.5, 4.5, 5, 7.5, 11.5), box(2, 4.5, 4.5, 5, 5.5, 11.5), box(2, 3.5, 5.25, 4.25, 12.5, 10.75));
-	private static final VoxelShape SHAPE_1_WEST = Shapes.or(box(14, 1.5, 4.5, 16, 14.5, 11.5), box(11, 1.5, 4.5, 14, 3.5, 11.5), box(11, 12.5, 4.5, 14, 14.5, 11.5), box(11, 10.5, 4.5, 14, 11.5, 11.5), box(11, 8.5, 4.5, 14, 9.5, 11.5),
-			box(11, 6.5, 4.5, 14, 7.5, 11.5), box(11, 4.5, 4.5, 14, 5.5, 11.5), box(11.75, 3.5, 5.25, 14, 12.5, 10.75));
-	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(4.5, 1.5, 14, 11.5, 14.5, 16), box(4.5, 1.5, 11, 11.5, 3.5, 14), box(4.5, 12.5, 11, 11.5, 14.5, 14), box(4.5, 10.5, 11, 11.5, 11.5, 14), box(4.5, 8.5, 11, 11.5, 9.5, 14),
-			box(4.5, 6.5, 11, 11.5, 7.5, 14), box(4.5, 4.5, 11, 11.5, 5.5, 14), box(5.25, 3.5, 11.75, 10.75, 12.5, 14));
-	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(4.5, 1.5, 0, 11.5, 14.5, 2), box(4.5, 1.5, 2, 11.5, 3.5, 5), box(4.5, 12.5, 2, 11.5, 14.5, 5), box(4.5, 10.5, 2, 11.5, 11.5, 5), box(4.5, 8.5, 2, 11.5, 9.5, 5),
-			box(4.5, 6.5, 2, 11.5, 7.5, 5), box(4.5, 4.5, 2, 11.5, 5.5, 5), box(5.25, 3.5, 2, 10.75, 12.5, 4.25));
-	private static final VoxelShape SHAPE_EAST = Shapes.or(box(0, 1.5, 4.5, 2, 14.5, 11.5), box(2, 1.5, 4.5, 5, 3.5, 11.5), box(2, 12.5, 4.5, 5, 14.5, 11.5), box(2, 10.5, 4.5, 5, 11.5, 11.5), box(2, 8.5, 4.5, 5, 9.5, 11.5),
-			box(2, 6.5, 4.5, 5, 7.5, 11.5), box(2, 4.5, 4.5, 5, 5.5, 11.5), box(2, 3.5, 5.25, 4.25, 12.5, 10.75));
-	private static final VoxelShape SHAPE_WEST = Shapes.or(box(14, 1.5, 4.5, 16, 14.5, 11.5), box(11, 1.5, 4.5, 14, 3.5, 11.5), box(11, 12.5, 4.5, 14, 14.5, 11.5), box(11, 10.5, 4.5, 14, 11.5, 11.5), box(11, 8.5, 4.5, 14, 9.5, 11.5),
-			box(11, 6.5, 4.5, 14, 7.5, 11.5), box(11, 4.5, 4.5, 14, 5.5, 11.5), box(11.75, 3.5, 5.25, 14, 12.5, 10.75));
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public ModernBulkheadLightOffBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(2f, 3f).lightLevel(s -> (new Object() {
-			public int getLightLevel() {
-				if (s.getValue(BLOCKSTATE) == 1)
-					return 10;
-				return 0;
+	public ModernBulkheadLightOffBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.GLASS).strength(2f, 3f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(BLOCKSTATE, 0));
+	}
+
+	private Function<BlockState, VoxelShape> makeShapes() {
+		return this.getShapeForEachState(state -> {
+			if (state.getValue(BLOCKSTATE) == 1) {
+				return switch (state.getValue(FACING)) {
+					case NORTH -> Shapes.or(box(4.5, 1.5, 14, 11.5, 14.5, 16), box(4.5, 1.5, 11, 11.5, 3.5, 14), box(4.5, 12.5, 11, 11.5, 14.5, 14), box(4.5, 10.5, 11, 11.5, 11.5, 14), box(4.5, 8.5, 11, 11.5, 9.5, 14),
+							box(4.5, 6.5, 11, 11.5, 7.5, 14), box(4.5, 4.5, 11, 11.5, 5.5, 14), box(5.25, 3.5, 11.75, 10.75, 12.5, 14));
+					case EAST -> Shapes.or(box(0, 1.5, 4.5, 2, 14.5, 11.5), box(2, 1.5, 4.5, 5, 3.5, 11.5), box(2, 12.5, 4.5, 5, 14.5, 11.5), box(2, 10.5, 4.5, 5, 11.5, 11.5), box(2, 8.5, 4.5, 5, 9.5, 11.5), box(2, 6.5, 4.5, 5, 7.5, 11.5),
+							box(2, 4.5, 4.5, 5, 5.5, 11.5), box(2, 3.5, 5.25, 4.25, 12.5, 10.75));
+					case WEST -> Shapes.or(box(14, 1.5, 4.5, 16, 14.5, 11.5), box(11, 1.5, 4.5, 14, 3.5, 11.5), box(11, 12.5, 4.5, 14, 14.5, 11.5), box(11, 10.5, 4.5, 14, 11.5, 11.5), box(11, 8.5, 4.5, 14, 9.5, 11.5),
+							box(11, 6.5, 4.5, 14, 7.5, 11.5), box(11, 4.5, 4.5, 14, 5.5, 11.5), box(11.75, 3.5, 5.25, 14, 12.5, 10.75));
+					default -> Shapes.or(box(4.5, 1.5, 0, 11.5, 14.5, 2), box(4.5, 1.5, 2, 11.5, 3.5, 5), box(4.5, 12.5, 2, 11.5, 14.5, 5), box(4.5, 10.5, 2, 11.5, 11.5, 5), box(4.5, 8.5, 2, 11.5, 9.5, 5), box(4.5, 6.5, 2, 11.5, 7.5, 5),
+							box(4.5, 4.5, 2, 11.5, 5.5, 5), box(5.25, 3.5, 2, 10.75, 12.5, 4.25));
+				};
 			}
-		}.getLightLevel())).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+			return switch (state.getValue(FACING)) {
+				case NORTH -> Shapes.or(box(4.5, 1.5, 14, 11.5, 14.5, 16), box(4.5, 1.5, 11, 11.5, 3.5, 14), box(4.5, 12.5, 11, 11.5, 14.5, 14), box(4.5, 10.5, 11, 11.5, 11.5, 14), box(4.5, 8.5, 11, 11.5, 9.5, 14), box(4.5, 6.5, 11, 11.5, 7.5, 14),
+						box(4.5, 4.5, 11, 11.5, 5.5, 14), box(5.25, 3.5, 11.75, 10.75, 12.5, 14));
+				case EAST -> Shapes.or(box(0, 1.5, 4.5, 2, 14.5, 11.5), box(2, 1.5, 4.5, 5, 3.5, 11.5), box(2, 12.5, 4.5, 5, 14.5, 11.5), box(2, 10.5, 4.5, 5, 11.5, 11.5), box(2, 8.5, 4.5, 5, 9.5, 11.5), box(2, 6.5, 4.5, 5, 7.5, 11.5),
+						box(2, 4.5, 4.5, 5, 5.5, 11.5), box(2, 3.5, 5.25, 4.25, 12.5, 10.75));
+				case WEST -> Shapes.or(box(14, 1.5, 4.5, 16, 14.5, 11.5), box(11, 1.5, 4.5, 14, 3.5, 11.5), box(11, 12.5, 4.5, 14, 14.5, 11.5), box(11, 10.5, 4.5, 14, 11.5, 11.5), box(11, 8.5, 4.5, 14, 9.5, 11.5), box(11, 6.5, 4.5, 14, 7.5, 11.5),
+						box(11, 4.5, 4.5, 14, 5.5, 11.5), box(11.75, 3.5, 5.25, 14, 12.5, 10.75));
+				default -> Shapes.or(box(4.5, 1.5, 0, 11.5, 14.5, 2), box(4.5, 1.5, 2, 11.5, 3.5, 5), box(4.5, 12.5, 2, 11.5, 14.5, 5), box(4.5, 10.5, 2, 11.5, 11.5, 5), box(4.5, 8.5, 2, 11.5, 9.5, 5), box(4.5, 6.5, 2, 11.5, 7.5, 5),
+						box(4.5, 4.5, 2, 11.5, 5.5, 5), box(5.25, 3.5, 2, 10.75, 12.5, 4.25));
+			};
+		});
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
-	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return shapes.apply(state);
 	}
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		if (state.getValue(BLOCKSTATE) == 1) {
-			return (switch (state.getValue(FACING)) {
-				case NORTH -> SHAPE_1_NORTH;
-				case SOUTH -> SHAPE_1_SOUTH;
-				case EAST -> SHAPE_1_EAST;
-				case WEST -> SHAPE_1_WEST;
-				default -> SHAPE_1_NORTH;
-			});
-		}
-		return (switch (state.getValue(FACING)) {
-			case NORTH -> SHAPE_NORTH;
-			case SOUTH -> SHAPE_SOUTH;
-			case EAST -> SHAPE_EAST;
-			case WEST -> SHAPE_WEST;
-			default -> SHAPE_NORTH;
-		});
 	}
 
 	@Override
@@ -98,7 +79,10 @@ public class ModernBulkheadLightOffBlock extends Block {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(BLOCKSTATE, 0);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {

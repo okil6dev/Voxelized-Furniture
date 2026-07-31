@@ -1,10 +1,12 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:bathroom_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:lever",
+    "minecraft:light_blue_concrete_powder"
+  ],
   "result": {
     "id": "voxelized_furniture:soap",
-    "count": 2
+    "count": 1
   }
 }

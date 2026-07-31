@@ -1,26 +1,32 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Stone cutting",
+    "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
     "unlockingItems": [
-      {
-        "value": "CUSTOM:NatureSet"
-      }
+      "Blocks.CONCRETE#5",
+      "Blocks.GRASS",
+      "Blocks.LEAVES"
     ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
-    "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "CUSTOM:NatureSet"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:PottedGreenPlant"
-    },
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "Blocks.LEAVES",
+      "",
+      "",
+      "Blocks.GRASS",
+      "",
+      "",
+      "Blocks.CONCRETE#5",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:PottedGreenPlant",
     "name": "pgp_recipe",
     "namespace": "mod"
   }

@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.CHERRY_PLANKS",
+      "Items.STICK"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": true,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.CHERRY_TRAPDOOR"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.CHERRY_PLANKS"
-      },
-      {
-        "value": "Blocks.CHERRY_PLANKS"
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Items.STICK"
-      },
-      {
-        "value": "Items.STICK"
-      }
+      "",
+      "",
+      "Blocks.CHERRY_TRAPDOOR",
+      "",
+      "Blocks.CHERRY_PLANKS",
+      "Blocks.CHERRY_PLANKS",
+      "",
+      "Items.STICK",
+      "Items.STICK"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:CherryChair1"
-    },
+    "recipeReturnStack": "CUSTOM:CherryChair1",
     "name": "cherry_chair_craft",
     "namespace": "mod"
   }

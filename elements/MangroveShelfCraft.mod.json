@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 2,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.CHEST"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.MANGROVE_SLAB"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      },
-      {
-        "value": "Blocks.CHEST"
-      },
-      {
-        "value": "Blocks.MANGROVE_PLANKS"
-      }
+      "",
+      "",
+      "",
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.MANGROVE_SLAB",
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.MANGROVE_PLANKS",
+      "Blocks.CHEST",
+      "Blocks.MANGROVE_PLANKS"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:MangroveShelf"
-    },
+    "recipeReturnStack": "CUSTOM:MangroveShelf",
     "name": "mangrove_shelf_craft",
     "namespace": "mod"
   }

@@ -2,8 +2,7 @@
   "parent": "voxelized_furniture:custom/jamjar",
   "textures": {
     "all": "voxelized_furniture:block/jamjar",
-    "particle": "voxelized_furniture:block/jamjar",
+    "particle": "minecraft:block/brown_wool",
     "2": "voxelized_furniture:block/jamjar"
-  },
-  "render_type": "cutout"
+  }
 }

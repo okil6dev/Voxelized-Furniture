@@ -1,22 +1,20 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Stone cutting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#1"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "stoneCuttingInputStack": {
-      "value": "Blocks.PLANKS#1"
-    },
-    "stoneCuttingReturnStack": {
-      "value": "CUSTOM:CabinetSpruce"
-    },
+    "stoneCuttingInputStack": "Blocks.PLANKS#1",
+    "stoneCuttingReturnStack": "CUSTOM:CabinetSpruce",
     "name": "cabinet_spruce_craft",
     "namespace": "mod"
   }

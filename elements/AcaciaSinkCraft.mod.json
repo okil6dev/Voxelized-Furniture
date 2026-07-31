@@ -1,5 +1,5 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -12,37 +12,17 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": "Blocks.WOODEN_SLAB#4"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#4"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#4"
-      },
-      {
-        "value": "Blocks.QUARTZ_BLOCK#3"
-      },
-      {
-        "value": "Blocks.ANVIL#0"
-      },
-      {
-        "value": "Blocks.QUARTZ_BLOCK#3"
-      },
-      {
-        "value": "Blocks.QUARTZ_BLOCK#3"
-      },
-      {
-        "value": "Blocks.QUARTZ_BLOCK#3"
-      },
-      {
-        "value": "Blocks.QUARTZ_BLOCK#3"
-      }
+      "Blocks.WOODEN_SLAB#4",
+      "Blocks.WOODEN_SLAB#4",
+      "Blocks.WOODEN_SLAB#4",
+      "Blocks.QUARTZ_BLOCK#3",
+      "Blocks.ANVIL#0",
+      "Blocks.QUARTZ_BLOCK#3",
+      "Blocks.QUARTZ_BLOCK#3",
+      "Blocks.QUARTZ_BLOCK#3",
+      "Blocks.QUARTZ_BLOCK#3"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:AcaciaSink"
-    },
+    "recipeReturnStack": "CUSTOM:AcaciaSink",
     "name": "acacia_sink_craft",
     "namespace": "mod"
   }

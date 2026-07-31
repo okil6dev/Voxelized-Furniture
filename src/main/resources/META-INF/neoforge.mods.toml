@@ -1,47 +1,39 @@
 modLoader="javafml"
 loaderVersion="[4,)"
-license="All Rights Reserved"
+license="Custom license"
 
 [[mods]]
 modId="voxelized_furniture"
-version="1.3.0"
+version="1.5.2"
 displayName="Voxelized Furniture"
 displayURL="https://github.com/okil6dev/Voxelized-Furniture"
 logoFile="logo.png"
-credits="Made by okil6"
+credits="Made by okil6, CC0 License"
 authors="okil6"
 description="This mod adds chairs, tables, kitchen sets, sinks, and small land pieces you can use in your builds. It\u2019s mainly for decorating houses, rooms, and custom areas, and gives you more basic objects to work with when building or roleplaying."
 
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
+
+# Start of user code block custom mixins
+# End of user code block custom mixins
+
 [[dependencies.voxelized_furniture]]
     modId="neoforge"
     type="required"
-    versionRange="[21.1.190,)"
+    versionRange="[26.1.2.71,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.voxelized_furniture]]
     modId="minecraft"
     type="required"
-    versionRange="[1.21.1]"
+    versionRange="[26.1.2]"
     ordering="AFTER"
     side="BOTH"
 
 
-[[dependencies.voxelized_furniture]]
-    modId="sodium"
-    type="optional"
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.voxelized_furniture]]
-    modId="geckolib"
-    type="optional"
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 
 
 # Start of user code block dependencies configuration

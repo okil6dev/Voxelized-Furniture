@@ -8,7 +8,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,42 +27,36 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-public class ShowerBlock extends Block implements EntityBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(6, 31, 12, 10, 32, 15), box(6, 31, 2, 10, 32, 12), box(6, 9, 15, 10, 32, 16), box(2.5, 14.5, 13, 4.5, 16.5, 14), box(11.5, 14.5, 13, 13.5, 16.5, 14), box(2, 14, 14, 14, 17, 15));
-	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(6, 31, 1, 10, 32, 4), box(6, 31, 4, 10, 32, 14), box(6, 9, 0, 10, 32, 1), box(11.5, 14.5, 2, 13.5, 16.5, 3), box(2.5, 14.5, 2, 4.5, 16.5, 3), box(2, 14, 1, 14, 17, 2));
-	private static final VoxelShape SHAPE_EAST = Shapes.or(box(1, 31, 6, 4, 32, 10), box(4, 31, 6, 14, 32, 10), box(0, 9, 6, 1, 32, 10), box(2, 14.5, 2.5, 3, 16.5, 4.5), box(2, 14.5, 11.5, 3, 16.5, 13.5), box(1, 14, 2, 2, 17, 14));
-	private static final VoxelShape SHAPE_WEST = Shapes.or(box(12, 31, 6, 15, 32, 10), box(2, 31, 6, 12, 32, 10), box(15, 9, 6, 16, 32, 10), box(13, 14.5, 11.5, 14, 16.5, 13.5), box(13, 14.5, 2.5, 14, 16.5, 4.5), box(14, 14, 2, 15, 17, 14));
+import java.util.function.Function;
 
-	public ShowerBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(0.8f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+public class ShowerBlock extends Block implements EntityBlock {
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+
+	public ShowerBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.METAL).strength(0.8f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
-		return true;
+	private Function<BlockState, VoxelShape> makeShapes() {
+		return this.getShapeForEachState(state -> {
+			return switch (state.getValue(FACING)) {
+				case NORTH -> Shapes.or(box(6, 31, 12, 10, 32, 15), box(6, 31, 2, 10, 32, 12), box(6, 9, 15, 10, 32, 16), box(2.5, 14.5, 13, 4.5, 16.5, 14), box(11.5, 14.5, 13, 13.5, 16.5, 14), box(2, 14, 14, 14, 17, 15));
+				case EAST -> Shapes.or(box(1, 31, 6, 4, 32, 10), box(4, 31, 6, 14, 32, 10), box(0, 9, 6, 1, 32, 10), box(2, 14.5, 2.5, 3, 16.5, 4.5), box(2, 14.5, 11.5, 3, 16.5, 13.5), box(1, 14, 2, 2, 17, 14));
+				case WEST -> Shapes.or(box(12, 31, 6, 15, 32, 10), box(2, 31, 6, 12, 32, 10), box(15, 9, 6, 16, 32, 10), box(13, 14.5, 11.5, 14, 16.5, 13.5), box(13, 14.5, 2.5, 14, 16.5, 4.5), box(14, 14, 2, 15, 17, 14));
+				default -> Shapes.or(box(6, 31, 1, 10, 32, 4), box(6, 31, 4, 10, 32, 14), box(6, 9, 0, 10, 32, 1), box(11.5, 14.5, 2, 13.5, 16.5, 3), box(2.5, 14.5, 2, 4.5, 16.5, 3), box(2, 14, 1, 14, 17, 2));
+			};
+		});
 	}
 
 	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return shapes.apply(state);
 	}
 
 	@Override
 	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return (switch (state.getValue(FACING)) {
-			case NORTH -> SHAPE_NORTH;
-			case SOUTH -> SHAPE_SOUTH;
-			case EAST -> SHAPE_EAST;
-			case WEST -> SHAPE_WEST;
-			default -> SHAPE_NORTH;
-		});
 	}
 
 	@Override
@@ -73,7 +67,10 @@ public class ShowerBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -130,15 +127,8 @@ public class ShowerBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof ShowerBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -147,7 +137,7 @@ public class ShowerBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof ShowerBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

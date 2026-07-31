@@ -1,10 +1,13 @@
 {
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "voxelized_furniture:nature_set"
-  },
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:short_grass",
+    "#minecraft:dirt",
+    "minecraft:bricks"
+  ],
   "result": {
     "id": "voxelized_furniture:seed_in_pot",
-    "count": 1
+    "count": 3
   }
 }

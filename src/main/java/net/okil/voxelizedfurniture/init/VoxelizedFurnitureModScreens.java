@@ -22,6 +22,8 @@ public class VoxelizedFurnitureModScreens {
 		event.register(VoxelizedFurnitureModMenus.SEED_IN_POT_SETTINGS.get(), SeedInPotSettingsScreen::new);
 		event.register(VoxelizedFurnitureModMenus.YUCCA_PLANT_SETTINGS_GUI.get(), YuccaPlantSettingsGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.WHEAT_PLANT_SETTINGS_GUI.get(), WheatPlantSettingsGuiScreen::new);
+		event.register(VoxelizedFurnitureModMenus.CACTUS_PLANT_SETTINGS_GUI.get(), CactusPlantSettingsGuiScreen::new);
+		event.register(VoxelizedFurnitureModMenus.DRAWER_GUI.get(), DrawerGuiScreen::new);
 	}
 
 	public interface ScreenAccessor {

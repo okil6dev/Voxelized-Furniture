@@ -1,48 +1,31 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 2,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#1",
+      "Blocks.CHEST"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "Blocks.PLANKS#1"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#1"
-      },
-      {
-        "value": "Blocks.PLANKS#1"
-      },
-      {
-        "value": "Blocks.PLANKS#1"
-      },
-      {
-        "value": "Blocks.CHEST"
-      },
-      {
-        "value": "Blocks.PLANKS#1"
-      }
+      "",
+      "",
+      "",
+      "Blocks.PLANKS#1",
+      "Blocks.WOODEN_SLAB#1",
+      "Blocks.PLANKS#1",
+      "Blocks.PLANKS#1",
+      "Blocks.CHEST",
+      "Blocks.PLANKS#1"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:SpruceShelf"
-    },
+    "recipeReturnStack": "CUSTOM:SpruceShelf",
     "name": "spruce_shelf_craft",
     "namespace": "mod"
   }

@@ -3,6 +3,5 @@
   "textures": {
     "all": "voxelized_furniture:block/asphalt",
     "particle": "voxelized_furniture:block/asphalt"
-  },
-  "render_type": "solid"
+  }
 }

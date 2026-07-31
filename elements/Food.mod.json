@@ -1,11 +1,9 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "tab",
   "definition": {
     "name": "Food",
-    "icon": {
-      "value": "CUSTOM:HoneyJar"
-    },
+    "icon": "CUSTOM:HoneyJar",
     "showSearch": true
   }
 }

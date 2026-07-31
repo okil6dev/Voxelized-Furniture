@@ -1,48 +1,30 @@
 {
-  "_fv": 79,
+  "_fv": 89,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [],
+    "unlockingItems": [
+      "Blocks.PLANKS#2"
+    ],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      {
-        "value": "Blocks.PLANKS#2"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#2"
-      },
-      {
-        "value": "Blocks.PLANKS#2"
-      },
-      {
-        "value": "Blocks.PLANKS#2"
-      },
-      {
-        "value": "Blocks.WOODEN_SLAB#2"
-      },
-      {
-        "value": "Blocks.PLANKS#2"
-      },
-      {
-        "value": "Blocks.PLANKS#2"
-      },
-      {
-        "value": "Blocks.BIRCH_STAIRS"
-      },
-      {
-        "value": "Blocks.PLANKS#2"
-      }
+      "Blocks.PLANKS#2",
+      "Blocks.WOODEN_SLAB#2",
+      "Blocks.PLANKS#2",
+      "Blocks.PLANKS#2",
+      "Blocks.WOODEN_SLAB#2",
+      "Blocks.PLANKS#2",
+      "Blocks.PLANKS#2",
+      "Blocks.BIRCH_STAIRS",
+      "Blocks.PLANKS#2"
     ],
-    "recipeReturnStack": {
-      "value": "CUSTOM:BirchWardrobe"
-    },
+    "recipeReturnStack": "CUSTOM:BirchWardrobe",
     "name": "birch_wardrobe_craft",
     "namespace": "mod"
   }

@@ -6,6 +6,5 @@
     "0": "minecraft:block/stone",
     "1": "minecraft:block/stripped_acacia_log",
     "2": "minecraft:block/gravel"
-  },
-  "render_type": "solid"
+  }
 }
