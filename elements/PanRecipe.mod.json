@@ -1,0 +1,32 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.BLACKSTONE",
+      "Blocks.IRON_BARS"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "",
+      "",
+      "",
+      "Blocks.IRON_BARS",
+      "Blocks.BLACKSTONE",
+      "",
+      "",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:Pan",
+    "name": "pan_recipe",
+    "namespace": "mod"
+  }
+}

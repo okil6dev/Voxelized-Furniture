@@ -1,0 +1,10 @@
+newmtl wooden_bucket_01
+illum 2
+Ns 250.0
+Ni 0.0
+d 0.0
+Ka 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+map_Kd null
+bump -bm 1.0 wooden_bucket_01_1k.blend/textures/wooden_bucket_01_nor_gl_1k.exr
+Ke 0.0 0.0 0.0

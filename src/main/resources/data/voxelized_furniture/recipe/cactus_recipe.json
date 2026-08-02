@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:cactus",
+    "#minecraft:dirt",
+    "minecraft:bricks"
+  ],
+  "result": {
+    "id": "voxelized_furniture:cactus_plant",
+    "count": 1
+  }
+}

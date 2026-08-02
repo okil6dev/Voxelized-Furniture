@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/kyanite"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/kyanite",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/kyanite",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/kyanite",
+      "y": 270
+    }
+  }
+}

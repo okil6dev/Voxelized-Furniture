@@ -225,7 +225,6 @@
     "itemTexture": "",
     "particleTexture": "",
     "blockSetType": "OAK",
-    "pottedPlant": "",
     "leavesParticleChance": 0.0,
     "tintType": "No tint",
     "isItemTinted": false,
@@ -449,7 +448,7 @@
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
-    "hasCustomOpacity": false,
+    "hasCustomOpacity": true,
     "lightOpacity": 0,
     "tickRate": 0,
     "tickRandomly": false,
@@ -473,7 +472,7 @@
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
-    "soundOnStep": "STONE",
+    "soundOnStep": "GLASS",
     "isCustomSoundType": false,
     "breakSound": "",
     "fallSound": "",
@@ -481,7 +480,8 @@
     "placeSound": "",
     "stepSound": "",
     "luminance": {
-      "fixedValue": 0.0
+      "fixedValue": 0.0,
+      "name": "Lightlevel12"
     },
     "unbreakable": false,
     "vanillaToolTier": "NONE",

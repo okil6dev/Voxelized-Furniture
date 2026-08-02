@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:stripped_bamboo_block",
+  "result": {
+    "id": "voxelized_furniture:bamboo_drawer",
+    "count": 1
+  }
+}

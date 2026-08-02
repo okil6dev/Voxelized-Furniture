@@ -101,6 +101,22 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.PAN.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.AIRFRYER.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.MICROWAVE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_WHITE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_BLUE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_BROWN.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_CYAN.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_GRAY.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_GREEN.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_BLUE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_GRAY.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIME.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_MAGENTA.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_ORANGE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_PINK.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_PURPLE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_RED.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_YELLOW.get().asItem());
 			}).withSearchBar().withTabsBefore(VF_LIVINGROOM.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> FOOD = REGISTRY.register("food",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.food")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.HONEY_JAR.get())).displayItems((parameters, tabData) -> {

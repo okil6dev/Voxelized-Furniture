@@ -1,0 +1,33 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.CACTUS",
+      "Blocks.DIRT",
+      "Blocks.BRICK_BLOCK"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "Blocks.CACTUS",
+      "",
+      "",
+      "Blocks.DIRT",
+      "",
+      "",
+      "Blocks.BRICK_BLOCK",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:CactusPlant",
+    "name": "cactus_recipe",
+    "namespace": "mod"
+  }
+}

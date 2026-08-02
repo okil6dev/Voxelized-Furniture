@@ -157,6 +157,22 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> BAMBOO_CLUSTER;
 	public static final DeferredBlock<Block> PAN;
 	public static final DeferredBlock<Block> AIRFRYER;
+	public static final DeferredBlock<Block> MICROWAVE;
+	public static final DeferredBlock<Block> TOASTER_WHITE;
+	public static final DeferredBlock<Block> TOASTER_BLUE;
+	public static final DeferredBlock<Block> TOASTER_BROWN;
+	public static final DeferredBlock<Block> TOASTER_CYAN;
+	public static final DeferredBlock<Block> TOASTER_GRAY;
+	public static final DeferredBlock<Block> TOASTER_GREEN;
+	public static final DeferredBlock<Block> TOASTER_LIGHT_BLUE;
+	public static final DeferredBlock<Block> TOASTER_LIGHT_GRAY;
+	public static final DeferredBlock<Block> TOASTER_LIME;
+	public static final DeferredBlock<Block> TOASTER_MAGENTA;
+	public static final DeferredBlock<Block> TOASTER_ORANGE;
+	public static final DeferredBlock<Block> TOASTER_PINK;
+	public static final DeferredBlock<Block> TOASTER_PURPLE;
+	public static final DeferredBlock<Block> TOASTER_RED;
+	public static final DeferredBlock<Block> TOASTER_YELLOW;
 	static {
 		CABINET_OAK = register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = register("cabinet_birch", CabinetBirchBlock::new);
@@ -295,6 +311,22 @@ public class VoxelizedFurnitureModBlocks {
 		BAMBOO_CLUSTER = register("bamboo_cluster", BambooClusterBlock::new);
 		PAN = register("pan", PanBlock::new);
 		AIRFRYER = register("airfryer", AirfryerBlock::new);
+		MICROWAVE = register("microwave", MicrowaveBlock::new);
+		TOASTER_WHITE = register("toaster_white", ToasterWhiteBlock::new);
+		TOASTER_BLUE = register("toaster_blue", ToasterBlueBlock::new);
+		TOASTER_BROWN = register("toaster_brown", ToasterBrownBlock::new);
+		TOASTER_CYAN = register("toaster_cyan", ToasterCyanBlock::new);
+		TOASTER_GRAY = register("toaster_gray", ToasterGrayBlock::new);
+		TOASTER_GREEN = register("toaster_green", ToasterGreenBlock::new);
+		TOASTER_LIGHT_BLUE = register("toaster_light_blue", ToasterLightBlueBlock::new);
+		TOASTER_LIGHT_GRAY = register("toaster_light_gray", ToasterLightGrayBlock::new);
+		TOASTER_LIME = register("toaster_lime", ToasterLimeBlock::new);
+		TOASTER_MAGENTA = register("toaster_magenta", ToasterMagentaBlock::new);
+		TOASTER_ORANGE = register("toaster_orange", ToasterOrangeBlock::new);
+		TOASTER_PINK = register("toaster_pink", ToasterPinkBlock::new);
+		TOASTER_PURPLE = register("toaster_purple", ToasterPurpleBlock::new);
+		TOASTER_RED = register("toaster_red", ToasterRedBlock::new);
+		TOASTER_YELLOW = register("toaster_yellow", ToasterYellowBlock::new);
 	}
 
 	// Start of user code block custom blocks

@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/toiletroll_cherry",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/cherry_planks",
+    "0": "minecraft:block/stripped_cherry_log",
+    "1": "minecraft:block/white_wool"
+  }
+}

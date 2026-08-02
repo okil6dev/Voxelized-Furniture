@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/airfryer",
+  "textures": {
+    "all": "voxelized_furniture:block/airfryer",
+    "particle": "voxelized_furniture:block/airfryer",
+    "0": "voxelized_furniture:block/airfryer"
+  }
+}

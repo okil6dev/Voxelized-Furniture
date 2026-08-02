@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/kyaniet",
+  "textures": {
+    "all": "voxelized_furniture:block/kyanietrocktex",
+    "particle": "minecraft:block/stone",
+    "1": "voxelized_furniture:block/kyanietrocktex",
+    "2": "voxelized_furniture:block/rockholdertex"
+  }
+}

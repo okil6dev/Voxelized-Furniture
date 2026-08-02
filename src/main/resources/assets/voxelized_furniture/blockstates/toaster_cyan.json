@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/toaster_cyan"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/toaster_cyan",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/toaster_cyan",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/toaster_cyan",
+      "y": 270
+    }
+  }
+}

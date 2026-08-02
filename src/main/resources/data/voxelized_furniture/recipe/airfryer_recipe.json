@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "ada"
+  ],
+  "key": {
+    "a": "minecraft:coal",
+    "b": "minecraft:iron_ingot",
+    "c": "minecraft:furnace",
+    "d": "minecraft:stone_button"
+  },
+  "result": {
+    "id": "voxelized_furniture:airfryer",
+    "count": 1
+  }
+}

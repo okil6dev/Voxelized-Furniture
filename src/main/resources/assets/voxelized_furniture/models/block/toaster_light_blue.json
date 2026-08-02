@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/light_blue_toaster",
+  "textures": {
+    "all": "voxelized_furniture:block/light_blue_toaster",
+    "particle": "voxelized_furniture:block/light_blue_toaster",
+    "0": "voxelized_furniture:block/light_blue_toaster"
+  }
+}

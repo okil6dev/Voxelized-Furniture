@@ -1,0 +1,34 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Items.COAL#0",
+      "Blocks.STONE_BUTTON",
+      "Blocks.FURNACE",
+      "Items.IRON_INGOT"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.COAL#0",
+      "Items.IRON_INGOT",
+      "Items.COAL#0",
+      "Items.COAL#0",
+      "Blocks.FURNACE",
+      "Items.COAL#0",
+      "Items.COAL#0",
+      "Blocks.STONE_BUTTON",
+      "Items.COAL#0"
+    ],
+    "recipeReturnStack": "CUSTOM:Airfryer",
+    "name": "airfryer_recipe",
+    "namespace": "mod"
+  }
+}

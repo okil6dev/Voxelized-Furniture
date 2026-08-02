@@ -1,0 +1,36 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Items.IRON_INGOT",
+      "Blocks.IRON_BARS",
+      "Blocks.LEVER",
+      "Blocks.STONE_BUTTON",
+      "Blocks.FURNACE",
+      "Blocks.CONCRETE#13"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.IRON_INGOT",
+      "Blocks.IRON_BARS",
+      "Items.IRON_INGOT",
+      "Blocks.CONCRETE#13",
+      "Blocks.FURNACE",
+      "Blocks.LEVER",
+      "Blocks.CONCRETE#13",
+      "Blocks.STONE_BUTTON",
+      "Blocks.CONCRETE#13"
+    ],
+    "recipeReturnStack": "CUSTOM:ToasterGreen",
+    "name": "toaster_green_recipe",
+    "namespace": "mod"
+  }
+}

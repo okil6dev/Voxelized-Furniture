@@ -1,0 +1,36 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Items.IRON_INGOT",
+      "Blocks.IRON_BARS",
+      "Blocks.LEVER",
+      "Blocks.STONE_BUTTON",
+      "Blocks.FURNACE",
+      "Blocks.CONCRETE#8"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.IRON_INGOT",
+      "Blocks.IRON_BARS",
+      "Items.IRON_INGOT",
+      "Blocks.CONCRETE#8",
+      "Blocks.FURNACE",
+      "Blocks.LEVER",
+      "Blocks.CONCRETE#8",
+      "Blocks.STONE_BUTTON",
+      "Blocks.CONCRETE#8"
+    ],
+    "recipeReturnStack": "CUSTOM:ToasterLightGray",
+    "name": "toaster_light_gray_recipe",
+    "namespace": "mod"
+  }
+}

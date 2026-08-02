@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/pan",
+  "textures": {
+    "all": "voxelized_furniture:block/panico",
+    "particle": "voxelized_furniture:block/panico",
+    "0": "voxelized_furniture:block/pan"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/magenta_toaster",
+  "textures": {
+    "all": "voxelized_furniture:block/magenta_toaster",
+    "particle": "voxelized_furniture:block/magenta_toaster",
+    "0": "voxelized_furniture:block/magenta_toaster"
+  }
+}

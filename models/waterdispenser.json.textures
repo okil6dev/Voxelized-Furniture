@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "zen_water_still",
+        "2": "minecraft:mushroom_stem",
+        "3": "minecraft:smooth_basalt",
+        "4": "minecraft:polished_deepslate",
+        "5": "minecraft:blue_concrete_powder"
+      }
+    }
+  }
+}

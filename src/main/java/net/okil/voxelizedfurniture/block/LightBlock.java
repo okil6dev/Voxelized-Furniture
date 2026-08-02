@@ -1,5 +1,6 @@
 package net.okil.voxelizedfurniture.block;
 
+import net.okil.voxelizedfurniture.procedures.Lightlevel12Procedure;
 import net.okil.voxelizedfurniture.procedures.LightSwitchProcedure;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -24,7 +25,7 @@ public class LightBlock extends Block {
 	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
 	public LightBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.GLASS).strength(2f, 4f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.sound(SoundType.GLASS).strength(2f, 4f).lightLevel(blockstate -> (int) Lightlevel12Procedure.execute(blockstate)).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(BLOCKSTATE, 0));
 	}
 
@@ -40,6 +41,16 @@ public class LightBlock extends Block {
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return shapes.apply(state);
+	}
+
+	@Override
+	public boolean propagatesSkylightDown(BlockState state) {
+		return true;
+	}
+
+	@Override
+	public int getLightDampening(BlockState state) {
+		return 0;
 	}
 
 	@Override

@@ -1,0 +1,50 @@
+{
+  "_fv": 89,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 85,
+    "height": 50,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_normal_2d",
+          "text": "Normal 2D",
+          "isUndecorated": false,
+          "onClick": "CactusPlantN2DP",
+          "width": 72,
+          "height": 20,
+          "x": 177,
+          "y": 99,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_random_2d",
+          "text": "Random 2D",
+          "isUndecorated": false,
+          "onClick": "CactusPlantR2DP",
+          "width": 72,
+          "height": 20,
+          "x": 177,
+          "y": 119,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 9,
+      "sy": 9,
+      "ox": 9,
+      "oy": 9,
+      "snapOnGrid": true
+    }
+  }
+}

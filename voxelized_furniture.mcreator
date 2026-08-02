@@ -6325,6 +6325,587 @@
         ]
       },
       "path": "~/Kitchen"
+    },
+    {
+      "name": "Microwave",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "microwave",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/microwave.json",
+          "src/main/resources/assets/voxelized_furniture/items/microwave.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/microwave_0.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/MicrowaveBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/microwave.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/microwave.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/microwave.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "ToasterWhite",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_white",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterWhiteBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_white.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_white.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_white.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_white.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_white.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterBlue",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_blue",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_blue.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_blue.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_blue.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_blue.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterBlueBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_blue.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterBrown",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_brown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterBrownBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_brown.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_brown.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_brown.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_brown.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_brown.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterCyan",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_cyan",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_cyan.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_cyan.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_cyan.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_cyan.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_cyan.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterCyanBlock.java"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterGray",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_gray",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_gray.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_gray.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_gray.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterGrayBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_gray.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_gray.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterGreen",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_green",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_green.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterGreenBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_green.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_green.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_green.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_green.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterLightBlue",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_light_blue",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_light_blue.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_light_blue.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_light_blue.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterLightBlueBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_light_blue.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_light_blue.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterLightGray",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_light_gray",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_light_gray.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_light_gray.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_light_gray.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_light_gray.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterLightGrayBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_light_gray.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterLime",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_lime",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_lime.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_lime.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_lime.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterLimeBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_lime.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_lime.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterMagenta",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_magenta",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_magenta.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_magenta.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_magenta.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterMagentaBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_magenta.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_magenta.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterOrange",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_orange",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterOrangeBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_orange.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_orange.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_orange.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_orange.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_orange.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterPink",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_pink",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_pink.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterPinkBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_pink.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_pink.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_pink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_pink.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterPurple",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_purple",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/items/toaster_purple.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_purple.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_purple.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterPurpleBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_purple.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_purple.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterRed",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_red",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_red.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_red.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_red.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_red.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_red.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterRedBlock.java"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterYellow",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_yellow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/ToasterYellowBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_yellow.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/toaster_yellow.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/toaster_yellow.json",
+          "src/main/resources/assets/voxelized_furniture/items/toaster_yellow.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/toaster_yellow.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "AirfryerRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "airfryer_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/airfryer_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/airfryer_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "MicrowaveRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "microwave_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/microwave_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/microwave_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "ToasterWhiteRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_white_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_white_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_white_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterBlueRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_blue_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_blue_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_blue_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterBrownRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_brown_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_brown_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_brown_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterCyanRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_cyan_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_cyan_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_cyan_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterGrayRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_gray_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_gray_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_gray_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterGreenRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_green_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_green_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_green_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterLightBlueRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_light_blue_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_light_blue_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_light_blue_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterLightGrayRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_light_gray_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_light_gray_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_light_gray_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterLimeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_lime_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_lime_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_lime_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterMagentaRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_magenta_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_magenta_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_magenta_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterOrangeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_orange_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_orange_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_orange_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterPinkRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_pink_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_pink_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_pink_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterPurpleRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_purple_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_purple_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_purple_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterRedRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_red_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_red_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_red_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "ToasterYellowRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toaster_yellow_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/toaster_yellow_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/toaster_yellow_recipe.json"
+        ]
+      },
+      "path": "~/Kitchen/toaster"
+    },
+    {
+      "name": "BambooClusterRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bamboo_cluster_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/bamboo_cluster_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/bamboo_cluster_recipe.json"
+        ]
+      },
+      "path": "~/Nature/Plants"
+    },
+    {
+      "name": "Lightlevel12",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightlevel_12",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/Lightlevel12Procedure.java"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "Lightlevel6",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightlevel_6",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/Lightlevel6Procedure.java"
+        ]
+      },
+      "path": "~/Electrical/Light"
     }
   ],
   "variable_elements": [
@@ -6424,12 +7005,23 @@
       "~CabinetOak@CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~ToasterYellow@CUSTOM:ToasterYellow",
+      "~ToasterRed@CUSTOM:ToasterRed",
+      "~ToasterPurple@CUSTOM:ToasterPurple",
+      "~ToasterPink@CUSTOM:ToasterPink",
+      "~ToasterOrange@CUSTOM:ToasterOrange",
+      "~ToasterMagenta@CUSTOM:ToasterMagenta",
+      "~ToasterLime@CUSTOM:ToasterLime",
+      "~ToasterLightGray@CUSTOM:ToasterLightGray",
+      "~ToasterLightBlue@CUSTOM:ToasterLightBlue",
+      "~ToasterGreen@CUSTOM:ToasterGreen",
+      "~ToasterGray@CUSTOM:ToasterGray",
+      "~ToasterCyan@CUSTOM:ToasterCyan",
+      "~ToasterBrown@CUSTOM:ToasterBrown",
+      "~ToasterBlue@CUSTOM:ToasterBlue",
+      "~ToasterWhite@CUSTOM:ToasterWhite",
+      "~Microwave@CUSTOM:Microwave",
       "~Pan@CUSTOM:Pan",
-      "~PottedGreenPlant@CUSTOM:PottedGreenPlant",
-      "~KitchenFridge@CUSTOM:KitchenFridge",
-      "~KitchenSink@CUSTOM:KitchenSink",
-      "~Oven@CUSTOM:Oven",
-      "~KitchenTable@CUSTOM:KitchenTable",
       "~Kyanite@CUSTOM:Kyanite",
       "~CactusPlantRandom@CUSTOM:CactusPlantRandom",
       "~CactusPlant@CUSTOM:CactusPlant",
@@ -6467,8 +7059,12 @@
       "~SpruceCobblePath@CUSTOM:SpruceCobblePath",
       "~OakCobblePath@CUSTOM:OakCobblePath",
       "~ModernBulkheadLightOff@CUSTOM:ModernBulkheadLightOff",
+      "~KitchenFridge@CUSTOM:KitchenFridge",
       "~KitchenDrawerCorner@CUSTOM:KitchenDrawerCorner",
+      "~KitchenTable@CUSTOM:KitchenTable",
       "~OvenVent@CUSTOM:OvenVent",
+      "~Oven@CUSTOM:Oven",
+      "~KitchenSink@CUSTOM:KitchenSink",
       "~KitchenDrawer1@CUSTOM:KitchenDrawer1",
       "~KitchenDrawer@CUSTOM:KitchenDrawer",
       "~LightSwitchButton@CUSTOM:LightSwitchButton",
@@ -6476,6 +7072,7 @@
       "~Asphalt@CUSTOM:Asphalt",
       "~Laptop@CUSTOM:Laptop",
       "~Tv@CUSTOM:Tv",
+      "~PottedGreenPlant@CUSTOM:PottedGreenPlant",
       "~Fridge@CUSTOM:Fridge"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
@@ -6796,7 +7393,41 @@
       "item.voxelized_furniture.bamboo_cluster": "Bamboo Cluster",
       "block.voxelized_furniture.bamboo_cluster": "Bamboo Cluster",
       "item.voxelized_furniture.pan": "Pan",
-      "item.voxelized_furniture.airfryer": "Airfryer"
+      "item.voxelized_furniture.airfryer": "Airfryer",
+      "item.voxelized_furniture.microwave": "Microwave",
+      "item.voxelized_furniture.toaster_white": "Toaster White",
+      "item.voxelized_furniture.toaster_blue": "Toaster Blue",
+      "item.voxelized_furniture.toaster_brown": "Toaster Brown",
+      "item.voxelized_furniture.toaster_cyan": "Toaster Cyan",
+      "item.voxelized_furniture.toaster_gray": "Toaster Gray",
+      "item.voxelized_furniture.toaster_green": "Toaster Green",
+      "item.voxelized_furniture.toaster_light_blue": "Toaster Light Blue",
+      "item.voxelized_furniture.toaster_light_gray": "Toaster Light Gray",
+      "item.voxelized_furniture.toaster_lime": "Toaster Lime",
+      "item.voxelized_furniture.toaster_magenta": "Toaster Magenta",
+      "item.voxelized_furniture.toaster_orange": "Toaster Orange",
+      "item.voxelized_furniture.toaster_pink": "Toaster Pink",
+      "item.voxelized_furniture.toaster_purple": "Toaster Purple",
+      "item.voxelized_furniture.toaster_red": "Toaster Red",
+      "item.voxelized_furniture.toaster_yellow": "Toaster Yellow",
+      "block.voxelized_furniture.pan": "Pan",
+      "block.voxelized_furniture.airfryer": "Airfryer",
+      "block.voxelized_furniture.microwave": "Microwave",
+      "block.voxelized_furniture.toaster_white": "Toaster White",
+      "block.voxelized_furniture.toaster_blue": "Toaster Blue",
+      "block.voxelized_furniture.toaster_brown": "Toaster Brown",
+      "block.voxelized_furniture.toaster_cyan": "Toaster Cyan",
+      "block.voxelized_furniture.toaster_gray": "Toaster Gray",
+      "block.voxelized_furniture.toaster_green": "Toaster Green",
+      "block.voxelized_furniture.toaster_light_blue": "Toaster Light Blue",
+      "block.voxelized_furniture.toaster_light_gray": "Toaster Light Gray",
+      "block.voxelized_furniture.toaster_lime": "Toaster Lime",
+      "block.voxelized_furniture.toaster_magenta": "Toaster Magenta",
+      "block.voxelized_furniture.toaster_orange": "Toaster Orange",
+      "block.voxelized_furniture.toaster_pink": "Toaster Pink",
+      "block.voxelized_furniture.toaster_purple": "Toaster Purple",
+      "block.voxelized_furniture.toaster_red": "Toaster Red",
+      "block.voxelized_furniture.toaster_yellow": "Toaster Yellow"
     }
   },
   "metadata": {
@@ -6898,6 +7529,10 @@
           {
             "name": "Sinks",
             "children": []
+          },
+          {
+            "name": "toaster",
+            "children": []
           }
         ]
       },
@@ -6975,7 +7610,7 @@
   "workspaceSettings": {
     "modid": "voxelized_furniture",
     "modName": "Voxelized Furniture",
-    "version": "1.5.2",
+    "version": "1.6",
     "description": "This mod adds chairs, tables, kitchen sets, sinks, and small land pieces you can use in your builds. It’s mainly for decorating houses, rooms, and custom areas, and gives you more basic objects to work with when building or roleplaying.",
     "author": "okil6",
     "websiteURL": "https://github.com/okil6dev/Voxelized-Furniture",

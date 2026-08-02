@@ -1,0 +1,35 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.STONE_SLAB#0",
+      "Items.IRON_INGOT",
+      "Blocks.STONE_BUTTON",
+      "Blocks.FURNACE",
+      "Blocks.GLASS_PANE"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Blocks.STONE_SLAB#0",
+      "Items.IRON_INGOT",
+      "Blocks.STONE_SLAB#0",
+      "Blocks.GLASS_PANE",
+      "Blocks.FURNACE",
+      "Blocks.STONE_BUTTON",
+      "Blocks.STONE_SLAB#0",
+      "Items.IRON_INGOT",
+      "Blocks.STONE_SLAB#0"
+    ],
+    "recipeReturnStack": "CUSTOM:Microwave",
+    "name": "microwave_recipe",
+    "namespace": "mod"
+  }
+}

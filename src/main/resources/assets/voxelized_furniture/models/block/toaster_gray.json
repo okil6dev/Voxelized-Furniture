@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/gray_toaster",
+  "textures": {
+    "all": "voxelized_furniture:block/gray_toaster",
+    "particle": "voxelized_furniture:block/gray_toaster",
+    "0": "voxelized_furniture:block/gray_toaster"
+  }
+}

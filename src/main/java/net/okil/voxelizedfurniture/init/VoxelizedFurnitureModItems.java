@@ -157,6 +157,22 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> BAMBOO_CLUSTER;
 	public static final DeferredItem<Item> PAN;
 	public static final DeferredItem<Item> AIRFRYER;
+	public static final DeferredItem<Item> MICROWAVE;
+	public static final DeferredItem<Item> TOASTER_WHITE;
+	public static final DeferredItem<Item> TOASTER_BLUE;
+	public static final DeferredItem<Item> TOASTER_BROWN;
+	public static final DeferredItem<Item> TOASTER_CYAN;
+	public static final DeferredItem<Item> TOASTER_GRAY;
+	public static final DeferredItem<Item> TOASTER_GREEN;
+	public static final DeferredItem<Item> TOASTER_LIGHT_BLUE;
+	public static final DeferredItem<Item> TOASTER_LIGHT_GRAY;
+	public static final DeferredItem<Item> TOASTER_LIME;
+	public static final DeferredItem<Item> TOASTER_MAGENTA;
+	public static final DeferredItem<Item> TOASTER_ORANGE;
+	public static final DeferredItem<Item> TOASTER_PINK;
+	public static final DeferredItem<Item> TOASTER_PURPLE;
+	public static final DeferredItem<Item> TOASTER_RED;
+	public static final DeferredItem<Item> TOASTER_YELLOW;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -296,6 +312,22 @@ public class VoxelizedFurnitureModItems {
 		BAMBOO_CLUSTER = block(VoxelizedFurnitureModBlocks.BAMBOO_CLUSTER);
 		PAN = block(VoxelizedFurnitureModBlocks.PAN, new Item.Properties().fireResistant());
 		AIRFRYER = block(VoxelizedFurnitureModBlocks.AIRFRYER);
+		MICROWAVE = block(VoxelizedFurnitureModBlocks.MICROWAVE, new Item.Properties().fireResistant());
+		TOASTER_WHITE = block(VoxelizedFurnitureModBlocks.TOASTER_WHITE, new Item.Properties().fireResistant());
+		TOASTER_BLUE = block(VoxelizedFurnitureModBlocks.TOASTER_BLUE, new Item.Properties().fireResistant());
+		TOASTER_BROWN = block(VoxelizedFurnitureModBlocks.TOASTER_BROWN, new Item.Properties().fireResistant());
+		TOASTER_CYAN = block(VoxelizedFurnitureModBlocks.TOASTER_CYAN, new Item.Properties().fireResistant());
+		TOASTER_GRAY = block(VoxelizedFurnitureModBlocks.TOASTER_GRAY, new Item.Properties().fireResistant());
+		TOASTER_GREEN = block(VoxelizedFurnitureModBlocks.TOASTER_GREEN, new Item.Properties().fireResistant());
+		TOASTER_LIGHT_BLUE = block(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_BLUE, new Item.Properties().fireResistant());
+		TOASTER_LIGHT_GRAY = block(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_GRAY, new Item.Properties().fireResistant());
+		TOASTER_LIME = block(VoxelizedFurnitureModBlocks.TOASTER_LIME, new Item.Properties().fireResistant());
+		TOASTER_MAGENTA = block(VoxelizedFurnitureModBlocks.TOASTER_MAGENTA, new Item.Properties().fireResistant());
+		TOASTER_ORANGE = block(VoxelizedFurnitureModBlocks.TOASTER_ORANGE, new Item.Properties().fireResistant());
+		TOASTER_PINK = block(VoxelizedFurnitureModBlocks.TOASTER_PINK, new Item.Properties().fireResistant());
+		TOASTER_PURPLE = block(VoxelizedFurnitureModBlocks.TOASTER_PURPLE, new Item.Properties().fireResistant());
+		TOASTER_RED = block(VoxelizedFurnitureModBlocks.TOASTER_RED, new Item.Properties().fireResistant());
+		TOASTER_YELLOW = block(VoxelizedFurnitureModBlocks.TOASTER_YELLOW, new Item.Properties().fireResistant());
 	}
 
 	// Start of user code block custom items

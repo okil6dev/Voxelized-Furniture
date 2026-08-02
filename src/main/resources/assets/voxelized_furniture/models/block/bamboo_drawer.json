@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/bamboo_drawer",
+  "textures": {
+    "all": "minecraft:block/stripped_oak_log",
+    "particle": "minecraft:block/stripped_bamboo_block",
+    "0": "minecraft:block/stripped_bamboo_block",
+    "1": "minecraft:block/light_blue_concrete",
+    "2": "minecraft:block/white_concrete"
+  }
+}

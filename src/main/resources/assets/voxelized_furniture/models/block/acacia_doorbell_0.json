@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/doorbellpressed_acacia",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/acacia_planks",
+    "0": "minecraft:block/stripped_acacia_log",
+    "1": "minecraft:block/anvil"
+  }
+}

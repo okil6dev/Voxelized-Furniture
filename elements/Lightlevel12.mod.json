@@ -1,0 +1,8 @@
+{
+  "_fv": 89,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"blockstate_get_integer_property\" x=\"495\" y=\"10\"><value name=\"property\"><block type=\"text\"><field name=\"TEXT\">age</field></block></value></block><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"math_binary_ops\"><field name=\"OP\">EQ</field><value name=\"A\"><block type=\"blockstate_get_integer_property\"><value name=\"property\"><block type=\"text\"><field name=\"TEXT\">blockstate</field></block></value><value name=\"block\"><block type=\"blockstate_from_deps\"></block></value></block></value><value name=\"B\"><block type=\"math_number\"><field name=\"NUM\">0</field></block></value></block></value><statement name=\"DO0\"><block type=\"return_number\"><value name=\"return\"><block type=\"math_number\"><field name=\"NUM\">0</field></block></value></block></statement><next><block type=\"return_number\"><value name=\"return\"><block type=\"math_number\"><field name=\"NUM\">12</field></block></value></block></next></block></next></block><block type=\"world_data_blockat\" x=\"998\" y=\"279\"><value name=\"x\"><block type=\"coord_x\"></block></value><value name=\"y\"><block type=\"coord_y\"></block></value><value name=\"z\"><block type=\"coord_z\"></block></value></block><block type=\"return_number\" x=\"120\" y=\"452\"><value name=\"return\"><block type=\"math_number\"><field name=\"NUM\">12</field></block></value></block><block type=\"blockstate_get_direction\" x=\"737\" y=\"444\"></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}

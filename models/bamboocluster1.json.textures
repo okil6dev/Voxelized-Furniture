@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "all": "minecraft:bamboo_stalk",
+        "1": "minecraft:bamboo_small_leaves"
+      }
+    }
+  }
+}

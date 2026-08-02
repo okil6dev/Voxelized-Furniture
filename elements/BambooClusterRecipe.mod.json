@@ -1,0 +1,31 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.BAMBOO"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "",
+      "",
+      "",
+      "Blocks.BAMBOO",
+      "",
+      "",
+      "Blocks.BAMBOO",
+      "Blocks.BAMBOO"
+    ],
+    "recipeReturnStack": "CUSTOM:BambooCluster",
+    "name": "bamboo_cluster_recipe",
+    "namespace": "mod"
+  }
+}

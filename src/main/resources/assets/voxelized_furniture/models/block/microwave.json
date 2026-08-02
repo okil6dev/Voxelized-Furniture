@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/microwave",
+  "textures": {
+    "all": "voxelized_furniture:block/microwave",
+    "particle": "voxelized_furniture:block/microwave",
+    "0": "voxelized_furniture:block/microwave",
+    "1": "voxelized_furniture:block/glass"
+  }
+}

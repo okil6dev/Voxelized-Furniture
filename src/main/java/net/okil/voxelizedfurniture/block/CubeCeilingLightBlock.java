@@ -1,5 +1,6 @@
 package net.okil.voxelizedfurniture.block;
 
+import net.okil.voxelizedfurniture.procedures.Lightlevel12Procedure;
 import net.okil.voxelizedfurniture.procedures.LightSwitchProcedure;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -29,7 +31,7 @@ public class CubeCeilingLightBlock extends Block {
 	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
 	public CubeCeilingLightBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(2f, 3f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.sound(SoundType.GLASS).strength(2f, 3f).lightLevel(blockstate -> (int) Lightlevel12Procedure.execute(blockstate)).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(BLOCKSTATE, 0));
 	}
 
@@ -79,6 +81,16 @@ public class CubeCeilingLightBlock extends Block {
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return shapes.apply(state);
+	}
+
+	@Override
+	public boolean propagatesSkylightDown(BlockState state) {
+		return true;
+	}
+
+	@Override
+	public int getLightDampening(BlockState state) {
+		return 0;
 	}
 
 	@Override

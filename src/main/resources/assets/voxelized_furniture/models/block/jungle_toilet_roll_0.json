@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/toiletroll_jungle",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/jungle_planks",
+    "0": "minecraft:block/stripped_jungle_log",
+    "1": "minecraft:block/white_wool"
+  }
+}

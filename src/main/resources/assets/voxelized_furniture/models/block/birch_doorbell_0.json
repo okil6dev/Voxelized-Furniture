@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/doorbellpressed_birch",
+  "textures": {
+    "all": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/birch_planks",
+    "0": "minecraft:block/stripped_birch_log",
+    "1": "minecraft:block/anvil"
+  }
+}
