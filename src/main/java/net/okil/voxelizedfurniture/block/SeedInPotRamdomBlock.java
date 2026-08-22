@@ -6,6 +6,7 @@ import net.okil.voxelizedfurniture.block.entity.SeedInPotRamdomBlockEntity;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -22,22 +23,21 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
+import com.google.common.collect.ImmutableMap;
 
 public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public SeedInPotRamdomBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(-1, 3600000).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
+	public SeedInPotRamdomBlock() {
+		super(BlockBehaviour.Properties.of().strength(-1, 3600000).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
 		this.registerDefaultState(this.stateDefinition.any().setValue(BLOCKSTATE, 0));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			if (state.getValue(BLOCKSTATE) == 1) {
 				return Shapes.or(box(5, 0, 5, 11, 1, 11), box(5, 1, 10, 11, 5, 11), box(6, 1, 6, 10, 5, 10), box(7.5, 8, 8.5, 8.5, 9, 10.5), box(8.5, 8, 7.5, 10.5, 9, 8.5), box(5.5, 8, 7.5, 7.5, 9, 8.5), box(7.5, 5, 7.5, 8.5, 8, 8.5),
@@ -50,7 +50,8 @@ public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state).move(state.getOffset(pos));
+		Vec3 offset = state.getOffset(world, pos);
+		return shapes.get(state).move(offset.x, offset.y, offset.z);
 	}
 
 	@Override
@@ -105,8 +106,15 @@ public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof SeedInPotRamdomBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override
@@ -115,7 +123,7 @@ public class SeedInPotRamdomBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof SeedInPotRamdomBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

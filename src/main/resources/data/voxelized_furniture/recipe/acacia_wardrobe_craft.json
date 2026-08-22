@@ -7,9 +7,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:acacia_planks",
-    "b": "minecraft:acacia_slab",
-    "c": "minecraft:acacia_stairs"
+    "a": {
+      "item": "minecraft:acacia_planks"
+    },
+    "b": {
+      "item": "minecraft:acacia_slab"
+    },
+    "c": {
+      "item": "minecraft:acacia_stairs"
+    }
   },
   "result": {
     "id": "voxelized_furniture:acacia_wardrobe",

@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "voxelized_furniture:kitchen_table",
-    "minecraft:furnace"
+    {
+      "item": "voxelized_furniture:kitchen_table"
+    },
+    {
+      "item": "minecraft:furnace"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:oven",

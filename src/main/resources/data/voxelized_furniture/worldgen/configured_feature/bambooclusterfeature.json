@@ -1,92 +1,73 @@
 {
-  "type": "minecraft:simple_random_selector",
+  "type": "minecraft:random_patch",
   "config": {
-    "features": [
-      {
-        "feature": {
-          "type": "minecraft:simple_block",
-          "config": {
-            "to_place": {
-              "type": "minecraft:randomized_int_state_provider",
-              "source": {
-                "type": "minecraft:weighted_state_provider",
-                "entries": [
-                  {
-                    "data": {
-                      "Name": "voxelized_furniture:bamboo_cluster",
-                      "Properties": {
-                        "facing": "north"
-                      }
-                    },
-                    "weight": 1
+    "xz_spread": 0,
+    "y_spread": 0,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:randomized_int_state_provider",
+            "source": {
+              "type": "minecraft:weighted_state_provider",
+              "entries": [
+                {
+                  "data": {
+                    "Name": "voxelized_furniture:bamboo_cluster",
+                    "Properties": {
+                      "facing": "north"
+                    }
                   },
-                  {
-                    "data": {
-                      "Name": "voxelized_furniture:bamboo_cluster",
-                      "Properties": {
-                        "facing": "east"
-                      }
-                    },
-                    "weight": 1
+                  "weight": 1
+                },
+                {
+                  "data": {
+                    "Name": "voxelized_furniture:bamboo_cluster",
+                    "Properties": {
+                      "facing": "east"
+                    }
                   },
-                  {
-                    "data": {
-                      "Name": "voxelized_furniture:bamboo_cluster",
-                      "Properties": {
-                        "facing": "south"
-                      }
-                    },
-                    "weight": 1
+                  "weight": 1
+                },
+                {
+                  "data": {
+                    "Name": "voxelized_furniture:bamboo_cluster",
+                    "Properties": {
+                      "facing": "south"
+                    }
                   },
-                  {
-                    "data": {
-                      "Name": "voxelized_furniture:bamboo_cluster",
-                      "Properties": {
-                        "facing": "west"
-                      }
-                    },
-                    "weight": 1
-                  }
-                ]
-              },
-              "property": "variant",
-              "values": {
-                "type": "uniform",
-                "min_inclusive": 0,
-                "max_inclusive": 1
-              }
-            }
-          }
-        },
-        "placement": [
-          {
-            "type": "minecraft:count",
-            "count": 128
-          },
-          {
-            "type": "minecraft:random_offset",
-            "xz_spread": {
-              "type": "minecraft:trapezoid",
-              "plateau": 0,
-              "min": -0,
-              "max": 0
+                  "weight": 1
+                },
+                {
+                  "data": {
+                    "Name": "voxelized_furniture:bamboo_cluster",
+                    "Properties": {
+                      "facing": "west"
+                    }
+                  },
+                  "weight": 1
+                }
+              ]
             },
-            "y_spread": {
-              "type": "minecraft:trapezoid",
-              "plateau": 0,
-              "min": -0,
-              "max": 0
-            }
-          },
-          {
-            "type": "minecraft:block_predicate_filter",
-            "predicate": {
-              "type": "minecraft:matching_blocks",
-              "blocks": "minecraft:air"
+            "property": "variant",
+            "values": {
+              "type": "uniform",
+              "min_inclusive": 0,
+              "max_inclusive": 1
             }
           }
-        ]
-      }
-    ]
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    }
   }
 }

@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/light_gray_toaster",
     "particle": "voxelized_furniture:block/light_gray_toaster",
     "0": "voxelized_furniture:block/light_gray_toaster"
-  }
+  },
+  "render_type": "solid"
 }

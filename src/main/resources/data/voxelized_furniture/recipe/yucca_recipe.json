@@ -2,9 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:acacia_leaves",
-    "minecraft:stick",
-    "minecraft:brown_concrete_powder"
+    {
+      "item": "minecraft:acacia_leaves"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:yucca_plant",

@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/kitchensinkon",
+  "textures": {
+    "all": "voxelized_furniture:block/kitchensinktex",
+    "particle": "voxelized_furniture:block/lowblack",
+    "1": "voxelized_furniture:block/zen_water_flow",
+    "2": "voxelized_furniture:block/zen_water_still",
+    "7": "voxelized_furniture:block/kitchensinktex"
+  },
+  "render_type": "translucent"
+}

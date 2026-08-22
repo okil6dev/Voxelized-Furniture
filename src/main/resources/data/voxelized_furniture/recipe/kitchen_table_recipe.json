@@ -7,8 +7,12 @@
     "bbb"
   ],
   "key": {
-    "a": "minecraft:spruce_slab",
-    "b": "minecraft:black_concrete"
+    "a": {
+      "item": "minecraft:spruce_slab"
+    },
+    "b": {
+      "item": "minecraft:black_concrete"
+    }
   },
   "result": {
     "id": "voxelized_furniture:kitchen_table",

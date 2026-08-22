@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "minecraft:quartz_block_side",
+        "1": "minecraft:stripped_jungle_log",
+        "2": "minecraft:anvil",
+        "3": "zen_water_flow",
+        "4": "zen_water_still"
+      }
+    }
+  }
+}

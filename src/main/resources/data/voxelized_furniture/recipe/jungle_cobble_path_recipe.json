@@ -6,9 +6,15 @@
     "bcb"
   ],
   "key": {
-    "a": "minecraft:jungle_fence",
-    "b": "#minecraft:slabs",
-    "c": "#c:stones"
+    "a": {
+      "item": "minecraft:jungle_fence"
+    },
+    "b": {
+      "tag": "minecraft:slabs"
+    },
+    "c": {
+      "tag": "c:stones"
+    }
   },
   "result": {
     "id": "voxelized_furniture:jungle_cobble_path",

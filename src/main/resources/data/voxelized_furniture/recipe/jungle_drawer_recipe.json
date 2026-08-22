@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:stripped_jungle_log",
+  "ingredient": {
+    "item": "minecraft:stripped_jungle_log"
+  },
   "result": {
     "id": "voxelized_furniture:jungle_drawer",
     "count": 1

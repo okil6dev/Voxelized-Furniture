@@ -14,11 +14,11 @@ public class LightonandoffProcedure {
 		double sz = 0;
 		sx = -10;
 		found = false;
-		for (int index1948 = 0; index1948 < 20; index1948++) {
+		for (int _i1 = 0; _i1 < 20; _i1++) {
 			sy = -10;
-			for (int index1949 = 0; index1949 < 20; index1949++) {
+			for (int _i2 = 0; _i2 < 20; _i2++) {
 				sz = -10;
-				for (int index1950 = 0; index1950 < 20; index1950++) {
+				for (int _i3 = 0; _i3 < 20; _i3++) {
 					world.scheduleTick(BlockPos.containing(x + sx, y + sy, z + sz), world.getBlockState(BlockPos.containing(x + sx, y + sy, z + sz)).getBlock(), 1);
 					sz = sz + 1;
 				}

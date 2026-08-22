@@ -10,7 +10,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/CabinetOakBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/cabinet_oak.json",
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_oak.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_oak.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CabinetOakBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_oak.json",
@@ -56,7 +55,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cabinet_birch.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cabinet_birch.json",
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_birch.json",
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_birch.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CabinetBirchBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_birch.json"
         ]
@@ -75,7 +73,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/CabinetDarkOakBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cabinet_dark_oak.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cabinet_dark_oak.json",
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_dark_oak.json",
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_dark_oak.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_dark_oak.json"
         ]
@@ -93,7 +90,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CabinetAcaciaBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_acacia.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_acacia.json",
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_acacia.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CabinetAcaciaBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/cabinet_acacia.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cabinet_acacia.json"
@@ -109,7 +105,6 @@
       "registry_name": "cabinet_mangrove",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_mangrove.json",
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_mangrove.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_mangrove.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cabinet_mangrove.json",
@@ -130,7 +125,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_cherry.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cabinet_cherry.json",
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_cherry.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_cherry.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CabinetCherryBlock.java",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CabinetCherryBlockEntity.java",
@@ -152,8 +146,7 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cabinet_jungle.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cabinet_jungle.json",
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_jungle.json",
-          "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_jungle.json",
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_jungle.json"
+          "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_jungle.json"
         ]
       },
       "path": "~/Living Room/Cabinets"
@@ -166,7 +159,6 @@
       "registry_name": "cabinet_bamboo",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_bamboo.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_bamboo.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cabinet_bamboo.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cabinet_bamboo.json",
@@ -312,7 +304,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/fridge.json",
           "src/main/java/net/okil/voxelizedfurniture/block/FridgeBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/fridge.json",
-          "src/main/resources/assets/voxelized_furniture/items/fridge.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/fridge.json",
           "src/main/resources/assets/voxelized_furniture/models/block/fridge.json"
         ]
@@ -352,10 +343,10 @@
       "registry_name": "oak_sink",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/oak_sink.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/oak_sink.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OakSinkBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/oak_sink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/oak_sink_0.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_sink.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_sink.json"
         ]
@@ -374,8 +365,8 @@
           "src/main/java/net/okil/voxelizedfurniture/block/SpruceSinkBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/spruce_sink.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_sink.json",
-          "src/main/resources/assets/voxelized_furniture/blockstates/spruce_sink.json",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_sink.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/spruce_sink_0.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/spruce_sink.json"
         ]
       },
       "path": "~/Kitchen/Sinks"
@@ -390,9 +381,9 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/MangroveSinkBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_sink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/mangrove_sink_0.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_sink.json",
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_sink.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_sink.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_sink.json"
         ]
       },
@@ -409,8 +400,8 @@
           "src/main/java/net/okil/voxelizedfurniture/block/JungleSinkBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/jungle_sink.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_sink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/jungle_sink_0.json",
           "src/main/resources/assets/voxelized_furniture/models/item/jungle_sink.json",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_sink.json",
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_sink.json"
         ]
       },
@@ -424,7 +415,7 @@
       "registry_name": "dark_oak_sink",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_sink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_sink_0.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_sink.json",
           "src/main/java/net/okil/voxelizedfurniture/block/DarkOakSinkBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_sink.json",
@@ -444,8 +435,8 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/block/birch_sink.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_sink.json",
-          "src/main/resources/assets/voxelized_furniture/items/birch_sink.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/birch_sink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/birch_sink_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BirchSinkBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/birch_sink.json"
         ]
@@ -462,7 +453,7 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/acacia_sink.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/acacia_sink.json",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_sink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/acacia_sink_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/AcaciaSinkBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_sink.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_sink.json"
@@ -480,10 +471,10 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/blockstates/cherry_sink.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_sink.json",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_sink.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CherrySinkBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_sink.json",
-          "src/main/resources/assets/voxelized_furniture/models/item/cherry_sink.json"
+          "src/main/resources/assets/voxelized_furniture/models/item/cherry_sink.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/cherry_sink_0.json"
         ]
       },
       "path": "~/Kitchen/Sinks"
@@ -496,8 +487,8 @@
       "registry_name": "bamboo_sink",
       "metadata": {
         "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/bamboo_sink_0.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_sink.json",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_sink.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_sink.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_sink.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooSinkBlock.java",
@@ -650,8 +641,7 @@
           "src/main/java/net/okil/voxelizedfurniture/block/CabinetSpruceBlock.java",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CabinetSpruceBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cabinet_spruce.json",
-          "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_spruce.json",
-          "src/main/resources/assets/voxelized_furniture/items/cabinet_spruce.json"
+          "src/main/resources/assets/voxelized_furniture/blockstates/cabinet_spruce.json"
         ]
       },
       "path": "~/Living Room/Cabinets"
@@ -676,7 +666,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jam_jar.json",
-          "src/main/resources/assets/voxelized_furniture/items/jam_jar.json",
           "src/main/java/net/okil/voxelizedfurniture/block/JamJarBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/jam_jar.json",
           "src/main/resources/assets/voxelized_furniture/models/item/jam_jar.json",
@@ -696,7 +685,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/honey_jar.json",
           "src/main/resources/assets/voxelized_furniture/models/item/honey_jar.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/honey_jar.json",
-          "src/main/resources/assets/voxelized_furniture/items/honey_jar.json",
           "src/main/java/net/okil/voxelizedfurniture/block/HoneyJarBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/honey_jar.json"
         ]
@@ -739,7 +727,6 @@
       "registry_name": "jam_bottle",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/jam_bottle.json",
           "src/main/resources/assets/voxelized_furniture/models/item/jam_bottle.json",
           "src/main/java/net/okil/voxelizedfurniture/item/JamBottleItem.java"
         ]
@@ -787,8 +774,7 @@
           "src/main/resources/assets/voxelized_furniture/models/item/shower.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/shower.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/shower.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/shower.json",
-          "src/main/resources/assets/voxelized_furniture/items/shower.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/shower.json"
         ]
       },
       "path": "~/Bathroom"
@@ -890,7 +876,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/oak_shelf.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/oak_shelf.json",
-          "src/main/resources/assets/voxelized_furniture/items/oak_shelf.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/OakShelfBlockEntity.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_shelf.json",
@@ -910,7 +895,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/SpruceShelfBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/spruce_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/SpruceShelfBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_shelf.json",
           "src/main/resources/assets/voxelized_furniture/models/block/spruce_shelf.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_shelf.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/spruce_shelf.json"
@@ -930,7 +914,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_shelf.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_shelf.json",
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_shelf.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_shelf.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MangroveShelfBlock.java"
         ]
@@ -946,7 +929,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/JungleShelfBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/JungleShelfBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_shelf.json",
           "src/main/resources/assets/voxelized_furniture/models/item/jungle_shelf.json",
@@ -964,7 +946,6 @@
       "registry_name": "dark_oak_shelf",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_shelf.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_shelf.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_shelf.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_shelf.json",
@@ -987,7 +968,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CherryShelfBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cherry_shelf.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_shelf.json",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CherryShelfBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_shelf.json"
         ]
@@ -1002,7 +982,6 @@
       "registry_name": "birch_shelf",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/birch_shelf.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/birch_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BirchShelfBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_shelf.json",
@@ -1022,7 +1001,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_shelf.json",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooShelfBlockEntity.java",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooShelfBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_shelf.json",
@@ -1045,7 +1023,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/acacia_shelf.json",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_shelf.json",
           "src/main/java/net/okil/voxelizedfurniture/block/AcaciaShelfBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_shelf.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/acacia_shelf.json"
         ]
       },
@@ -1203,7 +1180,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/soap.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/soap.json",
           "src/main/resources/assets/voxelized_furniture/models/item/soap.json",
-          "src/main/resources/assets/voxelized_furniture/items/soap.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/soap.json"
         ]
       },
@@ -1218,7 +1194,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/OakChairRenderer.java",
-          "src/main/resources/assets/voxelized_furniture/items/oak_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/OakChairEntity.java"
         ]
       },
@@ -1322,7 +1297,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/oak_chair_1.json",
-          "src/main/resources/assets/voxelized_furniture/items/oak_chair_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/OakChair1BlockEntity.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_chair_1.json",
@@ -1386,7 +1360,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/SpruceChairRenderer.java",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/SpruceChairEntity.java"
         ]
       },
@@ -1475,7 +1448,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/block/spruce_chair_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/SpruceChair1BlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/spruce_chair_1.json"
         ]
       },
@@ -1490,7 +1462,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/entity/MangroveChairEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/MangroveChairRenderer.java"
         ]
       },
@@ -1506,7 +1477,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_chair_1.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_chair_1.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_chair_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MangroveChair1Block.java",
@@ -1597,7 +1567,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_chair_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/JungleChair1Block.java",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/JungleChair1BlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/jungle_chair_1.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_chair_1.json"
         ]
@@ -1613,7 +1582,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/JungleChairRenderer.java",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/JungleChairEntity.java"
         ]
       },
@@ -1700,7 +1668,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/DarkOakChair1BlockEntity.java",
           "src/main/java/net/okil/voxelizedfurniture/block/DarkOakChair1Block.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_chair_1.json",
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_chair_1.json"
@@ -1748,7 +1715,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/entity/DarkOakChairEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/DarkOakChairRenderer.java"
         ]
       },
@@ -1806,7 +1772,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CherryChair1BlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cherry_chair_1.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_chair_1.json",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cherry_chair_1.json"
         ]
       },
@@ -1852,7 +1817,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/CherryChairRenderer.java",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/CherryChairEntity.java"
         ]
       },
@@ -1908,7 +1872,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/BirchChair1Block.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_chair_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BirchChair1BlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/birch_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/item/birch_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/birch_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/block/birch_chair_1.json"
@@ -1956,7 +1919,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/entity/BirchChairEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/birch_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/BirchChairRenderer.java"
         ]
       },
@@ -2011,7 +1973,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooChair1BlockEntity.java",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooChair1Block.java",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_chair_1.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_chair_1.json",
@@ -2059,7 +2020,6 @@
       "registry_name": "bamboo_chair",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/BambooChairRenderer.java",
           "src/main/java/net/okil/voxelizedfurniture/entity/BambooChairEntity.java"
         ]
@@ -2117,7 +2077,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/AcaciaChair1Block.java",
           "src/main/resources/assets/voxelized_furniture/models/item/acacia_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/acacia_chair_1.json",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_chair_1.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_chair_1.json",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_chair_1.json"
         ]
@@ -2163,7 +2122,6 @@
       "registry_name": "acacia_chair",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/acacia_chair_spawn_egg.json",
           "src/main/java/net/okil/voxelizedfurniture/entity/AcaciaChairEntity.java",
           "src/main/java/net/okil/voxelizedfurniture/client/renderer/AcaciaChairRenderer.java"
         ]
@@ -2219,7 +2177,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/GroundDevTexBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/ground_dev_tex.json",
-          "src/main/resources/assets/voxelized_furniture/items/ground_dev_tex.json",
           "src/main/resources/assets/voxelized_furniture/models/item/ground_dev_tex.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/ground_dev_tex.json",
           "src/main/resources/assets/voxelized_furniture/models/block/ground_dev_tex.json"
@@ -2348,7 +2305,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/GoldenDesktopFountainBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/golden_desktop_fountain.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/golden_desktop_fountain.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/golden_desktop_fountain.json",
           "src/main/resources/assets/voxelized_furniture/models/block/golden_desktop_fountain.json",
@@ -2369,8 +2325,7 @@
           "src/main/resources/assets/voxelized_furniture/models/block/potted_green_plant.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/potted_green_plant.json",
           "src/main/java/net/okil/voxelizedfurniture/block/PottedGreenPlantBlock.java",
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/potted_green_plant.json",
-          "src/main/resources/assets/voxelized_furniture/items/potted_green_plant.json"
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/potted_green_plant.json"
         ]
       },
       "path": "~/Nature/PlantLike"
@@ -2411,7 +2366,6 @@
       "registry_name": "golden_zen_fountain",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/golden_zen_fountain.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/golden_zen_fountain.json",
           "src/main/resources/assets/voxelized_furniture/models/block/golden_zen_fountain.json",
           "src/main/java/net/okil/voxelizedfurniture/block/GoldenZenFountainBlock.java",
@@ -2431,7 +2385,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/blockstates/tv.json",
           "src/main/resources/assets/voxelized_furniture/models/item/tv.json",
-          "src/main/resources/assets/voxelized_furniture/items/tv.json",
           "src/main/java/net/okil/voxelizedfurniture/block/TvBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/tv.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/tv.json"
@@ -2463,7 +2416,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/LaptopBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/laptop.json",
-          "src/main/resources/assets/voxelized_furniture/items/laptop.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/laptop.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/laptop.json",
           "src/main/resources/assets/voxelized_furniture/models/block/laptop.json"
@@ -2483,7 +2435,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/AsphaltBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/asphalt.json",
           "src/main/resources/assets/voxelized_furniture/models/item/asphalt.json",
-          "src/main/resources/assets/voxelized_furniture/items/asphalt.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/asphalt.json"
         ]
       },
@@ -2509,7 +2460,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/block/double_bed.json",
-          "src/main/resources/assets/voxelized_furniture/items/double_bed.json",
           "src/main/java/net/okil/voxelizedfurniture/block/DoubleBedBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/double_bed.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/double_bed.json",
@@ -2539,7 +2489,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/SingleBedBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/single_bed.json",
-          "src/main/resources/assets/voxelized_furniture/items/single_bed.json",
           "src/main/resources/assets/voxelized_furniture/models/block/single_bed.json",
           "src/main/resources/assets/voxelized_furniture/models/item/single_bed.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/single_bed.json"
@@ -2585,7 +2534,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/OakWardrobeBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_wardrobe_0.json",
-          "src/main/resources/assets/voxelized_furniture/items/oak_wardrobe.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/item/oak_wardrobe.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OakWardrobeBlock.java",
@@ -2668,8 +2616,7 @@
           "src/main/resources/assets/voxelized_furniture/models/block/spruce_wardrobe_0.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/spruce_wardrobe.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/spruce_wardrobe.json",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_wardrobe.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/spruce_wardrobe.json"
         ]
       },
       "path": "~/Bedroom/wardrobe"
@@ -2684,7 +2631,6 @@
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_wardrobe.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_wardrobe_0.json",
@@ -2703,7 +2649,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_wardrobe.json",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/jungle_wardrobe.json",
           "src/main/java/net/okil/voxelizedfurniture/block/JungleWardrobeBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_wardrobe.json",
@@ -2722,7 +2667,6 @@
       "registry_name": "dark_oak_wardrobe",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_wardrobe_0.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_wardrobe.json",
@@ -2744,7 +2688,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_wardrobe_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CherryWardrobeBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/item/cherry_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cherry_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_wardrobe.json",
@@ -2765,7 +2708,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/birch_wardrobe_0.json",
           "src/main/resources/assets/voxelized_furniture/models/item/birch_wardrobe.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BirchWardrobeBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/birch_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/birch_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/block/birch_wardrobe.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BirchWardrobeBlock.java",
@@ -2786,7 +2728,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_wardrobe_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooWardrobeBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_wardrobe.json",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_wardrobe.json"
@@ -2806,7 +2747,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/acacia_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_wardrobe_0.json",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_wardrobe.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_wardrobe.json",
           "src/main/resources/assets/voxelized_furniture/models/item/acacia_wardrobe.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/AcaciaWardrobeBlockEntity.java"
@@ -2825,7 +2765,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/light_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/LightBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/light.json",
-          "src/main/resources/assets/voxelized_furniture/items/light.json",
           "src/main/resources/assets/voxelized_furniture/models/block/light.json",
           "src/main/resources/assets/voxelized_furniture/models/item/light.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/light.json"
@@ -2904,7 +2843,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/light_switch_button.json",
-          "src/main/resources/assets/voxelized_furniture/items/light_switch_button.json",
           "src/main/resources/assets/voxelized_furniture/models/block/light_switch_button_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/LightSwitchButtonBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/light_switch_button.json",
@@ -3099,7 +3037,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/kitchen_drawer.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenDrawerBlock.java",
@@ -3122,7 +3059,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_drawer_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/KitchenDrawer1BlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_drawer_1.json",
-          "src/main/resources/assets/voxelized_furniture/items/kitchen_drawer_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenDrawer1Block.java"
         ]
       },
@@ -3136,11 +3072,11 @@
       "registry_name": "kitchen_sink",
       "metadata": {
         "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/kitchen_sink_0.json",
           "src/main/resources/assets/voxelized_furniture/models/item/kitchen_sink.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_sink.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_sink.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/KitchenSinkBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/kitchen_sink.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenSinkBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_sink.json"
         ]
@@ -3157,7 +3093,7 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/oven.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OvenBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/oven.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/OvenBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/oven.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oven.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oven.json"
@@ -3230,7 +3166,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/blockstates/oven_vent.json",
-          "src/main/resources/assets/voxelized_furniture/items/oven_vent.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OvenVentBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oven_vent.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oven_vent.json",
@@ -3264,7 +3199,6 @@
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/kitchen_table.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_table.json",
           "src/main/resources/assets/voxelized_furniture/models/item/kitchen_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenTableBlock.java"
@@ -3296,7 +3230,6 @@
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_drawer_corner.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenDrawerCornerBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/kitchen_drawer_corner.json",
           "src/main/resources/assets/voxelized_furniture/models/item/kitchen_drawer_corner.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_drawer_corner.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_drawer_corner.json"
@@ -3344,7 +3277,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kitchen_fridge.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kitchen_fridge.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/kitchen_fridge.json",
-          "src/main/resources/assets/voxelized_furniture/items/kitchen_fridge.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KitchenFridgeBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/kitchen_fridge.json"
         ]
@@ -3362,7 +3294,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/modern_bulkhead_light_off.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ModernBulkheadLightOffBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/modern_bulkhead_light_off_0.json",
-          "src/main/resources/assets/voxelized_furniture/items/modern_bulkhead_light_off.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/modern_bulkhead_light_off.json",
           "src/main/resources/assets/voxelized_furniture/models/block/modern_bulkhead_light_off.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/modern_bulkhead_light_off.json"
@@ -3395,7 +3326,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/oak_cobble_path.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OakCobblePathBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/oak_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/item/oak_cobble_path.json"
         ]
@@ -3414,7 +3344,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/spruce_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/spruce_cobble_path.json",
           "src/main/java/net/okil/voxelizedfurniture/block/SpruceCobblePathBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/spruce_cobble_path.json"
         ]
       },
@@ -3431,7 +3360,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_cobble_path.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_cobble_path.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MangroveCobblePathBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_cobble_path.json"
         ]
@@ -3447,7 +3375,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/jungle_cobble_path.json",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_cobble_path.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/jungle_cobble_path.json",
@@ -3468,7 +3395,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/DarkOakCobblePathBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_cobble_path.json",
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_cobble_path.json"
         ]
       },
@@ -3483,7 +3409,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/cherry_cobble_path.json",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cherry_cobble_path.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CherryCobblePathBlock.java",
@@ -3501,7 +3426,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/BirchCobblePathBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/birch_cobble_path.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/birch_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/item/birch_cobble_path.json",
@@ -3521,7 +3445,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_cobble_path.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooCobblePathBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_cobble_path.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_cobble_path.json"
         ]
@@ -3539,7 +3462,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/acacia_cobble_path.json",
           "src/main/java/net/okil/voxelizedfurniture/block/AcaciaCobblePathBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_cobble_path.json",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_cobble_path.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_cobble_path.json",
           "src/main/resources/assets/voxelized_furniture/models/item/acacia_cobble_path.json"
         ]
@@ -3684,7 +3606,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/oak_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/oak_doorbell.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_doorbell.json",
-          "src/main/resources/assets/voxelized_furniture/items/oak_doorbell.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OakDoorbellBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_doorbell_0.json"
         ]
@@ -3732,7 +3653,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/SpruceDoorbellBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_doorbell.json",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/spruce_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/spruce_doorbell_0.json",
           "src/main/resources/assets/voxelized_furniture/models/item/spruce_doorbell.json",
@@ -3751,7 +3671,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_doorbell_0.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_doorbell.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_doorbell.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MangroveDoorbellBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_doorbell.json",
@@ -3769,7 +3688,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_doorbell.json",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_doorbell_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/JungleDoorbellBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/jungle_doorbell.json",
@@ -3788,7 +3706,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/DarkOakDoorbellBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_doorbell_0.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_doorbell.json",
@@ -3809,7 +3726,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/cherry_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_doorbell_0.json",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_doorbell.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_doorbell.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CherryDoorbellBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cherry_doorbell.json",
@@ -3828,7 +3744,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/birch_doorbell.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_doorbell.json",
-          "src/main/resources/assets/voxelized_furniture/items/birch_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/birch_doorbell.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BirchDoorbellBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/birch_doorbell_0.json",
@@ -3850,7 +3765,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_doorbell.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooDoorbellBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_doorbell.json",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_doorbell.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_doorbell_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooDoorbellBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_doorbell.json"
@@ -3867,7 +3781,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_doorbell.json",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_doorbell.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/AcaciaDoorbellBlockEntity.java",
           "src/main/java/net/okil/voxelizedfurniture/block/AcaciaDoorbellBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_doorbell.json",
@@ -4016,8 +3929,7 @@
           "src/main/java/net/okil/voxelizedfurniture/block/OakPorchTableBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/oak_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/models/item/oak_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/oak_porch_table.json"
+          "src/main/resources/assets/voxelized_furniture/models/item/oak_porch_table.json"
         ]
       },
       "path": "~/Living Room/Tables/PorchTable"
@@ -4033,7 +3945,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/spruce_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/item/spruce_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/spruce_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/SprucePorchTableBlock.java"
         ]
@@ -4051,7 +3962,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/MangrovePorchTableBlockEntity.java",
           "src/main/java/net/okil/voxelizedfurniture/block/MangrovePorchTableBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_porch_table.json"
@@ -4072,8 +3982,7 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/JunglePorchTableBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/jungle_porch_table.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/jungle_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_porch_table.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/jungle_porch_table.json"
         ]
       },
       "path": "~/Living Room/Tables/PorchTable"
@@ -4091,7 +4000,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/DarkOakPorchTableBlockEntity.java"
         ]
       },
@@ -4108,7 +4016,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CherryPorchTableBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cherry_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CherryPorchTableBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/cherry_porch_table.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_porch_table.json"
@@ -4128,7 +4035,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/birch_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/item/birch_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/birch_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BirchPorchTableBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/birch_porch_table.json"
         ]
@@ -4146,7 +4052,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooPorchTableBlockEntity.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooPorchTableBlock.java"
@@ -4164,7 +4069,6 @@
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_porch_table.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/acacia_porch_table.json",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/AcaciaPorchTableBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_porch_table.json",
           "src/main/java/net/okil/voxelizedfurniture/block/AcaciaPorchTableBlock.java",
@@ -4311,7 +4215,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/amethyst_geode.json",
           "src/main/resources/assets/voxelized_furniture/models/block/amethyst_geode.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/amethyst_geode.json",
-          "src/main/resources/assets/voxelized_furniture/items/amethyst_geode.json",
           "src/main/resources/assets/voxelized_furniture/models/item/amethyst_geode.json"
         ]
       },
@@ -4339,7 +4242,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/EmeraldGeodeBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/emerald_geode.json",
           "src/main/resources/assets/voxelized_furniture/models/block/emerald_geode.json",
-          "src/main/resources/assets/voxelized_furniture/items/emerald_geode.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/emerald_geode.json",
           "src/main/resources/assets/voxelized_furniture/models/item/emerald_geode.json"
         ]
@@ -4357,7 +4259,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/diamond_geode.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/diamond_geode.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/diamond_geode.json",
-          "src/main/resources/assets/voxelized_furniture/items/diamond_geode.json",
           "src/main/java/net/okil/voxelizedfurniture/block/DiamondGeodeBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/diamond_geode.json"
         ]
@@ -4375,7 +4276,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/redstone_geode.json",
           "src/main/resources/assets/voxelized_furniture/models/item/redstone_geode.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/redstone_geode.json",
-          "src/main/resources/assets/voxelized_furniture/items/redstone_geode.json",
           "src/main/java/net/okil/voxelizedfurniture/block/RedstoneGeodeBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/redstone_geode.json"
         ]
@@ -4450,7 +4350,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/miniature_ruined_nether_portal.json",
           "src/main/resources/assets/voxelized_furniture/models/block/miniature_ruined_nether_portal.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MiniatureRuinedNetherPortalBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/miniature_ruined_nether_portal.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/miniature_ruined_nether_portal.json"
         ]
       },
@@ -4478,7 +4377,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/miniature_water_ruin.json",
           "src/main/resources/assets/voxelized_furniture/models/block/miniature_water_ruin.json",
           "src/main/resources/assets/voxelized_furniture/models/item/miniature_water_ruin.json",
-          "src/main/resources/assets/voxelized_furniture/items/miniature_water_ruin.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MiniatureWaterRuinBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/miniature_water_ruin.json"
         ]
@@ -4525,7 +4423,6 @@
           "src/main/resources/assets/voxelized_furniture/models/block/oak_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/oak_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OakToiletRollBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/oak_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_toilet_roll_0.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_toilet_roll.json"
         ]
@@ -4585,8 +4482,7 @@
           "src/main/resources/assets/voxelized_furniture/models/item/spruce_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/SpruceToiletRollBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/block/spruce_toilet_roll.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/spruce_toilet_roll_0.json",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_toilet_roll.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/spruce_toilet_roll_0.json"
         ]
       },
       "path": "~/Bathroom/Toilet Roll"
@@ -4602,7 +4498,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_toilet_roll_0.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_toilet_roll.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_toilet_roll.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MangroveToiletRollBlock.java",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/MangroveToiletRollBlockEntity.java",
@@ -4624,7 +4519,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/jungle_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/jungle_toilet_roll.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_toilet_roll.json",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_toilet_roll_0.json"
         ]
@@ -4640,7 +4534,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/DarkOakToiletRollBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/DarkOakToiletRollBlockEntity.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_toilet_roll.json",
@@ -4660,7 +4553,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/CherryToiletRollBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CherryToiletRollBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/cherry_toilet_roll.json",
@@ -4685,7 +4577,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BirchToiletRollBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/birch_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BirchToiletRollBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/birch_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/birch_toilet_roll.json"
         ]
       },
@@ -4701,7 +4592,6 @@
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_toilet_roll_0.json",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bamboo_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooToiletRollBlockEntity.java",
@@ -4720,7 +4610,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_toilet_roll.json",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_toilet_roll.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/AcaciaToiletRollBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/acacia_toilet_roll.json",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_toilet_roll.json",
@@ -4742,7 +4631,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/green_bamboo_plant.json",
           "src/main/resources/assets/voxelized_furniture/models/block/green_bamboo_plant.json",
           "src/main/java/net/okil/voxelizedfurniture/block/GreenBambooPlantBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/green_bamboo_plant.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/green_bamboo_plant.json",
           "src/main/resources/assets/voxelized_furniture/models/item/green_bamboo_plant.json"
         ]
@@ -4773,7 +4661,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/barrel_plant.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BarrelPlantBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/barrel_plant.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/barrel_plant.json",
           "src/main/resources/assets/voxelized_furniture/models/block/barrel_plant.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/barrel_plant.json"
@@ -4809,8 +4696,7 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/seed_in_pot.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/seed_in_pot.json",
           "src/main/resources/assets/voxelized_furniture/models/block/seed_in_pot.json",
-          "src/main/resources/assets/voxelized_furniture/models/item/seed_in_pot.json",
-          "src/main/resources/assets/voxelized_furniture/items/seed_in_pot.json"
+          "src/main/resources/assets/voxelized_furniture/models/item/seed_in_pot.json"
         ]
       },
       "path": "~/Nature/SeedInPot"
@@ -5128,7 +5014,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/SeedInPotRamdomBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/seed_in_pot_ramdom.json",
           "src/main/resources/assets/voxelized_furniture/models/block/seed_in_pot_ramdom.json",
           "src/main/resources/assets/voxelized_furniture/models/block/seed_in_pot_ramdom_0.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/seed_in_pot_ramdom.json",
@@ -5217,7 +5102,6 @@
       "registry_name": "cube_ceiling_light",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/cube_ceiling_light.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cube_ceiling_light_0.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/cube_ceiling_light.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CubeCeilingLightBlock.java",
@@ -5251,7 +5135,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/yucca_plant.json",
-          "src/main/resources/assets/voxelized_furniture/items/yucca_plant.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/yucca_plant.json",
           "src/main/java/net/okil/voxelizedfurniture/block/YuccaPlantBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/yucca_plant.json",
@@ -5272,8 +5155,7 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/yucca_plant_random.json",
           "src/main/java/net/okil/voxelizedfurniture/block/YuccaPlantRandomBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/yucca_plant_random.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/yucca_plant_random.json",
-          "src/main/resources/assets/voxelized_furniture/items/yucca_plant_random.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/yucca_plant_random.json"
         ]
       },
       "path": "~/Nature/Yuca Plant"
@@ -5439,7 +5321,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/WheatPlantBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/wheat_plant.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/wheat_plant.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/wheat_plant.json",
           "src/main/resources/assets/voxelized_furniture/models/item/wheat_plant.json",
@@ -5576,7 +5457,6 @@
       "registry_name": "random_wheat_plant",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/random_wheat_plant.json",
           "src/main/resources/assets/voxelized_furniture/models/block/random_wheat_plant.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/random_wheat_plant.json",
           "src/main/java/net/okil/voxelizedfurniture/block/RandomWheatPlantBlock.java",
@@ -5598,7 +5478,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/bricks.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bricks.json",
           "src/main/resources/assets/voxelized_furniture/models/block/bricks.json",
-          "src/main/resources/assets/voxelized_furniture/items/bricks.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BricksBlock.java"
         ]
       },
@@ -5640,7 +5519,6 @@
       "registry_name": "cactus_plant",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/cactus_plant.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CactusPlantBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/cactus_plant.json",
           "src/main/resources/assets/voxelized_furniture/models/block/cactus_plant.json",
@@ -5782,8 +5660,7 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cactus_plant_random.json",
           "src/main/java/net/okil/voxelizedfurniture/block/CactusPlantRandomBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/cactus_plant_random.json",
-          "src/main/resources/assets/voxelized_furniture/models/block/cactus_plant_random.json",
-          "src/main/resources/assets/voxelized_furniture/items/cactus_plant_random.json"
+          "src/main/resources/assets/voxelized_furniture/models/block/cactus_plant_random.json"
         ]
       },
       "path": "~/Nature/cactus plant"
@@ -5799,7 +5676,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/oak_drawer.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/block/oak_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/oak_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/OakDrawerBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/oak_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/OakDrawerBlockEntity.java"
@@ -5816,7 +5692,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/SpruceDrawerBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/spruce_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/item/spruce_drawer.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/spruce_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/SpruceDrawerBlock.java",
@@ -5837,7 +5712,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/JungleDrawerBlockEntity.java",
           "src/main/java/net/okil/voxelizedfurniture/block/JungleDrawerBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/jungle_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/jungle_drawer.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/jungle_drawer.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/block/jungle_drawer.json"
@@ -5858,8 +5732,7 @@
           "src/main/java/net/okil/voxelizedfurniture/block/entity/DarkOakDrawerBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/dark_oak_drawer.json"
+          "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_drawer.json"
         ]
       },
       "path": "~/Living Room/Drawers"
@@ -5877,8 +5750,7 @@
           "src/main/resources/assets/voxelized_furniture/models/block/cherry_drawer.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/item/cherry_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/blockstates/cherry_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/cherry_drawer.json"
+          "src/main/resources/assets/voxelized_furniture/blockstates/cherry_drawer.json"
         ]
       },
       "path": "~/Living Room/Drawers"
@@ -5896,8 +5768,7 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BirchDrawerBlock.java",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BirchDrawerBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/models/item/birch_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/birch_drawer.json"
+          "src/main/resources/assets/voxelized_furniture/models/item/birch_drawer.json"
         ]
       },
       "path": "~/Living Room/Drawers"
@@ -5911,7 +5782,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooDrawerBlockEntity.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_drawer.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_drawer.json",
@@ -5930,7 +5800,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/AcaciaDrawerBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/acacia_drawer.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/acacia_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/AcaciaDrawerBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/acacia_drawer.json",
@@ -5950,7 +5819,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_drawer.json",
           "src/main/resources/assets/voxelized_furniture/models/block/mangrove_drawer.json",
-          "src/main/resources/assets/voxelized_furniture/items/mangrove_drawer.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_drawer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/MangroveDrawerBlockEntity.java",
           "src/main/resources/assets/voxelized_furniture/models/item/mangrove_drawer.json",
@@ -6110,7 +5978,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/kyanite.json",
           "src/main/java/net/okil/voxelizedfurniture/block/KyaniteBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/kyanite.json",
-          "src/main/resources/assets/voxelized_furniture/items/kyanite.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/kyanite.json",
           "src/main/resources/assets/voxelized_furniture/models/block/kyanite.json"
         ]
@@ -6154,7 +6021,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooClusterBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/bamboo_cluster.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_cluster.json",
           "src/main/resources/assets/voxelized_furniture/models/item/bamboo_cluster.json",
           "src/main/java/net/okil/voxelizedfurniture/block/BambooClusterBlock.java",
@@ -6251,7 +6117,6 @@
       "registry_name": "pan",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/pan.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/pan.json",
           "src/main/resources/assets/voxelized_furniture/models/item/pan.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/pan.json",
@@ -6288,7 +6153,6 @@
           "src/main/resources/assets/voxelized_furniture/models/item/airfryer.json",
           "src/main/resources/assets/voxelized_furniture/models/block/airfryer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/entity/AirfryerBlockEntity.java",
-          "src/main/resources/assets/voxelized_furniture/items/airfryer.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/airfryer.json",
           "src/main/java/net/okil/voxelizedfurniture/block/AirfryerBlock.java"
         ]
@@ -6335,7 +6199,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/block/microwave.json",
-          "src/main/resources/assets/voxelized_furniture/items/microwave.json",
           "src/main/resources/assets/voxelized_furniture/models/block/microwave_0.json",
           "src/main/java/net/okil/voxelizedfurniture/block/MicrowaveBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/microwave.json",
@@ -6354,7 +6217,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterWhiteBlock.java",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_white.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_white.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_white.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_white.json",
@@ -6372,7 +6234,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_blue.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_blue.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_blue.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_blue.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterBlueBlock.java",
@@ -6392,7 +6253,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterBrownBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_brown.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_brown.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_brown.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_brown.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_brown.json"
         ]
@@ -6411,7 +6271,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_cyan.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_cyan.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_cyan.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_cyan.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterCyanBlock.java"
         ]
       },
@@ -6429,8 +6288,7 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_gray.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_gray.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterGrayBlock.java",
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_gray.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_gray.json"
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_gray.json"
         ]
       },
       "path": "~/Kitchen/toaster"
@@ -6447,8 +6305,7 @@
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterGreenBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_green.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_green.json",
-          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_green.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_green.json"
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_green.json"
         ]
       },
       "path": "~/Kitchen/toaster"
@@ -6463,7 +6320,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_light_blue.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_light_blue.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_light_blue.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterLightBlueBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_light_blue.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_light_blue.json"
@@ -6482,7 +6338,6 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_light_gray.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_light_gray.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_light_gray.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_light_gray.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterLightGrayBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_light_gray.json"
         ]
@@ -6498,7 +6353,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_lime.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_lime.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_lime.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterLimeBlock.java",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_lime.json",
@@ -6517,7 +6371,6 @@
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_magenta.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_magenta.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_magenta.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterMagentaBlock.java",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_magenta.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_magenta.json"
@@ -6535,7 +6388,6 @@
         "files": [
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterOrangeBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_orange.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_orange.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_orange.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_orange.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_orange.json"
@@ -6555,7 +6407,6 @@
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterPinkBlock.java",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_pink.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_pink.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_pink.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_pink.json"
         ]
       },
@@ -6569,7 +6420,6 @@
       "registry_name": "toaster_purple",
       "metadata": {
         "files": [
-          "src/main/resources/assets/voxelized_furniture/items/toaster_purple.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_purple.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_purple.json",
           "src/main/java/net/okil/voxelizedfurniture/block/ToasterPurpleBlock.java",
@@ -6588,7 +6438,6 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_red.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_red.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_red.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_red.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_red.json",
@@ -6609,7 +6458,6 @@
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/toaster_yellow.json",
           "src/main/resources/assets/voxelized_furniture/models/block/toaster_yellow.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/toaster_yellow.json",
-          "src/main/resources/assets/voxelized_furniture/items/toaster_yellow.json",
           "src/main/resources/assets/voxelized_furniture/models/item/toaster_yellow.json"
         ]
       },
@@ -6906,6 +6754,55 @@
         ]
       },
       "path": "~/Electrical/Light"
+    },
+    {
+      "name": "CookingGui",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooking_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/world/inventory/CookingGuiMenu.java",
+          "src/main/java/net/okil/voxelizedfurniture/client/gui/CookingGuiScreen.java"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "SinkStateSwitcher",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sink_state_switcher",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/SinkStateSwitcherProcedure.java"
+        ]
+      },
+      "path": "~/Kitchen/Sinks"
     }
   ],
   "variable_elements": [
@@ -6934,6 +6831,15 @@
   ],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
+      "~DarkOakSink@CUSTOM:DarkOakSink",
+      "~AcaciaSink@CUSTOM:AcaciaSink",
+      "~BambooSink@CUSTOM:BambooSink",
+      "~CherrySink@CUSTOM:CherrySink",
+      "~JungleSink@CUSTOM:JungleSink",
+      "~MangroveSink@CUSTOM:MangroveSink",
+      "~BirchSink@CUSTOM:BirchSink",
+      "~OakSink@CUSTOM:OakSink",
+      "~SpruceSink@CUSTOM:SpruceSink",
       "~BambooCluster@CUSTOM:BambooCluster",
       "~MangroveDrawer@CUSTOM:MangroveDrawer",
       "~AcaciaDrawer@CUSTOM:AcaciaDrawer",
@@ -6986,15 +6892,6 @@
       "~SpruceShelf@CUSTOM:SpruceShelf",
       "~OakShelf@CUSTOM:OakShelf",
       "~CabinetSpruce@CUSTOM:CabinetSpruce",
-      "~BambooSink@CUSTOM:BambooSink",
-      "~CherrySink@CUSTOM:CherrySink",
-      "~AcaciaSink@CUSTOM:AcaciaSink",
-      "~BirchSink@CUSTOM:BirchSink",
-      "~DarkOakSink@CUSTOM:DarkOakSink",
-      "~JungleSink@CUSTOM:JungleSink",
-      "~MangroveSink@CUSTOM:MangroveSink",
-      "~SpruceSink@CUSTOM:SpruceSink",
-      "~OakSink@CUSTOM:OakSink",
       "~CabinetBamboo@CUSTOM:CabinetBamboo",
       "~CabinetJungle@CUSTOM:CabinetJungle",
       "~CabinetCherry@CUSTOM:CabinetCherry",
@@ -7005,6 +6902,7 @@
       "~CabinetOak@CUSTOM:CabinetOak"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~KitchenSink@CUSTOM:KitchenSink",
       "~ToasterYellow@CUSTOM:ToasterYellow",
       "~ToasterRed@CUSTOM:ToasterRed",
       "~ToasterPurple@CUSTOM:ToasterPurple",
@@ -7064,7 +6962,6 @@
       "~KitchenTable@CUSTOM:KitchenTable",
       "~OvenVent@CUSTOM:OvenVent",
       "~Oven@CUSTOM:Oven",
-      "~KitchenSink@CUSTOM:KitchenSink",
       "~KitchenDrawer1@CUSTOM:KitchenDrawer1",
       "~KitchenDrawer@CUSTOM:KitchenDrawer",
       "~LightSwitchButton@CUSTOM:LightSwitchButton",
@@ -7427,7 +7324,8 @@
       "block.voxelized_furniture.toaster_pink": "Toaster Pink",
       "block.voxelized_furniture.toaster_purple": "Toaster Purple",
       "block.voxelized_furniture.toaster_red": "Toaster Red",
-      "block.voxelized_furniture.toaster_yellow": "Toaster Yellow"
+      "block.voxelized_furniture.toaster_yellow": "Toaster Yellow",
+      "subtitles.sinks": ""
     }
   },
   "metadata": {
@@ -7621,9 +7519,9 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "neoforge-26.1.2",
+    "currentGenerator": "neoforge-1.21.1",
     "credits": "Made by okil6, CC0 License",
     "modElementsPackage": "net.okil.voxelizedfurniture"
   },
-  "mcreatorVersion": 202600230420
+  "mcreatorVersion": 202600233518
 }

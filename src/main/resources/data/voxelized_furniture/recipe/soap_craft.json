@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:lever",
-    "minecraft:light_blue_concrete_powder"
+    {
+      "item": "minecraft:lever"
+    },
+    {
+      "item": "minecraft:light_blue_concrete_powder"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:soap",

@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/lowblack",
     "particle": "voxelized_furniture:block/lowblack",
     "3": "voxelized_furniture:block/kitchendrawecornertex"
-  }
+  },
+  "render_type": "cutout_mipped"
 }

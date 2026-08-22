@@ -6,5 +6,6 @@
     "1": "minecraft:block/farmland_moist",
     "2": "voxelized_furniture:block/brownpotcolor",
     "4": "minecraft:block/wheat_stage3"
-  }
+  },
+  "render_type": "cutout"
 }

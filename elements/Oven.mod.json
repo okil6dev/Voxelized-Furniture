@@ -195,8 +195,9 @@
     "vibrationSensitivityRadius": {
       "fixedValue": 7.0
     },
-    "hasInventory": false,
-    "openGUIOnRightClick": false,
+    "hasInventory": true,
+    "guiBoundTo": "CookingGui",
+    "openGUIOnRightClick": true,
     "inventorySize": 3,
     "inventoryStackSize": 99,
     "inventoryDropWhenDestroyed": true,

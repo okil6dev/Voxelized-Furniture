@@ -24,6 +24,7 @@ public class VoxelizedFurnitureModScreens {
 		event.register(VoxelizedFurnitureModMenus.WHEAT_PLANT_SETTINGS_GUI.get(), WheatPlantSettingsGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.CACTUS_PLANT_SETTINGS_GUI.get(), CactusPlantSettingsGuiScreen::new);
 		event.register(VoxelizedFurnitureModMenus.DRAWER_GUI.get(), DrawerGuiScreen::new);
+		event.register(VoxelizedFurnitureModMenus.COOKING_GUI.get(), CookingGuiScreen::new);
 	}
 
 	public interface ScreenAccessor {

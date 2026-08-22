@@ -14,7 +14,42 @@
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "states": [],
+    "states": [
+      {
+        "texture": "kitchensinktex",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "kitchensinkon:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 1,
+              "name": "CUSTOM:state",
+              "type": "integer"
+            },
+            "value": 1
+          }
+        ]
+      }
+    ],
     "animations": [],
     "itemTexture": "",
     "particleTexture": "lowblack",
@@ -24,7 +59,7 @@
     "isItemTinted": false,
     "hasTransparency": true,
     "connectedSides": false,
-    "transparencyType": "SOLID",
+    "transparencyType": "TRANSLUCENT",
     "disableOffset": false,
     "boundingBoxes": [
       {
@@ -181,7 +216,15 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "min": 0,
+        "max": 1,
+        "name": "CUSTOM:state",
+        "type": "integer",
+        "value": 0
+      }
+    ],
     "name": "Kitchen Sink",
     "specialInformation": {
       "fixedValue": []
@@ -251,7 +294,7 @@
     },
     "hasInventory": true,
     "guiBoundTo": "KitchenCounterGui",
-    "openGUIOnRightClick": true,
+    "openGUIOnRightClick": false,
     "inventorySize": 18,
     "inventoryStackSize": 99,
     "inventoryDropWhenDestroyed": true,
@@ -266,6 +309,7 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": "SinkStateSwitcher",
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

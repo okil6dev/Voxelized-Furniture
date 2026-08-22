@@ -11,7 +11,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
-import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.MenuType;
@@ -34,6 +33,7 @@ public class VoxelizedFurnitureModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<WheatPlantSettingsGuiMenu>> WHEAT_PLANT_SETTINGS_GUI = REGISTRY.register("wheat_plant_settings_gui", () -> IMenuTypeExtension.create(WheatPlantSettingsGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<CactusPlantSettingsGuiMenu>> CACTUS_PLANT_SETTINGS_GUI = REGISTRY.register("cactus_plant_settings_gui", () -> IMenuTypeExtension.create(CactusPlantSettingsGuiMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<DrawerGuiMenu>> DRAWER_GUI = REGISTRY.register("drawer_gui", () -> IMenuTypeExtension.create(DrawerGuiMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<CookingGuiMenu>> COOKING_GUI = REGISTRY.register("cooking_gui", () -> IMenuTypeExtension.create(CookingGuiMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
@@ -44,10 +44,10 @@ public class VoxelizedFurnitureModMenus {
 			getMenuState().put(elementType + ":" + name, elementState);
 			if (player instanceof ServerPlayer serverPlayer) {
 				PacketDistributor.sendToPlayer(serverPlayer, new MenuStateUpdateMessage(elementType, name, elementState));
-			} else if (player.level().isClientSide()) {
+			} else if (player.level().isClientSide) {
 				if (Minecraft.getInstance().screen instanceof VoxelizedFurnitureModScreens.ScreenAccessor accessor && needClientUpdate)
 					accessor.updateMenuState(elementType, name, elementState);
-				ClientPacketDistributor.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
+				PacketDistributor.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
 			}
 		}
 

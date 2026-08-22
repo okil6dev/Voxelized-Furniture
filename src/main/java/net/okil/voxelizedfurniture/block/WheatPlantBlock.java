@@ -19,8 +19,8 @@ import net.minecraft.core.BlockPos;
 public class WheatPlantBlock extends Block {
 	private static final VoxelShape SHAPE = box(5, 0, 5, 11, 8, 11);
 
-	public WheatPlantBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(2f, 3f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public WheatPlantBlock() {
+		super(BlockBehaviour.Properties.of().strength(2f, 3f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

@@ -6,5 +6,6 @@
     "0": "minecraft:block/bamboo_planks",
     "1": "minecraft:block/bamboo_block",
     "3": "minecraft:block/stripped_bamboo_block_top"
-  }
+  },
+  "render_type": "solid"
 }

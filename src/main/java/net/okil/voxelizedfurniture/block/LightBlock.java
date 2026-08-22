@@ -18,18 +18,18 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
+import com.google.common.collect.ImmutableMap;
 
 public class LightBlock extends Block {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public LightBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.GLASS).strength(2f, 4f).lightLevel(blockstate -> (int) Lightlevel12Procedure.execute(blockstate)).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public LightBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(2f, 4f).lightLevel(blockstate -> (int) Lightlevel12Procedure.execute(blockstate)).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(BLOCKSTATE, 0));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			if (state.getValue(BLOCKSTATE) == 1) {
 				return Shapes.or(box(7, 6, 7, 9, 16, 9), box(5, 0, 5, 11, 6, 11));
@@ -40,16 +40,16 @@ public class LightBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightDampening(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

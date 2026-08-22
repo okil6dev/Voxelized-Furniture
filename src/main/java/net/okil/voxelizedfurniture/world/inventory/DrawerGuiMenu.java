@@ -2,14 +2,11 @@ package net.okil.voxelizedfurniture.world.inventory;
 
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModMenus;
 
-import net.neoforged.neoforge.transfer.transaction.Transaction;
-import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
-import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
-import net.neoforged.neoforge.transfer.item.ItemUtil;
-import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
-import net.neoforged.neoforge.transfer.item.ItemResource;
-import net.neoforged.neoforge.transfer.access.ItemAccess;
-import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.items.wrapper.InvWrapper;
+import net.neoforged.neoforge.items.SlotItemHandler;
+import net.neoforged.neoforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.capabilities.Capabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -22,7 +19,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.Container;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
@@ -45,7 +41,7 @@ public class DrawerGuiMenu extends AbstractContainerMenu implements VoxelizedFur
 	public final Player entity;
 	public int x, y, z;
 	private ContainerLevelAccess access = ContainerLevelAccess.NULL;
-	private ResourceHandler<ItemResource> internal;
+	private IItemHandler internal;
 	private final Map<Integer, Slot> customSlots = new HashMap<>();
 	private boolean bound = false;
 	private Supplier<Boolean> boundItemMatcher = null;
@@ -56,7 +52,7 @@ public class DrawerGuiMenu extends AbstractContainerMenu implements VoxelizedFur
 		super(VoxelizedFurnitureModMenus.DRAWER_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStacksResourceHandler(24);
+		this.internal = new ItemStackHandler(24);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -66,149 +62,149 @@ public class DrawerGuiMenu extends AbstractContainerMenu implements VoxelizedFur
 			access = ContainerLevelAccess.create(world, pos);
 		}
 		if (pos != null) {
-			if (extraData.readableBytes() == 1) { // bound to item
+			if (extraData.readableBytes() == 1) {
 				byte hand = extraData.readByte();
 				ItemStack itemstack = hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem();
 				this.boundItemMatcher = () -> itemstack == (hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem());
-				ResourceHandler<ItemResource> cap = itemstack.getCapability(Capabilities.Item.ITEM, ItemAccess.forPlayerSlot(this.entity, hand == 0 ? this.entity.getInventory().getSelectedSlot() : Inventory.SLOT_OFFHAND));
+				IItemHandler cap = itemstack.getCapability(Capabilities.ItemHandler.ITEM);
 				if (cap != null) {
 					this.internal = cap;
 					this.bound = true;
 				}
-			} else if (extraData.readableBytes() > 1) { // bound to entity
-				extraData.readByte(); // drop padding
+			} else if (extraData.readableBytes() > 1) {
+				extraData.readByte();
 				boundEntity = world.getEntity(extraData.readVarInt());
 				if (boundEntity != null) {
-					ResourceHandler<ItemResource> cap = boundEntity.getCapability(Capabilities.Item.ENTITY);
+					IItemHandler cap = boundEntity.getCapability(Capabilities.ItemHandler.ENTITY);
 					if (cap != null) {
 						this.internal = cap;
 						this.bound = true;
 					}
 				}
-			} else { // might be bound to block
+			} else {
 				boundBlockEntity = this.world.getBlockEntity(pos);
 				if (boundBlockEntity instanceof BaseContainerBlockEntity baseContainerBlockEntity) {
-					this.internal = VanillaContainerWrapper.of(baseContainerBlockEntity);
+					this.internal = new InvWrapper(baseContainerBlockEntity);
 					this.bound = true;
 				}
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 0, 16, 32) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 16, 32) {
 			private final int slot = 0;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(1, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 1, 35, 32) {
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 35, 32) {
 			private final int slot = 1;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(2, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 2, 54, 32) {
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 54, 32) {
 			private final int slot = 2;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(3, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 3, 73, 32) {
+		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 73, 32) {
 			private final int slot = 3;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(4, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 4, 92, 32) {
+		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 92, 32) {
 			private final int slot = 4;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(5, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 5, 111, 32) {
+		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 111, 32) {
 			private final int slot = 5;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(6, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 6, 130, 32) {
+		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 130, 32) {
 			private final int slot = 6;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(7, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 7, 149, 32) {
+		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 149, 32) {
 			private final int slot = 7;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(8, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 8, 16, 51) {
+		this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 16, 51) {
 			private final int slot = 8;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(9, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 9, 35, 51) {
+		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 35, 51) {
 			private final int slot = 9;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(10, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 10, 54, 51) {
+		this.customSlots.put(10, this.addSlot(new SlotItemHandler(internal, 10, 54, 51) {
 			private final int slot = 10;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(11, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 11, 73, 51) {
+		this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 73, 51) {
 			private final int slot = 11;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(12, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 12, 92, 51) {
+		this.customSlots.put(12, this.addSlot(new SlotItemHandler(internal, 12, 92, 51) {
 			private final int slot = 12;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(13, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 13, 111, 51) {
+		this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 111, 51) {
 			private final int slot = 13;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(14, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 14, 130, 51) {
+		this.customSlots.put(14, this.addSlot(new SlotItemHandler(internal, 14, 130, 51) {
 			private final int slot = 14;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(15, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 15, 149, 51) {
+		this.customSlots.put(15, this.addSlot(new SlotItemHandler(internal, 15, 149, 51) {
 			private final int slot = 15;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(16, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 16, 16, 70) {
+		this.customSlots.put(16, this.addSlot(new SlotItemHandler(internal, 16, 16, 70) {
 			private final int slot = 16;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(17, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 17, 35, 70) {
+		this.customSlots.put(17, this.addSlot(new SlotItemHandler(internal, 17, 35, 70) {
 			private final int slot = 17;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(18, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 18, 54, 70) {
+		this.customSlots.put(18, this.addSlot(new SlotItemHandler(internal, 18, 54, 70) {
 			private final int slot = 18;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(19, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 19, 73, 70) {
+		this.customSlots.put(19, this.addSlot(new SlotItemHandler(internal, 19, 73, 70) {
 			private final int slot = 19;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(20, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 20, 92, 70) {
+		this.customSlots.put(20, this.addSlot(new SlotItemHandler(internal, 20, 92, 70) {
 			private final int slot = 20;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(21, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 21, 111, 70) {
+		this.customSlots.put(21, this.addSlot(new SlotItemHandler(internal, 21, 111, 70) {
 			private final int slot = 21;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(22, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 22, 130, 70) {
+		this.customSlots.put(22, this.addSlot(new SlotItemHandler(internal, 22, 130, 70) {
 			private final int slot = 22;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
 		}));
-		this.customSlots.put(23, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 23, 149, 70) {
+		this.customSlots.put(23, this.addSlot(new SlotItemHandler(internal, 23, 149, 70) {
 			private final int slot = 23;
 			private int x = DrawerGuiMenu.this.x;
 			private int y = DrawerGuiMenu.this.y;
@@ -218,22 +214,6 @@ public class DrawerGuiMenu extends AbstractContainerMenu implements VoxelizedFur
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 2 + 8 + sj * 18, 25 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 2 + 8 + si * 18, 25 + 142));
-	}
-
-	private void setItemInSlot(int index, ItemResource resource, int amount) {
-		if (internal instanceof ItemStacksResourceHandler handler) {
-			handler.set(index, resource, amount);
-		} else if (boundBlockEntity instanceof Container container) {
-			container.setItem(index, resource.toStack(Math.max(0, amount)));
-		} else {
-			try (var tx = Transaction.openRoot()) {
-				if (!internal.getResource(index).isEmpty())
-					internal.extract(index, internal.getResource(index), internal.getAmountAsInt(index), tx);
-				if (!resource.isEmpty() && amount > 0)
-					internal.insert(index, resource, amount, tx);
-				tx.commit();
-			}
-		}
 	}
 
 	@Override
@@ -252,7 +232,7 @@ public class DrawerGuiMenu extends AbstractContainerMenu implements VoxelizedFur
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
 		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = this.slots.get(index);
+		Slot slot = (Slot) this.slots.get(index);
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
@@ -284,62 +264,62 @@ public class DrawerGuiMenu extends AbstractContainerMenu implements VoxelizedFur
 	}
 
 	@Override
-	protected boolean moveItemStackTo(ItemStack itemStack, int startSlot, int endSlot, boolean backwards) {
-		boolean anythingChanged = false;
-		int destSlot = startSlot;
-		if (backwards) {
-			destSlot = endSlot - 1;
+	protected boolean moveItemStackTo(ItemStack p_38904_, int p_38905_, int p_38906_, boolean p_38907_) {
+		boolean flag = false;
+		int i = p_38905_;
+		if (p_38907_) {
+			i = p_38906_ - 1;
 		}
-		if (itemStack.isStackable()) {
-			while (!itemStack.isEmpty() && (backwards ? destSlot >= startSlot : destSlot < endSlot)) {
-				Slot slot = this.slots.get(destSlot);
-				ItemStack target = slot.getItem();
-				if (slot.mayPlace(target) && !target.isEmpty() && ItemStack.isSameItemSameComponents(itemStack, target)) {
-					int totalStack = target.getCount() + itemStack.getCount();
-					int maxStackSize = slot.getMaxStackSize(target);
-					if (totalStack <= maxStackSize) {
-						itemStack.setCount(0);
-						target.setCount(totalStack);
-						slot.set(target);
-						anythingChanged = true;
-					} else if (target.getCount() < maxStackSize) {
-						itemStack.shrink(maxStackSize - target.getCount());
-						target.setCount(maxStackSize);
-						slot.set(target);
-						anythingChanged = true;
+		if (p_38904_.isStackable()) {
+			while (!p_38904_.isEmpty() && (p_38907_ ? i >= p_38905_ : i < p_38906_)) {
+				Slot slot = this.slots.get(i);
+				ItemStack itemstack = slot.getItem();
+				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameComponents(p_38904_, itemstack)) {
+					int j = itemstack.getCount() + p_38904_.getCount();
+					int k = slot.getMaxStackSize(itemstack);
+					if (j <= k) {
+						p_38904_.setCount(0);
+						itemstack.setCount(j);
+						slot.set(itemstack);
+						flag = true;
+					} else if (itemstack.getCount() < k) {
+						p_38904_.shrink(k - itemstack.getCount());
+						itemstack.setCount(k);
+						slot.set(itemstack);
+						flag = true;
 					}
 				}
-				if (backwards) {
-					destSlot--;
+				if (p_38907_) {
+					i--;
 				} else {
-					destSlot++;
+					i++;
 				}
 			}
 		}
-		if (!itemStack.isEmpty()) {
-			if (backwards) {
-				destSlot = endSlot - 1;
+		if (!p_38904_.isEmpty()) {
+			if (p_38907_) {
+				i = p_38906_ - 1;
 			} else {
-				destSlot = startSlot;
+				i = p_38905_;
 			}
-			while (backwards ? destSlot >= startSlot : destSlot < endSlot) {
-				Slot slotx = this.slots.get(destSlot);
-				ItemStack targetx = slotx.getItem();
-				if (targetx.isEmpty() && slotx.mayPlace(itemStack)) {
-					int maxStackSize = slotx.getMaxStackSize(itemStack);
-					slotx.setByPlayer(itemStack.split(Math.min(itemStack.getCount(), maxStackSize)));
-					slotx.setChanged();
-					anythingChanged = true;
+			while (p_38907_ ? i >= p_38905_ : i < p_38906_) {
+				Slot slot1 = this.slots.get(i);
+				ItemStack itemstack1 = slot1.getItem();
+				if (itemstack1.isEmpty() && slot1.mayPlace(p_38904_)) {
+					int l = slot1.getMaxStackSize(p_38904_);
+					slot1.setByPlayer(p_38904_.split(Math.min(p_38904_.getCount(), l)));
+					slot1.setChanged();
+					flag = true;
 					break;
 				}
-				if (backwards) {
-					destSlot--;
+				if (p_38907_) {
+					i--;
 				} else {
-					destSlot++;
+					i++;
 				}
 			}
 		}
-		return anythingChanged;
+		return flag;
 	}
 
 	@Override
@@ -347,14 +327,16 @@ public class DrawerGuiMenu extends AbstractContainerMenu implements VoxelizedFur
 		super.removed(playerIn);
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
-				for (int j = 0; j < internal.size(); ++j) {
-					playerIn.drop(ItemUtil.getStack(internal, j), false);
-					setItemInSlot(j, ItemResource.EMPTY, 0);
+				for (int j = 0; j < internal.getSlots(); ++j) {
+					playerIn.drop(internal.getStackInSlot(j), false);
+					if (internal instanceof IItemHandlerModifiable ihm)
+						ihm.setStackInSlot(j, ItemStack.EMPTY);
 				}
 			} else {
-				for (int i = 0; i < internal.size(); ++i) {
-					playerIn.getInventory().placeItemBackInInventory(ItemUtil.getStack(internal, i));
-					setItemInSlot(i, ItemResource.EMPTY, 0);
+				for (int i = 0; i < internal.getSlots(); ++i) {
+					playerIn.getInventory().placeItemBackInInventory(internal.getStackInSlot(i));
+					if (internal instanceof IItemHandlerModifiable ihm)
+						ihm.setStackInSlot(i, ItemStack.EMPTY);
 				}
 			}
 		}

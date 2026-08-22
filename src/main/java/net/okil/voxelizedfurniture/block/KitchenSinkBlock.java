@@ -1,13 +1,14 @@
 package net.okil.voxelizedfurniture.block;
 
-import net.okil.voxelizedfurniture.world.inventory.KitchenCounterGuiMenu;
+import net.okil.voxelizedfurniture.procedures.SinkStateSwitcherProcedure;
 import net.okil.voxelizedfurniture.block.entity.KitchenSinkBlockEntity;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,31 +23,25 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
-
-import io.netty.buffer.Unpooled;
+import com.google.common.collect.ImmutableMap;
 
 public class KitchenSinkBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final IntegerProperty STATE = IntegerProperty.create("state", 0, 1);
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public KitchenSinkBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+	public KitchenSinkBlock() {
+		super(BlockBehaviour.Properties.of().strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(STATE, 0));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(0, 0, 3, 16, 11, 16), box(0, 11, 3, 16, 16, 5), box(0, 11, 12, 16, 16, 16), box(7.5, 16, 14, 8.5, 21, 15), box(14, 11, 5, 16, 16, 12), box(2, 11, 5, 14, 12, 12), box(0, 11, 5, 2, 16, 12),
@@ -67,7 +62,7 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
@@ -78,7 +73,7 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING);
+		builder.add(FACING, STATE);
 	}
 
 	@Override
@@ -86,7 +81,7 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 		BlockState state = super.getStateForPlacement(context);
 		if (state == null)
 			return null;
-		return state.setValue(FACING, context.getHorizontalDirection().getOpposite());
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(STATE, 0);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -100,19 +95,14 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 	@Override
 	public InteractionResult useWithoutItem(BlockState blockstate, Level world, BlockPos pos, Player entity, BlockHitResult hit) {
 		super.useWithoutItem(blockstate, world, pos, entity, hit);
-		if (entity instanceof ServerPlayer player) {
-			player.openMenu(new MenuProvider() {
-				@Override
-				public Component getDisplayName() {
-					return Component.literal("Kitchen Sink");
-				}
-
-				@Override
-				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new KitchenCounterGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
-				}
-			}, pos);
-		}
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		double hitX = hit.getLocation().x;
+		double hitY = hit.getLocation().y;
+		double hitZ = hit.getLocation().z;
+		Direction direction = hit.getDirection();
+		SinkStateSwitcherProcedure.execute(world, x, y, z, entity);
 		return InteractionResult.SUCCESS;
 	}
 
@@ -135,8 +125,15 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof KitchenSinkBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override
@@ -145,7 +142,7 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof KitchenSinkBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

@@ -2,11 +2,21 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:bamboo_trapdoor",
-    "minecraft:bamboo_planks",
-    "minecraft:bamboo_planks",
-    "minecraft:stick",
-    "minecraft:stick"
+    {
+      "item": "minecraft:bamboo_trapdoor"
+    },
+    {
+      "item": "minecraft:bamboo_planks"
+    },
+    {
+      "item": "minecraft:bamboo_planks"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:bamboo_chair_1",

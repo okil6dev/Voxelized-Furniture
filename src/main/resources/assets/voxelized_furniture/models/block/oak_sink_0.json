@@ -1,0 +1,13 @@
+{
+  "parent": "voxelized_furniture:custom/sink_on_oak",
+  "textures": {
+    "all": "minecraft:block/oak_log",
+    "particle": "minecraft:block/oak_log",
+    "0": "minecraft:block/quartz_block_side",
+    "1": "minecraft:block/stripped_oak_log",
+    "2": "minecraft:block/anvil",
+    "3": "voxelized_furniture:block/zen_water_flow",
+    "4": "voxelized_furniture:block/zen_water_still"
+  },
+  "render_type": "translucent"
+}

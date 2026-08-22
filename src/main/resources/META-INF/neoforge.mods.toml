@@ -22,14 +22,14 @@ description="This mod adds chairs, tables, kitchen sets, sinks, and small land p
 [[dependencies.voxelized_furniture]]
     modId="neoforge"
     type="required"
-    versionRange="[26.1.2.71,)"
+    versionRange="[21.1.232,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.voxelized_furniture]]
     modId="minecraft"
     type="required"
-    versionRange="[26.1.2]"
+    versionRange="[1.21.1]"
     ordering="AFTER"
     side="BOTH"
 

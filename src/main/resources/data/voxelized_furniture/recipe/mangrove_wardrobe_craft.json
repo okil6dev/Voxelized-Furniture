@@ -7,9 +7,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:mangrove_planks",
-    "b": "minecraft:mangrove_slab",
-    "c": "minecraft:mangrove_stairs"
+    "a": {
+      "item": "minecraft:mangrove_planks"
+    },
+    "b": {
+      "item": "minecraft:mangrove_slab"
+    },
+    "c": {
+      "item": "minecraft:mangrove_stairs"
+    }
   },
   "result": {
     "id": "voxelized_furniture:mangrove_wardrobe",

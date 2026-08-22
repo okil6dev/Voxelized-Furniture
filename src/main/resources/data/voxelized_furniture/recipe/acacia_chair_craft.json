@@ -2,11 +2,21 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:acacia_trapdoor",
-    "minecraft:acacia_planks",
-    "minecraft:acacia_planks",
-    "minecraft:stick",
-    "minecraft:stick"
+    {
+      "item": "minecraft:acacia_trapdoor"
+    },
+    {
+      "item": "minecraft:acacia_planks"
+    },
+    {
+      "item": "minecraft:acacia_planks"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:acacia_chair_1",

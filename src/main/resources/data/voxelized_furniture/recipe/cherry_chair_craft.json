@@ -2,11 +2,21 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:cherry_trapdoor",
-    "minecraft:cherry_planks",
-    "minecraft:cherry_planks",
-    "minecraft:stick",
-    "minecraft:stick"
+    {
+      "item": "minecraft:cherry_trapdoor"
+    },
+    {
+      "item": "minecraft:cherry_planks"
+    },
+    {
+      "item": "minecraft:cherry_planks"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:cherry_chair_1",

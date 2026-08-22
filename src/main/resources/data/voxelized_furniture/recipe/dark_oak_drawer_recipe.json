@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:stripped_dark_oak_log",
+  "ingredient": {
+    "item": "minecraft:stripped_dark_oak_log"
+  },
   "result": {
     "id": "voxelized_furniture:dark_oak_drawer",
     "count": 1

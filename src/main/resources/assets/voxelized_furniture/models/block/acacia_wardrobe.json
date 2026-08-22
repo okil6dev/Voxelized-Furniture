@@ -6,5 +6,6 @@
     "1": "minecraft:block/stripped_acacia_log",
     "2": "minecraft:block/acacia_planks",
     "3": "minecraft:block/anvil"
-  }
+  },
+  "render_type": "solid"
 }

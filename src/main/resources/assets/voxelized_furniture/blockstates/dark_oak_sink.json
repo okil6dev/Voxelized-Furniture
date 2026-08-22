@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,state=1": {
+      "model": "voxelized_furniture:block/dark_oak_sink_0"
+    },
+    "facing=north,state=0": {
       "model": "voxelized_furniture:block/dark_oak_sink"
     },
-    "facing=east": {
+    "facing=east,state=1": {
+      "model": "voxelized_furniture:block/dark_oak_sink_0",
+      "y": 90
+    },
+    "facing=east,state=0": {
       "model": "voxelized_furniture:block/dark_oak_sink",
       "y": 90
     },
-    "facing=south": {
+    "facing=south,state=1": {
+      "model": "voxelized_furniture:block/dark_oak_sink_0",
+      "y": 180
+    },
+    "facing=south,state=0": {
       "model": "voxelized_furniture:block/dark_oak_sink",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,state=1": {
+      "model": "voxelized_furniture:block/dark_oak_sink_0",
+      "y": 270
+    },
+    "facing=west,state=0": {
       "model": "voxelized_furniture:block/dark_oak_sink",
       "y": 270
     }

@@ -1,0 +1,13 @@
+{
+  "parent": "voxelized_furniture:custom/sink_on_bamboo",
+  "textures": {
+    "all": "minecraft:block/bamboo_block",
+    "particle": "minecraft:block/bamboo_block",
+    "0": "minecraft:block/quartz_block_side",
+    "1": "minecraft:block/stripped_bamboo_block",
+    "2": "minecraft:block/anvil",
+    "3": "voxelized_furniture:block/zen_water_flow",
+    "4": "voxelized_furniture:block/zen_water_still"
+  },
+  "render_type": "translucent"
+}
