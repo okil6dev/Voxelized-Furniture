@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/dirtcrate",
+  "textures": {
+    "all": "voxelized_furniture:block/dirtcrate",
+    "particle": "minecraft:block/stripped_oak_log",
+    "0": "voxelized_furniture:block/dirtcrate"
+  },
+  "render_type": "solid"
+}

@@ -6803,6 +6803,59 @@
         ]
       },
       "path": "~/Kitchen/Sinks"
+    },
+    {
+      "name": "WoodenCrate",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_crate",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/WoodenCrateBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/wooden_crate.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/wooden_crate.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/wooden_crate.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/wooden_crate_0.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/wooden_crate.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "Cratestates",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cratestates",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/CratestatesProcedure.java"
+        ]
+      },
+      "path": "~/outside"
     }
   ],
   "variable_elements": [
@@ -6831,6 +6884,7 @@
   ],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
+      "~WoodenCrate@CUSTOM:WoodenCrate",
       "~DarkOakSink@CUSTOM:DarkOakSink",
       "~AcaciaSink@CUSTOM:AcaciaSink",
       "~BambooSink@CUSTOM:BambooSink",
@@ -7325,7 +7379,8 @@
       "block.voxelized_furniture.toaster_purple": "Toaster Purple",
       "block.voxelized_furniture.toaster_red": "Toaster Red",
       "block.voxelized_furniture.toaster_yellow": "Toaster Yellow",
-      "subtitles.sinks": ""
+      "subtitles.sinks": "",
+      "block.voxelized_furniture.wooden_crate": "Wooden Crate"
     }
   },
   "metadata": {

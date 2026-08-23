@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,state=1": {
+      "model": "voxelized_furniture:block/wooden_crate_0"
+    },
+    "facing=north,state=0": {
+      "model": "voxelized_furniture:block/wooden_crate"
+    },
+    "facing=east,state=1": {
+      "model": "voxelized_furniture:block/wooden_crate_0",
+      "y": 90
+    },
+    "facing=east,state=0": {
+      "model": "voxelized_furniture:block/wooden_crate",
+      "y": 90
+    },
+    "facing=south,state=1": {
+      "model": "voxelized_furniture:block/wooden_crate_0",
+      "y": 180
+    },
+    "facing=south,state=0": {
+      "model": "voxelized_furniture:block/wooden_crate",
+      "y": 180
+    },
+    "facing=west,state=1": {
+      "model": "voxelized_furniture:block/wooden_crate_0",
+      "y": 270
+    },
+    "facing=west,state=0": {
+      "model": "voxelized_furniture:block/wooden_crate",
+      "y": 270
+    }
+  }
+}

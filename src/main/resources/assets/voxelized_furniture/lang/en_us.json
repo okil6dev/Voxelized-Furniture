@@ -345,5 +345,6 @@
   "block.voxelized_furniture.toaster_purple": "Toaster Purple",
   "block.voxelized_furniture.toaster_red": "Toaster Red",
   "block.voxelized_furniture.toaster_yellow": "Toaster Yellow",
-  "subtitles.sinks": ""
+  "subtitles.sinks": "",
+  "block.voxelized_furniture.wooden_crate": "Wooden Crate"
 }

@@ -214,6 +214,7 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DOORBELL.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DOORBELL.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.BRICKS.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_CRATE.get().asItem());
 			}).withSearchBar().withTabsBefore(ELECTRICAL.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GEODE = REGISTRY.register("geode",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.geode")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.AMETHYST_GEODE.get())).displayItems((parameters, tabData) -> {
