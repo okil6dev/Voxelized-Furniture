@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/aquabluewateringcan",
+  "textures": {
+    "all": "voxelized_furniture:block/aquabluewatercan",
+    "particle": "voxelized_furniture:block/aquabluewatercan",
+    "0": "voxelized_furniture:block/aquabluewatercan"
+  },
+  "render_type": "translucent"
+}

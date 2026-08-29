@@ -6946,6 +6946,95 @@
         ]
       },
       "path": "~/outside"
+    },
+    {
+      "name": "GrayWateringCan",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gray_watering_can",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/gray_watering_can.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/gray_watering_can_0.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/GrayWateringCanBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/gray_watering_can.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/gray_watering_can.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/gray_watering_can.json"
+        ]
+      },
+      "path": "~/outside/Watercans"
+    },
+    {
+      "name": "Wateringcanwater",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wateringcanwater",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/WateringcanwaterProcedure.java"
+        ]
+      },
+      "path": "~/outside/Watercans"
+    },
+    {
+      "name": "BlueWateringCan",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blue_watering_can",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/blue_watering_can.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/blue_watering_can.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/blue_watering_can.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/blue_watering_can.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/BlueWateringCanBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/blue_watering_can_0.json"
+        ]
+      },
+      "path": "~/outside/Watercans"
+    },
+    {
+      "name": "GreenWateringCan",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "green_watering_can",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/green_watering_can.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/green_watering_can.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/GreenWateringCanBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/green_watering_can.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/green_watering_can_0.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/green_watering_can.json"
+        ]
+      },
+      "path": "~/outside/Watercans"
     }
   ],
   "variable_elements": [
@@ -6974,6 +7063,9 @@
   ],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
+      "~GreenWateringCan@CUSTOM:GreenWateringCan",
+      "~BlueWateringCan@CUSTOM:BlueWateringCan",
+      "~GrayWateringCan@CUSTOM:GrayWateringCan",
       "~WoodenCrate@CUSTOM:WoodenCrate",
       "~DarkOakSink@CUSTOM:DarkOakSink",
       "~AcaciaSink@CUSTOM:AcaciaSink",
@@ -7474,7 +7566,10 @@
       "block.voxelized_furniture.toaster_yellow": "Toaster Yellow",
       "subtitles.sinks": "",
       "block.voxelized_furniture.wooden_crate": "Wooden Crate",
-      "block.voxelized_furniture.sack_of_soil": "Sack Of Soil"
+      "block.voxelized_furniture.sack_of_soil": "Sack Of Soil",
+      "block.voxelized_furniture.gray_watering_can": "Gray Watering Can",
+      "block.voxelized_furniture.blue_watering_can": "Blue Watering Can",
+      "block.voxelized_furniture.green_watering_can": "Green Watering Can"
     }
   },
   "metadata": {
@@ -7631,6 +7726,10 @@
           },
           {
             "name": "Cobble Paths",
+            "children": []
+          },
+          {
+            "name": "Watercans",
             "children": []
           }
         ]

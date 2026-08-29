@@ -347,5 +347,8 @@
   "block.voxelized_furniture.toaster_yellow": "Toaster Yellow",
   "subtitles.sinks": "",
   "block.voxelized_furniture.wooden_crate": "Wooden Crate",
-  "block.voxelized_furniture.sack_of_soil": "Sack Of Soil"
+  "block.voxelized_furniture.sack_of_soil": "Sack Of Soil",
+  "block.voxelized_furniture.gray_watering_can": "Gray Watering Can",
+  "block.voxelized_furniture.blue_watering_can": "Blue Watering Can",
+  "block.voxelized_furniture.green_watering_can": "Green Watering Can"
 }

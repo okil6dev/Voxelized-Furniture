@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/greenwateringcanwater",
+  "textures": {
+    "all": "voxelized_furniture:block/greenwatercan",
+    "particle": "voxelized_furniture:block/greenwatercan",
+    "0": "voxelized_furniture:block/greenwatercan",
+    "1": "voxelized_furniture:block/zen_water_still",
+    "2": "voxelized_furniture:block/air2"
+  },
+  "render_type": "translucent"
+}

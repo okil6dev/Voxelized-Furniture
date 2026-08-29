@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "graywatercan",
+        "1": "zen_water_still",
+        "2": "air2"
+      }
+    }
+  }
+}

@@ -172,6 +172,9 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> TOASTER_YELLOW;
 	public static final DeferredBlock<Block> WOODEN_CRATE;
 	public static final DeferredBlock<Block> SACK_OF_SOIL;
+	public static final DeferredBlock<Block> GRAY_WATERING_CAN;
+	public static final DeferredBlock<Block> BLUE_WATERING_CAN;
+	public static final DeferredBlock<Block> GREEN_WATERING_CAN;
 	static {
 		CABINET_OAK = REGISTRY.register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = REGISTRY.register("cabinet_birch", CabinetBirchBlock::new);
@@ -328,6 +331,9 @@ public class VoxelizedFurnitureModBlocks {
 		TOASTER_YELLOW = REGISTRY.register("toaster_yellow", ToasterYellowBlock::new);
 		WOODEN_CRATE = REGISTRY.register("wooden_crate", WoodenCrateBlock::new);
 		SACK_OF_SOIL = REGISTRY.register("sack_of_soil", SackOfSoilBlock::new);
+		GRAY_WATERING_CAN = REGISTRY.register("gray_watering_can", GrayWateringCanBlock::new);
+		BLUE_WATERING_CAN = REGISTRY.register("blue_watering_can", BlueWateringCanBlock::new);
+		GREEN_WATERING_CAN = REGISTRY.register("green_watering_can", GreenWateringCanBlock::new);
 	}
 
 	// Start of user code block custom blocks

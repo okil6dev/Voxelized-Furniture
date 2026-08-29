@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,state=1": {
+      "model": "voxelized_furniture:block/green_watering_can_0"
+    },
+    "facing=north,state=0": {
+      "model": "voxelized_furniture:block/green_watering_can"
+    },
+    "facing=east,state=1": {
+      "model": "voxelized_furniture:block/green_watering_can_0",
+      "y": 90
+    },
+    "facing=east,state=0": {
+      "model": "voxelized_furniture:block/green_watering_can",
+      "y": 90
+    },
+    "facing=south,state=1": {
+      "model": "voxelized_furniture:block/green_watering_can_0",
+      "y": 180
+    },
+    "facing=south,state=0": {
+      "model": "voxelized_furniture:block/green_watering_can",
+      "y": 180
+    },
+    "facing=west,state=1": {
+      "model": "voxelized_furniture:block/green_watering_can_0",
+      "y": 270
+    },
+    "facing=west,state=0": {
+      "model": "voxelized_furniture:block/green_watering_can",
+      "y": 270
+    }
+  }
+}
