@@ -1,9 +1,9 @@
 {
-  "parent": "voxelized_furniture:custom/dirtcrate",
+  "parent": "voxelized_furniture:custom/grasscrate",
   "textures": {
     "all": "minecraft:block/stripped_oak_log",
     "particle": "minecraft:block/stripped_oak_log",
-    "0": "voxelized_furniture:block/dirtcrate"
+    "0": "voxelized_furniture:block/grasscrate"
   },
   "render_type": "cutout"
 }

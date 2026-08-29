@@ -6812,10 +6812,13 @@
       "registry_name": "wooden_crate",
       "metadata": {
         "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/wooden_crate_1.json",
           "src/main/java/net/okil/voxelizedfurniture/block/WoodenCrateBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/wooden_crate_3.json",
           "src/main/resources/data/voxelized_furniture/loot_table/blocks/wooden_crate.json",
           "src/main/resources/assets/voxelized_furniture/models/item/wooden_crate.json",
           "src/main/resources/assets/voxelized_furniture/models/block/wooden_crate.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/wooden_crate_2.json",
           "src/main/resources/assets/voxelized_furniture/models/block/wooden_crate_0.json",
           "src/main/resources/assets/voxelized_furniture/blockstates/wooden_crate.json"
         ]

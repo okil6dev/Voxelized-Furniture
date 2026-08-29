@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "grasscrate",
+        "2": "minecraft:bamboo_stalk",
+        "3": "minecraft:bamboo_small_leaves"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/grassbamboocrate",
+  "textures": {
+    "all": "voxelized_furniture:block/grasscrate",
+    "particle": "minecraft:block/stripped_oak_log",
+    "0": "voxelized_furniture:block/grasscrate",
+    "2": "minecraft:block/bamboo_stalk",
+    "3": "minecraft:block/bamboo_small_leaves"
+  },
+  "render_type": "cutout"
+}

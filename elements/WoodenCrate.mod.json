@@ -16,7 +16,7 @@
     "displayFluidOverlay": false,
     "states": [
       {
-        "texture": "dirtcrate",
+        "texture": "minecraft:stripped_oak_log",
         "textureTop": "",
         "textureLeft": "",
         "textureFront": "",
@@ -212,11 +212,842 @@
           {
             "property": {
               "min": 0,
-              "max": 1,
+              "max": 4,
               "name": "CUSTOM:state",
               "type": "integer"
             },
             "value": 1
+          }
+        ]
+      },
+      {
+        "texture": "minecraft:stripped_oak_log",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "grasscrate:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": true,
+        "boundingBoxes": [
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 6.0,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 3.0,
+            "My": 6.0,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 13.0,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 13.0,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 3.0,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 0.5,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 13.0,
+            "My": 0.5,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 0.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 1.0,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 2.5,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 2.75,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 4.25,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 2.75,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 4.25,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 1.0,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 2.5,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 4.5,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 6.0,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 2.75,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 4.25,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 1.0,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 2.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 1.0,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 2.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 2.75,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 4.25,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 4.5,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.75,
+            "my": 0.5,
+            "mz": 4.25,
+            "Mx": 14.25,
+            "My": 4.5,
+            "Mz": 11.75,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 4,
+              "name": "CUSTOM:state",
+              "type": "integer"
+            },
+            "value": 2
+          }
+        ]
+      },
+      {
+        "texture": "dirtcrate",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "dirtbamboocrate:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": true,
+        "boundingBoxes": [
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 6.0,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 3.0,
+            "My": 6.0,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 13.0,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 13.0,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 3.0,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 0.5,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 13.0,
+            "My": 0.5,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 0.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 1.0,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 2.5,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 2.75,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 4.25,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 2.75,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 4.25,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 1.0,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 2.5,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 4.5,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 6.0,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 2.75,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 4.25,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 1.0,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 2.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 1.0,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 2.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 2.75,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 4.25,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 4.5,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.75,
+            "my": 0.5,
+            "mz": 4.25,
+            "Mx": 14.25,
+            "My": 4.5,
+            "Mz": 11.75,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 6.0,
+            "Mx": 5.0,
+            "My": 12.5,
+            "Mz": 8.0,
+            "subtract": false
+          },
+          {
+            "mx": 0.0,
+            "my": 6.5,
+            "mz": 7.0,
+            "Mx": 8.0,
+            "My": 14.5,
+            "Mz": 7.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.0,
+            "my": 6.5,
+            "mz": 3.0,
+            "Mx": 4.0,
+            "My": 14.5,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 9.0,
+            "my": 7.5,
+            "mz": 8.0,
+            "Mx": 15.0,
+            "My": 13.5,
+            "Mz": 8.0,
+            "subtract": false
+          },
+          {
+            "mx": 12.0,
+            "my": 7.5,
+            "mz": 5.0,
+            "Mx": 12.0,
+            "My": 13.5,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.0,
+            "my": 5.5,
+            "mz": 10.0,
+            "Mx": 10.0,
+            "My": 11.5,
+            "Mz": 10.0,
+            "subtract": false
+          },
+          {
+            "mx": 7.0,
+            "my": 5.5,
+            "mz": 7.0,
+            "Mx": 7.0,
+            "My": 11.5,
+            "Mz": 13.0,
+            "subtract": false
+          },
+          {
+            "mx": 6.0,
+            "my": 5.5,
+            "mz": 6.0,
+            "Mx": 12.0,
+            "My": 11.5,
+            "Mz": 6.0,
+            "subtract": false
+          },
+          {
+            "mx": 9.0,
+            "my": 5.5,
+            "mz": 3.0,
+            "Mx": 9.0,
+            "My": 11.5,
+            "Mz": 9.0,
+            "subtract": false
+          },
+          {
+            "mx": 11.0,
+            "my": 4.5,
+            "mz": 7.0,
+            "Mx": 13.0,
+            "My": 11.5,
+            "Mz": 9.0,
+            "subtract": false
+          },
+          {
+            "mx": 6.0,
+            "my": 4.5,
+            "mz": 9.0,
+            "Mx": 8.0,
+            "My": 9.5,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 8.0,
+            "my": 4.5,
+            "mz": 5.0,
+            "Mx": 10.0,
+            "My": 10.5,
+            "Mz": 7.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 4,
+              "name": "CUSTOM:state",
+              "type": "integer"
+            },
+            "value": 3
+          }
+        ]
+      },
+      {
+        "texture": "grasscrate",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "grassbamboocrate:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": true,
+        "boundingBoxes": [
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 6.0,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 3.0,
+            "My": 6.0,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 13.0,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 13.0,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 3.0,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 0.0,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 0.5,
+            "Mz": 5.5,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 0.0,
+            "mz": 10.5,
+            "Mx": 13.0,
+            "My": 0.5,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 0.0,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 0.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 1.0,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 2.5,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 2.75,
+            "mz": 4.0,
+            "Mx": 13.0,
+            "My": 4.25,
+            "Mz": 4.25,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 6.0,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 2.75,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 4.25,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 1.0,
+            "mz": 11.75,
+            "Mx": 13.0,
+            "My": 2.5,
+            "Mz": 12.0,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 4.5,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 6.0,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 2.75,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 4.25,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.5,
+            "my": 1.0,
+            "mz": 5.5,
+            "Mx": 1.75,
+            "My": 2.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 1.0,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 2.5,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 2.75,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 4.25,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 14.25,
+            "my": 4.5,
+            "mz": 5.5,
+            "Mx": 14.5,
+            "My": 6.0,
+            "Mz": 10.5,
+            "subtract": false
+          },
+          {
+            "mx": 1.75,
+            "my": 0.5,
+            "mz": 4.25,
+            "Mx": 14.25,
+            "My": 4.5,
+            "Mz": 11.75,
+            "subtract": false
+          },
+          {
+            "mx": 3.0,
+            "my": 4.5,
+            "mz": 6.0,
+            "Mx": 5.0,
+            "My": 12.5,
+            "Mz": 8.0,
+            "subtract": false
+          },
+          {
+            "mx": 0.0,
+            "my": 6.5,
+            "mz": 7.0,
+            "Mx": 8.0,
+            "My": 14.5,
+            "Mz": 7.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.0,
+            "my": 6.5,
+            "mz": 3.0,
+            "Mx": 4.0,
+            "My": 14.5,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 9.0,
+            "my": 7.5,
+            "mz": 8.0,
+            "Mx": 15.0,
+            "My": 13.5,
+            "Mz": 8.0,
+            "subtract": false
+          },
+          {
+            "mx": 12.0,
+            "my": 7.5,
+            "mz": 5.0,
+            "Mx": 12.0,
+            "My": 13.5,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 4.0,
+            "my": 5.5,
+            "mz": 10.0,
+            "Mx": 10.0,
+            "My": 11.5,
+            "Mz": 10.0,
+            "subtract": false
+          },
+          {
+            "mx": 7.0,
+            "my": 5.5,
+            "mz": 7.0,
+            "Mx": 7.0,
+            "My": 11.5,
+            "Mz": 13.0,
+            "subtract": false
+          },
+          {
+            "mx": 6.0,
+            "my": 5.5,
+            "mz": 6.0,
+            "Mx": 12.0,
+            "My": 11.5,
+            "Mz": 6.0,
+            "subtract": false
+          },
+          {
+            "mx": 9.0,
+            "my": 5.5,
+            "mz": 3.0,
+            "Mx": 9.0,
+            "My": 11.5,
+            "Mz": 9.0,
+            "subtract": false
+          },
+          {
+            "mx": 11.0,
+            "my": 4.5,
+            "mz": 7.0,
+            "Mx": 13.0,
+            "My": 11.5,
+            "Mz": 9.0,
+            "subtract": false
+          },
+          {
+            "mx": 6.0,
+            "my": 4.5,
+            "mz": 9.0,
+            "Mx": 8.0,
+            "My": 9.5,
+            "Mz": 11.0,
+            "subtract": false
+          },
+          {
+            "mx": 8.0,
+            "my": 4.5,
+            "mz": 5.0,
+            "Mx": 10.0,
+            "My": 10.5,
+            "Mz": 7.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 4,
+              "name": "CUSTOM:state",
+              "type": "integer"
+            },
+            "value": 4
           }
         ]
       }
@@ -230,7 +1061,7 @@
     "isItemTinted": false,
     "hasTransparency": true,
     "connectedSides": false,
-    "transparencyType": "SOLID",
+    "transparencyType": "CUTOUT",
     "disableOffset": false,
     "boundingBoxes": [
       {
@@ -408,7 +1239,7 @@
     "customProperties": [
       {
         "min": 0,
-        "max": 1,
+        "max": 4,
         "name": "CUSTOM:state",
         "type": "integer",
         "value": 0
