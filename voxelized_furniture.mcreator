@@ -6856,6 +6856,93 @@
         ]
       },
       "path": "~/outside"
+    },
+    {
+      "name": "SackOfSoil",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sack_of_soil",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/sack_of_soil.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/sack_of_soil.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil_4.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil_6.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil_1.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/sack_of_soil.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/SackOfSoilBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil_0.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil_2.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil_5.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/sack_of_soil_3.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "Soilsackstate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soilsackstate",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/SoilsackstateProcedure.java"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "WoodenCrateRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_crate_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/wooden_crate_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/wooden_crate_recipe.json"
+        ]
+      },
+      "path": "~/outside"
+    },
+    {
+      "name": "SackOfSoilRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sack_of_soil_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/sack_of_soil_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/sack_of_soil_recipe.json"
+        ]
+      },
+      "path": "~/outside"
     }
   ],
   "variable_elements": [
@@ -7028,6 +7115,9 @@
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
       "~Fridge@CUSTOM:Fridge"
+    ],
+    "BLOCKS:minecraft:mineable/hoe": [
+      "~SackOfSoil@CUSTOM:SackOfSoil"
     ]
   },
   "tab_element_order": {},
@@ -7380,7 +7470,8 @@
       "block.voxelized_furniture.toaster_red": "Toaster Red",
       "block.voxelized_furniture.toaster_yellow": "Toaster Yellow",
       "subtitles.sinks": "",
-      "block.voxelized_furniture.wooden_crate": "Wooden Crate"
+      "block.voxelized_furniture.wooden_crate": "Wooden Crate",
+      "block.voxelized_furniture.sack_of_soil": "Sack Of Soil"
     }
   },
   "metadata": {

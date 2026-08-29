@@ -149,6 +149,7 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.WHEAT_PLANT.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.CACTUS_PLANT.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_CLUSTER.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get().asItem());
 			}).withSearchBar().withTabsBefore(BATHROOM.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VF_ROADS = REGISTRY.register("vf_roads",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.vf_roads")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.ASPHALT.get())).displayItems((parameters, tabData) -> {
@@ -215,6 +216,7 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DOORBELL.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.BRICKS.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_CRATE.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get().asItem());
 			}).withSearchBar().withTabsBefore(ELECTRICAL.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GEODE = REGISTRY.register("geode",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.geode")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.AMETHYST_GEODE.get())).displayItems((parameters, tabData) -> {

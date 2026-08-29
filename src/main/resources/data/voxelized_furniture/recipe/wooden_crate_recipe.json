@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a a",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "result": {
+    "id": "voxelized_furniture:wooden_crate",
+    "count": 4
+  }
+}

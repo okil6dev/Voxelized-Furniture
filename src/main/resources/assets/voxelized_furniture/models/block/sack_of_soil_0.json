@@ -1,0 +1,10 @@
+{
+  "parent": "voxelized_furniture:custom/soil2",
+  "textures": {
+    "all": "voxelized_furniture:block/soiltex",
+    "particle": "voxelized_furniture:block/soiltex",
+    "0": "voxelized_furniture:block/soiltex",
+    "1": "voxelized_furniture:block/soiltext"
+  },
+  "render_type": "cutout"
+}

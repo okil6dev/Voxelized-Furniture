@@ -1,0 +1,31 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.PLANKS#0"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "",
+      "",
+      "",
+      "Blocks.PLANKS#0",
+      "",
+      "Blocks.PLANKS#0",
+      "Blocks.PLANKS#0",
+      "Blocks.PLANKS#0",
+      "Blocks.PLANKS#0"
+    ],
+    "recipeReturnStack": "CUSTOM:WoodenCrate",
+    "name": "wooden_crate_recipe",
+    "namespace": "mod"
+  }
+}

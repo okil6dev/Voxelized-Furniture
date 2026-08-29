@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "dbd"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:string"
+    },
+    "b": {
+      "item": "minecraft:leather"
+    },
+    "c": {
+      "tag": "minecraft:dirt"
+    },
+    "d": {
+      "item": "minecraft:bone"
+    }
+  },
+  "result": {
+    "id": "voxelized_furniture:sack_of_soil",
+    "count": 2
+  }
+}

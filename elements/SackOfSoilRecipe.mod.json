@@ -1,0 +1,34 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 2,
+    "group": "",
+    "unlockingItems": [
+      "Items.STRING",
+      "Items.LEAD",
+      "Blocks.DIRT",
+      "Items.BONE"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.STRING",
+      "Items.LEATHER",
+      "Items.STRING",
+      "Items.LEATHER",
+      "Blocks.DIRT",
+      "Items.LEATHER",
+      "Items.BONE",
+      "Items.LEATHER",
+      "Items.BONE"
+    ],
+    "recipeReturnStack": "CUSTOM:SackOfSoil",
+    "name": "sack_of_soil_recipe",
+    "namespace": "mod"
+  }
+}
