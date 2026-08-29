@@ -176,6 +176,8 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> GRAY_WATERING_CAN;
 	public static final DeferredItem<Item> BLUE_WATERING_CAN;
 	public static final DeferredItem<Item> GREEN_WATERING_CAN;
+	public static final DeferredItem<Item> OVEN_COOKTOP;
+	public static final DeferredItem<Item> WOODEN_KITCHEN_DRAWER;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -336,6 +338,8 @@ public class VoxelizedFurnitureModItems {
 		GRAY_WATERING_CAN = block(VoxelizedFurnitureModBlocks.GRAY_WATERING_CAN, new Item.Properties().fireResistant());
 		BLUE_WATERING_CAN = block(VoxelizedFurnitureModBlocks.BLUE_WATERING_CAN, new Item.Properties().fireResistant());
 		GREEN_WATERING_CAN = block(VoxelizedFurnitureModBlocks.GREEN_WATERING_CAN, new Item.Properties().fireResistant());
+		OVEN_COOKTOP = block(VoxelizedFurnitureModBlocks.OVEN_COOKTOP);
+		WOODEN_KITCHEN_DRAWER = block(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_DRAWER);
 	}
 
 	// Start of user code block custom items

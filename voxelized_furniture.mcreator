@@ -7035,6 +7035,84 @@
         ]
       },
       "path": "~/outside/Watercans"
+    },
+    {
+      "name": "GrayWateringCanRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gray_watering_can_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/gray_watering_can_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/gray_watering_can_recipe.json"
+        ]
+      },
+      "path": "~/outside/Watercans"
+    },
+    {
+      "name": "BlueWateringCanRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blue_watering_can_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/blue_watering_can_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/blue_watering_can_recipe.json"
+        ]
+      },
+      "path": "~/outside/Watercans"
+    },
+    {
+      "name": "GreenWateringCanRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "green_watering_can_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/green_watering_can_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/green_watering_can_recipe.json"
+        ]
+      },
+      "path": "~/outside/Watercans"
+    },
+    {
+      "name": "OvenCooktop",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oven_cooktop",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/oven_cooktop.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/oven_cooktop.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/oven_cooktop.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/oven_cooktop.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/OvenCooktopBlockEntity.java",
+          "src/main/java/net/okil/voxelizedfurniture/block/OvenCooktopBlock.java"
+        ]
+      },
+      "path": "~/Kitchen"
+    },
+    {
+      "name": "WoodenKitchenDrawer",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_kitchen_drawer",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/wooden_kitchen_drawer.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/WoodenKitchenDrawerBlock.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/wooden_kitchen_drawer.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/WoodenKitchenDrawerBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/wooden_kitchen_drawer.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/wooden_kitchen_drawer.json"
+        ]
+      },
+      "path": "~/Kitchen"
     }
   ],
   "variable_elements": [
@@ -7063,6 +7141,8 @@
   ],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
+      "~OvenCooktop@CUSTOM:OvenCooktop",
+      "~WoodenKitchenDrawer@CUSTOM:WoodenKitchenDrawer",
       "~GreenWateringCan@CUSTOM:GreenWateringCan",
       "~BlueWateringCan@CUSTOM:BlueWateringCan",
       "~GrayWateringCan@CUSTOM:GrayWateringCan",
@@ -7569,7 +7649,9 @@
       "block.voxelized_furniture.sack_of_soil": "Sack Of Soil",
       "block.voxelized_furniture.gray_watering_can": "Gray Watering Can",
       "block.voxelized_furniture.blue_watering_can": "Blue Watering Can",
-      "block.voxelized_furniture.green_watering_can": "Green Watering Can"
+      "block.voxelized_furniture.green_watering_can": "Green Watering Can",
+      "block.voxelized_furniture.oven_cooktop": "Oven Cooktop",
+      "block.voxelized_furniture.wooden_kitchen_drawer": "Wooden Kitchen Drawer"
     }
   },
   "metadata": {

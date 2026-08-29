@@ -98,6 +98,9 @@ public class VoxelizedFurnitureModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MangroveDrawerBlockEntity>> MANGROVE_DRAWER = register("mangrove_drawer", VoxelizedFurnitureModBlocks.MANGROVE_DRAWER, MangroveDrawerBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BambooClusterBlockEntity>> BAMBOO_CLUSTER = register("bamboo_cluster", VoxelizedFurnitureModBlocks.BAMBOO_CLUSTER, BambooClusterBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AirfryerBlockEntity>> AIRFRYER = register("airfryer", VoxelizedFurnitureModBlocks.AIRFRYER, AirfryerBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<OvenCooktopBlockEntity>> OVEN_COOKTOP = register("oven_cooktop", VoxelizedFurnitureModBlocks.OVEN_COOKTOP, OvenCooktopBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WoodenKitchenDrawerBlockEntity>> WOODEN_KITCHEN_DRAWER = register("wooden_kitchen_drawer", VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_DRAWER,
+			WoodenKitchenDrawerBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -183,5 +186,7 @@ public class VoxelizedFurnitureModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, MANGROVE_DRAWER.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BAMBOO_CLUSTER.get(), SidedInvWrapper::new);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, AIRFRYER.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, OVEN_COOKTOP.get(), SidedInvWrapper::new);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WOODEN_KITCHEN_DRAWER.get(), SidedInvWrapper::new);
 	}
 }

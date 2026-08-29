@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/ovencooktoptable",
+  "textures": {
+    "all": "voxelized_furniture:block/ovencooktoptabletex",
+    "particle": "voxelized_furniture:block/ovencooktoptabletex",
+    "0": "minecraft:block/stripped_oak_log",
+    "1": "minecraft:block/mushroom_block_inside",
+    "2": "voxelized_furniture:block/ovencooktoptabletex"
+  },
+  "render_type": "solid"
+}

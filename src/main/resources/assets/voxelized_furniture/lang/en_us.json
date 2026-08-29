@@ -350,5 +350,7 @@
   "block.voxelized_furniture.sack_of_soil": "Sack Of Soil",
   "block.voxelized_furniture.gray_watering_can": "Gray Watering Can",
   "block.voxelized_furniture.blue_watering_can": "Blue Watering Can",
-  "block.voxelized_furniture.green_watering_can": "Green Watering Can"
+  "block.voxelized_furniture.green_watering_can": "Green Watering Can",
+  "block.voxelized_furniture.oven_cooktop": "Oven Cooktop",
+  "block.voxelized_furniture.wooden_kitchen_drawer": "Wooden Kitchen Drawer"
 }
