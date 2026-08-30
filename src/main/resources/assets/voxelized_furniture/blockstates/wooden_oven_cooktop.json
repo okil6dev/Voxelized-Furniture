@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/wooden_oven_cooktop"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/wooden_oven_cooktop",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/wooden_oven_cooktop",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/wooden_oven_cooktop",
+      "y": 270
+    }
+  }
+}

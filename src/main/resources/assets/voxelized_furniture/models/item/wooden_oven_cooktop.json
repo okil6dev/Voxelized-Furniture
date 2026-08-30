@@ -1,5 +1,5 @@
 {
-  "parent": "voxelized_furniture:block/oven_cooktop",
+  "parent": "voxelized_furniture:block/wooden_oven_cooktop",
   "display": {
     "thirdperson": {
       "rotation": [

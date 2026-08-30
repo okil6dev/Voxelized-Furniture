@@ -1,6 +1,6 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "voxelized_furniture:blocks/oven_cooktop",
+  "random_sequence": "voxelized_furniture:blocks/wooden_oven_cooktop",
   "pools": [
     {
       "rolls": 1.0,
@@ -12,7 +12,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "voxelized_furniture:oven_cooktop"
+          "name": "voxelized_furniture:wooden_oven_cooktop"
         }
       ]
     }

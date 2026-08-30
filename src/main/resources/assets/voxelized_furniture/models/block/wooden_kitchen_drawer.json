@@ -1,10 +1,9 @@
 {
   "parent": "voxelized_furniture:custom/woodenkitchendrawer",
   "textures": {
-    "all": "minecraft:block/stripped_oak_log",
+    "all": "voxelized_furniture:block/woodenkitchendrawer",
     "particle": "minecraft:block/stripped_oak_log",
-    "1": "minecraft:block/stripped_oak_log",
-    "2": "minecraft:block/mushroom_block_inside"
+    "3": "voxelized_furniture:block/woodenkitchendrawer"
   },
   "render_type": "solid"
 }

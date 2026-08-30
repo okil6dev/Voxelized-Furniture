@@ -2,7 +2,7 @@
   "_fv": 89,
   "_type": "block",
   "definition": {
-    "texture": "minecraft:stripped_oak_log",
+    "texture": "woodenkitchendrawer",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -17,7 +17,7 @@
     "states": [],
     "animations": [],
     "itemTexture": "",
-    "particleTexture": "",
+    "particleTexture": "minecraft:stripped_oak_log",
     "blockSetType": "OAK",
     "leavesParticleChance": 0.0,
     "tintType": "No tint",
