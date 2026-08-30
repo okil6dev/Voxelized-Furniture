@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,83 +23,12 @@ public class CratestatesProcedure {
 		StopProcedure = 0;
 		if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip1 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip1) : -1) == 1) {
 			if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.BAMBOO.asItem())) {
-				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.DIRT.asItem()) {
-					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack8 = new ItemStack(Blocks.DIRT).copy();
-						_setstack8.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack8);
-						if (_entity instanceof Player _player)
-							_player.getInventory().setChanged();
-					}
-					{
-						int _value = 0;
-						BlockPos _pos = BlockPos.containing(x, y, z);
-						BlockState _bs = world.getBlockState(_pos);
-						if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
-							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
-					}
-					StopProcedure = 1;
-				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
-					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack14 = new ItemStack(Blocks.DIRT).copy();
-						_setstack14.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack14);
-						if (_entity instanceof Player _player)
-							_player.getInventory().setChanged();
-					}
-					{
-						int _value = 0;
-						BlockPos _pos = BlockPos.containing(x, y, z);
-						BlockState _bs = world.getBlockState(_pos);
-						if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
-							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
-					}
-					StopProcedure = 1;
-				} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.DIRT.asItem())) {
-					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(Blocks.DIRT).copy();
-						_setstack.setCount(1);
-						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-					}
-					{
-						int _value = 0;
-						BlockPos _pos = BlockPos.containing(x, y, z);
-						BlockState _bs = world.getBlockState(_pos);
-						if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
-							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
-					}
-					StopProcedure = 1;
-				}
-			}
-		} else if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip21 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip21) : -1) == 0) {
-			if (StopProcedure == 0) {
-				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.DIRT.asItem()) {
-					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack26 = new ItemStack(Blocks.DIRT).copy();
-						_setstack26.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack26);
-						if (_entity instanceof Player _player)
-							_player.getInventory().setChanged();
-					}
-					{
-						int _value = 1;
-						BlockPos _pos = BlockPos.containing(x, y, z);
-						BlockState _bs = world.getBlockState(_pos);
-						if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
-							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
-					}
-					StopProcedure = 1;
-				}
-			}
-		}
-		if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip29 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip29) : -1) == 2) {
-			if (StopProcedure == 0) {
-				if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.BAMBOO.asItem())) {
-					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.GRASS_BLOCK.asItem()) {
+				if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.WHEAT_SEEDS)) {
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.DIRT.asItem()) {
 						if (entity instanceof LivingEntity _entity) {
-							ItemStack _setstack36 = new ItemStack(Blocks.GRASS_BLOCK).copy();
-							_setstack36.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack36);
+							ItemStack _setstack10 = new ItemStack(Blocks.DIRT).copy();
+							_setstack10.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack10);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -112,9 +42,9 @@ public class CratestatesProcedure {
 						StopProcedure = 1;
 					} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
 						if (entity instanceof LivingEntity _entity) {
-							ItemStack _setstack42 = new ItemStack(Blocks.GRASS_BLOCK).copy();
-							_setstack42.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack42);
+							ItemStack _setstack16 = new ItemStack(Blocks.DIRT).copy();
+							_setstack16.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack16);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -126,9 +56,9 @@ public class CratestatesProcedure {
 								world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 						}
 						StopProcedure = 1;
-					} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.GRASS_BLOCK.asItem())) {
+					} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.DIRT.asItem())) {
 						if (entity instanceof Player _player) {
-							ItemStack _setstack = new ItemStack(Blocks.GRASS_BLOCK).copy();
+							ItemStack _setstack = new ItemStack(Blocks.DIRT).copy();
 							_setstack.setCount(1);
 							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 						}
@@ -143,13 +73,88 @@ public class CratestatesProcedure {
 					}
 				}
 			}
-		} else if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip49 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip49) : -1) == 0) {
+		} else if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip23 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip23) : -1) == 0) {
+			if (StopProcedure == 0) {
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.DIRT.asItem()) {
+					if (entity instanceof LivingEntity _entity) {
+						ItemStack _setstack28 = new ItemStack(Blocks.DIRT).copy();
+						_setstack28.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack28);
+						if (_entity instanceof Player _player)
+							_player.getInventory().setChanged();
+					}
+					{
+						int _value = 1;
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+					}
+					StopProcedure = 1;
+				}
+			}
+		}
+		if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip31 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip31) : -1) == 2) {
+			if (StopProcedure == 0) {
+				if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.BAMBOO.asItem())) {
+					if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.WHEAT_SEEDS)) {
+						if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.GRASS_BLOCK.asItem()) {
+							if (entity instanceof LivingEntity _entity) {
+								ItemStack _setstack40 = new ItemStack(Blocks.GRASS_BLOCK).copy();
+								_setstack40.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+								_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack40);
+								if (_entity instanceof Player _player)
+									_player.getInventory().setChanged();
+							}
+							{
+								int _value = 0;
+								BlockPos _pos = BlockPos.containing(x, y, z);
+								BlockState _bs = world.getBlockState(_pos);
+								if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+									world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+							}
+							StopProcedure = 1;
+						} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
+							if (entity instanceof LivingEntity _entity) {
+								ItemStack _setstack46 = new ItemStack(Blocks.GRASS_BLOCK).copy();
+								_setstack46.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+								_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack46);
+								if (_entity instanceof Player _player)
+									_player.getInventory().setChanged();
+							}
+							{
+								int _value = 0;
+								BlockPos _pos = BlockPos.containing(x, y, z);
+								BlockState _bs = world.getBlockState(_pos);
+								if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+									world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+							}
+							StopProcedure = 1;
+						} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.GRASS_BLOCK.asItem())) {
+							if (entity instanceof Player _player) {
+								ItemStack _setstack = new ItemStack(Blocks.GRASS_BLOCK).copy();
+								_setstack.setCount(1);
+								ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+							}
+							{
+								int _value = 0;
+								BlockPos _pos = BlockPos.containing(x, y, z);
+								BlockState _bs = world.getBlockState(_pos);
+								if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+									world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+							}
+							StopProcedure = 1;
+						}
+					}
+				}
+			}
+		} else if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip53 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip53) : -1) == 0) {
 			if (StopProcedure == 0) {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.GRASS_BLOCK.asItem()) {
 					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack54 = new ItemStack(Blocks.GRASS_BLOCK).copy();
-						_setstack54.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack54);
+						ItemStack _setstack58 = new ItemStack(Blocks.GRASS_BLOCK).copy();
+						_setstack58.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack58);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -164,13 +169,13 @@ public class CratestatesProcedure {
 				}
 			}
 		}
-		if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip57 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip57) : -1) == 4) {
+		if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip61 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip61) : -1) == 4) {
 			if (StopProcedure == 0) {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.BAMBOO.asItem()) {
 					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack62 = new ItemStack(Blocks.BAMBOO).copy();
-						_setstack62.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack62);
+						ItemStack _setstack66 = new ItemStack(Blocks.BAMBOO).copy();
+						_setstack66.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack66);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -184,9 +189,9 @@ public class CratestatesProcedure {
 					StopProcedure = 1;
 				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
 					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack68 = new ItemStack(Blocks.BAMBOO).copy();
-						_setstack68.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack68);
+						ItemStack _setstack72 = new ItemStack(Blocks.BAMBOO).copy();
+						_setstack72.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack72);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -216,12 +221,12 @@ public class CratestatesProcedure {
 			}
 		}
 		if (StopProcedure == 0) {
-			if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip75 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip75) : -1) == 2) {
+			if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip79 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip79) : -1) == 2) {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.BAMBOO.asItem()) {
 					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack80 = new ItemStack(Blocks.BAMBOO).copy();
-						_setstack80.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack80);
+						ItemStack _setstack84 = new ItemStack(Blocks.BAMBOO).copy();
+						_setstack84.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack84);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -236,13 +241,13 @@ public class CratestatesProcedure {
 				}
 			}
 		}
-		if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip83 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip83) : -1) == 3) {
+		if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip87 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip87) : -1) == 3) {
 			if (StopProcedure == 0) {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.BAMBOO.asItem()) {
 					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack88 = new ItemStack(Blocks.BAMBOO).copy();
-						_setstack88.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack88);
+						ItemStack _setstack92 = new ItemStack(Blocks.BAMBOO).copy();
+						_setstack92.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack92);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -256,9 +261,9 @@ public class CratestatesProcedure {
 					StopProcedure = 1;
 				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
 					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack94 = new ItemStack(Blocks.BAMBOO).copy();
-						_setstack94.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack94);
+						ItemStack _setstack98 = new ItemStack(Blocks.BAMBOO).copy();
+						_setstack98.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() + 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack98);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -288,12 +293,12 @@ public class CratestatesProcedure {
 			}
 		}
 		if (StopProcedure == 0) {
-			if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip101 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip101) : -1) == 1) {
+			if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip105 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip105) : -1) == 1) {
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.BAMBOO.asItem()) {
 					if (entity instanceof LivingEntity _entity) {
-						ItemStack _setstack106 = new ItemStack(Blocks.BAMBOO).copy();
-						_setstack106.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
-						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack106);
+						ItemStack _setstack110 = new ItemStack(Blocks.BAMBOO).copy();
+						_setstack110.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack110);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -303,6 +308,27 @@ public class CratestatesProcedure {
 						BlockState _bs = world.getBlockState(_pos);
 						if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
 							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+					}
+					StopProcedure = 1;
+				}
+			}
+		}
+		if (StopProcedure == 0) {
+			if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip113 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip113) : -1) == 1) {
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.WHEAT_SEEDS) {
+					{
+						int _value = 2;
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("state") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+					}
+					if (entity instanceof LivingEntity _entity) {
+						ItemStack _setstack119 = new ItemStack(Items.WHEAT_SEEDS).copy();
+						_setstack119.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
+						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack119);
+						if (_entity instanceof Player _player)
+							_player.getInventory().setChanged();
 					}
 					StopProcedure = 1;
 				}
