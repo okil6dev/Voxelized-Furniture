@@ -353,5 +353,8 @@
   "block.voxelized_furniture.green_watering_can": "Green Watering Can",
   "block.voxelized_furniture.wooden_kitchen_drawer": "Wooden Kitchen Drawer",
   "block.voxelized_furniture.wooden_oven_cooktop": "Wooden Oven Cooktop",
-  "block.voxelized_furniture.wooden_kitchen_sink": "Wooden Kitchen Sink"
+  "block.voxelized_furniture.wooden_kitchen_sink": "Wooden Kitchen Sink",
+  "block.voxelized_furniture.soft_oak": "Soft Oak",
+  "block.voxelized_furniture.soft_pale_oak": "Soft Pale Oak",
+  "block.voxelized_furniture.soft_dark_oak": "Soft Dark Oak"
 }

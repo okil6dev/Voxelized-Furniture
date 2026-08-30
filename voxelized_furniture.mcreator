@@ -7094,7 +7094,7 @@
           "src/main/resources/assets/voxelized_furniture/models/item/wooden_kitchen_drawer.json"
         ]
       },
-      "path": "~/Kitchen"
+      "path": "~/Kitchen/Wooden"
     },
     {
       "name": "WoodenOvenCooktop",
@@ -7111,7 +7111,7 @@
           "src/main/resources/assets/voxelized_furniture/blockstates/wooden_oven_cooktop.json"
         ]
       },
-      "path": "~/Kitchen"
+      "path": "~/Kitchen/Wooden"
     },
     {
       "name": "WoodenKitchenSink",
@@ -7129,7 +7129,100 @@
           "src/main/resources/assets/voxelized_furniture/models/block/wooden_kitchen_sink_0.json"
         ]
       },
-      "path": "~/Kitchen"
+      "path": "~/Kitchen/Wooden"
+    },
+    {
+      "name": "SoftOak",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soft_oak",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/soft_oak.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/soft_oak.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/soft_oak.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/soft_oak.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/SoftOakBlock.java"
+        ]
+      },
+      "path": "~/Nature"
+    },
+    {
+      "name": "SoftPaleOak",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soft_pale_oak",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/SoftPaleOakBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/soft_pale_oak.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/soft_pale_oak.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/soft_pale_oak.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/soft_pale_oak.json"
+        ]
+      },
+      "path": "~/Nature"
+    },
+    {
+      "name": "SoftDarkOak",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soft_dark_oak",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/soft_dark_oak.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/soft_dark_oak.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/SoftDarkOakBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/soft_dark_oak.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/soft_dark_oak.json"
+        ]
+      },
+      "path": "~/Nature"
+    },
+    {
+      "name": "SoftOakRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soft_oak_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/recipe/soft_oak_recipe.json",
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/soft_oak_recipe.json"
+        ]
+      },
+      "path": "~/Nature"
+    },
+    {
+      "name": "SoftPaleOakRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soft_pale_oak_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/soft_pale_oak_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/soft_pale_oak_recipe.json"
+        ]
+      },
+      "path": "~/Nature"
+    },
+    {
+      "name": "SoftDarkOakRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soft_dark_oak_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/soft_dark_oak_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/soft_dark_oak_recipe.json"
+        ]
+      },
+      "path": "~/Nature"
     }
   ],
   "variable_elements": [
@@ -7158,6 +7251,9 @@
   ],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/axe": [
+      "~SoftDarkOak@CUSTOM:SoftDarkOak",
+      "~SoftPaleOak@CUSTOM:SoftPaleOak",
+      "~SoftOak@CUSTOM:SoftOak",
       "~WoodenKitchenSink@CUSTOM:WoodenKitchenSink",
       "~WoodenKitchenDrawer@CUSTOM:WoodenKitchenDrawer",
       "~WoodenOvenCooktop@CUSTOM:WoodenOvenCooktop",
@@ -7670,7 +7766,10 @@
       "block.voxelized_furniture.green_watering_can": "Green Watering Can",
       "block.voxelized_furniture.wooden_kitchen_drawer": "Wooden Kitchen Drawer",
       "block.voxelized_furniture.wooden_oven_cooktop": "Wooden Oven Cooktop",
-      "block.voxelized_furniture.wooden_kitchen_sink": "Wooden Kitchen Sink"
+      "block.voxelized_furniture.wooden_kitchen_sink": "Wooden Kitchen Sink",
+      "block.voxelized_furniture.soft_oak": "Soft Oak",
+      "block.voxelized_furniture.soft_pale_oak": "Soft Pale Oak",
+      "block.voxelized_furniture.soft_dark_oak": "Soft Dark Oak"
     }
   },
   "metadata": {
@@ -7775,6 +7874,10 @@
           },
           {
             "name": "toaster",
+            "children": []
+          },
+          {
+            "name": "Wooden",
             "children": []
           }
         ]

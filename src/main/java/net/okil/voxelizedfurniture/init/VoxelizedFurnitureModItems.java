@@ -179,6 +179,9 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> WOODEN_KITCHEN_DRAWER;
 	public static final DeferredItem<Item> WOODEN_OVEN_COOKTOP;
 	public static final DeferredItem<Item> WOODEN_KITCHEN_SINK;
+	public static final DeferredItem<Item> SOFT_OAK;
+	public static final DeferredItem<Item> SOFT_PALE_OAK;
+	public static final DeferredItem<Item> SOFT_DARK_OAK;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -342,6 +345,9 @@ public class VoxelizedFurnitureModItems {
 		WOODEN_KITCHEN_DRAWER = block(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_DRAWER);
 		WOODEN_OVEN_COOKTOP = block(VoxelizedFurnitureModBlocks.WOODEN_OVEN_COOKTOP);
 		WOODEN_KITCHEN_SINK = block(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK);
+		SOFT_OAK = block(VoxelizedFurnitureModBlocks.SOFT_OAK);
+		SOFT_PALE_OAK = block(VoxelizedFurnitureModBlocks.SOFT_PALE_OAK);
+		SOFT_DARK_OAK = block(VoxelizedFurnitureModBlocks.SOFT_DARK_OAK);
 	}
 
 	// Start of user code block custom items

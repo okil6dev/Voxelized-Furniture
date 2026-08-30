@@ -153,6 +153,9 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.CACTUS_PLANT.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_CLUSTER.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.SOFT_OAK.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.SOFT_PALE_OAK.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.SOFT_DARK_OAK.get().asItem());
 			}).withSearchBar().withTabsBefore(BATHROOM.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VF_ROADS = REGISTRY.register("vf_roads",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.vf_roads")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.ASPHALT.get())).displayItems((parameters, tabData) -> {

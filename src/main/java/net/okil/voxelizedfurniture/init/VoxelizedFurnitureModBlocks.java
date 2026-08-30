@@ -178,6 +178,9 @@ public class VoxelizedFurnitureModBlocks {
 	public static final DeferredBlock<Block> WOODEN_KITCHEN_DRAWER;
 	public static final DeferredBlock<Block> WOODEN_OVEN_COOKTOP;
 	public static final DeferredBlock<Block> WOODEN_KITCHEN_SINK;
+	public static final DeferredBlock<Block> SOFT_OAK;
+	public static final DeferredBlock<Block> SOFT_PALE_OAK;
+	public static final DeferredBlock<Block> SOFT_DARK_OAK;
 	static {
 		CABINET_OAK = REGISTRY.register("cabinet_oak", CabinetOakBlock::new);
 		CABINET_BIRCH = REGISTRY.register("cabinet_birch", CabinetBirchBlock::new);
@@ -340,6 +343,9 @@ public class VoxelizedFurnitureModBlocks {
 		WOODEN_KITCHEN_DRAWER = REGISTRY.register("wooden_kitchen_drawer", WoodenKitchenDrawerBlock::new);
 		WOODEN_OVEN_COOKTOP = REGISTRY.register("wooden_oven_cooktop", WoodenOvenCooktopBlock::new);
 		WOODEN_KITCHEN_SINK = REGISTRY.register("wooden_kitchen_sink", WoodenKitchenSinkBlock::new);
+		SOFT_OAK = REGISTRY.register("soft_oak", SoftOakBlock::new);
+		SOFT_PALE_OAK = REGISTRY.register("soft_pale_oak", SoftPaleOakBlock::new);
+		SOFT_DARK_OAK = REGISTRY.register("soft_dark_oak", SoftDarkOakBlock::new);
 	}
 
 	// Start of user code block custom blocks
