@@ -1,0 +1,11 @@
+{
+  "parent": "voxelized_furniture:custom/woodenkitchensinkwater",
+  "textures": {
+    "all": "voxelized_furniture:block/woodenkitchensink",
+    "particle": "minecraft:block/stripped_oak_log",
+    "1": "voxelized_furniture:block/zen_water_flow",
+    "2": "voxelized_furniture:block/zen_water_still",
+    "5": "voxelized_furniture:block/woodenkitchensink"
+  },
+  "render_type": "translucent"
+}

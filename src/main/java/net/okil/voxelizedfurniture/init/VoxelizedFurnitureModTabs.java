@@ -119,6 +119,7 @@ public class VoxelizedFurnitureModTabs {
 				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_YELLOW.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_DRAWER.get().asItem());
 				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_OVEN_COOKTOP.get().asItem());
+				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK.get().asItem());
 			}).withSearchBar().withTabsBefore(VF_LIVINGROOM.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> FOOD = REGISTRY.register("food",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.food")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.HONEY_JAR.get())).displayItems((parameters, tabData) -> {

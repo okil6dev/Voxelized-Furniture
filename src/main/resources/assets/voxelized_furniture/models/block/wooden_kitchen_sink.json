@@ -1,0 +1,9 @@
+{
+  "parent": "voxelized_furniture:custom/woodenkitchensink",
+  "textures": {
+    "all": "voxelized_furniture:block/woodenkitchensink",
+    "particle": "minecraft:block/stripped_oak_log",
+    "5": "voxelized_furniture:block/woodenkitchensink"
+  },
+  "render_type": "translucent"
+}

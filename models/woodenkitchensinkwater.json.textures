@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "1": "zen_water_flow",
+        "2": "zen_water_still",
+        "5": "woodenkitchensink"
+      }
+    }
+  }
+}
