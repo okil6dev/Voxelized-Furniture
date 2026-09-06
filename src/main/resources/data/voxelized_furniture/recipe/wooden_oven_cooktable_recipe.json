@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:redstone",
+    "voxelized_furniture:wooden_kitchen_drawer",
+    "minecraft:blast_furnace"
+  ],
+  "result": {
+    "id": "voxelized_furniture:wooden_oven_cooktop",
+    "count": 1
+  }
+}

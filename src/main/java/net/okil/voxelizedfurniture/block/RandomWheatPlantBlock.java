@@ -5,7 +5,6 @@ import net.okil.voxelizedfurniture.procedures.WheatPlantSettingsOpenerProcedure;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -20,14 +19,13 @@ import net.minecraft.core.BlockPos;
 public class RandomWheatPlantBlock extends Block {
 	private static final VoxelShape SHAPE = box(5, 0, 5, 11, 8, 11);
 
-	public RandomWheatPlantBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 3f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
+	public RandomWheatPlantBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(2f, 3f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		Vec3 offset = state.getOffset(world, pos);
-		return SHAPE.move(offset.x, offset.y, offset.z);
+		return SHAPE.move(state.getOffset(pos));
 	}
 
 	@Override

@@ -7,7 +7,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -23,19 +23,19 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class LightSwitchButtonBlock extends Block {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public LightSwitchButtonBlock() {
-		super(BlockBehaviour.Properties.of().strength(1f, 2f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public LightSwitchButtonBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(1f, 2f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(BLOCKSTATE, 0));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			if (state.getValue(BLOCKSTATE) == 1) {
 				return switch (state.getValue(FACING)) {
@@ -56,7 +56,7 @@ public class LightSwitchButtonBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override

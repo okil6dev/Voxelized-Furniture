@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/cranegray",
     "particle": "voxelized_furniture:block/lowblack",
     "5": "voxelized_furniture:block/kitchendrawertex"
-  },
-  "render_type": "solid"
+  }
 }

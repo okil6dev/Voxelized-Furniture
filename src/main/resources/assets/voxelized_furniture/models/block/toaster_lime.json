@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/lime_toaster",
     "particle": "voxelized_furniture:block/lime_toaster",
     "0": "voxelized_furniture:block/lime_toaster"
-  },
-  "render_type": "solid"
+  }
 }

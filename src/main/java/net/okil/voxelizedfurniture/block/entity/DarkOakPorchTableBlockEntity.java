@@ -1,7 +1,11 @@
 package net.okil.voxelizedfurniture.block.entity;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlockEntities;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.item.ItemStack;
@@ -18,31 +22,28 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import javax.annotation.Nullable;
-
 import java.util.stream.IntStream;
 
 public class DarkOakPorchTableBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(9, ItemStack.EMPTY);
 
 	public DarkOakPorchTableBlockEntity(BlockPos position, BlockState state) {
-		super(VoxelizedFurnitureModBlockEntities.DARK_OAK_PORCH_TABLE.get(), position, state);
+		super(VoxelizedFurnitureModBlockEntities.DARK_OAK_PORCH_TABLE, position, state);
 	}
 
 	@Override
-	public void loadAdditional(CompoundTag compound, HolderLookup.Provider lookupProvider) {
-		super.loadAdditional(compound, lookupProvider);
-		if (!this.tryLoadLootTable(compound))
+	public void loadAdditional(ValueInput valueInput) {
+		super.loadAdditional(valueInput);
+		if (!this.tryLoadLootTable(valueInput))
 			this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(compound, this.stacks, lookupProvider);
+		ContainerHelper.loadAllItems(valueInput, this.stacks);
 	}
 
 	@Override
-	public void saveAdditional(CompoundTag compound, HolderLookup.Provider lookupProvider) {
-		super.saveAdditional(compound, lookupProvider);
-		if (!this.trySaveLootTable(compound)) {
-			ContainerHelper.saveAllItems(compound, this.stacks, lookupProvider);
-		}
+	public void saveAdditional(ValueOutput valueOutput) {
+		super.saveAdditional(valueOutput);
+		if (!this.trySaveLootTable(valueOutput))
+			ContainerHelper.saveAllItems(valueOutput, this.stacks);
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 
 public class AsphaltBlock extends Block {
-	public AsphaltBlock() {
-		super(BlockBehaviour.Properties.of().strength(7f, 10f).requiresCorrectToolForDrops());
+	public AsphaltBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(7f, 10f).requiresCorrectToolForDrops());
 	}
 }

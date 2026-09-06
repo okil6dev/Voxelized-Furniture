@@ -220,7 +220,7 @@
     "slipperiness": 0.6,
     "speedFactor": 1.0,
     "jumpFactor": 1.0,
-    "reactionToPushing": "NORMAL",
+    "reactionToPushing": "BLOCK",
     "isNotColidable": false,
     "soundOnStep": "WOOD",
     "isCustomSoundType": false,
@@ -240,9 +240,10 @@
     "vibrationSensitivityRadius": {
       "fixedValue": 7.0
     },
-    "hasInventory": false,
-    "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "hasInventory": true,
+    "guiBoundTo": "Ovencooktopgui",
+    "openGUIOnRightClick": true,
+    "inventorySize": 18,
     "inventoryStackSize": 99,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,

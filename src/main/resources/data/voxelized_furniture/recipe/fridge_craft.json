@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:quartz_slab"
-    },
-    {
-      "item": "minecraft:barrel"
-    },
-    {
-      "item": "minecraft:quartz_block"
-    }
+    "minecraft:quartz_slab",
+    "minecraft:barrel",
+    "minecraft:quartz_block"
   ],
   "result": {
     "id": "voxelized_furniture:fridge",

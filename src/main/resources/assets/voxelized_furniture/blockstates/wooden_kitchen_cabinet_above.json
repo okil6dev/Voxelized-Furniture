@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "voxelized_furniture:block/wooden_kitchen_cabinet_above"
+    },
+    "facing=east": {
+      "model": "voxelized_furniture:block/wooden_kitchen_cabinet_above",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "voxelized_furniture:block/wooden_kitchen_cabinet_above",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "voxelized_furniture:block/wooden_kitchen_cabinet_above",
+      "y": 270
+    }
+  }
+}

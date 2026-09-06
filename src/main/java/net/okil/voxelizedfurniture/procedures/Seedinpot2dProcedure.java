@@ -19,6 +19,6 @@ public class Seedinpot2dProcedure {
 				world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 		}
 		if (entity instanceof Player _player)
-			_player.closeContainer();
+			_player.containerMenu = _player.inventoryMenu;
 	}
 }

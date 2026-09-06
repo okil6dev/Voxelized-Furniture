@@ -3,7 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,18 +17,18 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class SoapBlock extends Block {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public SoapBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(0f, 10f).noCollission().isRedstoneConductor((bs, br, bp) -> false));
+	public SoapBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.GLASS).strength(0f, 10f).noCollision().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(11.5, 4.45, 12.5, 12.5, 5.45, 14.5), box(10.5, 0, 13, 13.5, 4, 15), box(11.25, 3.2, 13.25, 12.75, 4.2, 14.75), box(11.5, 3.45, 13.5, 12.5, 4.45, 14.5));
@@ -41,7 +41,7 @@ public class SoapBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override

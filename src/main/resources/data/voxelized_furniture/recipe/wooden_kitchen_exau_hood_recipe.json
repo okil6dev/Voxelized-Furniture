@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "voxelized_furniture:wooden_kitchen_cabinet_above",
+    "minecraft:iron_trapdoor"
+  ],
+  "result": {
+    "id": "voxelized_furniture:wooden_kitchen_exhausthood",
+    "count": 1
+  }
+}

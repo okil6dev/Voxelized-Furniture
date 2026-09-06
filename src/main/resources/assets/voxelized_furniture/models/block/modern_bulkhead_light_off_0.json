@@ -5,6 +5,5 @@
     "particle": "minecraft:block/sea_lantern",
     "1": "voxelized_furniture:block/lightcoloron",
     "2": "voxelized_furniture:block/darkgray"
-  },
-  "render_type": "solid"
+  }
 }

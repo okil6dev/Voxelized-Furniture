@@ -6,6 +6,5 @@
     "0": "minecraft:block/quartz_block_side",
     "1": "minecraft:block/stripped_dark_oak_log",
     "2": "minecraft:block/anvil"
-  },
-  "render_type": "translucent"
+  }
 }

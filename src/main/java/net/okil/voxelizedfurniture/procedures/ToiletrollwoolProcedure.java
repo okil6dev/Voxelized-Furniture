@@ -1,12 +1,10 @@
 package net.okil.voxelizedfurniture.procedures;
 
-import net.neoforged.neoforge.items.ItemHandlerHelper;
-
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -17,7 +15,7 @@ public class ToiletrollwoolProcedure {
 		if (entity == null)
 			return;
 		if (0 == (getPropertyByName(blockstate, "blockstate") instanceof IntegerProperty _getip1 ? blockstate.getValue(_getip1) : -1)) {
-			if (hasEntityInInventory(entity, new ItemStack(Blocks.WHITE_WOOL))) {
+			if (hasEntityInInventory(entity, new ItemStack(Items.WOOL.white()))) {
 				{
 					int _value = 1;
 					BlockPos _pos = BlockPos.containing(x, y, z);
@@ -26,7 +24,7 @@ public class ToiletrollwoolProcedure {
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
 				if (entity instanceof Player _player) {
-					ItemStack _stktoremove = new ItemStack(Blocks.WHITE_WOOL);
+					ItemStack _stktoremove = new ItemStack(Items.WOOL.white());
 					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 				}
 			}
@@ -39,9 +37,9 @@ public class ToiletrollwoolProcedure {
 					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 			}
 			if (entity instanceof Player _player) {
-				ItemStack _setstack = new ItemStack(Blocks.WHITE_WOOL).copy();
+				ItemStack _setstack = new ItemStack(Items.WOOL.white()).copy();
 				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				_player.addItem(_setstack);
 			}
 		}
 	}

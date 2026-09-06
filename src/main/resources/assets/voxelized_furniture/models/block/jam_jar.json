@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/jamjar",
     "particle": "minecraft:block/brown_wool",
     "2": "voxelized_furniture:block/jamjar"
-  },
-  "render_type": "cutout"
+  }
 }

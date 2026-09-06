@@ -5,9 +5,8 @@ import net.okil.voxelizedfurniture.procedures.YuccaPlantSettingsOpenerProcedure;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -23,18 +22,18 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class YuccaPlantRandomBlock extends Block {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public YuccaPlantRandomBlock() {
-		super(BlockBehaviour.Properties.of().strength(3f, 2f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
+	public YuccaPlantRandomBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(3f, 2f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> box(5, 0, 5, 11, 15, 11);
@@ -47,8 +46,7 @@ public class YuccaPlantRandomBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		Vec3 offset = state.getOffset(world, pos);
-		return shapes.get(state).move(offset.x, offset.y, offset.z);
+		return shapes.apply(state).move(state.getOffset(pos));
 	}
 
 	@Override

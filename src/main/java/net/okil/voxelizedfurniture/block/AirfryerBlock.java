@@ -10,7 +10,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -18,7 +18,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -27,23 +28,25 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class AirfryerBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final IntegerProperty STATE = IntegerProperty.create("state", 0, 1);
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public AirfryerBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(2.5f, 3.5f).noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false));
+	public AirfryerBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.METAL).strength(2.5f, 3.5f).noOcclusion().randomTicks().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(STATE, 0).setValue(WATERLOGGED, false));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			if (state.getValue(STATE) == 1) {
 				return switch (state.getValue(FACING)) {
@@ -71,22 +74,22 @@ public class AirfryerBlock extends Block implements SimpleWaterloggedBlock, Enti
 				default -> Shapes.or(box(4, 0, 3, 12, 10, 9.1), box(11.5, 5.5, 8.1, 12.1, 6, 9.2), box(3.9, 5.5, 8.1, 4.5, 6, 9.2), box(3.9, 5.5, 2.85, 12.1, 6, 8.1), box(4.5, 0.5, 9, 11.5, 6, 9.25), box(7.5, 4.75, 9, 8.5, 5.75, 11),
 						box(7.5, 2.75, 10, 8.5, 4.75, 11), box(7.5, 7, 9, 8.5, 8, 9.25));
 			};
-		});
+		}, WATERLOGGED);
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+	public boolean propagatesSkylightDown(BlockState state) {
 		return state.getFluidState().isEmpty();
 	}
 
 	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return propagatesSkylightDown(state, worldIn, pos) ? 0 : 1;
+	public int getLightDampening(BlockState state) {
+		return propagatesSkylightDown(state) ? 0 : 1;
 	}
 
 	@Override
@@ -123,11 +126,11 @@ public class AirfryerBlock extends Block implements SimpleWaterloggedBlock, Enti
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+	public BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess scheduledTickAccess, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random) {
 		if (state.getValue(WATERLOGGED)) {
-			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+			scheduledTickAccess.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
-		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
+		return super.updateShape(state, world, scheduledTickAccess, currentPos, facing, facingPos, facingState, random);
 	}
 
 	@Override
@@ -163,15 +166,8 @@ public class AirfryerBlock extends Block implements SimpleWaterloggedBlock, Enti
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof AirfryerBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -180,7 +176,7 @@ public class AirfryerBlock extends Block implements SimpleWaterloggedBlock, Enti
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof AirfryerBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

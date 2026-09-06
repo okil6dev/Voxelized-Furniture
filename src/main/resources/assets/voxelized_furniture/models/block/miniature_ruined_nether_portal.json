@@ -11,6 +11,5 @@
     "5": "minecraft:block/lava_still",
     "6": "minecraft:block/chain",
     "7": "minecraft:block/magma"
-  },
-  "render_type": "cutout"
+  }
 }

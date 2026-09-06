@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:chain"
-    },
-    {
-      "item": "minecraft:sea_lantern"
-    }
+    "minecraft:iron_chain",
+    "minecraft:sea_lantern"
   ],
   "result": {
     "id": "voxelized_furniture:light",

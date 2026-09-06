@@ -5,6 +5,5 @@
     "particle": "minecraft:block/stone",
     "1": "voxelized_furniture:block/kyanietrocktex",
     "2": "voxelized_furniture:block/rockholdertex"
-  },
-  "render_type": "translucent"
+  }
 }

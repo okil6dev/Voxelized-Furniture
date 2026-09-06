@@ -11,8 +11,8 @@ public class SeedinpotramdomPProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM.get().defaultBlockState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM.defaultBlockState(), 3);
 		if (entity instanceof Player _player)
-			_player.closeContainer();
+			_player.containerMenu = _player.inventoryMenu;
 	}
 }

@@ -5,6 +5,5 @@
     "particle": "voxelized_furniture:block/fridgegray",
     "1": "minecraft:block/anvil",
     "2": "voxelized_furniture:block/anvil_darker"
-  },
-  "render_type": "solid"
+  }
 }

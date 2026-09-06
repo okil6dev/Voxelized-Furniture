@@ -29,7 +29,7 @@ public class WheatPlantSettingsOpenerProcedure {
 					}
 
 					@Override
-					public boolean shouldTriggerClientSideContainerClosingOnOpen() {
+					public boolean shouldCloseCurrentScreen() {
 						return false;
 					}
 
@@ -37,7 +37,7 @@ public class WheatPlantSettingsOpenerProcedure {
 					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
 						return new WheatPlantSettingsGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
-				}, _bpos);
+				});
 			}
 		}
 	}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "bbb"
+  ],
+  "key": {
+    "a": "voxelized_furniture:soft_pale_oak",
+    "b": "voxelized_furniture:soft_oak",
+    "c": "minecraft:barrel"
+  },
+  "result": {
+    "id": "voxelized_furniture:wooden_kitchen_drawer",
+    "count": 4
+  }
+}

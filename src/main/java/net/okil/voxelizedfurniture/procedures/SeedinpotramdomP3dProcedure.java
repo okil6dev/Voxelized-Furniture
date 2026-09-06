@@ -13,7 +13,7 @@ public class SeedinpotramdomP3dProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM.get().defaultBlockState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM.defaultBlockState(), 3);
 		{
 			int _value = 1;
 			BlockPos _pos = BlockPos.containing(x, y, z);
@@ -22,6 +22,6 @@ public class SeedinpotramdomP3dProcedure {
 				world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 		}
 		if (entity instanceof Player _player)
-			_player.closeContainer();
+			_player.containerMenu = _player.inventoryMenu;
 	}
 }

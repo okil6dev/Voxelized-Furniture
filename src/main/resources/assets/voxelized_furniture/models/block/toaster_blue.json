@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/blue_toaster",
     "particle": "voxelized_furniture:block/blue_toaster",
     "0": "voxelized_furniture:block/blue_toaster"
-  },
-  "render_type": "solid"
+  }
 }

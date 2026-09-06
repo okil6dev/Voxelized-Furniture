@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/panico",
     "particle": "voxelized_furniture:block/panico",
     "0": "voxelized_furniture:block/pan"
-  },
-  "render_type": "cutout"
+  }
 }

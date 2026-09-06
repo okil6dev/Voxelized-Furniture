@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/woodenexhausthood",
+  "textures": {
+    "all": "voxelized_furniture:block/woodenexhausthood",
+    "particle": "voxelized_furniture:block/woodenexhausthood",
+    "4": "voxelized_furniture:block/woodenexhausthood"
+  }
+}

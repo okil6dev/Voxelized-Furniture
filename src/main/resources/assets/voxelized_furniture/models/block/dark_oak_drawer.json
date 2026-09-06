@@ -6,6 +6,5 @@
     "0": "minecraft:block/stripped_dark_oak_log",
     "1": "minecraft:block/light_blue_concrete",
     "2": "minecraft:block/white_concrete"
-  },
-  "render_type": "solid"
+  }
 }

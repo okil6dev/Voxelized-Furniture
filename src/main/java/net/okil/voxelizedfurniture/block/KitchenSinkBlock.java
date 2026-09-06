@@ -8,7 +8,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -26,22 +26,23 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class KitchenSinkBlock extends Block implements EntityBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty STATE = IntegerProperty.create("state", 0, 1);
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public KitchenSinkBlock() {
-		super(BlockBehaviour.Properties.of().strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public KitchenSinkBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(5f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(STATE, 0));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(0, 0, 3, 16, 11, 16), box(0, 11, 3, 16, 16, 5), box(0, 11, 12, 16, 16, 16), box(7.5, 16, 14, 8.5, 21, 15), box(14, 11, 5, 16, 16, 12), box(2, 11, 5, 14, 12, 12), box(0, 11, 5, 2, 16, 12),
@@ -62,7 +63,7 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override
@@ -125,15 +126,8 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof KitchenSinkBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -142,7 +136,7 @@ public class KitchenSinkBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof KitchenSinkBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

@@ -5,6 +5,5 @@
     "particle": "minecraft:block/oak_planks",
     "0": "minecraft:block/stripped_oak_log",
     "1": "minecraft:block/anvil"
-  },
-  "render_type": "solid"
+  }
 }

@@ -5,6 +5,5 @@
     "particle": "voxelized_furniture:block/microwave",
     "0": "voxelized_furniture:block/microwave",
     "1": "voxelized_furniture:block/glass"
-  },
-  "render_type": "translucent"
+  }
 }

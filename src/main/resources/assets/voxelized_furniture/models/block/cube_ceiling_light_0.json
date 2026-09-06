@@ -5,6 +5,5 @@
     "particle": "voxelized_furniture:block/lightcoloroff",
     "2": "voxelized_furniture:block/lightcoloron",
     "3": "minecraft:block/gray_concrete"
-  },
-  "render_type": "solid"
+  }
 }

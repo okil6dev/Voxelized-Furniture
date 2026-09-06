@@ -5,6 +5,5 @@
     "particle": "minecraft:block/jungle_planks",
     "0": "minecraft:block/stripped_jungle_log",
     "1": "minecraft:block/anvil"
-  },
-  "render_type": "solid"
+  }
 }

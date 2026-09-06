@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:lever"
-    },
-    {
-      "item": "voxelized_furniture:kitchen_table"
-    }
+    "minecraft:lever",
+    "voxelized_furniture:kitchen_table"
   ],
   "result": {
     "id": "voxelized_furniture:kitchen_sink",

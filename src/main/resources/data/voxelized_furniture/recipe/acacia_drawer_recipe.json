@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:stripped_acacia_log"
-  },
+  "ingredient": "minecraft:stripped_acacia_log",
   "result": {
     "id": "voxelized_furniture:acacia_drawer",
     "count": 1

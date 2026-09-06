@@ -6,15 +6,9 @@
     "bcb"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:spruce_fence"
-    },
-    "b": {
-      "tag": "minecraft:slabs"
-    },
-    "c": {
-      "tag": "c:stones"
-    }
+    "a": "minecraft:spruce_fence",
+    "b": "#minecraft:slabs",
+    "c": "#c:stones"
   },
   "result": {
     "id": "voxelized_furniture:spruce_cobble_path",

@@ -9,6 +9,5 @@
     "3": "voxelized_furniture:block/zen_water_still",
     "4": "minecraft:block/stone",
     "5": "voxelized_furniture:block/zen_water_flow"
-  },
-  "render_type": "translucent"
+  }
 }

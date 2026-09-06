@@ -7,24 +7,12 @@
     "cfc"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:iron_ingot"
-    },
-    "b": {
-      "item": "minecraft:iron_bars"
-    },
-    "c": {
-      "item": "minecraft:cyan_concrete"
-    },
-    "d": {
-      "item": "minecraft:furnace"
-    },
-    "e": {
-      "item": "minecraft:lever"
-    },
-    "f": {
-      "item": "minecraft:stone_button"
-    }
+    "a": "minecraft:iron_ingot",
+    "b": "minecraft:iron_bars",
+    "c": "minecraft:cyan_concrete",
+    "d": "minecraft:furnace",
+    "e": "minecraft:lever",
+    "f": "minecraft:stone_button"
   },
   "result": {
     "id": "voxelized_furniture:toaster_cyan",

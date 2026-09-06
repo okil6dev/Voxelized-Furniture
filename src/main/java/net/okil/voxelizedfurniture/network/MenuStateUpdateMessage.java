@@ -4,23 +4,18 @@ import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModScreens;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModMenus;
 import net.okil.voxelizedfurniture.VoxelizedFurnitureMod;
 
-import net.neoforged.neoforge.network.handling.IPayloadContext;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.client.Minecraft;
 
-@EventBusSubscriber
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+
 public record MenuStateUpdateMessage(int elementType, String name, Object elementState) implements CustomPacketPayload {
-	public static final Type<MenuStateUpdateMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "guistate_update"));
+	public static final Type<MenuStateUpdateMessage> TYPE = new Type<>(Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "menustate_update"));
 	public static final StreamCodec<RegistryFriendlyByteBuf, MenuStateUpdateMessage> STREAM_CODEC = StreamCodec.of(MenuStateUpdateMessage::write, MenuStateUpdateMessage::read);
 
 	public static void write(FriendlyByteBuf buffer, MenuStateUpdateMessage message) {
@@ -54,24 +49,29 @@ public record MenuStateUpdateMessage(int elementType, String name, Object elemen
 		return TYPE;
 	}
 
-	public static void handleMenuState(final MenuStateUpdateMessage message, final IPayloadContext context) {
+	public static void handleMenuState(final MenuStateUpdateMessage message, final ServerPlayNetworking.Context context) {
 		if (message.name.length() > 256 || message.elementState instanceof String string && string.length() > 8192)
 			return;
-		context.enqueueWork(() -> {
+		context.server().execute(() -> {
 			if (context.player().containerMenu instanceof VoxelizedFurnitureModMenus.MenuAccessor menu) {
 				menu.getMenuState().put(message.elementType + ":" + message.name, message.elementState);
-				if (context.flow() == PacketFlow.CLIENTBOUND && Minecraft.getInstance().screen instanceof VoxelizedFurnitureModScreens.ScreenAccessor accessor) {
+				if (Minecraft.getInstance().gui.screen() instanceof VoxelizedFurnitureModScreens.FabricScreenAccessor accessor) {
 					accessor.updateMenuState(message.elementType, message.name, message.elementState);
 				}
 			}
-		}).exceptionally(e -> {
-			context.connection().disconnect(Component.literal(e.getMessage()));
-			return null;
 		});
 	}
 
-	@SubscribeEvent
-	public static void registerMessage(FMLCommonSetupEvent event) {
-		VoxelizedFurnitureMod.addNetworkMessage(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage.STREAM_CODEC, MenuStateUpdateMessage::handleMenuState);
+	public static void handleClientMenuState(final MenuStateUpdateMessage message, final ClientPlayNetworking.Context context) {
+		if (message.name.length() > 256 || message.elementState instanceof String string && string.length() > 8192)
+			return;
+		context.client().execute(() -> {
+			if (context.player().containerMenu instanceof VoxelizedFurnitureModMenus.MenuAccessor menu) {
+				menu.getMenuState().put(message.elementType + ":" + message.name, message.elementState);
+				if (Minecraft.getInstance().gui.screen() instanceof VoxelizedFurnitureModScreens.FabricScreenAccessor accessor) {
+					accessor.updateMenuState(message.elementType, message.name, message.elementState);
+				}
+			}
+		});
 	}
 }

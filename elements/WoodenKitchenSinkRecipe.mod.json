@@ -1,0 +1,32 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.NORMAL_STONE_SLAB",
+      "CUSTOM:WoodenKitchenDrawer"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "Blocks.NORMAL_STONE_SLAB",
+      "",
+      "",
+      "CUSTOM:WoodenKitchenDrawer",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:WoodenKitchenSink",
+    "name": "wooden_kitchen_sink_recipe",
+    "namespace": "mod"
+  }
+}

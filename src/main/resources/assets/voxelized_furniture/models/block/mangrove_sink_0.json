@@ -8,6 +8,5 @@
     "2": "minecraft:block/anvil",
     "3": "voxelized_furniture:block/zen_water_flow",
     "4": "voxelized_furniture:block/zen_water_still"
-  },
-  "render_type": "translucent"
+  }
 }

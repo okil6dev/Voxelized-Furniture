@@ -1,13 +1,12 @@
 package net.okil.voxelizedfurniture.block;
 
-import net.okil.voxelizedfurniture.world.inventory.FridgeGuiMenu;
 import net.okil.voxelizedfurniture.block.entity.KitchenFridgeBlockEntity;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,30 +21,26 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import io.netty.buffer.Unpooled;
-
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class KitchenFridgeBlock extends Block implements EntityBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public KitchenFridgeBlock() {
-		super(BlockBehaviour.Properties.of().strength(6f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public KitchenFridgeBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(6f, 9f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(0, 0, 3, 16, 16, 16), box(0, 16, 3, 16, 32, 16), box(0.25, 16, 2, 15.75, 31.5, 3), box(14, 12, 1, 15, 24, 2), box(14, 4, 1, 15, 9, 2), box(0.25, 11, 2, 15.75, 16, 3), box(0.25, 1, 2, 15.75, 10, 3),
@@ -62,7 +57,7 @@ public class KitchenFridgeBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override
@@ -95,19 +90,8 @@ public class KitchenFridgeBlock extends Block implements EntityBlock {
 	@Override
 	public InteractionResult useWithoutItem(BlockState blockstate, Level world, BlockPos pos, Player entity, BlockHitResult hit) {
 		super.useWithoutItem(blockstate, world, pos, entity, hit);
-		if (entity instanceof ServerPlayer player) {
-			player.openMenu(new MenuProvider() {
-				@Override
-				public Component getDisplayName() {
-					return Component.literal("Kitchen Fridge");
-				}
-
-				@Override
-				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new FridgeGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
-				}
-			}, pos);
-		}
+		if (entity instanceof ServerPlayer player)
+			player.openMenu(world.getBlockEntity(pos) instanceof MenuProvider menuProvider ? menuProvider : null);
 		return InteractionResult.SUCCESS;
 	}
 
@@ -130,15 +114,8 @@ public class KitchenFridgeBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof KitchenFridgeBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
+	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
+		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
 	}
 
 	@Override
@@ -147,7 +124,7 @@ public class KitchenFridgeBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof KitchenFridgeBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

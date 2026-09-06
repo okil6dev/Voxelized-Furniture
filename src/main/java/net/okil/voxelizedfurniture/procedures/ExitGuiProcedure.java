@@ -8,6 +8,6 @@ public class ExitGuiProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player _player)
-			_player.closeContainer();
+			_player.containerMenu = _player.inventoryMenu;
 	}
 }

@@ -19,8 +19,8 @@ import net.minecraft.core.BlockPos;
 public class CactusPlantBlock extends Block {
 	private static final VoxelShape SHAPE = box(5, 0, 5, 11, 10, 11);
 
-	public CactusPlantBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 3f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public CactusPlantBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(2f, 3f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

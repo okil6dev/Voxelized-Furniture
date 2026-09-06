@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/fridgehandle",
     "particle": "voxelized_furniture:block/fridgehandle",
     "3": "voxelized_furniture:block/kitchenfridgetex"
-  },
-  "render_type": "cutout_mipped"
+  }
 }

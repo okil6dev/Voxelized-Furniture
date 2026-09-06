@@ -5,6 +5,5 @@
     "particle": "minecraft:block/cherry_planks",
     "0": "minecraft:block/anvil",
     "1": "minecraft:block/cherry_planks"
-  },
-  "render_type": "translucent"
+  }
 }

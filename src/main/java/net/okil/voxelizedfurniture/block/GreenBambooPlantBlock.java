@@ -5,7 +5,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -16,25 +16,27 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class GreenBambooPlantBlock extends Block implements SimpleWaterloggedBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public GreenBambooPlantBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 6f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public GreenBambooPlantBlock(BlockBehaviour.Properties properties) {
+		super(properties.strength(2f, 6f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(4, 0, 4, 12, 1, 12), box(11, 1, 4, 12, 7, 12), box(5, 1, 5, 11, 6, 11), box(4, 1, 4, 5, 7, 12), box(5, 1, 4, 11, 7, 5), box(5, 1, 11, 11, 7, 12));
@@ -42,22 +44,22 @@ public class GreenBambooPlantBlock extends Block implements SimpleWaterloggedBlo
 				case WEST -> Shapes.or(box(4, 0, 4, 12, 1, 12), box(4, 1, 4, 12, 7, 5), box(5, 1, 5, 11, 6, 11), box(4, 1, 11, 12, 7, 12), box(4, 1, 5, 5, 7, 11), box(11, 1, 5, 12, 7, 11));
 				default -> Shapes.or(box(4, 0, 4, 12, 1, 12), box(4, 1, 4, 5, 7, 12), box(5, 1, 5, 11, 6, 11), box(11, 1, 4, 12, 7, 12), box(5, 1, 11, 11, 7, 12), box(5, 1, 4, 11, 7, 5));
 			};
-		});
+		}, WATERLOGGED);
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+	public boolean propagatesSkylightDown(BlockState state) {
 		return state.getFluidState().isEmpty();
 	}
 
 	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return propagatesSkylightDown(state, worldIn, pos) ? 0 : 1;
+	public int getLightDampening(BlockState state) {
+		return propagatesSkylightDown(state) ? 0 : 1;
 	}
 
 	@Override
@@ -94,10 +96,10 @@ public class GreenBambooPlantBlock extends Block implements SimpleWaterloggedBlo
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+	public BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess scheduledTickAccess, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random) {
 		if (state.getValue(WATERLOGGED)) {
-			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+			scheduledTickAccess.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
-		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
+		return super.updateShape(state, world, scheduledTickAccess, currentPos, facing, facingPos, facingState, random);
 	}
 }

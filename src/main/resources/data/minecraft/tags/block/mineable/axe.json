@@ -14,6 +14,7 @@
     "voxelized_furniture:spruce_shelf",
     "voxelized_furniture:cherry_wardrobe",
     "voxelized_furniture:jungle_toilet_roll",
+    "voxelized_furniture:wooden_kitchen_cabinet_above",
     "voxelized_furniture:cherry_sink",
     "voxelized_furniture:birch_toilet_roll",
     "voxelized_furniture:cherry_toilet_roll",
@@ -51,8 +52,9 @@
     "voxelized_furniture:cabinet_mangrove",
     "voxelized_furniture:mangrove_sink",
     "voxelized_furniture:cherry_shelf",
-    "voxelized_furniture:jungle_sink",
     "voxelized_furniture:acacia_doorbell",
+    "voxelized_furniture:jungle_sink",
+    "voxelized_furniture:wooden_kitchen_exhausthood",
     "voxelized_furniture:golden_zen_fountain",
     "voxelized_furniture:spruce_sink",
     "voxelized_furniture:jungle_doorbell",
@@ -66,8 +68,8 @@
     "voxelized_furniture:soft_oak",
     "voxelized_furniture:cabinet_acacia",
     "voxelized_furniture:cherry_drawer",
-    "voxelized_furniture:oak_sink",
     "voxelized_furniture:birch_doorbell",
+    "voxelized_furniture:oak_sink",
     "voxelized_furniture:bamboo_wardrobe",
     "voxelized_furniture:mangrove_wardrobe",
     "voxelized_furniture:bamboo_shelf",
@@ -78,7 +80,7 @@
     "voxelized_furniture:spruce_doorbell",
     "voxelized_furniture:oak_doorbell",
     "voxelized_furniture:bamboo_drawer",
-    "voxelized_furniture:birch_sink",
-    "voxelized_furniture:mangrove_doorbell"
+    "voxelized_furniture:mangrove_doorbell",
+    "voxelized_furniture:birch_sink"
   ]
 }

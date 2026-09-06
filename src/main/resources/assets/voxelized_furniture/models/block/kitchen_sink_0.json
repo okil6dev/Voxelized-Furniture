@@ -6,6 +6,5 @@
     "1": "voxelized_furniture:block/zen_water_flow",
     "2": "voxelized_furniture:block/zen_water_still",
     "7": "voxelized_furniture:block/kitchensinktex"
-  },
-  "render_type": "translucent"
+  }
 }

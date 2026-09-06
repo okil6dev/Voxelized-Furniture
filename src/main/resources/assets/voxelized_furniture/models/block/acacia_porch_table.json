@@ -5,6 +5,5 @@
     "particle": "minecraft:block/acacia_planks",
     "0": "minecraft:block/anvil",
     "1": "minecraft:block/acacia_planks"
-  },
-  "render_type": "translucent"
+  }
 }

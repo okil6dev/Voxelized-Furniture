@@ -5,6 +5,5 @@
     "particle": "minecraft:block/mangrove_planks",
     "0": "minecraft:block/anvil",
     "1": "minecraft:block/mangrove_planks"
-  },
-  "render_type": "translucent"
+  }
 }

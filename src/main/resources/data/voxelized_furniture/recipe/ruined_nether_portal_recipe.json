@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:netherrack"
-  },
+  "ingredient": "minecraft:netherrack",
   "result": {
     "id": "voxelized_furniture:miniature_ruined_nether_portal",
     "count": 1

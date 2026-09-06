@@ -29,7 +29,7 @@ public class CactusPlantSettingsOpenerProcedure {
 					}
 
 					@Override
-					public boolean shouldTriggerClientSideContainerClosingOnOpen() {
+					public boolean shouldCloseCurrentScreen() {
 						return false;
 					}
 
@@ -37,7 +37,7 @@ public class CactusPlantSettingsOpenerProcedure {
 					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
 						return new CactusPlantSettingsGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
-				}, _bpos);
+				});
 			}
 		}
 	}

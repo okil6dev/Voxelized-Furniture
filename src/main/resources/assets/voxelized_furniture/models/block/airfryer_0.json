@@ -5,6 +5,5 @@
     "particle": "voxelized_furniture:block/airfryer",
     "0": "voxelized_furniture:block/airfryer",
     "1": "voxelized_furniture:block/airfryerdoor"
-  },
-  "render_type": "cutout"
+  }
 }

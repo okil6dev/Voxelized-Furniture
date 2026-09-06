@@ -3,7 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,18 +17,18 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class DoubleBedBlock extends Block {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public DoubleBedBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(4f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public DoubleBedBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.WOOD).strength(4f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(14, 0, 0, 16, 3, 2), box(14, 0, 30, 16, 3, 32), box(0, 3, 0, 16, 5, 16), box(-16, 3, 0, 0, 5, 16), box(-16, 3, 16, 0, 5, 32), box(-15.5, 5, 16, 0, 8, 30), box(-16, 5, 18, 0, 9, 30),
@@ -53,7 +53,7 @@ public class DoubleBedBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override

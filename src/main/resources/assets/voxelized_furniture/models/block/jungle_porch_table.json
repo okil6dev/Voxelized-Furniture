@@ -5,6 +5,5 @@
     "particle": "minecraft:block/jungle_planks",
     "0": "minecraft:block/anvil",
     "1": "minecraft:block/jungle_planks"
-  },
-  "render_type": "translucent"
+  }
 }

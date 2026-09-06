@@ -14,7 +14,7 @@ public class Seedinpot3dProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (VoxelizedFurnitureModBlocks.SEED_IN_POT.get() == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock()) {
+		if (VoxelizedFurnitureModBlocks.SEED_IN_POT == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock()) {
 			{
 				int _value = 1;
 				BlockPos _pos = BlockPos.containing(x, y, z);
@@ -23,12 +23,12 @@ public class Seedinpot3dProcedure {
 					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 			}
 			if (entity instanceof Player _player)
-				_player.closeContainer();
+				_player.containerMenu = _player.inventoryMenu;
 		}
-		if (VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM.get() == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock()) {
+		if (VoxelizedFurnitureModBlocks.SEED_IN_POT_RAMDOM == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock()) {
 			{
 				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockState _bs = VoxelizedFurnitureModBlocks.SEED_IN_POT.get().defaultBlockState();
+				BlockState _bs = VoxelizedFurnitureModBlocks.SEED_IN_POT.defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Property<?> _propertyOld : _bso.getProperties()) {
 					Property _propertyNew = _bs.getBlock().getStateDefinition().getProperty(_propertyOld.getName());

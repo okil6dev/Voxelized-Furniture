@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:orange_carpet"
-    },
-    {
-      "item": "minecraft:honey_bottle"
-    },
-    {
-      "item": "minecraft:glass"
-    }
+    "minecraft:orange_carpet",
+    "minecraft:honey_bottle",
+    "minecraft:glass"
   ],
   "result": {
     "id": "voxelized_furniture:honey_jar",

@@ -7,15 +7,9 @@
     "bbb"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:mangrove_slab"
-    },
-    "b": {
-      "item": "minecraft:quartz_block"
-    },
-    "c": {
-      "item": "minecraft:anvil"
-    }
+    "a": "minecraft:mangrove_slab",
+    "b": "minecraft:quartz_block",
+    "c": "minecraft:anvil"
   },
   "result": {
     "id": "voxelized_furniture:mangrove_sink",

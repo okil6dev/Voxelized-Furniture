@@ -5,6 +5,5 @@
     "particle": "voxelized_furniture:block/soiltex",
     "0": "voxelized_furniture:block/soiltex",
     "1": "voxelized_furniture:block/soiltext"
-  },
-  "render_type": "cutout"
+  }
 }

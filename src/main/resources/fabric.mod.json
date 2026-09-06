@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "voxelized_furniture",
+  "version": "1.7.0",
+  "name": "Voxelized Furniture",
+  "description": "This mod adds chairs, tables, kitchen sets, sinks, and small land pieces you can use in your builds. It’s mainly for decorating houses, rooms, and custom areas, and gives you more basic objects to work with when building or roleplaying.",
+  "authors": [
+    "okil6"
+  ],
+  "contact": {
+    "homepage": "https://github.com/okil6dev/Voxelized-Furniture",
+    "sources": ""
+  },
+  "license": "MIT License",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.okil.voxelizedfurniture.VoxelizedFurnitureMod"
+    ],
+    "client": [
+      "net.okil.voxelizedfurniture.VoxelizedFurnitureModClient"
+    ]
+  },
+  "mixins": [
+    "voxelized_furniture.mixins.json"
+  ],
+  "accessWidener": "META-INF/voxelized_furniture.classtweaker",
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:oak_trapdoor"
-    },
-    {
-      "item": "minecraft:oak_planks"
-    },
-    {
-      "item": "minecraft:oak_planks"
-    },
-    {
-      "item": "minecraft:stick"
-    },
-    {
-      "item": "minecraft:stick"
-    }
+    "minecraft:oak_trapdoor",
+    "minecraft:oak_planks",
+    "minecraft:oak_planks",
+    "minecraft:stick",
+    "minecraft:stick"
   ],
   "result": {
     "id": "voxelized_furniture:oak_chair_1",

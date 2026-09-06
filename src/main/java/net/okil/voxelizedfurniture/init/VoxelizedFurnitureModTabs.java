@@ -1,243 +1,270 @@
 /*
- *    MCreator note: This file will be REGENERATED on each build.
+ *	MCreator note: This file will be REGENERATED on each build.
  */
 package net.okil.voxelizedfurniture.init;
 
 import net.okil.voxelizedfurniture.VoxelizedFurnitureMod;
 
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.DeferredHolder;
-
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
 
 public class VoxelizedFurnitureModTabs {
-	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, VoxelizedFurnitureMod.MODID);
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VF_LIVINGROOM = REGISTRY.register("vf_livingroom",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.vf_livingroom")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.CABINET_OAK.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_OAK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_BIRCH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_DARK_OAK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_ACACIA.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_MANGROVE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_CHERRY.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_JUNGLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_BAMBOO.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CABINET_SPRUCE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_SHELF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_CHAIR_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_ZEN_FOUNTAIN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TV.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.LAPTOP.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BARREL_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SEED_IN_POT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_DRAWER.get().asItem());
-			}).withSearchBar().build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> KITCHEN = REGISTRY.register("kitchen",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.kitchen")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.FRIDGE.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.FRIDGE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_1.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_SINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OVEN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OVEN_VENT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_CORNER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.PAN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.AIRFRYER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MICROWAVE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_WHITE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_BLUE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_BROWN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_CYAN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_GRAY.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_GREEN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_BLUE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_GRAY.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIME.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_MAGENTA.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_ORANGE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_PINK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_PURPLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_RED.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_YELLOW.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_OVEN_COOKTOP.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK.get().asItem());
-			}).withSearchBar().withTabsBefore(VF_LIVINGROOM.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> FOOD = REGISTRY.register("food",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.food")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.HONEY_JAR.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.JAM_JAR.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.HONEY_JAR.get().asItem());
-			}).withSearchBar().withTabsBefore(KITCHEN.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BATHROOM = REGISTRY.register("bathroom",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.bathroom")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.SHOWER.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.SHOWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SOAP.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL.get().asItem());
-			}).withSearchBar().withTabsBefore(FOOD.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> NATURE = REGISTRY.register("nature",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.nature")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.SEED_IN_POT.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.POTTED_GREEN_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_ZEN_FOUNTAIN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BARREL_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SEED_IN_POT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.YUCCA_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.WHEAT_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CACTUS_PLANT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_CLUSTER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SOFT_OAK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SOFT_PALE_OAK.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SOFT_DARK_OAK.get().asItem());
-			}).withSearchBar().withTabsBefore(BATHROOM.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> VF_ROADS = REGISTRY.register("vf_roads",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.vf_roads")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.ASPHALT.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.ASPHALT.get().asItem());
-			}).withSearchBar().withTabsBefore(NATURE.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BED_ROOM = REGISTRY.register("bed_room",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.bed_room")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.DOUBLE_BED.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.DOUBLE_BED.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SINGLE_BED.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_WARDROBE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DRAWER.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_DRAWER.get().asItem());
-			}).withSearchBar().withTabsBefore(VF_ROADS.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ELECTRICAL = REGISTRY.register("electrical",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.electrical")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.LIGHT.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.LIGHT.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.LIGHT_SWITCH_BUTTON.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_OFF.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CUBE_CEILING_LIGHT.get().asItem());
-			}).withSearchBar().withTabsBefore(BED_ROOM.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> OUTSIDE = REGISTRY.register("outside",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.outside")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_COBBLE_PATH.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.OAK_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DOORBELL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BRICKS.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_CRATE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.GRAY_WATERING_CAN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.BLUE_WATERING_CAN.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.GREEN_WATERING_CAN.get().asItem());
-			}).withSearchBar().withTabsBefore(ELECTRICAL.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GEODE = REGISTRY.register("geode",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.geode")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.AMETHYST_GEODE.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.AMETHYST_GEODE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.EMERALD_GEODE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.DIAMOND_GEODE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.REDSTONE_GEODE.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.KYANITE.get().asItem());
-			}).withSearchBar().withTabsBefore(OUTSIDE.getId()).build());
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MINIATURE = REGISTRY.register("miniature",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.voxelized_furniture.miniature")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL.get().asItem());
-				tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.get().asItem());
-			}).withSearchBar().withTabsBefore(GEODE.getId()).build());
+	public static ResourceKey<CreativeModeTab> TAB_VF_LIVINGROOM = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "vf_livingroom"));
+	public static ResourceKey<CreativeModeTab> TAB_KITCHEN = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "kitchen"));
+	public static ResourceKey<CreativeModeTab> TAB_FOOD = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "food"));
+	public static ResourceKey<CreativeModeTab> TAB_BATHROOM = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "bathroom"));
+	public static ResourceKey<CreativeModeTab> TAB_NATURE = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "nature"));
+	public static ResourceKey<CreativeModeTab> TAB_VF_ROADS = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "vf_roads"));
+	public static ResourceKey<CreativeModeTab> TAB_BED_ROOM = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "bed_room"));
+	public static ResourceKey<CreativeModeTab> TAB_ELECTRICAL = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "electrical"));
+	public static ResourceKey<CreativeModeTab> TAB_OUTSIDE = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "outside"));
+	public static ResourceKey<CreativeModeTab> TAB_GEODE = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "geode"));
+	public static ResourceKey<CreativeModeTab> TAB_MINIATURE = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, "miniature"));
+
+	public static void load() {
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_VF_LIVINGROOM,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.vf_livingroom")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.CABINET_OAK)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_OAK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_BIRCH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_DARK_OAK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_ACACIA.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_MANGROVE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_CHERRY.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_JUNGLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_BAMBOO.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CABINET_SPRUCE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_SHELF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_CHAIR_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_ZEN_FOUNTAIN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TV.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.LAPTOP.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BARREL_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SEED_IN_POT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_DRAWER.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_KITCHEN,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.kitchen")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.FRIDGE)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.FRIDGE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_1.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OVEN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OVEN_VENT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_DRAWER_CORNER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.KITCHEN_FRIDGE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.PAN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.AIRFRYER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MICROWAVE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_WHITE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_BLUE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_BROWN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_CYAN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_GRAY.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_GREEN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_BLUE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIGHT_GRAY.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_LIME.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_MAGENTA.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_ORANGE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_PINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_PURPLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_RED.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.TOASTER_YELLOW.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_OVEN_COOKTOP.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_EXHAUSTHOOD.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_CABINET_ABOVE.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_FOOD,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.food")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.HONEY_JAR)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.JAM_JAR.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.HONEY_JAR.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_BATHROOM,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.bathroom")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.SHOWER)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.SHOWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SOAP.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_TOILET_ROLL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_TOILET_ROLL.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_NATURE,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.nature")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.SEED_IN_POT)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.POTTED_GREEN_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.GOLDEN_ZEN_FOUNTAIN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.GREEN_BAMBOO_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BARREL_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SEED_IN_POT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.YUCCA_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.WHEAT_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CACTUS_PLANT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_CLUSTER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SOFT_OAK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SOFT_PALE_OAK.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SOFT_DARK_OAK.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_VF_ROADS,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.vf_roads")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.ASPHALT)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.ASPHALT.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_BED_ROOM,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.bed_room")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.DOUBLE_BED)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.DOUBLE_BED.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SINGLE_BED.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_WARDROBE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_PORCH_TABLE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DRAWER.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_DRAWER.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_ELECTRICAL,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.electrical")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.LIGHT)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.LIGHT.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.LIGHT_SWITCH_BUTTON.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MODERN_BULKHEAD_LIGHT_OFF.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CUBE_CEILING_LIGHT.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_OUTSIDE,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.outside")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_COBBLE_PATH.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.OAK_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SPRUCE_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MANGROVE_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.JUNGLE_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DARK_OAK_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.CHERRY_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BIRCH_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BAMBOO_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.ACACIA_DOORBELL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BRICKS.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.WOODEN_CRATE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.GRAY_WATERING_CAN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.BLUE_WATERING_CAN.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.GREEN_WATERING_CAN.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_GEODE,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.geode")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.AMETHYST_GEODE)).type(CreativeModeTab.Type.SEARCH)
+						.backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.AMETHYST_GEODE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.EMERALD_GEODE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.DIAMOND_GEODE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.REDSTONE_GEODE.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.KYANITE.asItem());
+						}).build());
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, TAB_MINIATURE,
+				CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item_group.voxelized_furniture.miniature")).icon(() -> new ItemStack(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL))
+						.type(CreativeModeTab.Type.SEARCH).backgroundTexture(Identifier.withDefaultNamespace("textures/gui/container/creative_inventory/tab_item_search.png")).displayItems((parameters, tabData) -> {
+							tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_RUINED_NETHER_PORTAL.asItem());
+							tabData.accept(VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.asItem());
+						}).build());
+	}
 }

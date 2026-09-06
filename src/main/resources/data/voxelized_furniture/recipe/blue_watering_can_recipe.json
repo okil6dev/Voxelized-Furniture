@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:light_blue_concrete"
-  },
+  "ingredient": "minecraft:light_blue_concrete",
   "result": {
     "id": "voxelized_furniture:blue_watering_can",
     "count": 1

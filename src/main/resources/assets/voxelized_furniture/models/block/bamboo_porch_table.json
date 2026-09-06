@@ -5,6 +5,5 @@
     "particle": "minecraft:block/stripped_bamboo_block",
     "0": "minecraft:block/anvil",
     "1": "minecraft:block/bamboo_planks"
-  },
-  "render_type": "translucent"
+  }
 }

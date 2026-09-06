@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/woodenovencooktoptable",
     "particle": "minecraft:block/stripped_oak_log",
     "3": "voxelized_furniture:block/woodenovencooktoptable"
-  },
-  "render_type": "solid"
+  }
 }

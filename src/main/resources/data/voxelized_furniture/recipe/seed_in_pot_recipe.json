@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:short_grass"
-    },
-    {
-      "tag": "minecraft:dirt"
-    },
-    {
-      "item": "minecraft:bricks"
-    }
+    "minecraft:short_grass",
+    "#minecraft:dirt",
+    "minecraft:bricks"
   ],
   "result": {
     "id": "voxelized_furniture:seed_in_pot",

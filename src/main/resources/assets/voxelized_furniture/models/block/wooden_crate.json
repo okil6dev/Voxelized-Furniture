@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/crate",
     "particle": "minecraft:block/stripped_oak_log",
     "0": "voxelized_furniture:block/crate"
-  },
-  "render_type": "cutout"
+  }
 }

@@ -1,9 +1,7 @@
 package net.okil.voxelizedfurniture.world.inventory;
 
+import net.okil.voxelizedfurniture.network.YuccaPlantSettingsGuiButtonMessage;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModMenus;
-
-import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.IItemHandler;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
@@ -14,8 +12,13 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.Container;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
+
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -35,18 +38,55 @@ public class YuccaPlantSettingsGuiMenu extends AbstractContainerMenu implements 
 	public final Player entity;
 	public int x, y, z;
 	private ContainerLevelAccess access = ContainerLevelAccess.NULL;
-	private IItemHandler internal;
+	private final Container inventory;
 	private final Map<Integer, Slot> customSlots = new HashMap<>();
 	private boolean bound = false;
 	private Supplier<Boolean> boundItemMatcher = null;
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
+	private ItemStack boundItem = null;
+
+	public YuccaPlantSettingsGuiMenu(int id, Inventory inv) {
+		this(id, inv, new SimpleContainer(0));
+		this.x = (int) inv.player.getX();
+		this.y = (int) inv.player.getY();
+		this.z = (int) inv.player.getZ();
+		access = ContainerLevelAccess.create(inv.player.level(), new BlockPos(x, y, z));
+	}
 
 	public YuccaPlantSettingsGuiMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(VoxelizedFurnitureModMenus.YUCCA_PLANT_SETTINGS_GUI.get(), id);
-		this.entity = inv.player;
-		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(0);
+		this(id, inv, resolveBlockContainer(inv, extraData), extraData);
+	}
+
+	private static Container resolveBlockContainer(Inventory inv, FriendlyByteBuf extraData) {
+		// The MenuType factory uses this constructor on both sides. Keep a temporary
+		// mirror on the client (slot sync populates it), but on the dedicated/integrated
+		// server bind procedure-opened GUIs to the real block inventory at the supplied
+		// position. This makes "Open GUI at x/y/z" persist items just like a GUI
+		// opened directly by its bound block entity.
+		if (extraData != null && !inv.player.level().isClientSide()) {
+			extraData.markReaderIndex();
+			try {
+				BlockPos pos = extraData.readBlockPos();
+				// Item/entity-bound internal opens append marker data after BlockPos. Only
+				// treat a buffer containing exactly the position as a block-bound open.
+				if (extraData.readableBytes() == 0) {
+					BlockEntity blockEntity = inv.player.level().getBlockEntity(pos);
+					if (blockEntity instanceof Container blockContainer && blockContainer.getContainerSize() >= 0) {
+						return blockContainer;
+					}
+				}
+			} catch (IndexOutOfBoundsException ignored) {
+				// Malformed/short extra data: fall back to a temporary GUI inventory.
+			} finally {
+				extraData.resetReaderIndex();
+			}
+		}
+		return new SimpleContainer(0);
+	}
+
+	public YuccaPlantSettingsGuiMenu(int id, Inventory inv, Container container, FriendlyByteBuf extraData) {
+		this(id, inv, container);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -55,6 +95,13 @@ public class YuccaPlantSettingsGuiMenu extends AbstractContainerMenu implements 
 			this.z = pos.getZ();
 			access = ContainerLevelAccess.create(world, pos);
 		}
+	}
+
+	public YuccaPlantSettingsGuiMenu(int id, Inventory inv, Container container) {
+		super(VoxelizedFurnitureModMenus.YUCCA_PLANT_SETTINGS_GUI, id);
+		this.entity = inv.player;
+		this.world = inv.player.level();
+		this.inventory = container;
 	}
 
 	@Override
@@ -67,7 +114,7 @@ public class YuccaPlantSettingsGuiMenu extends AbstractContainerMenu implements 
 			else if (this.boundEntity != null)
 				return this.boundEntity.isAlive();
 		}
-		return true;
+		return this.inventory.stillValid(player);
 	}
 
 	@Override
@@ -83,5 +130,10 @@ public class YuccaPlantSettingsGuiMenu extends AbstractContainerMenu implements 
 	@Override
 	public Map<String, Object> getMenuState() {
 		return menuState;
+	}
+
+	public static void screenInit() {
+		PayloadTypeRegistry.serverboundPlay().register(YuccaPlantSettingsGuiButtonMessage.TYPE, YuccaPlantSettingsGuiButtonMessage.STREAM_CODEC);
+		ServerPlayNetworking.registerGlobalReceiver(YuccaPlantSettingsGuiButtonMessage.TYPE, YuccaPlantSettingsGuiButtonMessage::handleData);
 	}
 }

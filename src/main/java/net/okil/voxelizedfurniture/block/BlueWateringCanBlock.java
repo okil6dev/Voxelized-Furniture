@@ -7,7 +7,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -24,19 +24,19 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class BlueWateringCanBlock extends Block {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty STATE = IntegerProperty.create("state", 0, 1);
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public BlueWateringCanBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SCAFFOLDING).strength(0.8f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public BlueWateringCanBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.SCAFFOLDING).strength(0.8f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(STATE, 0));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			if (state.getValue(STATE) == 1) {
 				return switch (state.getValue(FACING)) {
@@ -73,7 +73,7 @@ public class BlueWateringCanBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override

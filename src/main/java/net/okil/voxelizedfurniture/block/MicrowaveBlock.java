@@ -9,36 +9,38 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.function.Function;
 
 public class MicrowaveBlock extends Block implements SimpleWaterloggedBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final IntegerProperty STATE = IntegerProperty.create("state", 0, 1);
-	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public MicrowaveBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(3.5f, 4f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public MicrowaveBlock(BlockBehaviour.Properties properties) {
+		super(properties.sound(SoundType.METAL).strength(3.5f, 4f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(STATE, 0).setValue(WATERLOGGED, false));
 	}
 
-	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
+	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(1, 0, 4, 5, 9, 12), box(1, 8, 3.85, 5, 9, 4), box(1, 0, 3.85, 5, 2, 4), box(1, 9, 3.85, 5, 9.15, 6), box(2, 5, 3.5, 4, 7, 4), box(2.5, 3, 3.6, 3.5, 4, 4), box(5, 0, 4, 15, 2, 12), box(5, 8, 4, 14, 9, 12),
@@ -50,22 +52,22 @@ public class MicrowaveBlock extends Block implements SimpleWaterloggedBlock {
 				default -> Shapes.or(box(11, 0, 4, 15, 9, 12), box(11, 8, 12, 15, 9, 12.15), box(11, 0, 12, 15, 2, 12.15), box(11, 9, 10, 15, 9.15, 12.15), box(12, 5, 12, 14, 7, 12.5), box(12.5, 3, 12, 13.5, 4, 12.4), box(1, 0, 4, 11, 2, 12),
 						box(2, 8, 4, 11, 9, 12), box(3, 3, 11.75, 10, 7, 12), box(3, 2, 11.75, 10, 3, 12), box(2, 2, 11.75, 3, 8, 12), box(3, 7, 11.75, 10, 8, 12), box(10, 2, 11.75, 11, 8, 12), box(2, 2, 4, 11, 8, 5), box(1, 2, 4, 2, 9, 12));
 			};
-		});
+		}, WATERLOGGED);
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.get(state);
+		return shapes.apply(state);
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+	public boolean propagatesSkylightDown(BlockState state) {
 		return state.getFluidState().isEmpty();
 	}
 
 	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return propagatesSkylightDown(state, worldIn, pos) ? 0 : 1;
+	public int getLightDampening(BlockState state) {
+		return propagatesSkylightDown(state) ? 0 : 1;
 	}
 
 	@Override
@@ -102,11 +104,11 @@ public class MicrowaveBlock extends Block implements SimpleWaterloggedBlock {
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
+	public BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess scheduledTickAccess, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random) {
 		if (state.getValue(WATERLOGGED)) {
-			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+			scheduledTickAccess.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
-		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
+		return super.updateShape(state, world, scheduledTickAccess, currentPos, facing, facingPos, facingState, random);
 	}
 
 	@Override

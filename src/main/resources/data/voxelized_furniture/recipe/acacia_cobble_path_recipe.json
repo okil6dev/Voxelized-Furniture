@@ -6,15 +6,9 @@
     "bcb"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:acacia_fence"
-    },
-    "b": {
-      "tag": "minecraft:slabs"
-    },
-    "c": {
-      "tag": "c:stones"
-    }
+    "a": "minecraft:acacia_fence",
+    "b": "#minecraft:slabs",
+    "c": "#c:stones"
   },
   "result": {
     "id": "voxelized_furniture:acacia_cobble_path",

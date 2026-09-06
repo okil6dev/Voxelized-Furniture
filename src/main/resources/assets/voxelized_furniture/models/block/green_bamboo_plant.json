@@ -7,6 +7,5 @@
     "1": "minecraft:block/dirt",
     "2": "minecraft:block/bamboo_stage0",
     "3": "voxelized_furniture:block/bamboo_singleleaf_greener"
-  },
-  "render_type": "cutout_mipped"
+  }
 }

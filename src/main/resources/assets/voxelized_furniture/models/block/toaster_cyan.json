@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/cyan_toaster",
     "particle": "voxelized_furniture:block/cyan_toaster",
     "0": "voxelized_furniture:block/cyan_toaster"
-  },
-  "render_type": "solid"
+  }
 }

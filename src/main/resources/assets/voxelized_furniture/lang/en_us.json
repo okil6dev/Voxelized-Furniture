@@ -356,5 +356,21 @@
   "block.voxelized_furniture.wooden_kitchen_sink": "Wooden Kitchen Sink",
   "block.voxelized_furniture.soft_oak": "Soft Oak",
   "block.voxelized_furniture.soft_pale_oak": "Soft Pale Oak",
-  "block.voxelized_furniture.soft_dark_oak": "Soft Dark Oak"
+  "block.voxelized_furniture.soft_dark_oak": "Soft Dark Oak",
+  "block.voxelized_furniture.wooden_kitchen_exhausthood": "Wooden Kitchen Exhausthood",
+  "block.voxelized_furniture.wooden_kitchen_cabinet_above": "Wooden Kitchen Cabinet Above",
+  "gui.voxelized_furniture.ovencooktopgui.label_timeleft": "Timeleft",
+  "item.voxelized_furniture.wooden_crate": "Wooden Crate",
+  "item.voxelized_furniture.sack_of_soil": "Sack Of Soil",
+  "item.voxelized_furniture.gray_watering_can": "Gray Watering Can",
+  "item.voxelized_furniture.blue_watering_can": "Blue Watering Can",
+  "item.voxelized_furniture.green_watering_can": "Green Watering Can",
+  "item.voxelized_furniture.wooden_kitchen_drawer": "Wooden Kitchen Drawer",
+  "item.voxelized_furniture.wooden_oven_cooktop": "Wooden Oven Cooktop",
+  "item.voxelized_furniture.wooden_kitchen_sink": "Wooden Kitchen Sink",
+  "item.voxelized_furniture.soft_oak": "Soft Oak",
+  "item.voxelized_furniture.soft_pale_oak": "Soft Pale Oak",
+  "item.voxelized_furniture.soft_dark_oak": "Soft Dark Oak",
+  "item.voxelized_furniture.wooden_kitchen_exhausthood": "Wooden Kitchen Exhausthood",
+  "item.voxelized_furniture.wooden_kitchen_cabinet_above": "Wooden Kitchen Cabinet Above"
 }

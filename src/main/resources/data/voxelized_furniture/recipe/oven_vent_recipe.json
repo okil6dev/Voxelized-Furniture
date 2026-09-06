@@ -6,9 +6,7 @@
     "aaa"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:light_gray_concrete"
-    }
+    "a": "minecraft:light_gray_concrete"
   },
   "result": {
     "id": "voxelized_furniture:oven_vent",

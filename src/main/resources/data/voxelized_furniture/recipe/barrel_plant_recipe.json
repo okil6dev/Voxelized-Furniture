@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "minecraft:small_flowers"
-    },
-    {
-      "tag": "minecraft:dirt"
-    },
-    {
-      "item": "minecraft:barrel"
-    }
+    "#minecraft:small_flowers",
+    "#minecraft:dirt",
+    "minecraft:barrel"
   ],
   "result": {
     "id": "voxelized_furniture:barrel_plant",

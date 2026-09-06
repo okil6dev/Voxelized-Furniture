@@ -7,15 +7,9 @@
     "bbb"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:bamboo_block"
-    },
-    "b": {
-      "item": "minecraft:bamboo_planks"
-    },
-    "c": {
-      "item": "minecraft:stripped_bamboo_block"
-    }
+    "a": "minecraft:bamboo_block",
+    "b": "minecraft:bamboo_planks",
+    "c": "minecraft:stripped_bamboo_block"
   },
   "result": {
     "id": "voxelized_furniture:bamboo_sink",

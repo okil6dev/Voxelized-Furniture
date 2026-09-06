@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/oventex",
     "particle": "voxelized_furniture:block/fridgegray",
     "1": "voxelized_furniture:block/oventex"
-  },
-  "render_type": "solid"
+  }
 }

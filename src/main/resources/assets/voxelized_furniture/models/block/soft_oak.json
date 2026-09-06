@@ -3,6 +3,5 @@
   "textures": {
     "all": "voxelized_furniture:block/modernoakwood",
     "particle": "voxelized_furniture:block/modernoakwood"
-  },
-  "render_type": "solid"
+  }
 }

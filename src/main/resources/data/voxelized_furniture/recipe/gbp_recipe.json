@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "tag": "minecraft:dirt"
-    },
-    {
-      "item": "minecraft:green_concrete"
-    }
+    "minecraft:bamboo",
+    "#minecraft:dirt",
+    "minecraft:green_concrete"
   ],
   "result": {
     "id": "voxelized_furniture:green_bamboo_plant",

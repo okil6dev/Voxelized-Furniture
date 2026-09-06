@@ -6,15 +6,9 @@
     "bcb"
   ],
   "key": {
-    "a": {
-      "item": "minecraft:mangrove_fence"
-    },
-    "b": {
-      "tag": "minecraft:slabs"
-    },
-    "c": {
-      "tag": "c:stones"
-    }
+    "a": "minecraft:mangrove_fence",
+    "b": "#minecraft:slabs",
+    "c": "#c:stones"
   },
   "result": {
     "id": "voxelized_furniture:mangrove_cobble_path",

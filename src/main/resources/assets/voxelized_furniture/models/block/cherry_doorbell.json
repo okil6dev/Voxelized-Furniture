@@ -5,6 +5,5 @@
     "particle": "minecraft:block/cherry_planks",
     "0": "minecraft:block/stripped_cherry_log",
     "1": "minecraft:block/anvil"
-  },
-  "render_type": "solid"
+  }
 }

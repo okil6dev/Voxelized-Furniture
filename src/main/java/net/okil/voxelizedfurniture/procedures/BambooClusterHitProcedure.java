@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.server.level.ServerLevel;
@@ -24,19 +25,19 @@ public class BambooClusterHitProcedure {
 			if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "timeshit") instanceof IntegerProperty _getip4 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip4) : -1) == 1) {
 				if (Math.random() < 0.7) {
 					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.BAMBOO));
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BAMBOO));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
 					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.BAMBOO));
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BAMBOO));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}
 					world.setBlock(BlockPos.containing(x, y, z), Blocks.AIR.defaultBlockState(), 3);
 				} else {
 					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Blocks.BAMBOO));
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BAMBOO));
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);
 					}

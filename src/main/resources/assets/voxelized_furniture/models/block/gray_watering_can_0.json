@@ -6,6 +6,5 @@
     "0": "voxelized_furniture:block/graywatercan",
     "1": "voxelized_furniture:block/zen_water_still",
     "2": "voxelized_furniture:block/air2"
-  },
-  "render_type": "translucent"
+  }
 }

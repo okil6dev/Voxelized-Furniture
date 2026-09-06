@@ -7,33 +7,70 @@ import net.okil.voxelizedfurniture.world.inventory.*;
 import net.okil.voxelizedfurniture.network.MenuStateUpdateMessage;
 import net.okil.voxelizedfurniture.VoxelizedFurnitureMod;
 
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.network.PacketDistributor;
-import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
-
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
 import net.minecraft.client.Minecraft;
+
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 
 import java.util.Map;
 
 public class VoxelizedFurnitureModMenus {
-	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU, VoxelizedFurnitureMod.MODID);
-	public static final DeferredHolder<MenuType<?>, MenuType<CabinetsGuiMenu>> CABINETS_GUI = REGISTRY.register("cabinets_gui", () -> IMenuTypeExtension.create(CabinetsGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<FridgeGuiMenu>> FRIDGE_GUI = REGISTRY.register("fridge_gui", () -> IMenuTypeExtension.create(FridgeGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<ShelfGuiMenu>> SHELF_GUI = REGISTRY.register("shelf_gui", () -> IMenuTypeExtension.create(ShelfGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<WardrobeGuiMenu>> WARDROBE_GUI = REGISTRY.register("wardrobe_gui", () -> IMenuTypeExtension.create(WardrobeGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<KitchenCounterGuiMenu>> KITCHEN_COUNTER_GUI = REGISTRY.register("kitchen_counter_gui", () -> IMenuTypeExtension.create(KitchenCounterGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<SeedInPotSettingsMenu>> SEED_IN_POT_SETTINGS = REGISTRY.register("seed_in_pot_settings", () -> IMenuTypeExtension.create(SeedInPotSettingsMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<YuccaPlantSettingsGuiMenu>> YUCCA_PLANT_SETTINGS_GUI = REGISTRY.register("yucca_plant_settings_gui", () -> IMenuTypeExtension.create(YuccaPlantSettingsGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<WheatPlantSettingsGuiMenu>> WHEAT_PLANT_SETTINGS_GUI = REGISTRY.register("wheat_plant_settings_gui", () -> IMenuTypeExtension.create(WheatPlantSettingsGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<CactusPlantSettingsGuiMenu>> CACTUS_PLANT_SETTINGS_GUI = REGISTRY.register("cactus_plant_settings_gui", () -> IMenuTypeExtension.create(CactusPlantSettingsGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<DrawerGuiMenu>> DRAWER_GUI = REGISTRY.register("drawer_gui", () -> IMenuTypeExtension.create(DrawerGuiMenu::new));
-	public static final DeferredHolder<MenuType<?>, MenuType<CookingGuiMenu>> COOKING_GUI = REGISTRY.register("cooking_gui", () -> IMenuTypeExtension.create(CookingGuiMenu::new));
+	public static MenuType<CabinetsGuiMenu> CABINETS_GUI;
+	public static MenuType<FridgeGuiMenu> FRIDGE_GUI;
+	public static MenuType<ShelfGuiMenu> SHELF_GUI;
+	public static MenuType<WardrobeGuiMenu> WARDROBE_GUI;
+	public static MenuType<KitchenCounterGuiMenu> KITCHEN_COUNTER_GUI;
+	public static MenuType<SeedInPotSettingsMenu> SEED_IN_POT_SETTINGS;
+	public static MenuType<YuccaPlantSettingsGuiMenu> YUCCA_PLANT_SETTINGS_GUI;
+	public static MenuType<WheatPlantSettingsGuiMenu> WHEAT_PLANT_SETTINGS_GUI;
+	public static MenuType<CactusPlantSettingsGuiMenu> CACTUS_PLANT_SETTINGS_GUI;
+	public static MenuType<DrawerGuiMenu> DRAWER_GUI;
+	public static MenuType<CookingGuiMenu> COOKING_GUI;
+	public static MenuType<OvencooktopguiMenu> OVENCOOKTOPGUI;
+
+	public static void load() {
+		CABINETS_GUI = register("cabinets_gui", CabinetsGuiMenu::new);
+		CabinetsGuiMenu.screenInit();
+		FRIDGE_GUI = register("fridge_gui", FridgeGuiMenu::new);
+		FridgeGuiMenu.screenInit();
+		SHELF_GUI = register("shelf_gui", ShelfGuiMenu::new);
+		ShelfGuiMenu.screenInit();
+		WARDROBE_GUI = register("wardrobe_gui", WardrobeGuiMenu::new);
+		WardrobeGuiMenu.screenInit();
+		KITCHEN_COUNTER_GUI = register("kitchen_counter_gui", KitchenCounterGuiMenu::new);
+		KitchenCounterGuiMenu.screenInit();
+		SEED_IN_POT_SETTINGS = register("seed_in_pot_settings", SeedInPotSettingsMenu::new);
+		SeedInPotSettingsMenu.screenInit();
+		YUCCA_PLANT_SETTINGS_GUI = register("yucca_plant_settings_gui", YuccaPlantSettingsGuiMenu::new);
+		YuccaPlantSettingsGuiMenu.screenInit();
+		WHEAT_PLANT_SETTINGS_GUI = register("wheat_plant_settings_gui", WheatPlantSettingsGuiMenu::new);
+		WheatPlantSettingsGuiMenu.screenInit();
+		CACTUS_PLANT_SETTINGS_GUI = register("cactus_plant_settings_gui", CactusPlantSettingsGuiMenu::new);
+		CactusPlantSettingsGuiMenu.screenInit();
+		DRAWER_GUI = register("drawer_gui", DrawerGuiMenu::new);
+		DrawerGuiMenu.screenInit();
+		COOKING_GUI = register("cooking_gui", CookingGuiMenu::new);
+		CookingGuiMenu.screenInit();
+		OVENCOOKTOPGUI = register("ovencooktopgui", OvencooktopguiMenu::new);
+		OvencooktopguiMenu.screenInit();
+		PayloadTypeRegistry.serverboundPlay().register(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage.STREAM_CODEC);
+		ServerPlayNetworking.registerGlobalReceiver(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage::handleMenuState);
+	}
+
+	public static void clientLoad() {
+		PayloadTypeRegistry.clientboundPlay().register(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage.STREAM_CODEC);
+		ClientPlayNetworking.registerGlobalReceiver(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage::handleClientMenuState);
+	}
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
@@ -43,11 +80,11 @@ public class VoxelizedFurnitureModMenus {
 		default void sendMenuStateUpdate(Player player, int elementType, String name, Object elementState, boolean needClientUpdate) {
 			getMenuState().put(elementType + ":" + name, elementState);
 			if (player instanceof ServerPlayer serverPlayer) {
-				PacketDistributor.sendToPlayer(serverPlayer, new MenuStateUpdateMessage(elementType, name, elementState));
-			} else if (player.level().isClientSide) {
-				if (Minecraft.getInstance().screen instanceof VoxelizedFurnitureModScreens.ScreenAccessor accessor && needClientUpdate)
+				ServerPlayNetworking.send(serverPlayer, new MenuStateUpdateMessage(elementType, name, elementState));
+			} else if (player.level().isClientSide()) {
+				if (Minecraft.getInstance().gui.screen() instanceof VoxelizedFurnitureModScreens.FabricScreenAccessor accessor && needClientUpdate)
 					accessor.updateMenuState(elementType, name, elementState);
-				PacketDistributor.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
+				ClientPlayNetworking.send(new MenuStateUpdateMessage(elementType, name, elementState));
 			}
 		}
 
@@ -58,5 +95,9 @@ public class VoxelizedFurnitureModMenus {
 				return defaultValue;
 			}
 		}
+	}
+
+	private static <M extends AbstractContainerMenu> MenuType<M> register(String registryname, MenuType.MenuSupplier<M> element) {
+		return Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, registryname), new MenuType<>(element, FeatureFlags.DEFAULT_FLAGS));
 	}
 }

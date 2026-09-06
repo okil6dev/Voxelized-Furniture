@@ -4,6 +4,5 @@
     "all": "voxelized_furniture:block/greenwatercan",
     "particle": "voxelized_furniture:block/greenwatercan",
     "0": "voxelized_furniture:block/greenwatercan"
-  },
-  "render_type": "translucent"
+  }
 }
