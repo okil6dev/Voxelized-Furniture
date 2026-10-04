@@ -8,10 +8,6 @@ import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.multiplayer.ClientLevel;
 
-import net.fabricmc.api.Environment;
-import net.fabricmc.api.EnvType;
-
-@Environment(EnvType.CLIENT)
 public class ShowerPParticle extends SingleQuadParticle {
 	public static ShowerPParticleProvider provider(SpriteSet spriteSet) {
 		return new ShowerPParticleProvider(spriteSet);

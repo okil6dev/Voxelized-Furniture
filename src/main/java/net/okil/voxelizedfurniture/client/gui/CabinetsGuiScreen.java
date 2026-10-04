@@ -13,7 +13,9 @@ import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 
-public class CabinetsGuiScreen extends AbstractContainerScreen<CabinetsGuiMenu> implements VoxelizedFurnitureModScreens.FabricScreenAccessor {
+import com.mojang.blaze3d.platform.InputConstants;
+
+public class CabinetsGuiScreen extends AbstractContainerScreen<CabinetsGuiMenu> implements VoxelizedFurnitureModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
@@ -50,7 +52,7 @@ public class CabinetsGuiScreen extends AbstractContainerScreen<CabinetsGuiMenu> 
 
 	@Override
 	public boolean keyPressed(KeyEvent event) {
-		int key = event.key();
+		int key = InputConstants.getKey(event).getValue();
 		if (key == 256) {
 			this.minecraft.player.closeContainer();
 			return true;

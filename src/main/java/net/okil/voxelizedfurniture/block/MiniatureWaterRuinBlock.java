@@ -2,6 +2,8 @@ package net.okil.voxelizedfurniture.block;
 
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
 
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -18,8 +20,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.color.block.BlockTintSources;
-
-import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 
 import java.util.function.Function;
 import java.util.List;
@@ -76,7 +76,7 @@ public class MiniatureWaterRuinBlock extends Block {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
 	}
 
-	public static void blockColorLoad() {
-		BlockColorRegistry.register(List.of(BlockTintSources.foliage()), VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN);
+	public static void blockColorLoad(RegisterColorHandlersEvent.BlockTintSources event) {
+		event.getBlockColors().register(List.of(BlockTintSources.foliage()), VoxelizedFurnitureModBlocks.MINIATURE_WATER_RUIN.get());
 	}
 }

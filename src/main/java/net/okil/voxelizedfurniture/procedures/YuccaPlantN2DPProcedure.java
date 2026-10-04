@@ -18,7 +18,7 @@ public class YuccaPlantN2DPProcedure {
 			return;
 		Direction Rotation = Direction.NORTH;
 		Rotation = getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z))));
-		world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.YUCCA_PLANT.defaultBlockState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), VoxelizedFurnitureModBlocks.YUCCA_PLANT.get().defaultBlockState(), 3);
 		{
 			Direction _dir = Rotation;
 			BlockPos _pos = BlockPos.containing(x, y, z);
@@ -30,7 +30,7 @@ public class YuccaPlantN2DPProcedure {
 			}
 		}
 		if (entity instanceof Player _player)
-			_player.containerMenu = _player.inventoryMenu;
+			_player.closeContainer();
 	}
 
 	private static Direction getDirectionFromBlockState(BlockState blockState) {

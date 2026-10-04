@@ -1,7 +1,5 @@
 package net.okil.voxelizedfurniture.block.entity;
 
-import org.jetbrains.annotations.Nullable;
-
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlockEntities;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -22,13 +20,15 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import javax.annotation.Nullable;
+
 import java.util.stream.IntStream;
 
 public class CherryPorchTableBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(9, ItemStack.EMPTY);
 
 	public CherryPorchTableBlockEntity(BlockPos position, BlockState state) {
-		super(VoxelizedFurnitureModBlockEntities.CHERRY_PORCH_TABLE, position, state);
+		super(VoxelizedFurnitureModBlockEntities.CHERRY_PORCH_TABLE.get(), position, state);
 	}
 
 	@Override

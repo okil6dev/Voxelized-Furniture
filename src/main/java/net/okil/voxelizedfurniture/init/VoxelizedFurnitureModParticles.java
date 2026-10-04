@@ -1,17 +1,19 @@
 /*
- *	MCreator note: This file will be REGENERATED on each build.
+ *    MCreator note: This file will be REGENERATED on each build.
  */
 package net.okil.voxelizedfurniture.init;
 
 import net.okil.voxelizedfurniture.client.particle.ShowerPParticle;
 
-import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
-import net.fabricmc.api.Environment;
-import net.fabricmc.api.EnvType;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
 
-@Environment(EnvType.CLIENT)
+@EventBusSubscriber(Dist.CLIENT)
 public class VoxelizedFurnitureModParticles {
-	public static void clientLoad() {
-		ParticleProviderRegistry.getInstance().register(VoxelizedFurnitureModParticleTypes.SHOWER_P, ShowerPParticle::provider);
+	@SubscribeEvent
+	public static void registerParticles(RegisterParticleProvidersEvent event) {
+		event.registerSpriteSet(VoxelizedFurnitureModParticleTypes.SHOWER_P.get(), ShowerPParticle::provider);
 	}
 }

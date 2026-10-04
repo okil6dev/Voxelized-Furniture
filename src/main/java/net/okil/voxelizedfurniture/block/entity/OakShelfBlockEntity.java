@@ -1,7 +1,5 @@
 package net.okil.voxelizedfurniture.block.entity;
 
-import org.jetbrains.annotations.Nullable;
-
 import net.okil.voxelizedfurniture.world.inventory.ShelfGuiMenu;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlockEntities;
 
@@ -23,6 +21,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import javax.annotation.Nullable;
+
 import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
@@ -31,7 +31,7 @@ public class OakShelfBlockEntity extends RandomizableContainerBlockEntity implem
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(5, ItemStack.EMPTY);
 
 	public OakShelfBlockEntity(BlockPos position, BlockState state) {
-		super(VoxelizedFurnitureModBlockEntities.OAK_SHELF, position, state);
+		super(VoxelizedFurnitureModBlockEntities.OAK_SHELF.get(), position, state);
 	}
 
 	@Override
@@ -79,7 +79,7 @@ public class OakShelfBlockEntity extends RandomizableContainerBlockEntity implem
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new ShelfGuiMenu(id, inventory, this, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new ShelfGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override

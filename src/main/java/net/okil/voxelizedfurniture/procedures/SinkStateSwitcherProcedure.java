@@ -23,8 +23,8 @@ public class SinkStateSwitcherProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.KITCHEN_SINK)) {
-			if (!((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK)) {
+		if (!((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.KITCHEN_SINK.get())) {
+			if (!((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK.get())) {
 				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip5 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip5) : -1) == 0) {
 					{
 						int _value = 1;
@@ -42,7 +42,7 @@ public class SinkStateSwitcherProcedure {
 							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 					}
 				}
-			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.WOODEN_KITCHEN_SINK.get()) {
 				if (!entity.isShiftKeyDown()) {
 					if (entity instanceof ServerPlayer _ent) {
 						BlockPos _bpos = BlockPos.containing(x, y, z);
@@ -53,7 +53,7 @@ public class SinkStateSwitcherProcedure {
 							}
 
 							@Override
-							public boolean shouldCloseCurrentScreen() {
+							public boolean shouldTriggerClientSideContainerClosingOnOpen() {
 								return false;
 							}
 
@@ -61,7 +61,7 @@ public class SinkStateSwitcherProcedure {
 							public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
 								return new KitchenCounterGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 							}
-						});
+						}, _bpos);
 					}
 				} else if (entity.isShiftKeyDown()) {
 					if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip16 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip16) : -1) == 0) {
@@ -83,7 +83,7 @@ public class SinkStateSwitcherProcedure {
 					}
 				}
 			}
-		} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.KITCHEN_SINK) {
+		} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == VoxelizedFurnitureModBlocks.KITCHEN_SINK.get()) {
 			if (!entity.isShiftKeyDown()) {
 				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = BlockPos.containing(x, y, z);
@@ -94,7 +94,7 @@ public class SinkStateSwitcherProcedure {
 						}
 
 						@Override
-						public boolean shouldCloseCurrentScreen() {
+						public boolean shouldTriggerClientSideContainerClosingOnOpen() {
 							return false;
 						}
 
@@ -102,7 +102,7 @@ public class SinkStateSwitcherProcedure {
 						public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
 							return new KitchenCounterGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 						}
-					});
+					}, _bpos);
 				}
 			} else if (entity.isShiftKeyDown()) {
 				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip27 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip27) : -1) == 0) {

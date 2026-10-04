@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/spruce_diningboard",
+  "textures": {
+    "all": "voxelized_furniture:block/spruce_diningboard",
+    "particle": "minecraft:block/stripped_spruce_log",
+    "0": "voxelized_furniture:block/spruce_diningboard"
+  }
+}

@@ -5,9 +5,9 @@ import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,10 +22,10 @@ public class SoilsackstateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VoxelizedFurnitureModBlocks.SACK_OF_SOIL.asItem()) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get().asItem()) {
 			if (!(entity.isShiftKeyDown() == true)) {
 				if (!((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip4 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip4) : -1) == 7)) {
-					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VoxelizedFurnitureModBlocks.SACK_OF_SOIL.asItem()) {
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get().asItem()) {
 						{
 							int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip8 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip8) : -1) + 1;
 							BlockPos _pos = BlockPos.containing(x, y, z);
@@ -34,7 +34,7 @@ public class SoilsackstateProcedure {
 								world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 						}
 						if (entity instanceof LivingEntity _entity) {
-							ItemStack _setstack12 = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL).copy();
+							ItemStack _setstack12 = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 							_setstack12.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
 							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack12);
 							if (_entity instanceof Player _player)
@@ -47,7 +47,7 @@ public class SoilsackstateProcedure {
 								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
 							}
 						}
-					} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.AIR) {
+					} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
 						{
 							int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip17 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip17) : -1) + 1;
 							BlockPos _pos = BlockPos.containing(x, y, z);
@@ -56,7 +56,7 @@ public class SoilsackstateProcedure {
 								world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 						}
 						if (entity instanceof LivingEntity _entity) {
-							ItemStack _setstack21 = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL).copy();
+							ItemStack _setstack21 = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 							_setstack21.setCount((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount() - 1);
 							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack21);
 							if (_entity instanceof Player _player)
@@ -69,7 +69,7 @@ public class SoilsackstateProcedure {
 								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
 							}
 						}
-					} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.AIR)) {
+					} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
 						{
 							int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "state") instanceof IntegerProperty _getip26 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip26) : -1) + 1;
 							BlockPos _pos = BlockPos.containing(x, y, z);
@@ -78,7 +78,7 @@ public class SoilsackstateProcedure {
 								world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 						}
 						if (entity instanceof Player _player) {
-							ItemStack _stktoremove = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL);
+							ItemStack _stktoremove = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get());
 							_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
 						}
 						if (world instanceof Level _level) {
@@ -99,9 +99,9 @@ public class SoilsackstateProcedure {
 								world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 						}
 						if (entity instanceof Player _player) {
-							ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL).copy();
+							ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 							_setstack.setCount(1);
-							_player.addItem(_setstack);
+							_player.getInventory().placeItemBackInInventory(_setstack);
 						}
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
@@ -122,9 +122,9 @@ public class SoilsackstateProcedure {
 							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL).copy();
+						ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 						_setstack.setCount(1);
-						_player.addItem(_setstack);
+						_player.getInventory().placeItemBackInInventory(_setstack);
 					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
@@ -145,9 +145,9 @@ public class SoilsackstateProcedure {
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
 				if (entity instanceof Player _player) {
-					ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL).copy();
+					ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 					_setstack.setCount(1);
-					_player.addItem(_setstack);
+					_player.getInventory().placeItemBackInInventory(_setstack);
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

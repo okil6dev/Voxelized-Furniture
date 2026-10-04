@@ -4,6 +4,8 @@ import net.okil.voxelizedfurniture.world.inventory.CactusPlantSettingsGuiMenu;
 import net.okil.voxelizedfurniture.network.CactusPlantSettingsGuiButtonMessage;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModScreens;
 
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,9 +17,9 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import com.mojang.blaze3d.platform.InputConstants;
 
-public class CactusPlantSettingsGuiScreen extends AbstractContainerScreen<CactusPlantSettingsGuiMenu> implements VoxelizedFurnitureModScreens.FabricScreenAccessor {
+public class CactusPlantSettingsGuiScreen extends AbstractContainerScreen<CactusPlantSettingsGuiMenu> implements VoxelizedFurnitureModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
@@ -54,7 +56,7 @@ public class CactusPlantSettingsGuiScreen extends AbstractContainerScreen<Cactus
 
 	@Override
 	public boolean keyPressed(KeyEvent event) {
-		int key = event.key();
+		int key = InputConstants.getKey(event).getValue();
 		if (key == 256) {
 			this.minecraft.player.closeContainer();
 			return true;
@@ -73,10 +75,8 @@ public class CactusPlantSettingsGuiScreen extends AbstractContainerScreen<Cactus
 			int x = CactusPlantSettingsGuiScreen.this.x;
 			int y = CactusPlantSettingsGuiScreen.this.y;
 			if (true) {
-				// GUI button procedures must execute on the server only.
-				// The packet handler runs the procedure server-side; executing it here as well
-				// causes client/server inventory desynchronization for procedures that modify slots.
-				ClientPlayNetworking.send(new CactusPlantSettingsGuiButtonMessage(0, x, y, z));
+				ClientPacketDistributor.sendToServer(new CactusPlantSettingsGuiButtonMessage(0, x, y, z));
+				CactusPlantSettingsGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 6, this.topPos + 4, 72, 20).build();
 		this.addRenderableWidget(button_normal_2d);
@@ -84,10 +84,8 @@ public class CactusPlantSettingsGuiScreen extends AbstractContainerScreen<Cactus
 			int x = CactusPlantSettingsGuiScreen.this.x;
 			int y = CactusPlantSettingsGuiScreen.this.y;
 			if (true) {
-				// GUI button procedures must execute on the server only.
-				// The packet handler runs the procedure server-side; executing it here as well
-				// causes client/server inventory desynchronization for procedures that modify slots.
-				ClientPlayNetworking.send(new CactusPlantSettingsGuiButtonMessage(1, x, y, z));
+				ClientPacketDistributor.sendToServer(new CactusPlantSettingsGuiButtonMessage(1, x, y, z));
+				CactusPlantSettingsGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}).bounds(this.leftPos + 6, this.topPos + 24, 72, 20).build();
 		this.addRenderableWidget(button_random_2d);

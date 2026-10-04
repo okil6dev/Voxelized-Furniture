@@ -6215,9 +6215,9 @@
       "registry_name": "bambooclusterfeature",
       "metadata": {
         "files": [
-          "src/main/java/net/okil/voxelizedfurniture/world/features/BambooclusterfeatureFeature.java",
           "src/main/resources/data/voxelized_furniture/worldgen/placed_feature/bambooclusterfeature.json",
-          "src/main/resources/data/voxelized_furniture/worldgen/configured_feature/bambooclusterfeature.json"
+          "src/main/resources/data/voxelized_furniture/worldgen/configured_feature/bambooclusterfeature.json",
+          "src/main/resources/data/voxelized_furniture/neoforge/biome_modifier/bambooclusterfeature_biome_modifier.json"
         ]
       },
       "path": "~/Nature/Plants"
@@ -7521,6 +7521,260 @@
         ]
       },
       "path": "~/Kitchen/Wooden"
+    },
+    {
+      "name": "RightClicklight",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right_clicklight",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/RightClicklightProcedure.java"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "PathwayLight",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pathway_light",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/items/pathway_light.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/pathway_light.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/PathwayLightBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/pathway_light.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/pathway_light_0.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/pathway_light.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/pathway_light.json"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "Lightlevel6state",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightlevel_6state",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/Lightlevel6stateProcedure.java"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "Lightlevel3state",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightlevel_3state",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/procedures/Lightlevel3stateProcedure.java"
+        ]
+      },
+      "path": "~/Electrical/Light"
+    },
+    {
+      "name": "OakDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oak_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/oak_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/oak_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/items/oak_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/OakDiningBoardBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/oak_dining_board.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/oak_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "SpruceDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spruce_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/spruce_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/spruce_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/spruce_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/spruce_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/SpruceDiningBoardBlock.java",
+          "src/main/resources/assets/voxelized_furniture/items/spruce_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "BirchDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "birch_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/block/birch_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/items/birch_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/birch_dining_board.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/birch_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/birch_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/BirchDiningBoardBlock.java"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "JungleDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/jungle_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/items/jungle_dining_board.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/jungle_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/jungle_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/JungleDiningBoardBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/jungle_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "AcaciaDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "acacia_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/blockstates/acacia_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/acacia_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/AcaciaDiningBoardBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/acacia_dining_board.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/acacia_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/items/acacia_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "DarkOakDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_oak_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/dark_oak_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/dark_oak_dining_board.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/dark_oak_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/DarkOakDiningBoardBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/dark_oak_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/items/dark_oak_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "MangroveDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mangrove_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/items/mangrove_dining_board.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/mangrove_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/mangrove_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/mangrove_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/MangroveDiningBoardBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/item/mangrove_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "CherryDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cherry_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/voxelized_furniture/models/item/cherry_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/items/cherry_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/block/cherry_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/CherryDiningBoardBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/blockstates/cherry_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/CherryDiningBoardBlock.java",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/cherry_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
+    },
+    {
+      "name": "BambooDiningBoard",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bamboo_dining_board",
+      "metadata": {
+        "files": [
+          "src/main/java/net/okil/voxelizedfurniture/block/BambooDiningBoardBlock.java",
+          "src/main/resources/assets/voxelized_furniture/models/block/bamboo_dining_board.json",
+          "src/main/java/net/okil/voxelizedfurniture/block/entity/BambooDiningBoardBlockEntity.java",
+          "src/main/resources/assets/voxelized_furniture/items/bamboo_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/blockstates/bamboo_dining_board.json",
+          "src/main/resources/data/voxelized_furniture/loot_table/blocks/bamboo_dining_board.json",
+          "src/main/resources/assets/voxelized_furniture/models/item/bamboo_dining_board.json"
+        ]
+      },
+      "path": "~/Kitchen/Dining Boards"
     }
   ],
   "variable_elements": [
@@ -7553,6 +7807,15 @@
       "TAG:minecraft:coals"
     ],
     "BLOCKS:minecraft:mineable/axe": [
+      "~BambooDiningBoard@CUSTOM:BambooDiningBoard",
+      "~CherryDiningBoard@CUSTOM:CherryDiningBoard",
+      "~MangroveDiningBoard@CUSTOM:MangroveDiningBoard",
+      "~DarkOakDiningBoard@CUSTOM:DarkOakDiningBoard",
+      "~AcaciaDiningBoard@CUSTOM:AcaciaDiningBoard",
+      "~JungleDiningBoard@CUSTOM:JungleDiningBoard",
+      "~BirchDiningBoard@CUSTOM:BirchDiningBoard",
+      "~SpruceDiningBoard@CUSTOM:SpruceDiningBoard",
+      "~OakDiningBoard@CUSTOM:OakDiningBoard",
       "~WoodenKitchenCabinetAbove@CUSTOM:WoodenKitchenCabinetAbove",
       "~WoodenKitchenExhausthood@CUSTOM:WoodenKitchenExhausthood",
       "~SoftDarkOak@CUSTOM:SoftDarkOak",
@@ -8089,7 +8352,18 @@
       "item.voxelized_furniture.soft_pale_oak": "Soft Pale Oak",
       "item.voxelized_furniture.soft_dark_oak": "Soft Dark Oak",
       "item.voxelized_furniture.wooden_kitchen_exhausthood": "Wooden Kitchen Exhausthood",
-      "item.voxelized_furniture.wooden_kitchen_cabinet_above": "Wooden Kitchen Cabinet Above"
+      "item.voxelized_furniture.wooden_kitchen_cabinet_above": "Wooden Kitchen Cabinet Above",
+      "block.voxelized_furniture.outdoor_light": "Outdoor Light",
+      "item.voxelized_furniture.pathway_light": "Pathway Light",
+      "item.voxelized_furniture.oak_dining_board": "Oak Dining Board",
+      "item.voxelized_furniture.spruce_dining_board": "Spruce Dining Board",
+      "item.voxelized_furniture.birch_dining_board": "Birch Dining Board",
+      "item.voxelized_furniture.jungle_dining_board": "Jungle Dining Board",
+      "item.voxelized_furniture.acacia_dining_board": "Acacia Dining Board",
+      "item.voxelized_furniture.dark_oak_dining_board": "Dark Oak Dining Board",
+      "item.voxelized_furniture.mangrove_dining_board": "Mangrove Dining Board",
+      "item.voxelized_furniture.cherry_dining_board": "Cherry Dining Board",
+      "item.voxelized_furniture.bamboo_dining_board": "Bamboo Dining Board"
     }
   },
   "metadata": {
@@ -8102,34 +8376,17 @@
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModBlocks.java",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModBlockEntities.java",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModItems.java",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/ServerPlayerMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/RepairItemRecipeMixin.java",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModEntityRenderers.java",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModEntities.java",
-      "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModFeatures.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModTabs.java",
-      "src/main/resources/voxelized_furniture.mixins.json",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/PlayerMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/BlockItemMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/ExperienceOrbMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/VoxelizedFurnitureMod.java",
-      "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModSounds.java",
-      "src/main/java/net/okil/voxelizedfurniture/event/LivingEntityEvents.java",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/LivingEntityMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/CommandsMixin.java",
-      "src/main/resources/pack.mcmeta",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/ItemStackMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/event/PlayerEvents.java",
-      "src/main/java/net/okil/voxelizedfurniture/mixin/BoneMealItemMixin.java",
-      "src/main/java/net/okil/voxelizedfurniture/event/MiscEvents.java",
+      "src/main/resources/META-INF/accesstransformer.cfg",
       "src/main/resources/assets/voxelized_furniture/sounds.json",
       "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModModels.java",
+      "src/main/java/net/okil/voxelizedfurniture/VoxelizedFurnitureMod.java",
       "src/main/java/net/okil/voxelizedfurniture/network/VoxelizedFurnitureModVariables.java",
-      "src/main/resources/META-INF/voxelized_furniture.classtweaker",
-      "src/main/java/net/okil/voxelizedfurniture/event/BlockEvents.java",
-      "src/main/java/net/okil/voxelizedfurniture/VoxelizedFurnitureModClient.java",
-      "src/main/java/net/okil/voxelizedfurniture/event/ItemEvents.java",
-      "src/main/resources/fabric.mod.json"
+      "src/main/java/net/okil/voxelizedfurniture/init/VoxelizedFurnitureModSounds.java",
+      "src/main/resources/pack.mcmeta"
     ]
   },
   "foldersRoot": {
@@ -8215,6 +8472,10 @@
           },
           {
             "name": "Wooden",
+            "children": []
+          },
+          {
+            "name": "Dining Boards",
             "children": []
           }
         ]
@@ -8308,7 +8569,7 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "fabric-26.2",
+    "currentGenerator": "neoforge-26.1.2",
     "credits": "Made by okil6",
     "modElementsPackage": "net.okil.voxelizedfurniture"
   },

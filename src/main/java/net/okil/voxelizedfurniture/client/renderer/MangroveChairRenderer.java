@@ -8,10 +8,6 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-import net.fabricmc.api.Environment;
-import net.fabricmc.api.EnvType;
-
-@Environment(EnvType.CLIENT)
 public class MangroveChairRenderer extends MobRenderer<MangroveChairEntity, LivingEntityRenderState, chair_mangrove> {
 	private final Identifier entityTexture = Identifier.parse("voxelized_furniture:textures/entities/stripped_mangrove_log.png");
 

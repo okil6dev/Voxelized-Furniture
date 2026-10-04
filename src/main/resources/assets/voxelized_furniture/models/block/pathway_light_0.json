@@ -1,0 +1,8 @@
+{
+  "parent": "voxelized_furniture:custom/outdoorlight",
+  "textures": {
+    "all": "voxelized_furniture:block/outdoorlight",
+    "particle": "minecraft:block/black_concrete_powder",
+    "0": "voxelized_furniture:block/outdoorlighton"
+  }
+}

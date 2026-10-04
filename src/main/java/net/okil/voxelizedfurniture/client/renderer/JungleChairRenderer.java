@@ -8,10 +8,6 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-import net.fabricmc.api.Environment;
-import net.fabricmc.api.EnvType;
-
-@Environment(EnvType.CLIENT)
 public class JungleChairRenderer extends MobRenderer<JungleChairEntity, LivingEntityRenderState, chair_jungle> {
 	private final Identifier entityTexture = Identifier.parse("voxelized_furniture:textures/entities/stripped_jungle_log.png");
 

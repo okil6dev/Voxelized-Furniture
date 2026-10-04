@@ -28,7 +28,7 @@ public class MiniatureRuinedNetherPortalBlock extends Block implements SimpleWat
 	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
 	public MiniatureRuinedNetherPortalBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.NETHERRACK).strength(0.4f, 1f).requiresCorrectToolForDrops().noOcclusion().postProcess((bs, br, bp) -> bp).emissiveRendering(bs -> true).isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.sound(SoundType.NETHERRACK).strength(0.4f, 1f).requiresCorrectToolForDrops().noOcclusion().postProcess((bs, br, bp) -> bp).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
 

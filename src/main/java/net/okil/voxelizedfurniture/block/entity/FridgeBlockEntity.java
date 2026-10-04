@@ -1,7 +1,5 @@
 package net.okil.voxelizedfurniture.block.entity;
 
-import org.jetbrains.annotations.Nullable;
-
 import net.okil.voxelizedfurniture.world.inventory.FridgeGuiMenu;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlockEntities;
 
@@ -23,6 +21,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import javax.annotation.Nullable;
+
 import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
@@ -31,7 +31,7 @@ public class FridgeBlockEntity extends RandomizableContainerBlockEntity implemen
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(39, ItemStack.EMPTY);
 
 	public FridgeBlockEntity(BlockPos position, BlockState state) {
-		super(VoxelizedFurnitureModBlockEntities.FRIDGE, position, state);
+		super(VoxelizedFurnitureModBlockEntities.FRIDGE.get(), position, state);
 	}
 
 	@Override
@@ -84,7 +84,7 @@ public class FridgeBlockEntity extends RandomizableContainerBlockEntity implemen
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new FridgeGuiMenu(id, inventory, this, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new FridgeGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override

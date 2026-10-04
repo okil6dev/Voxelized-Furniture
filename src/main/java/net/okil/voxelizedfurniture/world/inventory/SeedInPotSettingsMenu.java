@@ -1,7 +1,11 @@
 package net.okil.voxelizedfurniture.world.inventory;
 
-import net.okil.voxelizedfurniture.network.SeedInPotSettingsButtonMessage;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModMenus;
+
+import net.neoforged.neoforge.transfer.transaction.Transaction;
+import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.ResourceHandler;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
@@ -12,13 +16,9 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.Container;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
-
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -38,55 +38,18 @@ public class SeedInPotSettingsMenu extends AbstractContainerMenu implements Voxe
 	public final Player entity;
 	public int x, y, z;
 	private ContainerLevelAccess access = ContainerLevelAccess.NULL;
-	private final Container inventory;
+	private ResourceHandler<ItemResource> internal;
 	private final Map<Integer, Slot> customSlots = new HashMap<>();
 	private boolean bound = false;
 	private Supplier<Boolean> boundItemMatcher = null;
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
-	private ItemStack boundItem = null;
-
-	public SeedInPotSettingsMenu(int id, Inventory inv) {
-		this(id, inv, new SimpleContainer(0));
-		this.x = (int) inv.player.getX();
-		this.y = (int) inv.player.getY();
-		this.z = (int) inv.player.getZ();
-		access = ContainerLevelAccess.create(inv.player.level(), new BlockPos(x, y, z));
-	}
 
 	public SeedInPotSettingsMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		this(id, inv, resolveBlockContainer(inv, extraData), extraData);
-	}
-
-	private static Container resolveBlockContainer(Inventory inv, FriendlyByteBuf extraData) {
-		// The MenuType factory uses this constructor on both sides. Keep a temporary
-		// mirror on the client (slot sync populates it), but on the dedicated/integrated
-		// server bind procedure-opened GUIs to the real block inventory at the supplied
-		// position. This makes "Open GUI at x/y/z" persist items just like a GUI
-		// opened directly by its bound block entity.
-		if (extraData != null && !inv.player.level().isClientSide()) {
-			extraData.markReaderIndex();
-			try {
-				BlockPos pos = extraData.readBlockPos();
-				// Item/entity-bound internal opens append marker data after BlockPos. Only
-				// treat a buffer containing exactly the position as a block-bound open.
-				if (extraData.readableBytes() == 0) {
-					BlockEntity blockEntity = inv.player.level().getBlockEntity(pos);
-					if (blockEntity instanceof Container blockContainer && blockContainer.getContainerSize() >= 0) {
-						return blockContainer;
-					}
-				}
-			} catch (IndexOutOfBoundsException ignored) {
-				// Malformed/short extra data: fall back to a temporary GUI inventory.
-			} finally {
-				extraData.resetReaderIndex();
-			}
-		}
-		return new SimpleContainer(0);
-	}
-
-	public SeedInPotSettingsMenu(int id, Inventory inv, Container container, FriendlyByteBuf extraData) {
-		this(id, inv, container);
+		super(VoxelizedFurnitureModMenus.SEED_IN_POT_SETTINGS.get(), id);
+		this.entity = inv.player;
+		this.world = inv.player.level();
+		this.internal = new ItemStacksResourceHandler(0);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -97,11 +60,20 @@ public class SeedInPotSettingsMenu extends AbstractContainerMenu implements Voxe
 		}
 	}
 
-	public SeedInPotSettingsMenu(int id, Inventory inv, Container container) {
-		super(VoxelizedFurnitureModMenus.SEED_IN_POT_SETTINGS, id);
-		this.entity = inv.player;
-		this.world = inv.player.level();
-		this.inventory = container;
+	private void setItemInSlot(int index, ItemResource resource, int amount) {
+		if (internal instanceof ItemStacksResourceHandler handler) {
+			handler.set(index, resource, amount);
+		} else if (boundBlockEntity instanceof Container container) {
+			container.setItem(index, resource.toStack(Math.max(0, amount)));
+		} else {
+			try (var tx = Transaction.openRoot()) {
+				if (!internal.getResource(index).isEmpty())
+					internal.extract(index, internal.getResource(index), internal.getAmountAsInt(index), tx);
+				if (!resource.isEmpty() && amount > 0)
+					internal.insert(index, resource, amount, tx);
+				tx.commit();
+			}
+		}
 	}
 
 	@Override
@@ -114,7 +86,7 @@ public class SeedInPotSettingsMenu extends AbstractContainerMenu implements Voxe
 			else if (this.boundEntity != null)
 				return this.boundEntity.isAlive();
 		}
-		return this.inventory.stillValid(player);
+		return true;
 	}
 
 	@Override
@@ -130,10 +102,5 @@ public class SeedInPotSettingsMenu extends AbstractContainerMenu implements Voxe
 	@Override
 	public Map<String, Object> getMenuState() {
 		return menuState;
-	}
-
-	public static void screenInit() {
-		PayloadTypeRegistry.serverboundPlay().register(SeedInPotSettingsButtonMessage.TYPE, SeedInPotSettingsButtonMessage.STREAM_CODEC);
-		ServerPlayNetworking.registerGlobalReceiver(SeedInPotSettingsButtonMessage.TYPE, SeedInPotSettingsButtonMessage::handleData);
 	}
 }

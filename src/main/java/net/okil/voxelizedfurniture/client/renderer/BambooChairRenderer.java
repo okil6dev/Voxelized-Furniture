@@ -8,10 +8,6 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-import net.fabricmc.api.Environment;
-import net.fabricmc.api.EnvType;
-
-@Environment(EnvType.CLIENT)
 public class BambooChairRenderer extends MobRenderer<BambooChairEntity, LivingEntityRenderState, chair_bamboo> {
 	private final Identifier entityTexture = Identifier.parse("voxelized_furniture:textures/entities/stripped_bamboo_block.png");
 

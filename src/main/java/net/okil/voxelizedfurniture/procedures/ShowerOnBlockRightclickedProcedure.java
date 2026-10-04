@@ -29,19 +29,19 @@ public class ShowerOnBlockRightclickedProcedure {
 			}
 			if (Direction.NORTH == (getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z)))))) {
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles(((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P)), (0.5 + x), (1.8 + y), (0.4 + z), 30, 0.05, 0, 0.1, 1);
+					_level.sendParticles((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P.get()), (0.5 + x), (1.8 + y), (0.4 + z), 30, 0.05, 0, 0.1, 1);
 			} else {
 				if (Direction.WEST == (getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z)))))) {
 					if (world instanceof ServerLevel _level)
-						_level.sendParticles(((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P)), (0.4 + x), (1.8 + y), (0.5 + z), 30, 0.1, 0, 0.05, 1);
+						_level.sendParticles((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P.get()), (0.4 + x), (1.8 + y), (0.5 + z), 30, 0.1, 0, 0.05, 1);
 				} else {
 					if (Direction.SOUTH == (getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z)))))) {
 						if (world instanceof ServerLevel _level)
-							_level.sendParticles(((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P)), (0.5 + x), (1.8 + y), (0.6 + z), 30, 0.05, 0, 0.1, 1);
+							_level.sendParticles((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P.get()), (0.5 + x), (1.8 + y), (0.6 + z), 30, 0.05, 0, 0.1, 1);
 					} else {
 						if (Direction.EAST == (getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z)))))) {
 							if (world instanceof ServerLevel _level)
-								_level.sendParticles(((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P)), (0.6 + x), (1.8 + y), (0.5 + z), 30, 0.1, 0, 0.05, 1);
+								_level.sendParticles((SimpleParticleType) (VoxelizedFurnitureModParticleTypes.SHOWER_P.get()), (0.6 + x), (1.8 + y), (0.5 + z), 30, 0.1, 0, 0.05, 1);
 						}
 					}
 				}

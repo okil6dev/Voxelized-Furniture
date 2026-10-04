@@ -372,5 +372,16 @@
   "item.voxelized_furniture.soft_pale_oak": "Soft Pale Oak",
   "item.voxelized_furniture.soft_dark_oak": "Soft Dark Oak",
   "item.voxelized_furniture.wooden_kitchen_exhausthood": "Wooden Kitchen Exhausthood",
-  "item.voxelized_furniture.wooden_kitchen_cabinet_above": "Wooden Kitchen Cabinet Above"
+  "item.voxelized_furniture.wooden_kitchen_cabinet_above": "Wooden Kitchen Cabinet Above",
+  "block.voxelized_furniture.outdoor_light": "Outdoor Light",
+  "item.voxelized_furniture.pathway_light": "Pathway Light",
+  "item.voxelized_furniture.oak_dining_board": "Oak Dining Board",
+  "item.voxelized_furniture.spruce_dining_board": "Spruce Dining Board",
+  "item.voxelized_furniture.birch_dining_board": "Birch Dining Board",
+  "item.voxelized_furniture.jungle_dining_board": "Jungle Dining Board",
+  "item.voxelized_furniture.acacia_dining_board": "Acacia Dining Board",
+  "item.voxelized_furniture.dark_oak_dining_board": "Dark Oak Dining Board",
+  "item.voxelized_furniture.mangrove_dining_board": "Mangrove Dining Board",
+  "item.voxelized_furniture.cherry_dining_board": "Cherry Dining Board",
+  "item.voxelized_furniture.bamboo_dining_board": "Bamboo Dining Board"
 }

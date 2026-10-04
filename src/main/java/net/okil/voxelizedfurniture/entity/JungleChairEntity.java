@@ -1,11 +1,13 @@
 package net.okil.voxelizedfurniture.entity;
 
-import org.jetbrains.annotations.Nullable;
-
 import net.okil.voxelizedfurniture.procedures.OakChairOnInitialEntitySpawnProcedure;
 import net.okil.voxelizedfurniture.procedures.OakChairOnEntityTickUpdateProcedure;
 import net.okil.voxelizedfurniture.procedures.JungleChairEntityIsRightclickedProcedure;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
+
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.common.NeoForgeMod;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -25,6 +27,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.Identifier;
 import net.minecraft.core.registries.BuiltInRegistries;
+
+import javax.annotation.Nullable;
 
 public class JungleChairEntity extends PathfinderMob {
 	public JungleChairEntity(EntityType<JungleChairEntity> type, Level world) {
@@ -46,7 +50,7 @@ public class JungleChairEntity extends PathfinderMob {
 
 	protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource source, boolean recentlyHitIn) {
 		super.dropCustomDeathLoot(serverLevel, source, recentlyHitIn);
-		this.spawnAtLocation(serverLevel, new ItemStack(VoxelizedFurnitureModBlocks.JUNGLE_CHAIR_1));
+		this.spawnAtLocation(serverLevel, new ItemStack(VoxelizedFurnitureModBlocks.JUNGLE_CHAIR_1.get()));
 	}
 
 	@Override
@@ -61,7 +65,7 @@ public class JungleChairEntity extends PathfinderMob {
 
 	@Override
 	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		if (damagesource.getDirectEntity() instanceof AbstractThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud)
+		if (damagesource.getDirectEntity() instanceof AbstractThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud || damagesource.typeHolder().is(NeoForgeMod.POISON_DAMAGE))
 			return false;
 		if (damagesource.is(DamageTypes.CACTUS))
 			return false;
@@ -100,13 +104,18 @@ public class JungleChairEntity extends PathfinderMob {
 	}
 
 	@Override
-	public boolean canBreatheUnderwater() {
+	public boolean canDrownInFluidType(FluidType type) {
 		double x = this.getX();
 		double y = this.getY();
 		double z = this.getZ();
 		Level world = this.level();
 		Entity entity = this;
 		return false;
+	}
+
+	@Override
+	public boolean canBreatheUnderwater() {
+		return !this.canDrownInFluidType(NeoForgeMod.WATER_TYPE.value());
 	}
 
 	@Override
@@ -127,6 +136,9 @@ public class JungleChairEntity extends PathfinderMob {
 	@Override
 	public boolean canBeCollidedWith(Entity sourceentity) {
 		return true;
+	}
+
+	public static void init(RegisterSpawnPlacementsEvent event) {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

@@ -2,17 +2,26 @@ package net.okil.voxelizedfurniture.world.inventory;
 
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModMenus;
 
+import net.neoforged.neoforge.transfer.transaction.Transaction;
+import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
+import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
+import net.neoforged.neoforge.transfer.item.ItemUtil;
+import net.neoforged.neoforge.transfer.item.ItemStacksResourceHandler;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.access.ItemAccess;
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.capabilities.Capabilities;
+
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.ContainerInput;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.Container;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
@@ -36,55 +45,18 @@ public class CookingGuiMenu extends AbstractContainerMenu implements VoxelizedFu
 	public final Player entity;
 	public int x, y, z;
 	private ContainerLevelAccess access = ContainerLevelAccess.NULL;
-	private final Container inventory;
+	private ResourceHandler<ItemResource> internal;
 	private final Map<Integer, Slot> customSlots = new HashMap<>();
 	private boolean bound = false;
 	private Supplier<Boolean> boundItemMatcher = null;
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
-	private ItemStack boundItem = null;
-
-	public CookingGuiMenu(int id, Inventory inv) {
-		this(id, inv, new SimpleContainer(3));
-		this.x = (int) inv.player.getX();
-		this.y = (int) inv.player.getY();
-		this.z = (int) inv.player.getZ();
-		access = ContainerLevelAccess.create(inv.player.level(), new BlockPos(x, y, z));
-	}
 
 	public CookingGuiMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		this(id, inv, resolveBlockContainer(inv, extraData), extraData);
-	}
-
-	private static Container resolveBlockContainer(Inventory inv, FriendlyByteBuf extraData) {
-		// The MenuType factory uses this constructor on both sides. Keep a temporary
-		// mirror on the client (slot sync populates it), but on the dedicated/integrated
-		// server bind procedure-opened GUIs to the real block inventory at the supplied
-		// position. This makes "Open GUI at x/y/z" persist items just like a GUI
-		// opened directly by its bound block entity.
-		if (extraData != null && !inv.player.level().isClientSide()) {
-			extraData.markReaderIndex();
-			try {
-				BlockPos pos = extraData.readBlockPos();
-				// Item/entity-bound internal opens append marker data after BlockPos. Only
-				// treat a buffer containing exactly the position as a block-bound open.
-				if (extraData.readableBytes() == 0) {
-					BlockEntity blockEntity = inv.player.level().getBlockEntity(pos);
-					if (blockEntity instanceof Container blockContainer && blockContainer.getContainerSize() >= 3) {
-						return blockContainer;
-					}
-				}
-			} catch (IndexOutOfBoundsException ignored) {
-				// Malformed/short extra data: fall back to a temporary GUI inventory.
-			} finally {
-				extraData.resetReaderIndex();
-			}
-		}
-		return new SimpleContainer(3);
-	}
-
-	public CookingGuiMenu(int id, Inventory inv, Container container, FriendlyByteBuf extraData) {
-		this(id, inv, container);
+		super(VoxelizedFurnitureModMenus.COOKING_GUI.get(), id);
+		this.entity = inv.player;
+		this.world = inv.player.level();
+		this.internal = new ItemStacksResourceHandler(3);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -97,41 +69,41 @@ public class CookingGuiMenu extends AbstractContainerMenu implements VoxelizedFu
 			if (extraData.readableBytes() == 1) {
 				byte hand = extraData.readByte();
 				ItemStack itemstack = hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem();
-				this.boundItem = itemstack;
 				this.boundItemMatcher = () -> itemstack == (hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem());
-				this.bound = true;
+				ResourceHandler<ItemResource> cap = itemstack.getCapability(Capabilities.Item.ITEM, ItemAccess.forPlayerSlot(this.entity, hand == 0 ? this.entity.getInventory().getSelectedSlot() : Inventory.SLOT_OFFHAND));
+				if (cap != null) {
+					this.internal = cap;
+					this.bound = true;
+				}
 			} else if (extraData.readableBytes() > 1) {
 				extraData.readByte();
 				boundEntity = world.getEntity(extraData.readVarInt());
-				if (boundEntity != null)
-					this.bound = true;
+				if (boundEntity != null) {
+					ResourceHandler<ItemResource> cap = boundEntity.getCapability(Capabilities.Item.ENTITY);
+					if (cap != null) {
+						this.internal = cap;
+						this.bound = true;
+					}
+				}
 			} else {
 				boundBlockEntity = this.world.getBlockEntity(pos);
-				// Do not mark a temporary SimpleContainer as bound merely because a
-				// container block exists at this position. The backing inventory itself
-				// must be that block entity, otherwise closing the GUI can lose items.
-				if (boundBlockEntity instanceof Container && this.inventory == boundBlockEntity)
+				if (boundBlockEntity instanceof BaseContainerBlockEntity baseContainerBlockEntity) {
+					this.internal = VanillaContainerWrapper.of(baseContainerBlockEntity);
 					this.bound = true;
+				}
 			}
 		}
-	}
-
-	public CookingGuiMenu(int id, Inventory inv, Container container) {
-		super(VoxelizedFurnitureModMenus.COOKING_GUI, id);
-		this.entity = inv.player;
-		this.world = inv.player.level();
-		this.inventory = container;
-		this.customSlots.put(0, this.addSlot(new Slot(inventory, 0, 46, 33) {
+		this.customSlots.put(0, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 0, 46, 33) {
 			private final int slot = 0;
 			private int x = CookingGuiMenu.this.x;
 			private int y = CookingGuiMenu.this.y;
 		}));
-		this.customSlots.put(1, this.addSlot(new Slot(inventory, 1, 46, 69) {
+		this.customSlots.put(1, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 1, 46, 69) {
 			private final int slot = 1;
 			private int x = CookingGuiMenu.this.x;
 			private int y = CookingGuiMenu.this.y;
 		}));
-		this.customSlots.put(2, this.addSlot(new Slot(inventory, 2, 118, 51) {
+		this.customSlots.put(2, this.addSlot(new ResourceHandlerSlot(internal, this::setItemInSlot, 2, 118, 51) {
 			private final int slot = 2;
 			private int x = CookingGuiMenu.this.x;
 			private int y = CookingGuiMenu.this.y;
@@ -148,6 +120,22 @@ public class CookingGuiMenu extends AbstractContainerMenu implements VoxelizedFu
 			this.addSlot(new Slot(inv, si, 2 + 8 + si * 18, 22 + 142));
 	}
 
+	private void setItemInSlot(int index, ItemResource resource, int amount) {
+		if (internal instanceof ItemStacksResourceHandler handler) {
+			handler.set(index, resource, amount);
+		} else if (boundBlockEntity instanceof Container container) {
+			container.setItem(index, resource.toStack(Math.max(0, amount)));
+		} else {
+			try (var tx = Transaction.openRoot()) {
+				if (!internal.getResource(index).isEmpty())
+					internal.extract(index, internal.getResource(index), internal.getAmountAsInt(index), tx);
+				if (!resource.isEmpty() && amount > 0)
+					internal.insert(index, resource, amount, tx);
+				tx.commit();
+			}
+		}
+	}
+
 	@Override
 	public boolean stillValid(Player player) {
 		if (this.bound) {
@@ -158,13 +146,13 @@ public class CookingGuiMenu extends AbstractContainerMenu implements VoxelizedFu
 			else if (this.boundEntity != null)
 				return this.boundEntity.isAlive();
 		}
-		return this.inventory.stillValid(player);
+		return true;
 	}
 
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
 		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = (Slot) this.slots.get(index);
+		Slot slot = this.slots.get(index);
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
@@ -172,8 +160,6 @@ public class CookingGuiMenu extends AbstractContainerMenu implements VoxelizedFu
 				if (!this.moveItemStackTo(itemstack1, 3, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (boundItem != null && itemstack1 == boundItem) {
-				return ItemStack.EMPTY;
 			} else if (!this.moveItemStackTo(itemstack1, 0, 3, false)) {
 				if (index < 3 + 27) {
 					if (!this.moveItemStackTo(itemstack1, 3 + 27, this.slots.size(), true))
@@ -198,97 +184,77 @@ public class CookingGuiMenu extends AbstractContainerMenu implements VoxelizedFu
 	}
 
 	@Override
-	public void clicked(int slotId, int button, ContainerInput containerInput, Player player) {
-		if (containerInput == ContainerInput.SWAP && boundItem != null) {
-			if (slotId >= 0 && slotId < this.slots.size()) {
-				ItemStack slotItem = this.slots.get(slotId).getItem();
-				ItemStack hotbarItem = player.getInventory().getItem(button);
-				if (slotItem == boundItem || hotbarItem == boundItem) {
-					return;
-				}
-			}
+	protected boolean moveItemStackTo(ItemStack itemStack, int startSlot, int endSlot, boolean backwards) {
+		boolean anythingChanged = false;
+		int destSlot = startSlot;
+		if (backwards) {
+			destSlot = endSlot - 1;
 		}
-		super.clicked(slotId, button, containerInput, player);
-	}
-
-	@Override
-	protected boolean moveItemStackTo(ItemStack itemstack, int i, int j, boolean bl) {
-		int l;
-		ItemStack itemstack2;
-		Slot slot;
-		boolean bl2 = false;
-		int k = i;
-		if (bl) {
-			k = j - 1;
-		}
-		if (itemstack.isStackable()) {
-			while (!itemstack.isEmpty() && (bl ? k >= i : k < j)) {
-				slot = this.slots.get(k);
-				itemstack2 = slot.getItem();
-				if (!itemstack2.isEmpty() && ItemStack.isSameItemSameComponents(itemstack, itemstack2)) {
-					int m;
-					l = itemstack2.getCount() + itemstack.getCount();
-					if (l <= (m = slot.getMaxStackSize(itemstack2))) {
-						itemstack.setCount(0);
-						itemstack2.setCount(l);
-						slot.set(itemstack2);
-						bl2 = true;
-					} else if (itemstack2.getCount() < m) {
-						itemstack.shrink(m - itemstack2.getCount());
-						itemstack2.setCount(m);
-						slot.set(itemstack2);
-						bl2 = true;
+		if (itemStack.isStackable()) {
+			while (!itemStack.isEmpty() && (backwards ? destSlot >= startSlot : destSlot < endSlot)) {
+				Slot slot = this.slots.get(destSlot);
+				ItemStack target = slot.getItem();
+				if (slot.mayPlace(target) && !target.isEmpty() && ItemStack.isSameItemSameComponents(itemStack, target)) {
+					int totalStack = target.getCount() + itemStack.getCount();
+					int maxStackSize = slot.getMaxStackSize(target);
+					if (totalStack <= maxStackSize) {
+						itemStack.setCount(0);
+						target.setCount(totalStack);
+						slot.set(target);
+						anythingChanged = true;
+					} else if (target.getCount() < maxStackSize) {
+						itemStack.shrink(maxStackSize - target.getCount());
+						target.setCount(maxStackSize);
+						slot.set(target);
+						anythingChanged = true;
 					}
 				}
-				if (bl) {
-					--k;
-					continue;
+				if (backwards) {
+					destSlot--;
+				} else {
+					destSlot++;
 				}
-				++k;
 			}
 		}
-		if (!itemstack.isEmpty()) {
-			k = bl ? j - 1 : i;
-			while (bl ? k >= i : k < j) {
-				slot = this.slots.get(k);
-				itemstack2 = slot.getItem();
-				if (itemstack2.isEmpty() && slot.mayPlace(itemstack)) {
-					l = slot.getMaxStackSize(itemstack);
-					slot.setByPlayer(itemstack.split(Math.min(itemstack.getCount(), l)));
-					bl2 = true;
+		if (!itemStack.isEmpty()) {
+			if (backwards) {
+				destSlot = endSlot - 1;
+			} else {
+				destSlot = startSlot;
+			}
+			while (backwards ? destSlot >= startSlot : destSlot < endSlot) {
+				Slot slotx = this.slots.get(destSlot);
+				ItemStack targetx = slotx.getItem();
+				if (targetx.isEmpty() && slotx.mayPlace(itemStack)) {
+					int maxStackSize = slotx.getMaxStackSize(itemStack);
+					slotx.setByPlayer(itemStack.split(Math.min(itemStack.getCount(), maxStackSize)));
+					slotx.setChanged();
+					anythingChanged = true;
 					break;
 				}
-				if (bl) {
-					--k;
-					continue;
+				if (backwards) {
+					destSlot--;
+				} else {
+					destSlot++;
 				}
-				++k;
 			}
 		}
-		return bl2;
+		return anythingChanged;
 	}
 
 	@Override
 	public void removed(Player playerIn) {
 		super.removed(playerIn);
-		// Only clear temporary, unbound GUI slots that are explicitly configured to drop/return
-		// their contents when the GUI closes. Bound block/entity/item inventories must persist.
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
-				for (int i = 0; i < inventory.getContainerSize(); ++i) {
-					ItemStack stack = inventory.getItem(i);
-					if (!stack.isEmpty()) {
-						playerIn.drop(stack.copy(), false);
-						inventory.setItem(i, ItemStack.EMPTY);
-					}
+				for (int j = 0; j < internal.size(); ++j) {
+					playerIn.drop(ItemUtil.getStack(internal, j), false);
+					setItemInSlot(j, ItemResource.EMPTY, 0);
 				}
 			} else {
-				for (int i = 0; i < inventory.getContainerSize(); ++i) {
-					ItemStack stack = inventory.getItem(i);
-					if (!stack.isEmpty()) {
-						playerIn.getInventory().placeItemBackInInventory(stack);
-						inventory.setItem(i, ItemStack.EMPTY);
-					}
+				for (int i = 0; i < internal.size(); ++i) {
+					playerIn.getInventory().placeItemBackInInventory(ItemUtil.getStack(internal, i));
+					setItemInSlot(i, ItemResource.EMPTY, 0);
 				}
 			}
 		}
@@ -302,8 +268,5 @@ public class CookingGuiMenu extends AbstractContainerMenu implements VoxelizedFu
 	@Override
 	public Map<String, Object> getMenuState() {
 		return menuState;
-	}
-
-	public static void screenInit() {
 	}
 }

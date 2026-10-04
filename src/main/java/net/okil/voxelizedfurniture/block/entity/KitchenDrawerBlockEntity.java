@@ -1,7 +1,5 @@
 package net.okil.voxelizedfurniture.block.entity;
 
-import org.jetbrains.annotations.Nullable;
-
 import net.okil.voxelizedfurniture.world.inventory.KitchenCounterGuiMenu;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlockEntities;
 
@@ -23,6 +21,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import javax.annotation.Nullable;
+
 import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
@@ -31,7 +31,7 @@ public class KitchenDrawerBlockEntity extends RandomizableContainerBlockEntity i
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(18, ItemStack.EMPTY);
 
 	public KitchenDrawerBlockEntity(BlockPos position, BlockState state) {
-		super(VoxelizedFurnitureModBlockEntities.KITCHEN_DRAWER, position, state);
+		super(VoxelizedFurnitureModBlockEntities.KITCHEN_DRAWER.get(), position, state);
 	}
 
 	@Override
@@ -79,7 +79,7 @@ public class KitchenDrawerBlockEntity extends RandomizableContainerBlockEntity i
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new KitchenCounterGuiMenu(id, inventory, this, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new KitchenCounterGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override
