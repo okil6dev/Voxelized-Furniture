@@ -7718,6 +7718,20 @@
         ]
       },
       "path": "~/Nature/Plants"
+    },
+    {
+      "name": "WaterPlantRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_plant_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/voxelized_furniture/advancement/recipes/water_plant_recipe.json",
+          "src/main/resources/data/voxelized_furniture/recipe/water_plant_recipe.json"
+        ]
+      },
+      "path": "~/Nature/Plants"
     }
   ],
   "variable_elements": [
