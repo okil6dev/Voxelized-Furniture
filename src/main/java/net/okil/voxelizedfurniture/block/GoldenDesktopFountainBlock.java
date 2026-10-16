@@ -3,11 +3,13 @@ package net.okil.voxelizedfurniture.block;
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
 
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -16,25 +18,25 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.color.block.BlockTintSources;
+import net.minecraft.client.renderer.BiomeColors;
 
-import java.util.function.Function;
-import java.util.List;
+import com.google.common.collect.ImmutableMap;
 
 public class GoldenDesktopFountainBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public GoldenDesktopFountainBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(3f, 6f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public GoldenDesktopFountainBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(3f, 6f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> box(1, 0, 1, 15, 4, 15);
@@ -47,7 +49,7 @@ public class GoldenDesktopFountainBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
@@ -77,7 +79,17 @@ public class GoldenDesktopFountainBlock extends Block {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
 	}
 
-	public static void blockColorLoad(RegisterColorHandlersEvent.BlockTintSources event) {
-		event.getBlockColors().register(List.of(BlockTintSources.grass()), VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.get());
+	@OnlyIn(Dist.CLIENT)
+	public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
+		event.getBlockColors().register((bs, world, pos, index) -> {
+			return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
+		}, VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.get());
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
+		event.getItemColors().register((stack, index) -> {
+			return GrassColor.get(0.5D, 1.0D);
+		}, VoxelizedFurnitureModBlocks.GOLDEN_DESKTOP_FOUNTAIN.get());
 	}
 }

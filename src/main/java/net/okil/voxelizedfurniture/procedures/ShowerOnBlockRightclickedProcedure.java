@@ -4,12 +4,13 @@ import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModParticleTypes;
 
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.Direction;
@@ -22,9 +23,9 @@ public class ShowerOnBlockRightclickedProcedure {
 		if (world instanceof Level _level0 && _level0.hasNeighborSignal(BlockPos.containing(x, y, z))) {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.pointed_dripstone.drip_water")), SoundSource.NEUTRAL, 1, 1);
+					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.pointed_dripstone.drip_water")), SoundSource.NEUTRAL, 1, 1);
 				} else {
-					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.pointed_dripstone.drip_water")), SoundSource.NEUTRAL, 1, 1, false);
+					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.pointed_dripstone.drip_water")), SoundSource.NEUTRAL, 1, 1, false);
 				}
 			}
 			if (Direction.NORTH == (getDirectionFromBlockState((world.getBlockState(BlockPos.containing(x, y, z)))))) {
@@ -50,11 +51,11 @@ public class ShowerOnBlockRightclickedProcedure {
 	}
 
 	private static Direction getDirectionFromBlockState(BlockState blockState) {
-		if (getPropertyByName(blockState, "facing") instanceof EnumProperty ep && ep.getValueClass() == Direction.class)
-			return (Direction) blockState.getValue(ep);
-		if (getPropertyByName(blockState, "axis") instanceof EnumProperty ep && ep.getValueClass() == Direction.Axis.class)
-			return Direction.fromAxisAndDirection((Direction.Axis) blockState.getValue(ep), Direction.AxisDirection.POSITIVE);
-		return Direction.NORTH;
+		Property<?> prop = getPropertyByName(blockState, "facing");
+		if (prop instanceof DirectionProperty dp)
+			return blockState.getValue(dp);
+		prop = getPropertyByName(blockState, "axis");
+		return prop instanceof EnumProperty ep && ep.getPossibleValues().toArray()[0] instanceof Direction.Axis ? Direction.fromAxisAndDirection((Direction.Axis) blockState.getValue(ep), Direction.AxisDirection.POSITIVE) : Direction.NORTH;
 	}
 
 	private static Property<?> getPropertyByName(BlockState state, String name) {

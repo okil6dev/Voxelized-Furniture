@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:oak_planks",
+  "ingredient": {
+    "item": "minecraft:oak_planks"
+  },
   "result": {
     "id": "voxelized_furniture:cabinet_oak",
     "count": 1

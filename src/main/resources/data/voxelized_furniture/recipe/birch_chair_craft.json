@@ -2,11 +2,21 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:birch_trapdoor",
-    "minecraft:birch_planks",
-    "minecraft:birch_planks",
-    "minecraft:stick",
-    "minecraft:stick"
+    {
+      "item": "minecraft:birch_trapdoor"
+    },
+    {
+      "item": "minecraft:birch_planks"
+    },
+    {
+      "item": "minecraft:birch_planks"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:stick"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:birch_chair_1",

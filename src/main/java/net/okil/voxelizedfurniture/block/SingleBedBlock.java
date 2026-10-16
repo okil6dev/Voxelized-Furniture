@@ -3,7 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -17,18 +17,18 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
+import com.google.common.collect.ImmutableMap;
 
 public class SingleBedBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public SingleBedBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(3f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public SingleBedBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(3f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(14, 0, 0, 16, 3, 2), box(14, 0, 30, 16, 3, 32), box(0, 0, 30, 2, 3, 32), box(0, 0, 0, 2, 3, 2), box(0, 3, 0, 16, 5, 16), box(1.25, 8, 23, 14.75, 16.25, 26), box(1.5, 9, 26, 14.5, 14, 30),
@@ -45,7 +45,7 @@ public class SingleBedBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override

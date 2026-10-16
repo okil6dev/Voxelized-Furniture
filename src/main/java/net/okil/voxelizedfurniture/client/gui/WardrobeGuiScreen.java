@@ -6,30 +6,30 @@ import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModScreens;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
-import com.mojang.blaze3d.platform.InputConstants;
+import com.mojang.blaze3d.systems.RenderSystem;
 
 public class WardrobeGuiScreen extends AbstractContainerScreen<WardrobeGuiMenu> implements VoxelizedFurnitureModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
 	private boolean menuStateUpdateActive = false;
-	private static final Identifier BACKGROUND = Identifier.parse("voxelized_furniture:textures/screens/wardrobe_gui.png");
-	private static final Identifier IMAGE_0 = Identifier.parse("voxelized_furniture:textures/screens/wardrobeicon.png");
+	private static final ResourceLocation BACKGROUND = ResourceLocation.parse("voxelized_furniture:textures/screens/wardrobe_gui.png");
+	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("voxelized_furniture:textures/screens/wardrobeicon.png");
 
 	public WardrobeGuiScreen(WardrobeGuiMenu container, Inventory inventory, Component text) {
-		super(container, inventory, text, 173, 138);
+		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
+		this.imageWidth = 173;
+		this.imageHeight = 138;
 	}
 
 	@Override
@@ -39,29 +39,32 @@ public class WardrobeGuiScreen extends AbstractContainerScreen<WardrobeGuiMenu> 
 	}
 
 	@Override
-	public void extractRenderState(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.extractRenderState(guiGraphics, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	public void extractBackground(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		super.extractBackground(guiGraphics, mouseX, mouseY, partialTicks);
-		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, BACKGROUND, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, IMAGE_0, this.leftPos + 59, this.topPos + 2, 0, 0, 48, 8, 48, 8);
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
+		RenderSystem.setShaderColor(1, 1, 1, 1);
+		RenderSystem.enableBlend();
+		RenderSystem.defaultBlendFunc();
+		guiGraphics.blit(BACKGROUND, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(IMAGE_0, this.leftPos + 59, this.topPos + 2, 0, 0, 48, 8, 48, 8);
+		RenderSystem.disableBlend();
 	}
 
 	@Override
-	public boolean keyPressed(KeyEvent event) {
-		int key = InputConstants.getKey(event).getValue();
+	public boolean keyPressed(int key, int b, int c) {
 		if (key == 256) {
 			this.minecraft.player.closeContainer();
 			return true;
 		}
-		return super.keyPressed(event);
+		return super.keyPressed(key, b, c);
 	}
 
 	@Override
-	protected void extractLabels(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY) {
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 	}
 
 	@Override

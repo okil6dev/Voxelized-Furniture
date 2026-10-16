@@ -1,6 +1,3 @@
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.okil.voxelizedfurniture.init;
 
 import net.okil.voxelizedfurniture.item.JamBottleItem;
@@ -14,8 +11,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
-
-import java.util.function.Function;
 
 public class VoxelizedFurnitureModItems {
 	public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(VoxelizedFurnitureMod.MODID);
@@ -196,6 +191,7 @@ public class VoxelizedFurnitureModItems {
 	public static final DeferredItem<Item> MANGROVE_DINING_BOARD;
 	public static final DeferredItem<Item> CHERRY_DINING_BOARD;
 	public static final DeferredItem<Item> BAMBOO_DINING_BOARD;
+	public static final DeferredItem<Item> WATER_PLANT;
 	static {
 		CABINET_OAK = block(VoxelizedFurnitureModBlocks.CABINET_OAK);
 		CABINET_BIRCH = block(VoxelizedFurnitureModBlocks.CABINET_BIRCH);
@@ -218,7 +214,7 @@ public class VoxelizedFurnitureModItems {
 		CABINET_SPRUCE = block(VoxelizedFurnitureModBlocks.CABINET_SPRUCE);
 		JAM_JAR = block(VoxelizedFurnitureModBlocks.JAM_JAR);
 		HONEY_JAR = block(VoxelizedFurnitureModBlocks.HONEY_JAR);
-		JAM_BOTTLE = register("jam_bottle", JamBottleItem::new);
+		JAM_BOTTLE = REGISTRY.register("jam_bottle", JamBottleItem::new);
 		SHOWER = block(VoxelizedFurnitureModBlocks.SHOWER, new Item.Properties().fireResistant());
 		OAK_SHELF = block(VoxelizedFurnitureModBlocks.OAK_SHELF);
 		SPRUCE_SHELF = block(VoxelizedFurnitureModBlocks.SPRUCE_SHELF);
@@ -374,19 +370,16 @@ public class VoxelizedFurnitureModItems {
 		MANGROVE_DINING_BOARD = block(VoxelizedFurnitureModBlocks.MANGROVE_DINING_BOARD);
 		CHERRY_DINING_BOARD = block(VoxelizedFurnitureModBlocks.CHERRY_DINING_BOARD);
 		BAMBOO_DINING_BOARD = block(VoxelizedFurnitureModBlocks.BAMBOO_DINING_BOARD);
+		WATER_PLANT = block(VoxelizedFurnitureModBlocks.WATER_PLANT);
 	}
 
 	// Start of user code block custom items
 	// End of user code block custom items
-	private static <I extends Item> DeferredItem<I> register(String name, Function<Item.Properties, ? extends I> supplier) {
-		return REGISTRY.registerItem(name, supplier, Item.Properties::new);
-	}
-
 	private static DeferredItem<Item> block(DeferredHolder<Block, Block> block) {
 		return block(block, new Item.Properties());
 	}
 
 	private static DeferredItem<Item> block(DeferredHolder<Block, Block> block, Item.Properties properties) {
-		return REGISTRY.registerItem(block.getId().getPath(), prop -> new BlockItem(block.get(), prop), () -> properties);
+		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), properties));
 	}
 }

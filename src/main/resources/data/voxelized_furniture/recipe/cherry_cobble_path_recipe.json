@@ -6,9 +6,15 @@
     "bcb"
   ],
   "key": {
-    "a": "minecraft:cherry_fence",
-    "b": "#minecraft:slabs",
-    "c": "#c:stones"
+    "a": {
+      "item": "minecraft:cherry_fence"
+    },
+    "b": {
+      "tag": "minecraft:slabs"
+    },
+    "c": {
+      "tag": "c:stones"
+    }
   },
   "result": {
     "id": "voxelized_furniture:cherry_cobble_path",

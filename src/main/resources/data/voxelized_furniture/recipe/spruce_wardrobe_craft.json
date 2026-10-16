@@ -7,9 +7,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:spruce_planks",
-    "b": "minecraft:spruce_slab",
-    "c": "minecraft:spruce_stairs"
+    "a": {
+      "item": "minecraft:spruce_planks"
+    },
+    "b": {
+      "item": "minecraft:spruce_slab"
+    },
+    "c": {
+      "item": "minecraft:spruce_stairs"
+    }
   },
   "result": {
     "id": "voxelized_furniture:spruce_wardrobe",

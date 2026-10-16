@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/acacia_diningboard",
     "particle": "minecraft:block/stripped_acacia_log",
     "0": "voxelized_furniture:block/acacia_diningboard"
-  }
+  },
+  "render_type": "cutout"
 }

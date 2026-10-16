@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:bamboo_planks",
+  "ingredient": {
+    "item": "minecraft:bamboo_planks"
+  },
   "result": {
     "id": "voxelized_furniture:bamboo_porch_table",
     "count": 1

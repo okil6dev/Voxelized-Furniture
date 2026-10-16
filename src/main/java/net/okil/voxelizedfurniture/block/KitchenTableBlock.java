@@ -3,7 +3,7 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -16,18 +16,18 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
+import com.google.common.collect.ImmutableMap;
 
 public class KitchenTableBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public KitchenTableBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(5f, 7f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public KitchenTableBlock() {
+		super(BlockBehaviour.Properties.of().strength(5f, 7f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH ->
@@ -44,16 +44,16 @@ public class KitchenTableBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightDampening(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

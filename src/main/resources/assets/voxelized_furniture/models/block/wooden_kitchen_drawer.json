@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/woodenkitchendrawer",
     "particle": "minecraft:block/stripped_oak_log",
     "3": "voxelized_furniture:block/woodenkitchendrawer"
-  }
+  },
+  "render_type": "solid"
 }

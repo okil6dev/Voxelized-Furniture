@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "#c:ores/quartz",
+  "ingredient": {
+    "tag": "c:ores/quartz"
+  },
   "result": {
     "id": "voxelized_furniture:shower",
     "count": 1

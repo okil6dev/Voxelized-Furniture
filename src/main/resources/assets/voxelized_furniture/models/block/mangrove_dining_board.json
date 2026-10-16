@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/mangrove_diningboard",
     "particle": "minecraft:block/stripped_mangrove_log",
     "0": "voxelized_furniture:block/mangrove_diningboard"
-  }
+  },
+  "render_type": "cutout"
 }

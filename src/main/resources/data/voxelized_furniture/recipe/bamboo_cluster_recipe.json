@@ -2,9 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:bamboo",
-    "minecraft:bamboo",
-    "minecraft:bamboo"
+    {
+      "item": "minecraft:bamboo"
+    },
+    {
+      "item": "minecraft:bamboo"
+    },
+    {
+      "item": "minecraft:bamboo"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:bamboo_cluster",

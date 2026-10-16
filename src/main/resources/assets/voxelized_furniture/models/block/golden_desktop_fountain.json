@@ -10,5 +10,6 @@
     "4": "voxelized_furniture:block/zen_water_still",
     "5": "minecraft:block/stripped_oak_log",
     "6": "minecraft:block/anvil"
-  }
+  },
+  "render_type": "translucent"
 }

@@ -4,5 +4,6 @@
     "all": "minecraft:block/stripped_birch_log",
     "particle": "minecraft:block/stripped_birch_log",
     "0": "minecraft:block/stripped_birch_log"
-  }
+  },
+  "render_type": "solid"
 }

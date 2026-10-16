@@ -7,9 +7,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:birch_planks",
-    "b": "minecraft:birch_slab",
-    "c": "minecraft:birch_stairs"
+    "a": {
+      "item": "minecraft:birch_planks"
+    },
+    "b": {
+      "item": "minecraft:birch_slab"
+    },
+    "c": {
+      "item": "minecraft:birch_stairs"
+    }
   },
   "result": {
     "id": "voxelized_furniture:birch_wardrobe",

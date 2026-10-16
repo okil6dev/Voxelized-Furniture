@@ -6,5 +6,6 @@
     "0": "minecraft:block/stripped_cherry_log",
     "1": "minecraft:block/cherry_planks",
     "3": "minecraft:block/anvil"
-  }
+  },
+  "render_type": "solid"
 }

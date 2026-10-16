@@ -3,5 +3,6 @@
   "textures": {
     "all": "voxelized_furniture:block/6372755229",
     "particle": "voxelized_furniture:block/6372755229"
-  }
+  },
+  "render_type": "solid"
 }

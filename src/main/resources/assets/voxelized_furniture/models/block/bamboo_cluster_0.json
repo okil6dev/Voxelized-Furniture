@@ -4,5 +4,6 @@
     "all": "minecraft:block/bamboo_stalk",
     "particle": "minecraft:block/bamboo_block",
     "1": "minecraft:block/bamboo_small_leaves"
-  }
+  },
+  "render_type": "cutout_mipped"
 }

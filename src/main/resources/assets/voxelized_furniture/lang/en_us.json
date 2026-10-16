@@ -123,7 +123,6 @@
   "item.voxelized_furniture.diamond_geode": "Diamond Geode",
   "item.voxelized_furniture.redstone_geode": "Redstone Geode (Emits Redstone Power)",
   "item.voxelized_furniture.miniature_ruined_nether_portal": "Miniature Ruined Nether Portal",
-  "item_group.voxelized_furniture.miniature": "Miniature",
   "item.voxelized_furniture.miniature_water_ruin": "Miniature Water Ruin",
   "item.voxelized_furniture.oak_toilet_roll": "Oak Toilet Roll",
   "item.voxelized_furniture.spruce_toilet_roll": "Spruce Toilet Roll",
@@ -383,5 +382,17 @@
   "item.voxelized_furniture.dark_oak_dining_board": "Dark Oak Dining Board",
   "item.voxelized_furniture.mangrove_dining_board": "Mangrove Dining Board",
   "item.voxelized_furniture.cherry_dining_board": "Cherry Dining Board",
-  "item.voxelized_furniture.bamboo_dining_board": "Bamboo Dining Board"
+  "item.voxelized_furniture.bamboo_dining_board": "Bamboo Dining Board",
+  "block.voxelized_furniture.pathway_light": "Pathway Light",
+  "block.voxelized_furniture.oak_dining_board": "Oak Dining Board",
+  "block.voxelized_furniture.spruce_dining_board": "Spruce Dining Board",
+  "block.voxelized_furniture.birch_dining_board": "Birch Dining Board",
+  "block.voxelized_furniture.jungle_dining_board": "Jungle Dining Board",
+  "block.voxelized_furniture.acacia_dining_board": "Acacia Dining Board",
+  "block.voxelized_furniture.dark_oak_dining_board": "Dark Oak Dining Board",
+  "block.voxelized_furniture.mangrove_dining_board": "Mangrove Dining Board",
+  "block.voxelized_furniture.cherry_dining_board": "Cherry Dining Board",
+  "block.voxelized_furniture.bamboo_dining_board": "Bamboo Dining Board",
+  "item_group.voxelized_furniture.other": "Other",
+  "block.voxelized_furniture.water_plant": "Water Plant"
 }

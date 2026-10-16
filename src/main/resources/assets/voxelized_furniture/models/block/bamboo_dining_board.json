@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/bamboo_diningboard",
     "particle": "minecraft:block/stripped_bamboo_block",
     "0": "voxelized_furniture:block/bamboo_diningboard"
-  }
+  },
+  "render_type": "cutout"
 }

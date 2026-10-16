@@ -5,18 +5,21 @@ import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
 import net.okil.voxelizedfurniture.block.entity.SpruceShelfBlockEntity;
 
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -26,28 +29,26 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.color.block.BlockTintSources;
-
-import java.util.function.Function;
-import java.util.List;
+import net.minecraft.client.renderer.BiomeColors;
 
 import io.netty.buffer.Unpooled;
 
-public class SpruceShelfBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+import com.google.common.collect.ImmutableMap;
 
-	public SpruceShelfBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+public class SpruceShelfBlock extends Block implements EntityBlock {
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+
+	public SpruceShelfBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(1, 1, 9, 15, 2, 16), box(1, 6, 9, 15, 7, 16), box(15, 0, 9, 16, 8, 16), box(0, 0, 9, 1, 8, 16));
@@ -60,7 +61,7 @@ public class SpruceShelfBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
@@ -128,8 +129,15 @@ public class SpruceShelfBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof SpruceShelfBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override
@@ -138,7 +146,7 @@ public class SpruceShelfBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof SpruceShelfBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
@@ -146,7 +154,17 @@ public class SpruceShelfBlock extends Block implements EntityBlock {
 			return 0;
 	}
 
-	public static void blockColorLoad(RegisterColorHandlersEvent.BlockTintSources event) {
-		event.getBlockColors().register(List.of(BlockTintSources.foliage()), VoxelizedFurnitureModBlocks.SPRUCE_SHELF.get());
+	@OnlyIn(Dist.CLIENT)
+	public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
+		event.getBlockColors().register((bs, world, pos, index) -> {
+			return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor();
+		}, VoxelizedFurnitureModBlocks.SPRUCE_SHELF.get());
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
+		event.getItemColors().register((stack, index) -> {
+			return FoliageColor.getDefaultColor();
+		}, VoxelizedFurnitureModBlocks.SPRUCE_SHELF.get());
 	}
 }

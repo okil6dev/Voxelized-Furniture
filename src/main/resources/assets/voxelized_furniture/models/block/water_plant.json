@@ -1,0 +1,12 @@
+{
+  "parent": "voxelized_furniture:custom/waterplant",
+  "textures": {
+    "all": "voxelized_furniture:block/waterplant",
+    "particle": "voxelized_furniture:block/waterplant",
+    "0": "voxelized_furniture:block/waterplantglass",
+    "1": "voxelized_furniture:block/waterplant",
+    "3": "minecraft:block/suspicious_sand_0",
+    "4": "voxelized_furniture:block/waterplantwater"
+  },
+  "render_type": "translucent"
+}

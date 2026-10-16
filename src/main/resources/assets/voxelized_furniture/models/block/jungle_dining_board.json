@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/jungle_diningboard",
     "particle": "minecraft:block/stripped_jungle_log",
     "0": "voxelized_furniture:block/jungle_diningboard"
-  }
+  },
+  "render_type": "cutout"
 }

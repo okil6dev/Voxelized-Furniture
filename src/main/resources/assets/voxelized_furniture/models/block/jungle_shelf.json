@@ -9,5 +9,6 @@
     "4": "minecraft:block/grass_block_top",
     "5": "minecraft:block/stone_bricks",
     "6": "minecraft:block/fern"
-  }
+  },
+  "render_type": "cutout"
 }

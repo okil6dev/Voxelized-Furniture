@@ -8,7 +8,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,23 +22,22 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
+import com.google.common.collect.ImmutableMap;
 
 public class BambooDoorbellBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 1);
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public BambooDoorbellBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(2f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public BambooDoorbellBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(BLOCKSTATE, 0));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			if (state.getValue(BLOCKSTATE) == 1) {
 				return switch (state.getValue(FACING)) {
@@ -59,7 +58,7 @@ public class BambooDoorbellBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
@@ -122,8 +121,15 @@ public class BambooDoorbellBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof BambooDoorbellBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override
@@ -132,7 +138,7 @@ public class BambooDoorbellBlock extends Block implements EntityBlock {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof BambooDoorbellBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

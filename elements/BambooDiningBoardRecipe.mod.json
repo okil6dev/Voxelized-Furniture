@@ -1,0 +1,33 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Items.IRON_NUGGET",
+      "Items.STICK",
+      "Blocks.BAMBOO_PLANKS"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "",
+      "",
+      "",
+      "Items.IRON_NUGGET",
+      "",
+      "Items.IRON_NUGGET",
+      "Items.STICK",
+      "Blocks.BAMBOO_PLANKS",
+      "Items.STICK"
+    ],
+    "recipeReturnStack": "CUSTOM:BambooDiningBoard",
+    "name": "bamboo_dining_board_recipe",
+    "namespace": "mod"
+  }
+}

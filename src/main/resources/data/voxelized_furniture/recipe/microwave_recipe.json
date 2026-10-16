@@ -7,11 +7,21 @@
     "aba"
   ],
   "key": {
-    "a": "minecraft:smooth_stone_slab",
-    "b": "minecraft:iron_ingot",
-    "c": "minecraft:glass_pane",
-    "d": "minecraft:furnace",
-    "e": "minecraft:stone_button"
+    "a": {
+      "item": "minecraft:smooth_stone_slab"
+    },
+    "b": {
+      "item": "minecraft:iron_ingot"
+    },
+    "c": {
+      "item": "minecraft:glass_pane"
+    },
+    "d": {
+      "item": "minecraft:furnace"
+    },
+    "e": {
+      "item": "minecraft:stone_button"
+    }
   },
   "result": {
     "id": "voxelized_furniture:microwave",

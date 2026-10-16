@@ -7,7 +7,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -15,36 +15,33 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.ScheduledTickAccess;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
-import net.minecraft.util.RandomSource;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 public class DarkOakPorchTableBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	public DarkOakPorchTableBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(3.5f, 8f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public DarkOakPorchTableBlock() {
+		super(BlockBehaviour.Properties.of().strength(3.5f, 8f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return state.getFluidState().isEmpty();
 	}
 
 	@Override
-	public int getLightDampening(BlockState state) {
-		return propagatesSkylightDown(state) ? 0 : 1;
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
+		return propagatesSkylightDown(state, worldIn, pos) ? 0 : 1;
 	}
 
 	@Override
@@ -81,11 +78,11 @@ public class DarkOakPorchTableBlock extends Block implements SimpleWaterloggedBl
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess scheduledTickAccess, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random) {
+	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
 		if (state.getValue(WATERLOGGED)) {
-			scheduledTickAccess.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
-		return super.updateShape(state, world, scheduledTickAccess, currentPos, facing, facingPos, facingState, random);
+		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
 	}
 
 	@Override
@@ -107,8 +104,15 @@ public class DarkOakPorchTableBlock extends Block implements SimpleWaterloggedBl
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof DarkOakPorchTableBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override
@@ -117,7 +121,7 @@ public class DarkOakPorchTableBlock extends Block implements SimpleWaterloggedBl
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof DarkOakPorchTableBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

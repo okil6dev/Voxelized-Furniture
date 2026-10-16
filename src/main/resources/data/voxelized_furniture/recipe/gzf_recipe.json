@@ -7,9 +7,15 @@
     " b "
   ],
   "key": {
-    "a": "minecraft:stone",
-    "b": "minecraft:bamboo_planks",
-    "c": "minecraft:grass_block"
+    "a": {
+      "item": "minecraft:stone"
+    },
+    "b": {
+      "item": "minecraft:bamboo_planks"
+    },
+    "c": {
+      "item": "minecraft:grass_block"
+    }
   },
   "result": {
     "id": "voxelized_furniture:golden_zen_fountain",

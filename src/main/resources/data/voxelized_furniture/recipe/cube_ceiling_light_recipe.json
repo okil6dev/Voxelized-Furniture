@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:sea_lantern",
+  "ingredient": {
+    "item": "minecraft:sea_lantern"
+  },
   "result": {
     "id": "voxelized_furniture:cube_ceiling_light",
     "count": 1

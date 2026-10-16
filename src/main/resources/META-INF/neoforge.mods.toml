@@ -4,7 +4,7 @@ license="MIT License"
 
 [[mods]]
 modId="voxelized_furniture"
-version="1.7.0"
+version="1.7.2"
 displayName="Voxelized Furniture"
 displayURL="https://github.com/okil6dev/Voxelized-Furniture"
 logoFile="logo.png"
@@ -22,14 +22,14 @@ description="This mod adds chairs, tables, kitchen sets, sinks, and small land p
 [[dependencies.voxelized_furniture]]
     modId="neoforge"
     type="required"
-    versionRange="[26.1.2.95,)"
+    versionRange="[21.1.232,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.voxelized_furniture]]
     modId="minecraft"
     type="required"
-    versionRange="[26.1.2]"
+    versionRange="[1.21.1]"
     ordering="AFTER"
     side="BOTH"
 

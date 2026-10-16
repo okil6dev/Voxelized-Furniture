@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "#c:stones",
+  "ingredient": {
+    "tag": "c:stones"
+  },
   "result": {
     "id": "voxelized_furniture:miniature_water_ruin",
     "count": 1

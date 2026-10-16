@@ -3,7 +3,8 @@ package net.okil.voxelizedfurniture.block;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -16,18 +17,19 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
+import com.google.common.collect.ImmutableMap;
 
 public class RedstoneGeodeBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public RedstoneGeodeBlock(BlockBehaviour.Properties properties) {
-		super(properties.strength(3f, 5f).requiresCorrectToolForDrops().noOcclusion().postProcess((bs, br, bp) -> bp).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false).dynamicShape().offsetType(Block.OffsetType.XZ));
+	public RedstoneGeodeBlock() {
+		super(BlockBehaviour.Properties.of().strength(3f, 5f).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false).dynamicShape()
+				.offsetType(Block.OffsetType.XZ));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(1, 0, 9, 15, 9, 15), box(1, 0, 2, 8, 9, 9));
@@ -40,7 +42,8 @@ public class RedstoneGeodeBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state).move(state.getOffset(pos));
+		Vec3 offset = state.getOffset(world, pos);
+		return shapes.get(state).move(offset.x, offset.y, offset.z);
 	}
 
 	@Override

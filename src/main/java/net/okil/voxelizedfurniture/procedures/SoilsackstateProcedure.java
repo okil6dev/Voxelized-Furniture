@@ -2,6 +2,8 @@ package net.okil.voxelizedfurniture.procedures;
 
 import net.okil.voxelizedfurniture.init.VoxelizedFurnitureModBlocks;
 
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,7 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
@@ -42,9 +44,9 @@ public class SoilsackstateProcedure {
 						}
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1);
 							} else {
-								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
+								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
 							}
 						}
 					} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
@@ -64,9 +66,9 @@ public class SoilsackstateProcedure {
 						}
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1);
 							} else {
-								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
+								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
 							}
 						}
 					} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
@@ -83,9 +85,9 @@ public class SoilsackstateProcedure {
 						}
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1);
 							} else {
-								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
+								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.place")), SoundSource.BLOCKS, 1, 1, false);
 							}
 						}
 					}
@@ -101,13 +103,13 @@ public class SoilsackstateProcedure {
 						if (entity instanceof Player _player) {
 							ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 							_setstack.setCount(1);
-							_player.getInventory().placeItemBackInInventory(_setstack);
+							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 						}
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1);
+								_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1);
 							} else {
-								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1, false);
+								_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1, false);
 							}
 						}
 					}
@@ -124,13 +126,13 @@ public class SoilsackstateProcedure {
 					if (entity instanceof Player _player) {
 						ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 						_setstack.setCount(1);
-						_player.getInventory().placeItemBackInInventory(_setstack);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1);
 						} else {
-							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1, false);
+							_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1, false);
 						}
 					}
 				}
@@ -147,13 +149,13 @@ public class SoilsackstateProcedure {
 				if (entity instanceof Player _player) {
 					ItemStack _setstack = new ItemStack(VoxelizedFurnitureModBlocks.SACK_OF_SOIL.get()).copy();
 					_setstack.setCount(1);
-					_player.getInventory().placeItemBackInInventory(_setstack);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1);
+						_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1);
 					} else {
-						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.getValue(Identifier.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1, false);
+						_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.rooted_dirt.break")), SoundSource.BLOCKS, 1, 1, false);
 					}
 				}
 			}

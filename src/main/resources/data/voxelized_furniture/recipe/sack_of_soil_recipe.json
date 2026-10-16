@@ -7,10 +7,18 @@
     "dbd"
   ],
   "key": {
-    "a": "minecraft:string",
-    "b": "minecraft:leather",
-    "c": "#minecraft:dirt",
-    "d": "minecraft:bone"
+    "a": {
+      "item": "minecraft:string"
+    },
+    "b": {
+      "item": "minecraft:leather"
+    },
+    "c": {
+      "tag": "minecraft:dirt"
+    },
+    "d": {
+      "item": "minecraft:bone"
+    }
   },
   "result": {
     "id": "voxelized_furniture:sack_of_soil",

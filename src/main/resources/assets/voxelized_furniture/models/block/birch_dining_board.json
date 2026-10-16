@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/birch_diningboard",
     "particle": "minecraft:block/stripped_birch_log",
     "0": "voxelized_furniture:block/birch_diningboard"
-  }
+  },
+  "render_type": "cutout"
 }

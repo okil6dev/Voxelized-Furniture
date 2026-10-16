@@ -7,9 +7,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:oak_planks",
-    "b": "minecraft:oak_slab",
-    "c": "minecraft:oak_stairs"
+    "a": {
+      "item": "minecraft:oak_planks"
+    },
+    "b": {
+      "item": "minecraft:oak_slab"
+    },
+    "c": {
+      "item": "minecraft:oak_stairs"
+    }
   },
   "result": {
     "id": "voxelized_furniture:oak_wardrobe",

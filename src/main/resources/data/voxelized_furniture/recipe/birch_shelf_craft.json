@@ -6,9 +6,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:birch_planks",
-    "b": "minecraft:birch_slab",
-    "c": "minecraft:chest"
+    "a": {
+      "item": "minecraft:birch_planks"
+    },
+    "b": {
+      "item": "minecraft:birch_slab"
+    },
+    "c": {
+      "item": "minecraft:chest"
+    }
   },
   "result": {
     "id": "voxelized_furniture:birch_shelf",

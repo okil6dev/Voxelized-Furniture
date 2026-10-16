@@ -6,5 +6,6 @@
     "0": "minecraft:block/stone",
     "1": "minecraft:block/stripped_spruce_log",
     "2": "minecraft:block/gravel"
-  }
+  },
+  "render_type": "solid"
 }

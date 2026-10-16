@@ -3,5 +3,6 @@
   "textures": {
     "all": "voxelized_furniture:block/modernwhitebeachwood",
     "particle": "voxelized_furniture:block/modernwhitebeachwood"
-  }
+  },
+  "render_type": "solid"
 }

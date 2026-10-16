@@ -19,7 +19,6 @@
     "itemTexture": "",
     "particleTexture": "",
     "blockSetType": "OAK",
-    "pottedPlant": "",
     "leavesParticleChance": 0.0,
     "tintType": "Foliage",
     "isItemTinted": true,
@@ -52,7 +51,7 @@
     "rarity": "COMMON",
     "immuneToFire": true,
     "creativeTabs": [
-      "CUSTOM:Miniature"
+      "CUSTOM:Other"
     ],
     "destroyTool": "pickaxe",
     "customDrop": "",

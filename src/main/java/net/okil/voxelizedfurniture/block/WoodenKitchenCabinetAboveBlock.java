@@ -7,7 +7,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -23,26 +23,25 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
-
 import io.netty.buffer.Unpooled;
 
-public class WoodenKitchenCabinetAboveBlock extends Block implements EntityBlock {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+import com.google.common.collect.ImmutableMap;
 
-	public WoodenKitchenCabinetAboveBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.WOOD).strength(1.5f, 2f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+public class WoodenKitchenCabinetAboveBlock extends Block implements EntityBlock {
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
+
+	public WoodenKitchenCabinetAboveBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(1.5f, 2f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(0, 0, 9, 16, 16, 16), box(15, 0, 8, 16, 16, 9), box(1, 0, 8, 3, 16, 9), box(13, 0, 8, 15, 16, 9), box(2, 1, 7, 3, 2, 8), box(4, 3, 8, 12, 13, 9), box(3, 0, 8, 13, 2, 9), box(3, 14, 8, 13, 16, 9),
@@ -59,7 +58,7 @@ public class WoodenKitchenCabinetAboveBlock extends Block implements EntityBlock
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
@@ -127,8 +126,15 @@ public class WoodenKitchenCabinetAboveBlock extends Block implements EntityBlock
 	}
 
 	@Override
-	protected void affectNeighborsAfterRemoval(BlockState blockstate, ServerLevel world, BlockPos blockpos, boolean flag) {
-		Containers.updateNeighboursAfterDestroy(blockstate, world, blockpos);
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (state.getBlock() != newState.getBlock()) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity instanceof WoodenKitchenCabinetAboveBlockEntity be) {
+				Containers.dropContents(world, pos, be);
+				world.updateNeighbourForOutputSignal(pos, this);
+			}
+			super.onRemove(state, world, pos, newState, isMoving);
+		}
 	}
 
 	@Override
@@ -137,7 +143,7 @@ public class WoodenKitchenCabinetAboveBlock extends Block implements EntityBlock
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos, Direction direction) {
+	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
 		if (tileentity instanceof WoodenKitchenCabinetAboveBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);

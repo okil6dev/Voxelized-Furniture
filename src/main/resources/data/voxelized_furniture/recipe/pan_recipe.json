@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:iron_bars",
-    "minecraft:blackstone"
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraft:blackstone"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:pan",

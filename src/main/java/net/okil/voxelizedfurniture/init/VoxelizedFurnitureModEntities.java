@@ -1,6 +1,3 @@
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.okil.voxelizedfurniture.init;
 
 import net.okil.voxelizedfurniture.entity.*;
@@ -16,54 +13,70 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.Identifier;
 import net.minecraft.core.registries.Registries;
 
-@EventBusSubscriber
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class VoxelizedFurnitureModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, VoxelizedFurnitureMod.MODID);
 	public static final DeferredHolder<EntityType<?>, EntityType<OakChairEntity>> OAK_CHAIR = register("oak_chair",
 			EntityType.Builder.<OakChairEntity>of(OakChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<SpruceChairEntity>> SPRUCE_CHAIR = register("spruce_chair",
 			EntityType.Builder.<SpruceChairEntity>of(SpruceChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<MangroveChairEntity>> MANGROVE_CHAIR = register("mangrove_chair",
 			EntityType.Builder.<MangroveChairEntity>of(MangroveChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<JungleChairEntity>> JUNGLE_CHAIR = register("jungle_chair",
 			EntityType.Builder.<JungleChairEntity>of(JungleChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<DarkOakChairEntity>> DARK_OAK_CHAIR = register("dark_oak_chair",
 			EntityType.Builder.<DarkOakChairEntity>of(DarkOakChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<CherryChairEntity>> CHERRY_CHAIR = register("cherry_chair",
 			EntityType.Builder.<CherryChairEntity>of(CherryChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<BirchChairEntity>> BIRCH_CHAIR = register("birch_chair",
 			EntityType.Builder.<BirchChairEntity>of(BirchChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<BambooChairEntity>> BAMBOO_CHAIR = register("bamboo_chair",
 			EntityType.Builder.<BambooChairEntity>of(BambooChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 	public static final DeferredHolder<EntityType<?>, EntityType<AcaciaChairEntity>> ACACIA_CHAIR = register("acacia_chair",
 			EntityType.Builder.<AcaciaChairEntity>of(AcaciaChairEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
-					.sized(0.6f, 1.25f));
+					.sized(0.6f, 1.25f)
+
+	);
 
 	// Start of user code block custom entities
 	// End of user code block custom entities
 	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(VoxelizedFurnitureMod.MODID, registryname))));
+		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
 	}
 
 	@SubscribeEvent

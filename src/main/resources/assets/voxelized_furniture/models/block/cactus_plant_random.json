@@ -9,5 +9,6 @@
     "6": "minecraft:block/cactus_top",
     "7": "voxelized_furniture:block/cactus_flower",
     "missing": "minecraft:block/acacia_planks"
-  }
+  },
+  "render_type": "cutout"
 }

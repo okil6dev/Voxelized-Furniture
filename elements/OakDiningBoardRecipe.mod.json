@@ -1,0 +1,33 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.PLANKS#0",
+      "Items.IRON_NUGGET",
+      "Items.STICK"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "",
+      "",
+      "",
+      "Items.IRON_NUGGET",
+      "",
+      "Items.IRON_NUGGET",
+      "Items.STICK",
+      "Blocks.PLANKS#0",
+      "Items.STICK"
+    ],
+    "recipeReturnStack": "CUSTOM:OakDiningBoard",
+    "name": "oak_dining_board_recipe",
+    "namespace": "mod"
+  }
+}

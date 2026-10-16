@@ -1,5 +1,7 @@
 package net.okil.voxelizedfurniture.procedures;
 
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
@@ -39,7 +41,7 @@ public class ToiletrollwoolProcedure {
 			if (entity instanceof Player _player) {
 				ItemStack _setstack = new ItemStack(Blocks.WHITE_WOOL).copy();
 				_setstack.setCount(1);
-				_player.getInventory().placeItemBackInInventory(_setstack);
+				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 			}
 		}
 	}

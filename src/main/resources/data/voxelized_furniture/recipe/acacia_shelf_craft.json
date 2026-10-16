@@ -6,9 +6,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:acacia_planks",
-    "b": "minecraft:acacia_slab",
-    "c": "minecraft:chest"
+    "a": {
+      "item": "minecraft:acacia_planks"
+    },
+    "b": {
+      "item": "minecraft:acacia_slab"
+    },
+    "c": {
+      "item": "minecraft:chest"
+    }
   },
   "result": {
     "id": "voxelized_furniture:cherry_shelf",

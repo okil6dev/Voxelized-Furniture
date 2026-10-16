@@ -6,9 +6,15 @@
     "aca"
   ],
   "key": {
-    "a": "minecraft:jungle_planks",
-    "b": "minecraft:jungle_slab",
-    "c": "minecraft:chest"
+    "a": {
+      "item": "minecraft:jungle_planks"
+    },
+    "b": {
+      "item": "minecraft:jungle_slab"
+    },
+    "c": {
+      "item": "minecraft:chest"
+    }
   },
   "result": {
     "id": "voxelized_furniture:jungle_shelf",

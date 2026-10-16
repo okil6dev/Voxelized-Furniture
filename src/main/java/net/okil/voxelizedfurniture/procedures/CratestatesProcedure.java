@@ -1,5 +1,7 @@
 package net.okil.voxelizedfurniture.procedures;
 
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.BlockState;
@@ -58,7 +60,7 @@ public class CratestatesProcedure {
 						if (entity instanceof Player _player) {
 							ItemStack _setstack = new ItemStack(Blocks.DIRT).copy();
 							_setstack.setCount(1);
-							_player.getInventory().placeItemBackInInventory(_setstack);
+							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 						}
 						{
 							int _value = 0;
@@ -132,7 +134,7 @@ public class CratestatesProcedure {
 							if (entity instanceof Player _player) {
 								ItemStack _setstack = new ItemStack(Blocks.GRASS_BLOCK).copy();
 								_setstack.setCount(1);
-								_player.getInventory().placeItemBackInInventory(_setstack);
+								ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 							}
 							{
 								int _value = 0;
@@ -205,7 +207,7 @@ public class CratestatesProcedure {
 					if (entity instanceof Player _player) {
 						ItemStack _setstack = new ItemStack(Blocks.BAMBOO).copy();
 						_setstack.setCount(1);
-						_player.getInventory().placeItemBackInInventory(_setstack);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					{
 						int _value = 2;
@@ -277,7 +279,7 @@ public class CratestatesProcedure {
 					if (entity instanceof Player _player) {
 						ItemStack _setstack = new ItemStack(Blocks.BAMBOO).copy();
 						_setstack.setCount(1);
-						_player.getInventory().placeItemBackInInventory(_setstack);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					{
 						int _value = 1;

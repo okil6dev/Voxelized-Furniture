@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:stone_slab",
-    "voxelized_furniture:wooden_kitchen_drawer"
+    {
+      "item": "minecraft:stone_slab"
+    },
+    {
+      "item": "voxelized_furniture:wooden_kitchen_drawer"
+    }
   ],
   "result": {
     "id": "voxelized_furniture:wooden_kitchen_sink",

@@ -6,5 +6,6 @@
     "0": "minecraft:block/rooted_dirt",
     "1": "voxelized_furniture:block/brickypot",
     "2": "voxelized_furniture:block/smallseedplant"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -8,7 +8,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,19 +25,19 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Function;
+import com.google.common.collect.ImmutableMap;
 
 public class PathwayLightBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty STATE = IntegerProperty.create("state", 0, 1);
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	private final ImmutableMap<BlockState, VoxelShape> shapes = this.makeShapes();
 
-	public PathwayLightBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.METAL).strength(0.5f, 2f).lightLevel(blockstate -> (int) Lightlevel3stateProcedure.execute(blockstate)).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+	public PathwayLightBlock() {
+		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(0.5f, 2f).lightLevel(blockstate -> (int) Lightlevel3stateProcedure.execute(blockstate)).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(STATE, 0));
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
+	private ImmutableMap<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
 				case NORTH -> Shapes.or(box(6, 0, 8, 10, 12, 10), box(9, 10, 4.5, 10, 12, 8), box(6, 10, 4.5, 7, 12, 8), box(7, 10, 4.5, 9, 12, 5.5), box(7, 10, 7, 9, 12, 8), box(7, 10, 5.5, 9, 11, 7), box(7, 11, 5.5, 9, 12, 7));
@@ -50,16 +50,16 @@ public class PathwayLightBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+		return shapes.get(state);
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return true;
 	}
 
 	@Override
-	public int getLightDampening(BlockState state) {
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
 	}
 

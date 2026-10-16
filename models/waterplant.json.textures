@@ -1,0 +1,13 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "waterplantglass",
+        "1": "waterplant",
+        "3": "minecraft:suspicious_sand_0",
+        "4": "waterplantwater"
+      }
+    }
+  }
+}

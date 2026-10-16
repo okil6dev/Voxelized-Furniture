@@ -7,9 +7,15 @@
     "bbb"
   ],
   "key": {
-    "a": "voxelized_furniture:soft_pale_oak",
-    "b": "voxelized_furniture:soft_oak",
-    "c": "minecraft:barrel"
+    "a": {
+      "item": "voxelized_furniture:soft_pale_oak"
+    },
+    "b": {
+      "item": "voxelized_furniture:soft_oak"
+    },
+    "c": {
+      "item": "minecraft:barrel"
+    }
   },
   "result": {
     "id": "voxelized_furniture:wooden_kitchen_drawer",

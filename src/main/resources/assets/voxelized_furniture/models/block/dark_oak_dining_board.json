@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/dark_oak_diningboard",
     "particle": "minecraft:block/stripped_dark_oak_log",
     "0": "voxelized_furniture:block/dark_oak_diningboard"
-  }
+  },
+  "render_type": "cutout"
 }

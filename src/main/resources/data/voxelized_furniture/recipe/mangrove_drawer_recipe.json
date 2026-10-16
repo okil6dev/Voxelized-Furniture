@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "minecraft:stripped_mangrove_log",
+  "ingredient": {
+    "item": "minecraft:stripped_mangrove_log"
+  },
   "result": {
     "id": "voxelized_furniture:mangrove_drawer",
     "count": 1

@@ -6,5 +6,6 @@
     "0": "voxelized_furniture:block/soiltex",
     "1": "voxelized_furniture:block/soiltext",
     "missing": "voxelized_furniture:block/"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -7,5 +7,6 @@
     "3": "minecraft:block/light_blue_wool",
     "4": "minecraft:block/blue_wool",
     "5": "minecraft:block/white_wool"
-  }
+  },
+  "render_type": "cutout_mipped"
 }

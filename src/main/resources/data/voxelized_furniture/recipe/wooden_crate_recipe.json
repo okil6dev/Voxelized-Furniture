@@ -6,7 +6,9 @@
     "aaa"
   ],
   "key": {
-    "a": "minecraft:oak_planks"
+    "a": {
+      "item": "minecraft:oak_planks"
+    }
   },
   "result": {
     "id": "voxelized_furniture:wooden_crate",

@@ -4,5 +4,6 @@
     "all": "voxelized_furniture:block/woodenexhausthood",
     "particle": "voxelized_furniture:block/woodenexhausthood",
     "4": "voxelized_furniture:block/woodenexhausthood"
-  }
+  },
+  "render_type": "solid"
 }
